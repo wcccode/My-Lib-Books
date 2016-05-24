@@ -1,0 +1,712 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<b>3</b>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 3: Special Components: Dhandlers and Autohandlers</h1><p class="content">
+<a name="CHP-3"></a>
+
+</p>
+<p class="content">
+In previous chapters you've seen an overview of the basic structure and syntax
+of Mason components, and you've seen how components can cooperate by invoking
+one another and passing arguments.
+</p>
+<p class="content">
+In this chapter you'll learn about <em>dhandlers</em> and <em>autohandlers</em>, two powerful mechanisms that help lend reusable structure to your site and
+help you design creative solutions to unique problems. Mason's dhandlers
+provide a flexible way to create &quot;virtual&quot; URLs that don't correspond
+directly to components on disk, and autohandlers let you easily control many
+structural aspects of your site with a powerful object-oriented metaphor.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Dhandlers</h2><p class="content">
+<a name="CHP-3-SECT-1"></a>
+
+</p>
+<p class="content">
+The term &quot;<a name="perlhtmlmason-IDXTERM-219"></a>
+ dhandler&quot; stands for &quot;default handler.&quot; The concept is simple:
+if Mason is asked to process a certain component but that component does not
+exist in the component tree, Mason will look for a component called <code>dhandler</code> and serve that instead of the requested component. Mason looks for dhandlers
+in the apparent requested directory and all parent directories. For instance,
+if your web server receives a request for <u>/archives/2001/March/21</u> and passes that request to Mason, but no such Mason component exists, Mason
+will sequentially look for <u>/archives/2001/March/dhandler</u>, <u>/archives/2001/dhandler</u>, <u>/archives/dhandler</u>, and <u>/dhandler</u>. If any of these components exist, the search will terminate and Mason will
+serve the first dhandler it finds, making the remainder of the requested
+component path available to the dhandler via <code>$m-&gt;dhandler_arg</code>. For instance, if the first dhandler found is <u>/archives/dhandler</u>, then inside this component (and any components it calls), <code>$m-&gt;dhandler_arg</code> will return <u>2001/March/21</u>. The dhandler can use this information to decide how to process the request.
+</p>
+<p class="content">
+Dhandlers can be useful in many situations. Suppose you have a large number of
+documents that you want to serve to your users through your web site. These
+documents might be <a name="IXT-3-534"></a>
+ PDF files stored on a central document server,<a name="IXT-3-535"></a>
+ JPEG files stored in a database, <a name="IXT-3-536"></a>
+ text messages from an electronic <a name="IXT-3-537"></a>
+ mailing list archive (as in the example from the previous paragraph), or even <a name="IXT-3-538"></a>
+ PNG files that you create dynamically in response to user input. You may want
+to use Mason's features to create or process these documents, but it wouldn't
+be feasible to create a separate Mason component for each document on your
+server.
+</p>
+<p class="content">
+In many situations, the dhandler feature is simply a way to make<a name="IXT-3-539"></a>
+ URLs more attractive to the end user of the site. Most people probably prefer
+URLs like <em>http://www.yoursite.com/docs/corporate/decisions.pdf</em> over URLs like <em>http://www.yoursite.com/doc.cgi?domain=corporate&amp;format=pdf&amp;content=dec
+isions</em>. It also lets you design an intuitive browsing interface, so that people who
+chop off the tail end of the URL and request <em>http://www.yoursite.com/docs/corporate/</em> can see a listing of available corporate documents if your dhandler chooses to
+show one.
+</p>
+<p class="content">
+The alert reader may have noticed that using dhandlers is remarkably similar to
+capturing the <code>PATH_INFO</code><a name="IXT-3-540"></a>
+ environment variable in a CGI application. In fact, this is not exactly true:
+Apache's <code>PATH_INFO</code><a name="IXT-3-541"></a>
+ mechanism is actually available to you if you're running Mason under <code>mod_perl</code>, but it gets triggered under different conditions than does Mason's dhandler
+mechanism.
+</p>
+<p class="content">
+If Apache receives a request with a certain path, say, <u>/path/to/missing/component</u>, then its actions depend on what the final existing part of that path is. If
+the <u>/path/to/missing/</u> directory exists but doesn't contain a <u>component</u> file, then Mason will be invoked, a dhandler will be searched for, and the
+remainder of the URL will be placed in <code>$m-&gt;dhandler_arg</code>. On the other hand, if <u>/path/to/missing</u> exists as a regular Mason component instead of as a directory, this component
+will be invoked by Mason and the remainder of the path will be placed (by
+Apache) into <code>$r-&gt;path_info</code>. Note that the majority of this handling is done by Apache; Mason steps into
+the picture after Apache has already decided whether the given URL points to a
+file, what that file is, and what the leftover bits are.
+</p>
+<p class="content">
+What are the implications of this? The behavioral differences previously
+described may help you determine what strategy to use in different situations.
+For example, if you've got a bunch of content sitting in a database but you
+want to route requests through a single Mason component, you may want to
+construct &quot;file-terminating&quot; URLs and use <code>$r-&gt;path_info</code> to get at the remaining bits. However, if you've got a directory tree under
+Mason's control and you want to provide intelligent behavior for requests that
+don't exist (perhaps involving customized 404 document generation, massaging of
+content output, and so on) you may want to construct
+&quot;directory-terminating&quot; URLs and use <code>$m-&gt;dhandler_arg</code> to get at the  rest.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h3>Finer Control over Dhandlers</h3><p class="content">
+<a name="CHP-3-SECT-1.1"></a>
+
+</p>
+<p class="content">
+Occasionally you will want more control over how Mason delegates execution to <a name="perlhtmlmason-IDXTERM-229"></a>
+ dhandlers. Several customization mechanisms are available.
+</p>
+<p class="content">
+First, any component (including a dhandler) may decline to handle a request, so
+that Mason continues its search for dhandlers up the component tree. For
+instance, given components located at <u>/docs/component.mas</u>, <u>/docs/dhandler</u>, and <u>/dhandler</u>, <u>/docs/component.mas</u> may decline the request by calling <code>$m-&gt;decline</code>, which passes control to <u>/docs/dhandler</u>. If <u>/docs/dhandler</u> calls <code>$m-&gt;decline</code>, it will pass control to <u>/dhandler</u>. Each component may do some processing before declining, so that it may base
+its decision to decline on specific user input, the state of the database, or
+the phase of the moon. If any output has been generated, <code>$m-&gt;decline</code> will clear the output buffer before starting to process the next component.
+</p>
+<p class="content">
+Second, you may change the filename used for dhandlers, so that instead of
+searching for files called <em>dhandler</em>, Mason will search for files called <em>default.mas</em> or any other name you might wish. To do this, set the <code>dhandler_name</code> Interpreter parameter (see <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a> for details on setting parameters). This may be useful if you use a text editor that recognizes Mason component syntax (we mention some such editors in <a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">Appendix C)</a> by file extension, if you want to configure your web server to handle (or deny) requests based on file extension, or if you simply don't like the name <em>dhandler</em> .
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h3>Dhandlers and Apache Configuration</h3><p class="content">
+<a name="CHP-3-SECT-1.2"></a>
+<a name="ch03-idx-1006442-4"></a>
+<a name="ch03-idx-1006442-3"></a>
+<a name="ch03-idx-1006442-2"></a>
+<a name="ch03-idx-1006442-1"></a>
+
+</p>
+<p class="content">
+You may very well have something in your Apache configuration file that looks
+something like this:
+</p>
+<div class="example-code">
+<pre>  DocumentRoot /home/httpd/html
+  
+  &lt;LocationMatch &quot;\.html$&quot;&gt;
+    SetHandler perl-script
+    PerlHandler HTML::Mason::ApacheHandler
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+This directive has a rather strange interaction with Mason's dhandler
+mechanism. If you have a dhandler at <u>/home/httpd/html/dhandler</u> on the filesystem, which corresponds to the URL <u>/dhandler</u> and a request arrives for the URL <u>/nonexistent.html</u>, Mason will be asked to handle the request. Since the file doesn't exist,
+Mason will call your dhandler, just as you would expect.
+</p>
+<p class="content">
+However, if you request the URL <u>/subdir/nonexistent.html</u>, Apache will never call Mason at all and will instead simply return a NOT
+FOUND (404) error. Why, you ask? A good question indeed. It turns out that in
+the process of answering the request, Apache notices that there is no <u>/home/httpd/html/subdir</u> directory on the filesystem before it even gets to the content generation
+phase, therefore it doesn't invoke Mason. In fact, if you were to create an
+empty <u>/home/httpd/html/subdir</u> directory, Mason <em>would</em> be called.
+</p>
+<p class="content">
+One possible solution is simply to create empty directories for each path you
+would like to be handled by a dhandler, but this is not a very practical
+solution in most cases. Fortunately, you can add another configuration
+directive like this:
+</p>
+<div class="example-code">
+<pre>  &lt;Location /subdir&gt;
+    SetHandler perl-script
+    PerlHandler HTML::Mason::ApacheHandler
+  &lt;/Location&gt;</pre>
+</div><p class="content">
+This tells Apache that it should pass control to Mason for all URL paths
+beginning with <em>/subdir</em>, regardless of what directories exist on disk. Of course, using this <code>Location</code> directive means that <em>all</em> URLs under this location, including images, will be served by Mason, so use it
+with  care.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Autohandlers</h2><p class="content">
+<a name="CHP-3-SECT-2"></a>
+
+</p>
+<p class="content">
+Mason's <a name="perlhtmlmason-IDXTERM-235"></a>
+ autohandler feature is one of its most powerful tools for managing complex web
+sites.
+</p>
+<p class="content">
+Managing duplication is a problem in any application, and web applications are
+no exception. For instance, if all pages on a given site should use the same
+(or similar) header and footer content, you immediately face a choice: should
+you simply duplicate all the common content in each individual page, or should
+you abstract it out into a central location that each page can reference?
+Anyone who's worked on web sites knows that the first approach is foolhardy: as
+soon as you need to make even a minor change to the common content, you have to
+do some kind of find-and-replace across your entire site, a tedious and
+error-prone process.
+</p>
+<p class="content">
+For this reason, all decent web serving environments provide a way to include
+external chunks of data into the web pages they serve. A simple example of this
+is the Server Side Include mechanism in Apache and other web servers. A more
+sophisticated example is Mason's own ability to call one component from inside
+another.
+</p>
+<p class="content">
+Although an include mechanism like this is absolutely necessary for a
+manageable web site, it doesn't solve all the duplication problems you might
+encounter.
+</p>
+<p class="content">
+First, the onus of calling the correct shared elements still rests within each
+individual page. There is no simple way for a site manager to wave a wand over
+her web site and say, &quot;Take all the pages in this directory and apply this
+header and this footer.&quot; Instead, she must edit each individual page to
+add a reference to the proper header and footer, which sounds remarkably like
+the hassle we were trying to avoid in the first place. Anyone who has had to
+change the header and footer for one portion of a site without changing other
+portions of the site knows that include mechanisms aren't the cat pajamas
+they're cracked up to be.
+</p>
+<p class="content">
+Second, include mechanisms address only <em>content</em> duplication, not any other kind of shared functionality. They don't let you
+share access control, content filtering, page initialization, or session
+management, to name just a few mechanisms that are typically shared across a
+site or a portion of a site.
+</p>
+<p class="content">
+To address these problems, Mason borrows a page from <a name="IXT-3-542"></a>
+ object-oriented programming. One of the central goals of object-oriented
+programming is to allow efficient and flexible sharing of functionality, so
+that a <code>Rhododendron</code> object can inherit from a <code>Plant</code> object, avoiding the need to reimplement the <code>photosynthesize()</code> method. Similarly, each component in Mason may have a <a name="IXT-3-543"></a>
+
+</p>
+<p class="content">
+<a name="IXT-3-544"></a>
+ parent component, so that several components may have the same parent, thereby
+sharing their common functionality.
+</p>
+<p class="content">
+To specify a component's parent, use the<a name="IXT-3-545"></a>
+<code>inherit</code> flag:
+</p>
+<div class="example-code">
+<pre>  &lt;%flags&gt;
+   inherit =&gt; 'mommy.mas'
+  &lt;/%flags&gt;</pre>
+</div><p class="content">
+If a component doesn't specify a parent explicitly, Mason may assign a default
+parent. This is (finally) how autohandlers come into the picture:
+</p>
+<ul>
+<li>
+The default parent for any &quot;regular&quot; component (one that isn't an
+autohandler -- but might be a dhandler) is a component named
+&quot;autohandler&quot; in the same directory. If no autohandler exists in the
+same directory, Mason will look for an autohandler one directory up, then one
+more directory up, and so on, until reaching the top of the component root. If
+this search doesn't find an autohandler, then no parent is assigned at all.</li>
+<li>
+The default parent for an autohandler is an autohandler in a higher directory.
+In other words, an autohandler inherits just like any other component, except
+that it won't inherit from itself.
+</ul>
+<p class="content">
+Note that these are only the defaults; any component, including an autohandler,
+may explicitly specify a parent by setting the <code>inherit</code> flag. Be careful when assigning a parent to an autohandler, though: you may
+end up with a circular inheritance chain if the autohandler's parent inherits
+(perhaps by default) from the autohandler.
+</p>
+<p class="content">
+Just like dhandlers, you can change the component name used for the autohandler
+mechanism from <em>autohandler</em> to something else, by setting the Mason interpreter's <code>autohandler_name</code><a name="IXT-3-546"></a>
+<a name="IXT-3-547"></a>
+ parameter.
+</p>
+<p class="content">
+We'll use the standard object-oriented terminology when talking about the
+inheritance hierarchy: a component that has a parent is said to be a
+&quot;child&quot; that &quot;inherits from&quot; its parent (and its parent's
+parent, and so on). At runtime, the hierarchy of parent and child components is
+often referred to in Mason as the &quot;wrapping chain,&quot; for reasons you
+are about to witness.
+</p>
+<p class="content">
+<a href="chapter-3.mhtml.htm#CHP-3-EX-1" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-1">Example 3-1</a> and <a href="chapter-3.mhtml.htm#CHP-3-EX-2" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-2">Example 3-2</a> show how to use autohandlers for our simple content-sharing scheme, adding common headers and footers to all the pages in a directory.
+</p>
+
+<p class="content">
+<a name="CHP-3-EX-1"></a>
+<div class="example">
+<span class="caption">Example 3-1.  /autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Example.com&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+  % $m-&gt;call_next;
+  &lt;br&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-3-EX-2"></a>
+<div class="example">
+<span class="caption">Example 3-2.  /welcome.html</span>
+<div class="example-code">
+<pre>  &lt;p&gt;Welcome to a very wonderful site.  We hope you enjoy your stay.&lt;/p&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This demonstrates the first property of inheritance, which we call &quot;<a name="IXT-3-548"></a>
+ content wrapping&quot; -- any component that inherits from the autohandler in <a href="chapter-3.mhtml.htm#CHP-3-EX-1" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-1">Example 3-1</a>, like <u>/welcome.html</u> in <a href="chapter-3.mhtml.htm#CHP-3-EX-2" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-2">Example 3-2</a>, will automatically be wrapped in the simple header and footer shown. Note that <u>/welcome.html</u> doesn't need to explicitly insert a header and footer; that happens
+automatically via the autohandler mechanism.
+</p>
+<p class="content">
+Let's trace through the details of the component processing. A request comes to
+the web server for <em>http://example.com/welcome.html</em>, which Mason translates into a request for the <u>/welcome.html</u> component. The component is found in the component path, so the dhandler
+mechanism is not invoked. <u>/welcome.html</u> doesn't explicitly specify a parent, so Mason looks for a component named <u>/autohandler</u>, and it finds one. It then tries to determine a parent for <u>/autohandler</u> -- because there are no directories above <u>/autohandler</u> and <u>/autohandler</u> doesn't explicitly specify a parent, <u>/autohandler</u> remains parentless, and the construction of the inheritance hierarchy is
+complete.
+</p>
+<p class="content">
+Mason then begins processing <u>/autohandler,</u>the top component in the parent hierarchy. The first part of the component
+doesn't contain any special Mason sections, so it simply gets output as text.
+Mason then sees the call to <code>$m-&gt;call_next</code>, which means that it should go one step down the inheritance hierarchy and
+start processing its child component, in this case <u>/welcome.html</u>. The <u>/welcome.html</u> component generates some output, which gets inserted into the middle of <u>/autohandler</u> and then finishes. Control passes back to <u>/autohandler</u>, which generates a little more output and then finishes, ending the server  response.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Using Autohandlers for Initialization</h3><p class="content">
+<a name="CHP-3-SECT-2.1"></a>
+
+</p>
+<p class="content">
+As we mentioned earlier, the <a name="perlhtmlmason-IDXTERM-244"></a>
+ autohandler mechanism can be applied to more than just header and footer
+generation. For the sake of dividing this material into reasonably sized chunks
+for learning, we're leaving the more advanced object-oriented stuff like
+methods and attributes for <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>. However, several extremely common autohandler techniques are presented here.
+</p>
+<p class="content">
+First, most interesting sites are going to interact with a database. Generally
+you'll want to open the database connection at the beginning of the response
+and simply make the database handle available globally for the life of the
+request.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> The autohandler provides a convenient way to do this (see <a href="chapter-3.mhtml.htm#CHP-3-EX-3" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-3">Example 3-3</a> and <a href="chapter-3.mhtml.htm#CHP-3-EX-4" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-4">Example 3-4)</a>.
+</p>
+
+<p class="content">
+<a name="CHP-3-EX-3"></a>
+<div class="example">
+<span class="caption">Example 3-3.  /autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Example.com&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+  % $m-&gt;call_next;
+  &lt;br&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  
+  &lt;%init&gt;
+   $dbh = DBI-&gt;connect('DBI:mysql:mydb;mysql_read_default_file=/home/ken/my.cnf')
+     or die &quot;Can't connect to database: $DBI::errstr&quot;;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-3-EX-4"></a>
+<div class="example">
+<span class="caption">Example 3-4.  /view_user.mas</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $user
+  &lt;/%args&gt;
+  
+  % if (defined $name) {
+   &lt;p&gt;Info for user '&lt;% $user %&gt;':&lt;/p&gt;
+   &lt;b&gt;Name:&lt;/b&gt; &lt;% $name %&gt;&lt;br&gt;
+   &lt;b&gt;Age:&lt;/b&gt;  &lt;% $age  %&gt;&lt;br&gt;
+  % } else {
+   &lt;p&gt;Sorry, no such user '&lt;% $user %&gt;'.&lt;/p&gt;
+  % }
+  
+  &lt;%init&gt;
+   my ($name, $age) = $dbh-&gt;selectrow_array
+     (&quot;SELECT name, age FROM users WHERE user=?&quot;, undef, $user);
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Note that the <code>$dbh</code> variable was not declared with <code>my()</code> in either component, so it should be declared using the Mason <code>allow_globals</code><a name="IXT-3-549"></a>
+ parameter (or, equivalently, the <code>MasonAllowGlobals</code> directive in an Apache config file). The <code>allow_globals</code> parameter tells the compiler to add <code>use vars</code> statements when compiling components, allowing you to use the global variables
+you specify. This is the easiest way to share variables among several
+components in a request, but it should be used sparingly, since having too many
+global variables can be difficult to manage.
+</p>
+<p class="content">
+We'll give a brief trace-through of this example. First, Mason receives a
+request for <em>http://example.com/view_user.mas?user=ken</em>, which it translates to a request for the <u>/view_user.mas</u> component. As before, the autohandler executes first, generating headers and
+footers, but now also connecting to the database. When the autohandler passes
+control to <u>/view_user.mas</u>, its <code>&lt;%init&gt;</code> section runs and uses the same<a name="IXT-3-550"></a>
+<a name="IXT-3-551"></a>
+<code>$dbh</code> global variable created in the autohandler. A couple of database values get
+fetched and used in the output, and when control passes back to the autohandler
+the request is finished.
+</p>
+<p class="content">
+Since this process is starting to get a little complicated under scrutiny, you
+may wonder how the <code>user</code> parameter is propagated through the inheritance hierarchy. The answer is that
+it's supplied to the autohandler, then passed automatically to <u>/view_user.mas</u> through <code>$m-&gt;call_next</code>. In fact, <code>$m-&gt;call_next</code> is really just some sugar around the <code>$m-&gt;comp</code> method, automatically selecting the correct component (the child) and passing
+the autohandler's arguments through to the child. If you like, you can supply
+additional arguments to the child by passing them as  arguments to <code>$m-&gt;call_next</code>.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h3>Using Autohandlers as Filters</h3><p class="content">
+<a name="CHP-3-SECT-2.2"></a>
+
+</p>
+<p class="content">
+<a href="chapter-3.mhtml.htm#CHP-3-EX-5" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-EX-5">Example 3-5</a> is another common use of <a name="perlhtmlmason-IDXTERM-249"></a>
+<a name="perlhtmlmason-IDXTERM-250"></a>
+ autohandlers. Often the content of each page will need to be modified in some
+systematic way, for example, transforming relative URLs in <code>&lt;img src&gt;</code> tags into absolute URLs.
+</p>
+
+<p class="content">
+<a name="CHP-3-EX-5"></a>
+<div class="example">
+<span class="caption">Example 3-5.  /autohandler</span>
+<div class="example-code">
+<pre>  % $m-&gt;call_next;
+  
+  &lt;%filter&gt;
+   # Images are on images.mysite.com
+   (my $host = $r-&gt;hostname) =~ s/^.*?(\w+\.\w+)$/images.$1/;
+   # Remove final filename from path to get directory
+   (my $path = $r-&gt;uri)      =~ s,/[^/]+$,,;
+
+   # Matches site-relative paths
+   s{(&lt;img[^&gt;]+src=\&quot;)/}        {$1http://$host/}ig;
+   
+   # Matches directory-relative paths
+   s{(&lt;img[^&gt;]+src=\&quot;)(?!\w+:)} {$1http://$host$path/}ig;
+  &lt;/%filter&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This particular autohandler doesn't add a header and footer to the page, but
+there's no reason it couldn't. Any additional content in the autohandler would
+function just as in our previous example and also get filtered just like the
+content from <code>call_next()</code>.
+</p>
+<p class="content">
+We make two substitution passes through the page. The first pass transforms
+URLs like <code>&lt;img src=&quot;/img/picture.gif&quot;&gt;</code> into <code>&lt;img src=&quot;http://images.mysite.com/img/picture.gif&quot;&gt;</code>. The second pass transforms URLs like <code>&lt;img src=&quot;picture.gif&quot;&gt;</code> into <code>&lt;img src=&quot;http://images.mysite.com/current_dir/picture.gif&quot;&gt;</code>.
+</p>
+<p class="content">
+Filter sections like this can be very handy for changing image paths, altering
+navigation bars to match the state of the current page, or making other simple
+transformations. It's not a great idea to use filters for very sophisticated
+processing, though, because parsing HTML can give you a stomach ache very
+quickly. In <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a> you'll see how to use inheritance to gain finer control over the production of the HTML in the first place, so that often no filtering is  necessary.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h3>Inspecting the Wrapping Chain</h3><p class="content">
+<a name="CHP-3-SECT-2.3"></a>
+
+</p>
+<p class="content">
+When Mason processes a request, it builds the <a name="perlhtmlmason-IDXTERM-253"></a>
+ wrapping chain and then executes each component in the chain, starting with
+the topmost parent component and working its way toward the bottommost child.
+Inside one of these components you may find it necessary to access individual
+components from the chain, and several Mason methods exist for this purpose.
+</p>
+<p class="content">
+For orientation purposes, let's define a little more terminology. The term
+&quot;<a name="IXT-3-552"></a>
+<a name="IXT-3-553"></a>
+ requested component&quot; refers to the component originally requested by a
+URL or to a dhandler if that component doesn't exist. The term &quot;<a name="IXT-3-554"></a>
+<a name="IXT-3-555"></a>
+ current component&quot; refers to the component currently executing at any
+given time. The term &quot;base component&quot; refers to the bottommost child
+of the current component. The <a name="IXT-3-556"></a>
+
+</p>
+<p class="content">
+<a name="IXT-3-557"></a>
+ base component starts out as the requested component, but as components call
+one another during a request, the base component will take on several different
+values. Note that the requested component is determined only once per request,
+but the current component and the base component will typically change several
+times as the request is handled
+</p>
+<p class="content">
+An example scenario is illustrated in <a href="chapter-3.mhtml.htm#CHP-3-FIG-1" tppabs="http://www.masonbook.com/book/chapter-3.mhtml#CHP-3-FIG-1">Figure 3-1</a>. If <u>/subdir/first.html</u> is called as the requested component, its parent will be <u>/subdir/autohandler</u> and its grandparent will be <u>/autohandler</u>. These three components make up the initial inheritance chain, and while <u>/subdir/first.html</u> is executing, it will be designated as the base component. Its content gets
+wrapped by its parents' content, so the component execution starts with <u>/autohandler</u>, which calls <u>/subdir/autohandler</u> via <code>$m-&gt;call_next</code>, which in turn calls <u>/subdir/first.html</u> by the same mechanism. While any of these components is executing, it
+temporarily becomes the current component, though the base component stays
+fixed as <u>/subdir/first.html</u>.
+</p>
+
+<p class="content">
+<a name="CHP-3-FIG-1"></a>
+<br />
+<img src="mas_0301.png" tppabs="http://www.masonbook.com/book/figures/mas_0301.png" width="309" height="282" /><br />
+<span class="caption">Figure 3-1.  The
+ wrapping chain</span>
+
+</p>
+<p class="content">
+If <u>/subdir/first.html</u> calls <code>&lt;&amp; called.mas &amp;&gt;</code> during the request, <u>/subdir/called.mas</u> temporarily becomes both the current component and the base component. Note
+that its parents do <em>not</em> go through the content wrapping phase again; this happens only for the
+requested component. When <u>/subdir/called.mas</u> finishes, control passes back to <u>/subdir/first.html</u>, which becomes the base component and current component again. It remains the
+base component for the duration of the request as its parents become the
+current components so they can finish their content wrapping.
+</p>
+<p class="content">
+To access the base component, current component, or requested component in your
+code, you can use the <code>$m-&gt;base_comp</code>, <code>$m-&gt;current_comp</code>, or <code>$m-&gt;request_comp</code> request methods. Each of these methods returns an object representing the
+component itself. These objects inherit from the <code>HTML::Mason::Component</code> class, and they can be used in several ways.
+</p>
+<p class="content">
+First, a component object can be used as the first argument of <code>$m-&gt;comp()</code> or <code>&lt;&amp; &amp;&gt;</code> in place of the component name. Second, you can access a component's parent by
+calling its <code>parent()</code> method, which returns another component object. Third, you can access methods
+or attributes that a component or its parents define in <code>&lt;%method&gt;</code> or <code>&lt;%attr&gt;</code> blocks. Finally, the <code>HTML::Mason::Component</code> class and its subclasses define several methods that let you query properties
+of the component itself, such as its creation time, what arguments it declares
+in its <code>&lt;%args&gt;</code> section, where its compiled form is cached on disk, and so on. See <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a> for more information on the <code>HTML::Mason::Component</code> family of  classes.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h2>Using Autohandlers and Dhandlers Together</h2><p class="content">
+<a name="CHP-3-SECT-3"></a>
+
+</p>
+<p class="content">
+Despite their similar names, the <a name="perlhtmlmason-IDXTERM-261"></a>
+<a name="perlhtmlmason-IDXTERM-262"></a>
+ autohandler and dhandler mechanisms are actually totally distinct and can be
+used independently or in tandem. In this section we look at some ways to use
+autohandlers and dhandlers together.
+</p>
+<p class="content">
+Most important about the way dhandlers and autohandlers interact is that Mason <em>first</em> figures out how to resolve a path to a component name, <em>then</em> figures out the inheritance of that component. In other words, Mason
+determines dhandlers before it determines autohandlers. This has several
+consequences.
+</p>
+<p class="content">
+First, it means that a dhandler may use the inheritance mechanism just like any
+other component can. A component called <u>/trains/dhandler</u> may specify its parent using the <code>inherit</code> flag, or it may inherit from <u>/trains/autohandler</u> or <u>/autohandler</u> by default.
+</p>
+<p class="content">
+Second, if Mason receives a request for <u>/one/two/three.mas</u>, and the component root contains components called <u>/one/two/autohandler</u> and <u>/one/dhandler</u> but no <u>/one/two/three.mas</u>, Mason will first determine that the proper requested component for this
+request is <u>/one/dhandler</u>, then it will search the component root for any appropriate parents. Since the
+autohandler is located in the <u>/one/two/</u> directory, it won't be invoked when serving <u>/one/</u>.
+</p>
+<p class="content">
+An example from John Williams (a frequent and important contributor to the
+Mason core) helps illustrate one powerful way of using dhandlers and
+autohandlers together. Suppose you're running a web site that serves news
+articles, with articles identified by the date they were written. Normally
+articles get published once a day, but once in a while there's a day without an
+article published.
+</p>
+<p class="content">
+Say you get a request for <u>/archive/2001/march/21</u>. A dhandler at <u>/archive/dhandler</u> could provide the content for any missing files, for example by finding the
+latest article whose date is before the requested date. An autohandler at <u>/archive/autohandler</u> or <u>/autohandler</u> could provide the sitewide header and footer in a uniform fashion, not caring
+whether the article had its own component file or whether it was generated by
+the dhandler.
+</p>
+<p class="content">
+Remember, autohandlers and dhandlers are distinct features in Mason, and by
+combining them creatively you can achieve very powerful  results.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. This strategy can be used in conjunction with the <code>Apache::DBI</code> module, which allows for database connections that persist over many requests. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<b>3</b>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

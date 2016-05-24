@@ -1,0 +1,865 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<b>7</b>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 7: Using Mason with mod_perl</h1><p class="content">
+<a name="CHP-7"></a>
+
+</p>
+<p class="content">
+While Mason can be used in any text generation context, it is most frequently
+used to create dynamic web sites. As you probably know, executing Perl (or
+anything else for that matter) as a CGI can be very slow. Mason, because it is
+not a small amount of code, can be sluggish when run as a CGI under heavy
+loads.
+</p>
+<p class="content">
+To that end, Mason has been designed to play nice when run under <code>mod_perl</code>. In fact, Mason has quite a number of features that make it nicely suited to
+running under <code>mod_perl</code>.
+</p>
+<p class="content">
+This chapter assumes that you are familiar with Apache, particularly Apache's
+configuration files, and with <code>mod_perl</code>. If you're not, here's a teaser: <code>mod_perl</code> embeds a Perl interpreter inside the Apache web server. Because Perl is
+already loaded, no external processes need to be launched to serve
+Perl-generated content. <code>mod_perl</code> also allows many server tasks to be configured and executed using Perl, which
+can be a great convenience.
+</p>
+<p class="content">
+More information on Apache can be found via the Apache web site at <a href="tppmsgs/msgs0.htm#58" tppabs="http://httpd.apache.org/">http://httpd.apache.org/</a>, as well as in O'Reilly's<a name="IXT-7-902"></a>
+<em>Apache: The Definitive Guide</em>, 3rd Edition (Ben and Peter Laurie, 2003).
+</p>
+<p class="content">
+For more information on <code>mod_perl</code>, the<a name="IXT-7-903"></a>
+<code>mod_perl</code> site at <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">http://perl.apache.org/</a> is useful, as is Stas Bekman's fabulous <code>mod_perl</code> guide, which can be found at the same location. Also useful is <em>Writing Apache Modules with Perl and C</em><a name="IXT-7-904"></a>
+ (the &quot;Eagle Book&quot;) by Lincoln Stein and Doug MacEachern, also
+published by O'Reilly.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> Despite the title, it is really primarily about <code>mod_perl</code>.
+</p>
+<p class="content">
+A recent <a name="perlhtmlmason-IDXTERM-568"></a>
+ book from Sams Publishing,<a name="IXT-7-905"></a>
+<em>The mod_perl Developer's Cookbook</em> by Geoffrey Young, Paul Lindner, and Randy Kobes, is also an extremely
+valuable resource for anyone who's going to spend a significant amount of time
+working with <code>mod_perl</code>. It fills a different niche in the developer's mental toolkit.
+</p>
+<p class="content">
+With Apache 2.0 and <code>mod_perl</code> 2.0 on the horizon as this is being written, please note that this chapter
+assumes that you are using Apache 1.3.x and <code>mod_perl</code> 1.22 or greater. In addition, your <code>mod_perl</code> should have been compiled with <code>PERL_METHOD_HANDLERS=1</code> and <code>PERL_TABLE_API=1</code>, or with <code>EVERYTHING=1</code> .
+</p>
+<p class="content">
+We expect Mason to work immediately under the 1.x compatibility layer that <code>mod_perl</code> 2.0 will provide. And of course, once <code>mod_perl</code> and Apache 2.0 are out, we hope to find new features for Mason to exploit.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Configuring Mason</h2><p class="content">
+<a name="CHP-7-SECT-1"></a>
+
+</p>
+<p class="content">
+<a name="IXT-7-906"></a>
+
+</p>
+<p class="content">
+<a name="IXT-7-907"></a>
+ Mason can be configured under <code>mod_perl</code> in two different ways. The easiest of the two merely requires that you add a
+few directives to Apache's configuration files. This method is very easy to use
+and is appropriate for most uses of Mason. It's commonly called
+&quot;configuration via <u>httpd.conf</u>,&quot; though many configuration directives can be placed anywhere Apache will
+see them, such as in an <u>.htaccess</u> file.
+</p>
+<p class="content">
+The other way is to write a custom piece of Perl code to bind Mason and <code>mod_perl</code> together, which you instruct <code>mod_perl</code> to use when handling requests. This method is very flexible but is a bit more
+complicated. It is not usually necessary, but it can be useful for a
+particularly complex or dynamic configuration. This configuration method is
+commonly called &quot;configuration via a <u>handler.pl</u>,&quot; though the <u>handler.pl</u> file can be called anything you like.
+</p>
+<p class="content">
+For simplicity's sake, we always refer to the <u>httpd.conf</u> and <u>handler.pl</u> files throughout the book.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h3>Configuration via httpd.conf</h3><p class="content">
+<a name="CHP-7-SECT-1.1"></a>
+
+</p>
+<p class="content">
+To make <a name="perlhtmlmason-IDXTERM-573"></a>
+<a name="perlhtmlmason-IDXTERM-574"></a>
+<a name="perlhtmlmason-IDXTERM-575"></a>
+ Mason work under <code>mod_perl</code>, we need to set up a few Mason configuration variables and then tell <code>mod_perl</code> to use Mason as a <code>PerlContentHandler</code><a name="IXT-7-908"></a>
+ . Here is the simplest possible configuration:
+</p>
+<div class="example-code">
+<pre>  SetHandler   perl-script
+  PerlHandler  HTML::Mason::ApacheHandler</pre>
+</div><p class="content">
+The <code>SetHandler</code><a name="IXT-7-909"></a>
+ directive just tells Apache to use <code>mod_perl</code> for this request. The <code>PerlHandler</code> directive is provided by <code>mod_perl</code>, and it tells Apache that the given module is a content handler. This means
+that the module will respond to the request and generate content to be sent to
+the client.
+</p>
+<p class="content">
+Putting the previous snippet in your configuration file will cause every file
+your web server processes to be handled by Mason. This is probably not what you
+want most of the time, so let's narrow it down a bit:
+</p>
+<div class="example-code">
+<pre>  &lt;Location /mason&gt;
+    PerlSetVar   MasonCompRoot  /path/to/doc/root/mason
+    SetHandler   perl-script
+    PerlHandler  HTML::Mason::ApacheHandler
+  &lt;/Location&gt;</pre>
+</div><p class="content">
+This tells Apache that only requests that have a path starting with <em>/mason</em> will be handled by Mason. We've narrowed down the component root
+correspondingly, though this is not required. In fact, it's important to
+realize that component root and document root are <em>not</em> the same thing. There will be more on this later.
+</p>
+<p class="content">
+Alternately, we might want to specify that only certain file extensions will be
+handled by Mason:
+</p>
+<div class="example-code">
+<pre>  AddType  text/html  .mhtml
+  &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  HTML::Mason::ApacheHandler
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+The first directive tells Apache that files ending with <em>.mhtml</em> have a content-type of <code>text/html</code> . The <code>LocationMatch</code><a name="IXT-7-910"></a>
+ section says that all URIs ending with .<em>mhtml</em> will be handled by Mason. This configuration is convenient if you want to
+intermix Mason components with other types of content, such as static HTML or
+image files, in the same directory. You want Mason to process only the Mason
+components, as having it process images or CSS is both a waste of time and a
+possible source of errors. Who knows what Mason will make of an image's binary
+data? You probably don't want to find out.
+</p>
+<p class="content">
+By default Mason will use the server's document root for the resolver's <code>comp_root</code> parameter. Mason also needs a data directory to store things like compiled
+components and cache files. By default, this will be a subdirectory called <u>mason</u> under your server's <code>ServerRoot</code>. It is important that this directory be writable by the user or group ID that
+the Apache children run as, though the ApacheHandler will ensure that this
+happens if your server is started as the root user.
+</p>
+<p class="content">
+Both of these defaults can easily be overridden.
+</p>
+<div class="example-code">
+<pre>  PerlSetVar  MasonCompRoot  /var/www/comps
+  PerlSetVar  MasonDataDir   /var/mason-data-dir</pre>
+</div><p class="content">
+The<a name="IXT-7-911"></a>
+<code>PerlSetVar</code> directive sets variables that are accessible by Perl modules via the Apache
+API. Mason uses this API internally to get at these settings.
+</p>
+<p class="content">
+All of the Interp, Compiler, and Lexer parameters that were discussed in <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a> can be set from the configuration file. A full listing of all the variables that can be set via <code>PerlSetVar</code> directives can be found in <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a>.
+</p>
+<p class="content">
+You also may have multiple Mason configurations for different parts of your web
+server:
+</p>
+<div class="example-code">
+<pre>  &lt;VirtualHost 1.2.3.4&gt;
+   ServerName  www.example.com
+   DocumentRoot  /home/example/htdocs/
+   PerlSetVar  MasonCompRoot  /home/example/htdocs
+   PerlSetVar  MasonDataDir   /home/example/mason-data
+   &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  HTML::Mason::ApacheHandler
+   &lt;/LocationMatch&gt;
+  &lt;/VirtualHost&gt;
+  
+  &lt;VirtualHost 1.2.3.4
+  &gt; ServerName  hello-kitty-heaven.example.com
+   DocumentRoot  /home/hello-kitty/htdocs/
+   PerlSetVar  MasonCompRoot  /home/hello-kitty/htdocs/mason
+   PerlSetVar  MasonDataDir   /home/hello-kitty/mason-data
+  
+   &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  HTML::Mason::ApacheHandler
+   &lt;/LocationMatch&gt;
+  &lt;/VirtualHost&gt;</pre>
+</div><p class="content">
+In this case, Mason will find the relevant configuration directives when asked
+to handle a request.
+</p>
+<p class="content">
+When you have only a single  Mason configuration for your server, Mason will attempt to create the objects
+it needs as early as possible, during the initial server startup.
+</p>
+<p class="content">
+Doing this increases the amount of shared memory between Apache processes on
+most systems. The reason is that memory that is not modified after a process
+forks can be shared between a parent and any children it spawns, at least with
+some operating systems.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h3>Configuration via Custom Code</h3><p class="content">
+<a name="CHP-7-SECT-1.2"></a>
+
+</p>
+<p class="content">
+When simple <a name="perlhtmlmason-IDXTERM-583"></a>
+<a name="perlhtmlmason-IDXTERM-584"></a>
+<a name="perlhtmlmason-IDXTERM-585"></a>
+ configuration variables aren't enough, when you simply must do it the hard
+way, Mason has an alternative. Write your own code. This method gives you
+complete control over how Mason handles requests at the cost of a bit of extra
+code to maintain.
+</p>
+<p class="content">
+The simplest external script that would work might look something like this:
+</p>
+<div class="example-code">
+<pre>  package MyMason::MyApp;
+  
+  use strict;
+  use HTML::Mason::ApacheHandler;
+  use Apache::Request;
+  
+  my $ah =
+    HTML::Mason::ApacheHandler-&gt;new
+      ( comp_root =&gt; '/home/httpd/html',
+        data_dir  =&gt; '/home/httpd/mason' );
+  
+  sub handler {
+      my $r = shift;  # Apache request object;
+  
+      return $ah-&gt;handle_request($r);
+  }</pre>
+</div><p class="content">
+Assume that this file is saved in the Apache configuration directory as <u>handler.pl</u>.
+</p>
+<p class="content">
+Then you'd add a few configuration directives to your Apache <a name="IXT-7-912"></a>
+ configuration file:
+</p>
+<div class="example-code">
+<pre>  PerlRequire  handler.pl
+  
+  &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  MyMason::MyApp
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+Notice the lack of <code>PerlSetVar</code> directives this time. Also note that the value given to the <code>PerlHandler</code><a name="IXT-7-913"></a>
+ directive is now the package you declared in the <u>handler.pl</u> file. This combination of script and Apache configuration would give us the
+exact same results as in the previous section.
+</p>
+<p class="content">
+Let's go through this in more detail to understand exactly what it is doing.
+Starting with the Apache configuration piece, we see that we set <code>PerlHandler</code> to <code>MyMason::MyApp</code>. This tells <code>mod_perl</code> to look for a subroutine called <code>handler()</code> in the <code>MyMason::MyApp</code> namespace. Mason does not include any such thing, so we have to write it
+ourselves, which is what the script does.
+</p>
+<p class="content">
+The choice of naming it <code>MyMason::MyApp</code> is completely arbitrary. You might prefer something that identifies the
+project you're working on, like <code>GooberCorp::WebEmail::Mason</code> or something like that. It doesn't even need to have the word <code>Mason</code> in it, though it will probably improve the clarity of your <u>httpd.conf</u> file if it does.
+</p>
+<p class="content">
+Why are we declaring ourselves as being in the <code>MyMason::MyApp</code> namespace? Look at our <code>PerlHandler</code> directive. It indicates that the handler subroutine will be found in that same
+namespace.
+</p>
+<p class="content">
+The first few lines of the script are simple. The only module that <em>must</em> be loaded is <code>HTML::Mason::ApacheHandler</code>.
+</p>
+<p class="content">
+To save some memory, we load <code>Apache::Request</code> in this file. Mason would load this for us when it was needed, but we want to
+make sure it gets loaded during the server startup so memory can be shared.
+</p>
+<p class="content">
+Then we create the <code>HTML::Mason::ApacheHandler</code><a name="IXT-7-914"></a>
+ object. This object takes an Apache request object and figures out how to
+dispatch it to Mason.
+</p>
+<p class="content">
+This object contains an <code>HTML::Mason::Interp</code><a name="IXT-7-915"></a>
+ object. As we discussed in the previous chapter, when a Mason object contains
+another Mason object, you can pass parameters to the containing object's
+constructor that are intended for the contained object(s).
+</p>
+<p class="content">
+This means that parameters that are intended for the Interpreter object's
+constructor can be passed to the ApacheHandler's <code>new()</code> method. In addition, since the Interpreter contains a Resolver, Compiler, and
+so forth, you can also pass parameters for those objects to the ApacheHandler
+constructor.
+</p>
+<p class="content">
+The <code>handler()</code> subroutine itself is quite simple. The Apache <a name="IXT-7-916"></a>
+ request object is always passed to any handler subroutine by <code>mod_perl</code>. This object is then passed to the ApacheHandler object's <code>handle_request()</code> method. The <code>handle_request()</code><a name="IXT-7-917"></a>
+ method does all the real work and makes sure that content is sent to the
+client. Its return value is a status code for the request and the <code>handler()</code> subroutine simply returns this status code to <code>mod_perl</code>, which passes it onto Apache, which handles it however it is configured to do
+so.
+</p>
+<p class="content">
+If this were all we did with a handler subroutine it would be awfully
+pointless. Let's examine a more complicated scenario.
+</p>
+<p class="content">
+We can rewrite the earlier <a name="IXT-7-918"></a>
+ virtual hosting example to use an external script:
+</p>
+<div class="example-code">
+<pre>  PerlRequire  handler.pl
+  
+  &lt;VirtualHost 1.2.3.4&gt;
+   ServerName  www.example.com
+  
+   &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  MyMason::MyApp
+   &lt;/LocationMatch&gt;
+  &lt;/VirtualHost&gt;
+  
+  &lt;VirtualHost 1.2.3.4&gt;
+   ServerName  hello-kitty-heaven.example.com
+  
+   &lt;LocationMatch &quot;\.mhtml$&quot;&gt;
+    SetHandler   perl-script
+    PerlHandler  MyMason::MyApp
+   &lt;/LocationMatch&gt;
+  &lt;/VirtualHost&gt;</pre>
+</div><p class="content">
+That takes care of the Apache configuration file; now the script:
+</p>
+<div class="example-code">
+<pre>  package MyMason::MyApp;
+  
+  use strict;
+  
+  use HTML::Mason::ApacheHandler;
+  
+  use Apache::Request;
+  
+  my %host_to_comp_root =
+      ( 'www.example.com' =&gt; '/home/example/htdocs',
+        'hello-kitty-heaven.example.com' =&gt; '/home/hello-kitty/htdocs' );
+  
+  my %ah;
+  
+  sub handler {
+      my $r = shift;  # Apache request object;
+  
+      my $host = $r-&gt;hostname; # tells us what server was requested;
+      my $comp_root = $host_to_comp_root{$host};
+  
+      # create a new object for this host if none exists yet.
+      $ah{$host} ||=
+          HTML::Mason::ApacheHandler-&gt;new( comp_root =&gt; $comp_root );
+  
+      return $ah{$host}-&gt;handle_request($r);
+  }</pre>
+</div><p class="content">
+This is a rather simple example and doesn't necessarily justify writing a
+script rather than just configuring via the Apache configuration file. However,
+let's imagine that we also had the script check in each home directory for
+extra 
+</p>
+<p class="content">
+
+</p>
+<p class="content">
+ Mason configuration directives, which could be stored either as pure Perl or
+in a specified format.
+</p>
+<p class="content">
+How about if you had to do virtual hosting for 200 domain names? Then some sort
+of scripted solution becomes more appealing. Of course, you could always write
+a script to generate the Apache configuration directives too. It really depends
+on what your needs are. But Mason gives you the flexibility to handle it in the
+way you think best.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Document Root Versus the Component Root</h2><p class="content">
+<a name="CHP-7-SECT-2"></a>
+
+</p>
+<p class="content">
+Apache's<a name="perlhtmlmason-IDXTERM-596"></a>
+<a name="perlhtmlmason-IDXTERM-597"></a>
+ document root is what defines the top level web directory of your Apache
+configuration. For example purposes, let's assume a document root of <u>/home/httpd/htdocs</u>. If you request the document <u>/index.html</u> via your web browser, Apache will look for the file <u>/home/httpd/htdocs/index.html</u>. If <u>index.html</u> contains an <code>HREF</code> to <u>/some/file.html</u>, you would have to place a file at <u>/home/httpd/htdocs/some/file.html</u> for the link to be resolved properly.
+</p>
+<p class="content">
+Mason has a component root, which is somewhat similar. If Mason's component
+root is <u>/home/httpd/htdocs/mason</u>, and a component makes a component call with an absolute path of <u>/some/component</u>, Mason will look for a file at <u>/home/httpd/htdocs/mason/some/component</u>.
+</p>
+<p class="content">
+It can be confusing when the component root and the document root are not the
+same because this means that the path for an <code>HREF</code> and a component path, though they may appear to be the same, can point to two
+different files.
+</p>
+<p class="content">
+For example, with the preceding configuration, we have the following:
+</p>
+<div class="example-code">
+<pre>  &lt;a href=&quot;/some/file.html&quot;&gt;resolves to /home/httpd/htdocs/some/file.html&lt;/a&gt;.
+  
+  &lt;&amp; /some/file.html &amp;&gt; resolves to /home/httpd/htdocs/mason/some/file.html.</pre>
+</div><p class="content">
+Do you see the difference?
+</p>
+<p class="content">
+Be sure to keep this in mind while working on your components. To avoid dealing
+with this problem, you could simply make your document root and component root
+the same directory and decide whether or not something is a component based on
+its file extension.
+</p>
+<p class="content">
+This is generally a bit easier on the brain and is definitely what we recommend
+for first-time  Mason users.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h2>Not OK</h2><p class="content">
+<a name="CHP-7-SECT-3"></a>
+
+</p>
+<p class="content">
+By default, if a <a name="perlhtmlmason-IDXTERM-600"></a>
+<a name="perlhtmlmason-IDXTERM-601"></a>
+ component does not give an explicit return code, the ApacheHandler object will
+assume that the request was error free and that the status it should return is
+OK. But sometimes things are just not OK.
+</p>
+<p class="content">
+For example, we may want to give an authorization error or a document not found
+error. There are several ways of doing this.
+</p>
+<p class="content">
+The first is to have the component that is called return the desired status
+code. Inside the <code>handle_request()</code><a name="IXT-7-919"></a>
+ method, the ApacheHandler object checks to see if the component that it called
+returned a value. If so, it uses this as the status code for the request.
+</p>
+<p class="content">
+If you try to do this, remember that with autohandler wrapping, the last
+component executed is not necessarily the first one called. For example, let's
+assume a component called <u>/give_up.html</u>:
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   # I give up!
+   use Apache::Constants qw(NOT_FOUND);
+   return NOT_FOUND;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+This component could be wrapped by an <u>/autohandler</u> like this:
+</p>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;My wonderful site&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+  % $m-&gt;call_next(%ARGS);
+  &lt;/body&gt;
+  &lt;/html&gt;</pre>
+</div><p class="content">
+In this case the return code from the <u>/give_up.html</u> component ends up being ignored.
+</p>
+<p class="content">
+A better way to do this is to use the Mason request object's <code>abort()</code> method, which we covered in <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a>. Using the <code>abort()</code> method, we could rewrite <u>/give_up.html</u> like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   # I give up!
+   use Apache::Constants qw(NOT_FOUND);
+   $m-&gt;abort(NOT_FOUND);
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+Any value passed to <code>abort()</code> will eventually be passed to the client. But this still might not work. The
+problem is the text content in the <u>/autohandler</u> that is generated before <u>/give_up.html</u> is called. Mason sees this before <code>abort()</code> is called and will try to send it to the client. This may be a problem for
+some non-OK codes, particularly for redirects. We need to clear Mason's buffer
+in order to make sure that the client doesn't see any output before the error
+is generated.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   # I really give up!
+   use Apache::Constants qw(NOT_FOUND);
+   $m-&gt;clear_buffer;
+   $m-&gt;abort(NOT_FOUND);
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+This will work just fine for all return codes, though some may need additional
+manipulation of the Apache object, <code>$r</code>, depending on the status  code being returned.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h2>$r</h2><p class="content">
+<a name="CHP-7-SECT-4"></a>
+
+</p>
+<p class="content">
+Every component that is run under Apache via the ApacheHandler module has
+access to a global variable called <code>$r</code><a name="IXT-7-920"></a>
+<a name="IXT-7-921"></a>
+ . This variable is the Apache request object for the current request. Using
+this variable gives you access to the full Apache API, including the ability to
+set HTTP headers, send messages to the Apache logs, access Apache configuration
+information, and much more.
+</p>
+<p class="content">
+If you used the <code>Apache::Request</code> module to processing incoming arguments, which is Mason's default, then <code>$r</code> will actually be an <code>Apache::Request</code> object.
+</p>
+<p class="content">
+Documenting what you can do with this object is outside the scope of the book,
+but do not despair. The <code>mod_perl</code> resources mentioned at the beginning of this chapter, as well as the Apache
+object's documentation (run <code>perldoc Apache</code>, and if you set <code>args_method</code> to <code>mod_perl</code> , also <code>perldoc Apache::Request</code>), can tell you everything you need to know. It's worth looking at the
+documentation to get an idea of what kinds of things it's capable of doing.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>ApacheHandler Parameters</h2><p class="content">
+<a name="CHP-7-SECT-5"></a>
+
+</p>
+<p class="content">
+The <a name="perlhtmlmason-IDXTERM-607"></a>
+ ApacheHandler object can take several parameters to its constructor; all of
+them are optional:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+args_method =&gt; 'mod_perl' or 'CGI'</div>
+<p class="content">
+<a name="IXT-7-922"></a>
+<a name="IXT-7-923"></a>
+
+</p>
+<p class="content">
+This tells the object what module you would like it to use for parsing incoming
+query string and POST parameters. <code>CGI</code> indicates that you want to use <code>CGI.pm</code> and <code>mod_perl</code> indicates that you want to use <code>Apache::Request</code>. <code>Apache::Request</code> is faster, uses less memory, and is the default.
+</p>
+<p class="content">
+You may choose to use <code>CGI.pm</code> if you want to take advantage of its form element generation features or if
+you cannot use Apache::Request on your operating system.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+decline_dirs =&gt; $boolean</div>
+<p class="content">
+<a name="IXT-7-924"></a>
+<a name="IXT-7-925"></a>
+
+</p>
+<p class="content">
+By default, requests that match directories under a <code>Location</code> or <code>Directory</code> section served by Mason are declined, returning a status code of <code>DECLINED</code><a name="IXT-7-926"></a>
+<code>(-1)</code> so that Apache will handle directory requests as it normally does. If you
+would like to handle these requests with Mason, presumably via a dhandler, you
+should set this to false.
+</p>
+<p class="content">
+Obviously, if you told Apache to serve Mason requests based only on a file
+extension, this parameter is not likely to be meaningful.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+apache_status_title =&gt; $string</div>
+<p class="content">
+<a name="IXT-7-927"></a>
+<a name="IXT-7-928"></a>
+
+</p>
+<p class="content">
+The ApacheHandler object will register itself with <code>mod_perl</code>'s <code>Apache::Status</code> module if possible. This registration involves giving <code>Apache::Status</code> a unique title for the registered object. This defaults to &quot;HTML::Mason
+status&quot; but if you have multiple ApacheHandler objects you may want to
+give each one a unique title. Otherwise, only one will be visible under the <code>Apache::Status</code> display.
+</p>
+
+</ul>
+<p class="content">
+The ApacheHandler module provides a special subclass of the Request object <code>$m</code>. This object has an additional constructor parameter besides those available
+to normal requests:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+auto_send_headers =&gt; $boolean</div>
+<p class="content">
+<a name="IXT-7-929"></a>
+<a name="IXT-7-930"></a>
+
+</p>
+<p class="content">
+This tells Mason whether or not you'd like it to automatically send the <a name="IXT-7-931"></a>
+ HTTP headers before sending content to a client. By default, this is true, and
+Mason will call <code>$r-&gt;send_http_header()</code> before sending output to the client. If you turn this off, you will need to
+send the headers yourself.
+</p>
+<p class="content">
+If you do call the <code>send_http_header()</code> method yourself before Mason has a chance to do so, Mason will not send extra
+headers, regardless of the value of this variable.
+</p>
+<p class="content">
+Remember, you can simply pass this value to the  ApacheHandler object when you create it, or you can set <code>MasonAutoSendHeaders</code> in your <u>httpd.conf</u> file.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-8"></a>
+<h2>To Autoflush or Not to Autoflush</h2><p class="content">
+<a name="CHP-7-SECT-6"></a>
+
+</p>
+<p class="content">
+In <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a> we saw that<a name="perlhtmlmason-IDXTERM-611"></a>
+ autoflushing can be turned on and off for a request. Whether or not
+autoflushing is turned on has a big impact on what kind of things you can do
+while running under Apache.
+</p>
+<p class="content">
+With autoflush off, you can easily start generating content, have your code
+throw it away halfway through, and then issue a redirect. This will simply not
+work with autoflushing on.
+</p>
+<p class="content">
+For a redirect to work, it has to have a chance to set the headers. Since
+content is sent as soon as it is created when autoflushing, any redirects that
+happen after content is generated will happen after the headers have already
+been sent. This makes it harder to have a flexible application with
+autoflushing on, and for this reason most people do not use it.
+</p>
+<p class="content">
+Turning autoflush on can make the response time appear quicker, since the
+initial output gets to the client sooner. To get the best of both worlds, leave  autoflushing off and send quick status reports with <code>$m-&gt;flush_buffer</code> on the pages that need it.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h2>Generating Something Besides HTML</h2><p class="content">
+<a name="CHP-7-SECT-7"></a>
+
+</p>
+<p class="content">
+Eventually you may want to have <a name="perlhtmlmason-IDXTERM-613"></a>
+ Mason generate things besides HTML, such as plain text pages, MP3 playlists,
+or even images. This is quite easy to do. Here's a simple component that
+generates plain <a name="IXT-7-932"></a>
+ text:
+</p>
+<div class="example-code">
+<pre>  I am a piece of plain text.  So boring.  This will not be &lt;b&gt;bold&lt;/b&gt;.
+  
+  &lt;%init&gt;
+   $r-&gt;content_type('text/plain');
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+If you want to generate <a name="IXT-7-933"></a>
+ binary data, you have to be careful to make sure that no extraneous snippets
+of text sneak into it:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $type =&gt; 'jpeg'
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   use Apache::Constants qw(OK);
+  
+   $m-&gt;clear_buffer; # avoid extra output (but it only works when autoflush is off)
+  
+   my $img = make_image( type =&gt; $type ); # magic hand-waving ...
+  
+   $r-&gt;content_type(&quot;image/$type&quot;);
+   $r-&gt;send_http_header;
+  
+   $m-&gt;print($img);
+  
+   $m-&gt;abort(OK);  # make sure nothing else gets sent
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+This component does two things to ensure that nothing corrupts the image's
+binary data. First, it clears the buffer, because if this component was wrapped
+by an autohandler there could be some text in the buffer when it is called. Of
+course, if you've turned on autoflushing, the <code>clear_buffer()</code><a name="IXT-7-934"></a>
+ method doesn't actually do anything, so you'd have to be extra careful in that
+situation.
+</p>
+<p class="content">
+Then, after sending the image, the component flushes the buffer to make sure
+that output gets sent and then aborts to make sure that nothing gets sent
+afterward. By passing the <code>OK</code> status code to the <code>abort()</code><a name="IXT-7-935"></a>
+ method, we make sure that the correct status code makes its way to the client.
+The <code>abort()</code> method does not prevent output from being sent to the client, so the image is
+sent as we'd expect.
+</p>
+<p class="content">
+We put all this code in an <code>&lt;%init&gt;</code> block to make sure that it gets executed right away, before any whitespace
+from the rest of the component could be processed as output.
+</p>
+<p class="content">
+Note that Mason's templating capabilities aren't exactly taking center stage in
+this example. You may ask why Mason is being used in this situation at all.
+Indeed, without context, it's difficult to see a good reason; however, people
+have done just this kind of thing in order to take advantage of Mason's other
+features like dhandlers or to integrate the dynamically generated image into an
+existing  Mason site.
+</p>
+<a name="TOC-ANCHOR-10"></a>
+<h2>Apache::Status and Mason</h2><p class="content">
+<a name="CHP-7-SECT-8"></a>
+
+</p>
+<p class="content">
+As was mentioned earlier, Mason can cooperate with the <code>Apache::Status</code><a name="IXT-7-936"></a>
+<a name="IXT-7-937"></a>
+<a name="IXT-7-938"></a>
+ module to display information about itself. To enable this module is
+relatively simple. For example, if you'd like the module to be accessible at
+the URL <u>/perl-status</u>, you could add this to your Apache configuration:
+</p>
+<div class="example-code">
+<pre>  &lt;Location /perl-status&gt;
+    SetHandler perl-script
+    PerlHandler Apache::Status
+  &lt;/Location&gt;</pre>
+</div><p class="content">
+<code>Apache::Status</code> provides information about <code>mod_perl</code> in general and allows other modules to provide their own status hooks. Mason
+provides a basic status report on the ApacheHandler and Interp objects, as well
+as a list of which components are currently in the code cache.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. They told us we get extra royalties every time we mention one of their other
+books. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<b>7</b>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<b>1</b>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 1: Introduction</h1><p class="content">
+<a name="CHP-1"></a>
+
+</p>
+<p class="content">
+At its heart, <a name="IXT-1-325"></a>
+ Mason is simply a mechanism for embedding Perl code into plain text. It is
+only one of many such mechanisms that all do more or less the same thing.
+However, Mason represents a particular set of choices about how this embedding
+should be done, and many people have found that the way Mason does things is
+very straightforward and extremely conducive to getting jobs done.
+</p>
+<p class="content">
+In this chapter we'll introduce you to some of Mason's key features and
+strengths, show you a couple of examples of how to use <a name="IXT-1-326"></a>
+ Mason, and talk about some alternatives to Mason. After reading this chapter,
+you should have a fairly good idea of how Mason relates to its peers and what
+kinds of tasks you can accomplish with Mason.
+</p>
+<p class="content">
+The most common application of Mason is in building large dynamic web sites,
+and this book focuses mostly on web site building. Mason is broadly applicable
+to any situation in which fine control over document content is required,
+however, such as generating mail-merged form letters, creating custom
+configuration file sets, and even building dynamic <a name="IXT-1-327"></a>
+ GIF images based on varying input parameters. We intend to give you enough
+facility with Mason that after reading this book, you can imagine Mason-based
+solutions to problems we haven't ever thought of.
+</p>
+<p class="content">
+Before we get into the details of Mason and comparisons with its alternatives,
+we'll just briefly mention some of its guiding design principles. Mason was
+designed to help you build, organize, and maintain large web sites or other
+groups of dynamically generated documents. It cooperates fully with Perl,
+leveraging all the solutions and techniques that Perl developers have come to
+depend on and that have made Perl such a powerful and widespread tool. It
+encourages thinking about your site in structural terms rather than as a
+collection of procedural scripts or <a name="IXT-1-328"></a>
+ modules. All of these things are conducive to getting your job done
+effectively, letting you concentrate on your goals while Mason takes care of
+the details.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>A First Example</h2><p class="content">
+<a name="CHP-1-SECT-1"></a>
+
+</p>
+<p class="content">
+To help make this discussion a little more concrete (this thing is called <em>Mason</em>, after all), let's look at an example. We'll give more in-depth treatment to
+the details of Mason's syntax later in the book; these examples are just to put
+some Mason code in front of your eyes and show you what it looks like.
+</p>
+<p class="content">
+The following code is a complete chunk of <a name="IXT-1-329"></a>
+ Mason code, called a<a name="perlhtmlmason-IDXTERM-6"></a>
+<em>component</em>:
+</p>
+<div class="example-code">
+<pre>  % my $planet = &quot;World&quot;;
+  Hello, &lt;% $planet %&gt;!</pre>
+</div><p class="content">
+When Mason runs this code, the output is:
+</p>
+<div class="example-code">
+<pre>  Hello, World!</pre>
+</div><p class="content">
+We'll talk more about the details of component syntax in <a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">Chapter 2</a>, but two basic elements in the preceding example deserve mention here. The first is that any line that begins with a <code>%</code><a name="IXT-1-330"></a>
+<a name="IXT-1-331"></a>
+ character tells Mason that the line contains Perl code. The <a name="IXT-1-332"></a>
+ Perl code can be any syntactically correct Perl -- Mason doesn't care what it
+is or what it does. In this case, it simply sets the value of a variable that
+will be used later in the component.
+</p>
+<p class="content">
+The other element in the previous Mason component is the<a name="IXT-1-333"></a>
+<a name="IXT-1-334"></a>
+ substitution tag, denoted by the sequence <code>&lt;% %&gt;</code>. Mason will evaluate the contents of any such tag and insert the result into
+the surrounding text. In this case, the variable <code>$planet</code> evaluates to <code>World</code>, and the output of the entire component is <code>Hello, World!</code> Note that any text that isn't a special Mason construct simply becomes part of
+the output of the component.
+</p>
+<p class="content">
+These two lines are relatively simple and not particularly exciting, but they
+should give you a taste for how Mason code looks in its simplest form.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h2>The Main Features of Mason</h2><p class="content">
+<a name="CHP-1-SECT-2"></a>
+
+</p>
+<p class="content">
+There are more templating systems written in Perl than you could possibly keep
+in your head all at once. To help you make sense of <a name="perlhtmlmason-IDXTERM-12"></a>
+ Mason's place in the world, this section presents Mason's most important and
+distinctive features. By the end of this section, you should see that Mason
+pushes the boundaries of the term &quot;<a name="IXT-1-335"></a>
+ templating system,&quot; with lots of features aimed at helping you manage the
+larger tasks of site design and maintenance.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h3>Components: Modular Design Elements</h3><p class="content">
+<a name="CHP-1-SECT-2.1"></a>
+
+</p>
+<p class="content">
+As we mentioned before, the basic unit of Mason code is called a component. It
+is a chunk of Mason code that can accept input parameters and generate output
+text. An important feature of Mason is that any component may call any other
+component at any point during its execution, much like a Perl subroutine
+calling another Perl <a name="IXT-1-336"></a>
+ subroutine. Because of this feature, a component may represent a single web
+page, a part of a web page (like a side navigation bar), or even a shared
+utility function that generates no output of its own. This separation of design
+elements allows you to use Mason as a sort of glorified <a name="IXT-1-337"></a>
+ server-side include (SSI) mechanism, as in <a href="chapter-1.mhtml.htm#CHP-1-EX-1" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-1">Example 1-1</a>, <a href="chapter-1.mhtml.htm#CHP-1-EX-2" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-2">Example 1-2</a>, and <a href="chapter-1.mhtml.htm#CHP-1-EX-3" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-3">Example 1-3</a>. Executing <u>mainpage.mas</u> will produce a full page of HTML with the header and footer inserted in place.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-1"></a>
+<div class="example">
+<span class="caption">Example 1-1.  header.mas</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Welcome to Wally World!&lt;/title&gt;&lt;/head&gt;
+  &lt;body bgcolor=&quot;#CCFFCC&quot;&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-2"></a>
+<div class="example">
+<span class="caption">Example 1-2.  footer.mas</span>
+<div class="example-code">
+<pre>  &lt;center&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/center&gt;
+  &lt;/body&gt;&lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+<a href="chapter-1.mhtml.htm#CHP-1-EX-3" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-3">Example 1-3</a> introduces the component<a name="IXT-1-338"></a>
+<a name="IXT-1-339"></a>
+ call tag syntax, <code>&lt;&amp; &amp;&gt;</code>, which is used to call another component and insert its output into the
+surrounding text. The component tag can also accept arguments, which in this
+case can help unify site design by moving the page header text into the<a name="perlhtmlmason-IDXTERM-18"></a>
+<u>header.mas</u> component.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-3"></a>
+<div class="example">
+<span class="caption">Example 1-3.  mainpage.mas</span>
+<div class="example-code">
+<pre>  &lt;&amp; header.mas &amp;&gt;
+  &lt;center&gt;&lt;h1&gt;Wally World Home&lt;/h1&gt;&lt;/center&gt;
+  Here at Wally World you'll find all the finest accoutrements.
+  &lt;&amp; footer.mas &amp;&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+The <u>header.mas</u> component in <a href="chapter-1.mhtml.htm#CHP-1-EX-4" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-4">Example 1-4</a> now accepts an argument called <code>$head</code> that contains the text that should get inserted into the<a name="IXT-1-340"></a>
+<code>&lt;h1&gt;</code> tags. A component's arguments are declared by using an <code>&lt;%args&gt;</code> block, which you'll see in more detail later in the book. The <code>$head</code> argument becomes an honest-to-goodness Perl variable that can be used
+throughout the rest of the component. It's lexically scoped in the <u>header.mas</u> component using Perl's <code>my()</code><a name="IXT-1-341"></a>
+ function.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-4"></a>
+<div class="example">
+<span class="caption">Example 1-4.  header.mas</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $head
+  &lt;/%args&gt;
+  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Welcome to Wally World!&lt;/title&gt;&lt;/head&gt;
+  &lt;body bgcolor=&quot;#CCFFCC&quot;&gt;
+  &lt;center&gt;&lt;h1&gt;&lt;% $head %&gt;&lt;/h1&gt;&lt;/center&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+The <em>footer.mas</em> component in <a href="chapter-1.mhtml.htm#CHP-1-EX-5" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-5">Example 1-5</a> is fairly straightforward. It just provides a link to the document root.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-5"></a>
+<div class="example">
+<span class="caption">Example 1-5.  footer.mas</span>
+<div class="example-code">
+<pre>  &lt;center&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/center&gt;
+  &lt;/body&gt;&lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+In the <u>mainpage.mas</u><a name="IXT-1-342"></a>
+ component in <a href="chapter-1.mhtml.htm#CHP-1-EX-6" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-6">Example 1-6</a>, the arguments are passed to the <u>header.mas</u> component by using standard Perl syntax (i.e., commas, quotes, and the <code>=&gt;</code> operator). In fact, any Perl syntax for passing a list can be used, because
+the argument list is specified in real Perl syntax.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-6"></a>
+<div class="example">
+<span class="caption">Example 1-6.  mainpage.mas</span>
+<div class="example-code">
+<pre>  &lt;&amp; header.mas, head =&gt; &quot;Wally World Home&quot; &amp;&gt;
+  Here at Wally World you'll find all the latest accoutrements.
+  &lt;&amp; footer.mas &amp;&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Mason will take the list of arguments passed to the <u>header.mas</u> component and assign the proper values to the variables specified in the <code>&lt;%args&gt;</code> block.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h3>Object-Style Component Inheritance</h3><p class="content">
+<a name="CHP-1-SECT-2.2"></a>
+<a name="ch01-idx-1006243-2"></a>
+<a name="ch01-idx-1006243-1"></a>
+
+</p>
+<p class="content">
+Aside from the fact that there's a little bit of Perl thrown into the mix for
+passing parameters, the examples we've seen don't really show anything that you
+couldn't do using standard server-side include (SSI) techniques. In fact, the
+usage demonstrated in these examples is relatively uncommon in building Mason
+sites, because there are better ways to get the job done. One of the greatest
+features of Mason is that components can inherit behavior from other
+components, much like classes and objects in an object-oriented hierarchy.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> Typically, each component will inherit from a single component called the <em>autohandler</em><a name="IXT-1-343"></a>
+ . The autohandler implements general behavior for all components, such as the
+content of headers and footers. Individual components implement specific
+behavior, such as the body text of the individual pages.
+</p>
+<p class="content">
+Using component inheritance, we can rewrite <a href="chapter-1.mhtml.htm#CHP-1-EX-4" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-4">Example 1-4</a> through <a href="chapter-1.mhtml.htm#CHP-1-EX-6" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-6">Example 1-6</a> in a more common Mason idiom, as shown in <a href="chapter-1.mhtml.htm#CHP-1-EX-7" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-7">Example 1-7</a> and <a href="chapter-1.mhtml.htm#CHP-1-EX-8" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-8">Example 1-8</a>.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-7"></a>
+<div class="example">
+<span class="caption">Example 1-7.  autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Welcome to Wally World!&lt;/title&gt;&lt;/head&gt;
+  &lt;body bgcolor=&quot;#CCFFCC&quot;&gt;
+  &lt;center&gt;&lt;h1&gt;&lt;% $m-&gt;base_comp-&gt;attr('head') %&gt;&lt;/h1&gt;&lt;/center&gt;
+  % $m-&gt;call_next;
+  &lt;center&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/center&gt;
+  &lt;/body&gt;&lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-8"></a>
+<div class="example">
+<span class="caption">Example 1-8.  mainpage.mas</span>
+<div class="example-code">
+<pre>  &lt;%attr&gt;
+   head =&gt; &quot;Wally World Home&quot;
+  &lt;/%attr&gt;
+  Here at Wally World you'll find all the finest accoutrements.
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Notice that the header and footer are now both all in one file, the
+autohandler. Visually, this helps unify the page content, because tags like <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code><a name="IXT-1-344"></a>
+ that are opened in the header are closed in the same file. The other important
+difference here is that <u>mainpage.mas</u> no longer has to call the header and footer components explicitly, but rather
+Mason calls the parent component automatically and it wraps its header and
+footer around the main content. The page header is now specified by an
+attributes block, one of Mason's object-oriented mechanisms. An attribute is a
+component property that inherits via Mason's component  inheritance chain.
+</p>
+<p class="content">
+There are zillions of other uses for Mason's inheritance mechanism, which will
+be further explored in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Intelligent Caching Mechanisms</h3><p class="content">
+<a name="CHP-1-SECT-2.3"></a>
+<a name="ch01-idx-1006245-1"></a>
+
+</p>
+<p class="content">
+Anyone who has built any dynamically generated web sites knows that sometimes
+certain portions of a site can take longer to generate and serve than you want
+to make your users wait. Furthermore, portions of a site might be only
+&quot;semidynamic,&quot; meaning that their content changes periodically but
+stays static for a long time between changes. Alternatively, as might happen on
+a news site or for an online poll, content may change continually, but a lag
+time of a few minutes in updating the content would be acceptable if it
+improves site performance. For cases like these, Mason provides a very
+sophisticated caching mechanism that you can use to control how often the
+output of a component is rebuilt. You can base the expiration decision on time,
+on certain key parameters like username or content ID, or on an explicit agent
+that decides when specific data has expired.
+</p>
+<p class="content">
+The caching mechanism can be used for the output of a component, for an
+arbitrary block of text, or for any Perl data structure you might want to
+cache. The first-class support for caching is one of Mason's most endearing
+qualities, and you'll learn to appreciate it the first time it saves you from
+spending hours optimizing sluggish code.
+</p>
+<p class="content">
+To aid overall performance, Mason also has an intelligent<a name="IXT-1-345"></a>
+ internal caching mechanism. During execution, Mason turns each component into
+Perl source code on disk, then compiles the Perl code into bytecode, then
+executes the bytecode to produce the component's output. It would be a waste of
+computing resources to repeat this cycle every time a component needs to be
+executed, so Mason caches at each stage. As an aid to rapid development, Mason
+will check your components' modification times and invalidate its cache when
+you make changes to your components, ensuring that any changes you make to your
+site take effect immediately. When your site moves from development to
+production, you probably won't be making frequent changes to your site, so you
+can disable the freshness checks in order to improve your site's responsiveness .
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h3>Integration with Apache and mod_perl</h3><p class="content">
+<a name="CHP-1-SECT-2.4"></a>
+
+</p>
+<p class="content">
+As mentioned before, the most common use of <a name="IXT-1-346"></a>
+<a name="IXT-1-347"></a>
+ Mason is in building large, dynamic, <a name="IXT-1-348"></a>
+ data-driven web sites. The most popular web server around is <a name="IXT-1-349"></a>
+<a name="IXT-1-350"></a>
+ Apache, and one of Apache's most powerful features is <code>mod_perl</code>, which lets you use the full power of Perl within the Apache server process.
+Therefore, it should come as no surprise that Mason is designed to cooperate
+fully with<a name="IXT-1-351"></a>
+<code>mod_perl</code>. Mason comes with drop-in <code>mod_perl</code> handlers that let Apache serve your Mason components directly. It lets you
+take advantage of the sophisticated decision-making mechanisms that Apache has
+evolved to support, such as custom authentication methods, content negotiation,
+and dynamic URL rewriting. Mason's caching mechanism and other performance
+considerations are designed specifically for the task of serving dynamic
+content efficiently and with enough flexibility to let you design creative
+solutions to your specific problems. Although Mason lets you build a site
+without relying very much on assumptions about the server environment, learning
+about <code>mod_perl</code> and Apache's request cycle can help you use  Mason to create slick and powerful features.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>Alternatives to Mason</h2><p class="content">
+<a name="CHP-1-SECT-3"></a>
+
+</p>
+<p class="content">
+Much of this chapter so far may have sounded like a sales pitch, because we
+wanted you to know about Mason's biggest strengths so you could have some solid
+reasons for reading the rest of this book. However, you should also be aware
+that there are many alternatives to using Mason, and an awareness of these
+alternatives will help you form an accurate picture of the context for which
+each system was created. It will also help you decide which system to use for
+each individual project, because no single system was designed to be a solution
+to all the problems you might encounter. Just as importantly, different people
+find that different systems suit the way they think better than others do.
+</p>
+<p class="content">
+There are generally two kinds of systems that people consider to be
+alternatives to <a name="perlhtmlmason-IDXTERM-37"></a>
+ Mason: lightweight solutions and heavyweight solutions. Lightweight solutions
+generally have the goal of being small and fast and leave much of the major
+work up to you. They are often simple templating modules like <code>Text::Template</code> or <code>HTML::Template</code> or even homegrown templating schemes. Using templates is certainly a good
+idea, and it is one of the core ideas in Mason itself. However, when designing
+an entire site, you're usually going to need some more sophisticated system
+that helps you manage your site-building resources; if you choose a
+templating-only solution, you'll probably end up writing this management code
+yourself. You may have a good idea of what such a system would entail only
+after writing and maintaining dozens of complicated web sites, so you'd likely
+spend more time working on your management code than on building your sites.
+This is the main trade-off with lightweight solutions: you gain flexibility
+because you can manage your site however you want, but since the burden rests
+entirely on you, you might end up preferring to use a tool that handles many of
+these management issues for you.
+</p>
+<p class="content">
+By contrast, heavyweight solutions implement several layers on top of their
+templating capabilities. Despite some disagreement on proper use of the term,
+&quot;application server&quot; is often used to describe such heavyweight
+systems. Each anticipates the typical needs of a large, sophisticated web site
+and provides methods for dealing with these situations cleanly. A heavyweight
+system will typically have support for integrating a site with a database,
+working with <a name="IXT-1-352"></a>
+ HTML and <a name="IXT-1-353"></a>
+ URLs, preserving state from one request to the next, caching often-used
+resources, and dealing with error conditions. Each heavyweight solution is
+tailored to different site requirements and makes different assumptions about
+the best ways to deal with them.
+</p>
+<p class="content">
+Good solutions, such as Mason, Embperl, and <code>Apache::ASP</code>, also help you organize your site code in a way that lets you think about your
+site's structure in an organized way, both on the small scale and the large
+scale. They help you design a site that is easy to build and easy to maintain.
+</p>
+<p class="content">
+Mason itself is sort of a unique offering. It sits somewhere in the middle
+between lightweight and heavyweight solutions, though it leans a bit toward the
+heavy. It doesn't directly provide support for database connections, HTML
+munging, or sessions, but it makes it so easy for you to use regular Perl tools
+for these purposes that you'll never miss the functionality. If you do decide
+that Mason is missing a feature you really need, it's easy to add
+functionalities to Mason and use them just as if they were built in. In a
+sense, Mason's main strengths lie in the ways it lets you interface various
+parts of your site with one another and with outside resources.
+</p>
+<p class="content">
+Consider these design goals as you read the following descriptions. When
+possible, we have worked with the authors of these systems to make sure the
+descriptions highlight each system's best features. Keep in mind, though, that
+our list of alternatives is by no means exhaustive. There are countless other
+solutions. We have tried to pick the most popular solutions, but for more
+information on any product you might want to use, read its documentation, find
+an appropriate mailing list in which to ask questions, and make your own
+decision.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h3>Embperl</h3><p class="content">
+<a name="CHP-1-SECT-3.1"></a>
+
+</p>
+<p class="content">
+Of the systems presented in this chapter, <a name="perlhtmlmason-IDXTERM-40"></a>
+ Embperl may be the most similar one to Mason. Embperl is one of the oldest
+heavyweight systems that is still in widespread use. It has been used for
+several years under the name <code>HTML::Embperl</code><a name="IXT-1-354"></a>
+ , but recent beta releases have switched the module name to just <code>Embperl</code>. Its author, <a name="IXT-1-355"></a>
+ Gerald Richter, is generally very responsive to bug reports and feature
+requests.
+</p>
+<p class="content">
+Embperl is targeted specifically toward generating HTML and has several
+&quot;magical&quot; HTML-manipulation features. For instance, <a name="IXT-1-356"></a>
+ HTML tables can be autogenerated by using the special Embperl variables <code>$row</code><a name="IXT-1-357"></a>
+, <code>$col</code><a name="IXT-1-358"></a>
+, and <code>$cnt</code><a name="IXT-1-359"></a>
+ :
+</p>
+<div class="example-code">
+<pre>  [- @k = qw(zero one two) -]
+  &lt;table&gt;
+   &lt;tr&gt;
+    &lt;td&gt;[+ $row     +]&lt;/td&gt;
+    &lt;td&gt;[+ $k[$row] +]&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;</pre>
+</div><p class="content">
+This would output:
+</p>
+<div class="example-code">
+<pre>  &lt;table&gt;
+   &lt;tr&gt;
+    &lt;td&gt;0&lt;/td&gt;
+    &lt;td&gt;zero&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;one&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;two&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;</pre>
+</div><p class="content">
+This means that Embperl does some scanning of your HTML and your Perl code to
+decide when you mean to use its magical generation. Some people find this
+assistance useful, and others would prefer to manage the generation themselves
+(the approach that Mason takes). The equivalent Mason code would require an
+explicit loop:
+</p>
+<div class="example-code">
+<pre>  % my @k = qw(zero one two);
+  &lt;table&gt;
+  % foreach my $row (0..$#k) {
+   &lt;tr&gt;
+    &lt;td&gt;&lt;% $row     %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $k[$row] %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  &lt;/table&gt;</pre>
+</div><p class="content">
+Notice that the Embperl delimiters for embedded Perl code are based on square
+brackets like <code>[+ +]</code>. This is so that Embperl code can be written by using a WYSIWYG <a name="IXT-1-360"></a>
+ HTML editor that might get confused by angle brackets and treat them as HTML
+code. Embperl takes this even further and lets you write Perl code that is
+HTML-escaped by the editor, like so:
+</p>
+<div class="example-code">
+<pre>  [- $i = 0; -]
+  [$ while ($i &amp;lt; 5) $]
+    Row: [+ $i++ +]&lt;br&gt;
+  [$ endwhile $]</pre>
+</div><p class="content">
+The text <code>&amp;lt;</code> will be converted to <code>&lt;</code> by Embperl before execution.
+</p>
+<p class="content">
+Notice also that Embperl uses its own custom <a name="IXT-1-361"></a>
+ loop control syntax rather than <a name="IXT-1-362"></a>
+ Perl's built-in loop control. There is experimental support in Version 1.2b2
+and higher for using native Perl loops, and it will be part of the stable
+feature set in Embperl Version 2.
+</p>
+<p class="content">
+Embperl has a feature called <a name="IXT-1-363"></a>
+ EmbperlObjects, which is an inheritance system similar to Mason's autohandler
+functionality. It also offers integrated support for preserving state between
+requests with <code>Apache::Session</code> via another special variable,<a name="IXT-1-364"></a>
+<code>%udat</code>. This can be very handy; see <a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">Chapter 12</a> for how you can accomplish a similar effect with Mason.
+</p>
+<p class="content">
+Variables you create in Embperl are usually dynamically scoped as either local
+or global variables (not lexical <code>my()</code> variables), which can sometimes be a bit unnerving in a persistent environment
+like <code>mod_perl</code>. Fortunately, after each request, Embperl will clean up any variables you
+created during the request. Variables declared with <code>local()</code> or <code>my()</code> in Embperl are usually scoped to the substitution tag enclosing them. Contrast
+this to Mason, in which the default scope of localized variables is the entire
+component. Because of this, it is more common to see <code>my()</code> in Mason code and global variables in Embperl code.
+</p>
+<p class="content">
+Embperl Version 1.x also provides some support for using the <code>Safe.pm</code> module, which can provide some protection against executing malicious Perl
+code. This strategy is somewhat dubious, however, because the <code>Safe</code> module is fairly easily defeated and because we hope your page designers
+aren't going to be trying to sabotage your servers in the first place.
+Moreover, when using <code>Safe</code> mode, you won't be able to access outside resources like databases, so it
+might not even be an option in the first place. Because of these problems,
+support for <code>Safe</code> mode has been removed in  Embperl Version 2.
+</p>
+<p class="content">
+Embperl 2 will add several new features, including support for XML/XSLT
+processing, custom template syntax, and a highly customizable data caching and
+output filtering system.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h3>Apache::ASP</h3><p class="content">
+<a name="CHP-1-SECT-3.2"></a>
+
+</p>
+<p class="content">
+<code>Apache::ASP</code><a name="perlhtmlmason-IDXTERM-53"></a>
+<a name="perlhtmlmason-IDXTERM-54"></a>
+ , by Joshua <a name="IXT-1-365"></a>
+ Chamas, is a package for writing <a name="IXT-1-366"></a>
+ Active Server Pages under <code>mod_perl</code>. It is fairly mature (its initial release was in 1998), and several years of
+development and active use by the Perl community have created a feature set
+that includes several useful extensions to the Microsoft standard.
+</p>
+<p class="content">
+With <code>Apache::ASP</code>, instead of using <a name="IXT-1-367"></a>
+ VBScript or <a name="IXT-1-368"></a>
+ JScript for the dynamic portions of the pages, you use Perl.<sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a> The ASP feature set has been neatly translated to Perl, so you have access to
+all of ASP's built-in features such as session management (using a custom
+session manager, not <code>Apache::Session</code>), email integration, and the ASP object model.
+</p>
+<p class="content">
+The <a name="IXT-1-369"></a>
+ Perl embedding syntax is very simple: <code>&lt;% %&gt;</code><a name="IXT-1-370"></a>
+ tags get wrapped around Perl control structures or miscellaneous Perl
+instructions, and <code>&lt;%= %&gt;</code> tags are wrapped around Perl expressions whose values you wish to insert into
+the surrounding HTML. For example:
+</p>
+<div class="example-code">
+<pre>  &lt;h2&gt;Font sizes:&lt;/h2&gt;
+  &lt;% foreach my $i (1..5) { %&gt;
+    &lt;font size=&quot;&lt;%= $i %&gt;&quot;&gt;Size = &lt;%= $i %&gt;&lt;/font&gt;&lt;br&gt;
+  &lt;% } %&gt;</pre>
+</div><p class="content">
+The Mason equivalent is very similar:
+</p>
+<div class="example-code">
+<pre>  &lt;h2&gt;Font sizes:&lt;/h2&gt;
+  % foreach my $i (1..5) {
+    &lt;font size=&quot;&lt;% $i %&gt;&quot;&gt;Size = &lt;% $i %&gt;&lt;/font&gt;&lt;br&gt;
+  % }</pre>
+</div><p class="content">
+The output of both examples is:
+</p>
+<div class="example-code">
+<pre>  &lt;h2&gt;Font sizes:&lt;/h2&gt;
+    &lt;font size=&quot;1&quot;&gt;Size = 1&lt;/font&gt;&lt;br&gt;
+    &lt;font size=&quot;2&quot;&gt;Size = 2&lt;/font&gt;&lt;br&gt;
+    &lt;font size=&quot;3&quot;&gt;Size = 3&lt;/font&gt;&lt;br&gt;
+    &lt;font size=&quot;4&quot;&gt;Size = 4&lt;/font&gt;&lt;br&gt;
+    &lt;font size=&quot;5&quot;&gt;Size = 5&lt;/font&gt;&lt;br&gt;</pre>
+</div><p class="content">
+Because it is built on the ASP model, <code>Apache::ASP</code> is a natural choice when porting an ASP/IIS application to the Apache
+platform. You will need to translate the scripting language from VBScript or
+JScript into Perl, but the overall structure of the site should remain
+unchanged.
+</p>
+<p class="content">
+Besides the standard ASP feature set, <code>Apache::ASP</code> supports several additional features, including extra <a name="IXT-1-371"></a>
+ event handlers, XML/XSLT processing, and component output caching. It also
+supports a cookieless mode for maintaining session data, which can be very
+handy for end users unwilling or unable to store session <a name="IXT-1-372"></a>
+ cookies. The <a name="IXT-1-373"></a>
+ XSLT support is particularly interesting, since combining it with the output
+caching features means that you can use dynamic XSLT transformations in web
+publishing, a technique that might be computationally prohibitive without  caching.
+</p>
+<p class="content">
+For more information on <code>Apache::ASP</code>, please visit <a href="tppmsgs/msgs0.htm#43" tppabs="http://www.apache-asp.org/">http://www.apache-asp.org/</a>.
+</p>
+<a name="TOC-ANCHOR-10"></a>
+<h3>HTML::Template</h3><p class="content">
+<a name="CHP-1-SECT-3.3"></a>
+
+</p>
+<p class="content">
+Sam <a name="IXT-1-374"></a>
+ Tregar's <code>HTML::Template</code><a name="perlhtmlmason-IDXTERM-67"></a>
+<a name="perlhtmlmason-IDXTERM-68"></a>
+ module falls into the lightweight category. Its chief goal is to allow site
+builders to separate a site's HTML from its Perl controlling code, and it
+enforces this division quite strictly. No Perl code is ever embedded within
+templates, and control structures like <code>if</code>, <code>include</code>, and various loops are all implemented by custom <code>HTML::Template</code> tags. Any variables to be interpolated into the HTML template are explicitly
+fed to the template by the controlling Perl code.
+</p>
+<p class="content">
+Philosophically, the reason for this strict division of HTML and Perl is so
+that a division of labor can be enforced in an organization, with HTML
+designers and Perl coders working independently, not worrying about whether
+they're editing the same files. It is also possible to apply the same
+controlling code to several different templates, so that designers can create
+different look-and-feel templates without involving programmers.
+</p>
+<p class="content">
+<code>HTML::Template</code> is generally very fast at filling in HTML templates, especially if you use its
+just-in-time compiler <code>HTML::Template::JIT</code>. It also provides a caching mechanism, somewhat similar to Mason's, that
+allows for caching templates in private memory, on disk, in memory shared
+between processes, or in combinations thereof. Unlike Mason, <code>HTML::Template</code>'s caching handles the caching only of templates themselves, not of their
+output or arbitrary data.
+</p>
+<p class="content">
+Example syntax:
+</p>
+<div class="example-code">
+<pre>  &lt;h1&gt;Employee listing:&lt;/h1&gt;
+  &lt;TMPL_LOOP NAME=EMPLOYEE_INFO&gt;
+    Name: &lt;TMPL_VAR NAME=NAME&gt; &lt;br&gt;
+     Job: &lt;TMPL_VAR NAME=JOB&gt; &lt;br&gt;
+  &lt;/TMPL_LOOP&gt;</pre>
+</div><p class="content">
+To make this actually do something, you need to write Perl code to call the
+template. For this template, we might write something like this:
+</p>
+<div class="example-code">
+<pre>  my $template = HTML::Template-&gt;new( filename =&gt; 'emp_list.tmpl' );
+  $template-&gt;param( EMPLOYEE_INFO =&gt;
+                    [ { NAME =&gt; 'Dave', JOB =&gt; 'Grouper of Bumpers' },
+                      { NAME =&gt; 'Ken',  JOB =&gt;  'Bumper of Groupers'} ] );
+  print &quot;Content-Type: text/html\n\n&quot;;
+  print $template-&gt;output;</pre>
+</div><p class="content">
+Note that the top layer for the system is a Perl script. Some people love this,
+some people hate it. You may know by now which category you  fall into.
+</p>
+<a name="TOC-ANCHOR-11"></a>
+<h3>Text::Template</h3><p class="content">
+<a name="CHP-1-SECT-3.4"></a>
+
+</p>
+<p class="content">
+<code>Text::Template</code><a name="perlhtmlmason-IDXTERM-71"></a>
+<a name="perlhtmlmason-IDXTERM-72"></a>
+ , written by <a name="IXT-1-375"></a>
+ Mark-Jason Dominus, is a lightweight solution similar to <code>HTML::Template</code>, but has some philosophical differences. First, it does not assume that the
+template contains <a name="IXT-1-376"></a>
+ HTML but is designed to work with any kind of text in the template (in truth, <code>HTML::Template</code> can work with arbitrary text, too, but it was designed specifically to work
+with HTML). Second, it uses native Perl control structures instead of its own
+custom macros, so Perl programmers have less to keep in their heads. This has
+the effect of breaking down the barrier that <code>HTML::Template</code> maintains between code and HTML, so in an environment in which designers and
+programmers need exclusive control over their own work products, <code>HTML::Template</code> may be the better choice.
+</p>
+<p class="content">
+Like Embperl, <code>Text::Template</code> also supports code sequestering via the <code>Safe.pm</code><a name="IXT-1-377"></a>
+ module, with the same caveats as mentioned earlier. Template variables can be
+passed explicitly to the template for substitution or drawn from Perl variables
+in a specified Perl package. <code>Text::Template</code> also allows the user to customize what <a name="IXT-1-378"></a>
+ delimiters are used to indicate the special Perl code or variable substitution
+sections. The default delimiters are curly braces:
+</p>
+<div class="example-code">
+<pre>  my $string = q[
+    Dear {$recipient},
+     Congratulations!  You have won {$amount} dollar{$plural}!
+  ];
+  my $template = Text::Template-&gt;new(TYPE =&gt; 'STRING', SOURCE =&gt; $string );
+  $T::recipient = int(rand 2) ? 'Mary' : 'John';
+  $T::amount    = int(rand 10) - 5;
+  $T::plural    = $T::amount == 1 ? '' : 's';
+  
+  print $template-&gt;fill_in(PACKAGE =&gt; 'T');</pre>
+</div><p class="content">
+<code>Text::Template</code> was first released in 1995 and has undergone many revisions in its life cycle.
+It is considered a mature product, and its author is very responsive to
+comments and questions about it. There is also a low-volume mailing list for
+users of <code>Text::Template</code>, the details of which can be found in the module  documentation.
+</p>
+<a name="TOC-ANCHOR-12"></a>
+<h3>Template Toolkit</h3><p class="content">
+<a name="CHP-1-SECT-3.5"></a>
+
+</p>
+<p class="content">
+In order to combat the proliferation of zillions of templating modules that all
+look and act similar but contain maddening and meaningless differences, the<a name="perlhtmlmason-IDXTERM-79"></a>
+ Template Toolkit package by Andy <a name="IXT-1-379"></a>
+ Wardley aims to be the only templating package you'll ever need and offers an
+extremely full-featured <a name="IXT-1-380"></a>
+ templating system. Like <code>HTML::Template</code>, it uses a large set of custom control <a name="IXT-1-381"></a>
+ macro tags like <code>IF</code><a name="IXT-1-382"></a>
+<a name="IXT-1-383"></a>
+<a name="IXT-1-384"></a>
+<a name="IXT-1-385"></a>
+ , <code>SWITCH</code>, <code>FOREACH</code>, and so on, as well as more advanced tags like <code>FILTER</code><a name="IXT-1-386"></a>
+<a name="IXT-1-387"></a>
+<a name="IXT-1-388"></a>
+<a name="IXT-1-389"></a>
+ , <code>TRY</code> and <code>CATCH</code>, and <code>MACRO</code>. It can either allow embedded Perl as <code>Text::Template</code> does or disallow it as <code>HTML::Template does</code>. Like Mason, it lets you build a site in terms of modular components. There is
+also an <code>Apache::Template</code><a name="IXT-1-390"></a>
+ module that facilitates building a <code>mod_perl</code>-based site out of Template Toolkit components.
+</p>
+<p class="content">
+An example of Template Toolkit usage follows:
+</p>
+<div class="example-code">
+<pre>  my $string = q(
+    Dear [% recipient %],
+     Congratulations!  You have won [% amount %] dollar[% plural %]!
+  );
+  
+  my $template = new Template;
+  my %vars = (recipient =&gt; (int(rand 2) ? 'Mary' : 'John'),
+              amount    =&gt; int(rand 10) - 5);
+  $vars{plural} = $vars{amount} == 1 ? '' : 's';
+  
+  $template-&gt;process(\$string, \%vars);</pre>
+</div><p class="content">
+Because of its many features and its well-supported development, the Template
+Toolkit is becoming the modern standard for standalone templates. It is quite
+different in philosophy from Mason, though, so we do not consider it to be in
+direct competition as a tool for the same situations we'd use  Mason for.
+</p>
+<a name="TOC-ANCHOR-13"></a>
+<h3>PHP</h3><p class="content">
+<a name="CHP-1-SECT-3.6"></a>
+
+</p>
+<p class="content">
+<a name="IXT-1-391"></a>
+ PHP (<a href="tppmsgs/msgs0.htm#44" tppabs="http://www.php.net/">http://www.php.net/</a>) is pretty far removed from Mason, but we mention it here because of its
+popularity. PHP is another mechanism for embedding functionality into web
+pages, but PHP does <em>not</em> use Perl as its scripting language. The name PHP can refer variously to the
+embedding system itself, the scripting language, or the interpreter that
+renders the HTML pages.
+</p>
+<p class="content">
+It is important to understand some of the properties of PHP before deciding to
+use it. One of the design goals of PHP is to be as simple as possible to
+install and start using, and in some cases this means that features that
+experienced Perl programmers rely on are not present. For instance, PHP lacks
+support for private namespaces, there is no way to create three-tiered
+applications that separate business logic and presentation code, and there is
+no mechanism for creating reusable code modules. The Apache <code>mod_php</code> module is only a content generation module, so it cannot cooperate with other
+request phases in the same way Mason can cooperate with <code>mod_perl</code>'s authentication or filename translation phases.<sup><a href="#FOOTNOTE-ANCHOR-3">3</a></sup><a name="RETURN-ANCHOR-3"></a> Importantly, although there is a lot of user-contributed code in the PHP
+world, it cannot match the breadth and depth of Perl's CPAN. It has often been
+said that the <a name="IXT-1-392"></a>
+ CPAN is Perl's &quot;killer app,&quot; and programmers most appreciate the
+CPAN when they least expect it.
+</p>
+<p class="content">
+Finally, although you can theoretically use PHP for general-purpose
+programming, it wasn't designed for that. PHP is typically used only for
+embedding PHP code into templates, whereas Perl is a full-featured programming
+language used for more purposes than any single programmer could imagine. While
+this does make PHP well-suited for the common tasks of web scripting, it may be
+limiting. For instance, a certain Perl programming friend was recently
+contracted to write a &quot;simple shopping cart system&quot; that had one
+small addition: it had to do some horribly complex optics calculations. For
+situations like these, a general-purpose programming language like Perl can be
+quite  handy.
+</p>
+<a name="TOC-ANCHOR-14"></a>
+<h2>Philosophy</h2><p class="content">
+<a name="CHP-1-SECT-4"></a>
+
+</p>
+<p class="content">
+The final criterion in evaluating an application platform is peace of mind:
+your peace of mind as a developer, your company's peace of mind as a provider
+of services and maintainer of site resources, and your users' peace of mind to
+enjoy (or suffer through) your final product.<sup><a href="#FOOTNOTE-ANCHOR-4">4</a></sup><a name="RETURN-ANCHOR-4"></a> If you are continually frustrated by your development tools and environment,
+you will almost certainly not be able to create a satisfactory product.
+</p>
+<p class="content">
+Mason was created to help you with tasks when you need help and get out of your
+way when you don't. It was designed to cooperate with Perl to the fullest
+extent possible. The Mason templating language is extremely simple but full
+featured and leverages Perl to do all the things that a programming language is
+good at. Mason is not explicitly tied to the HTML markup language, but it was
+designed to function well in an HTML environment. Mason's design choices were
+made to encourage a structural approach to site building rather than a
+procedural approach, and this often makes building large sites with a
+consistent feel very simple.
+</p>
+<p class="content">
+If you're interested in learning more about alternatives to Mason, you might be
+interested in another book from O'Reilly and Associates, Inc., <em>CGI Programming with Perl</em>, written by Scott Guelich, Shishir Gundavaram, and Gunther Birznieks. It
+contains more extensive discussions of many of the modules mentioned here.
+</p>
+<a name="TOC-ANCHOR-15"></a>
+<h2>Getting Started with Mason</h2><p class="content">
+<a name="CHP-1-SECT-5"></a>
+
+</p>
+<p class="content">
+To help you try out the various examples you'll see throughout the book, we'll
+walk you through the typical installation and configuration steps. First we'll
+describe a fairly bare-bones standalone installation that can be used without a
+web server, and then we'll describe the more common situation, which is to
+install Mason for use in conjunction with the Apache web server and its <code>mod_perl</code>-embedded Perl interpreter.
+</p>
+<a name="TOC-ANCHOR-16"></a>
+<h3>A Standalone Installation</h3><p class="content">
+<a name="CHP-1-SECT-5.1"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-96"></a>
+ Mason can be installed just like any other typical Perl module and used as a
+toolset for templating. You'll need these ingredients:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+Perl 5.005 or later</div>
+<p class="content">
+Available from <a href="tppmsgs/msgs0.htm#45" tppabs="http://www.cpan.org/src/">http://www.cpan.org/src/</a>. <a name="IXT-1-393"></a>
+ Perl may already be installed on your system, especially if it's a variety of
+Unix. Mason requires at least Version 5.005 of Perl, though Version 5.6.1 is
+recommended. Instructions for installing Perl are contained in the <u>INSTALL</u> file, included with the distributions. If you're on some variety of Windows,
+you may find it much easier to install a version of Perl supplied by
+ActiveState, available at <a href="tppmsgs/msgs0.htm#46" tppabs="http://www.activestate.com/Products/ActivePerl/">http://www.activestate.com/Products/ActivePerl/</a>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Mason 1.10 or later</div>
+<p class="content">
+To install Mason on any UNIX platform, download it from <a href="tppmsgs/msgs0.htm#47" tppabs="http://www.cpan.org/modules/by-module/HTML/">http://www.cpan.org/modules/by-module/HTML/</a>, <a href="tppmsgs/msgs0.htm#48" tppabs="http://www.masonhq.com/code/download/">http://www.masonhq.com/code/download/</a>, or your favorite CPAN mirror, and issue the standard commands for installing
+Perl modules: <code>perl</code><code>Makefile.PL</code>, then <code>make</code>, then <code>make test</code>. If no errors are encountered, issue the command <code>make install</code>. This last step may need to be done as the administrative user, so that Mason
+is made available to all the users of the computer.
+</p>
+<p class="content">
+On Win32 systems, you should use ActiveState's PPM to install Mason. PPMs for
+Mason and its dependencies are available from Randy Kobes' PPM repository. See <a href="tppmsgs/msgs0.htm#49" tppabs="http://theory.uwinnipeg.ca/">http://theory.uwinnipeg.ca/</a> for details.
+</p>
+<p class="content">
+During some of these steps, you'll notice Mason looking around for Apache and <code>mod_perl</code>. You can skip these parts of the installation process when asked, since you
+won't be using them in this scenario.
+</p>
+
+</ul>
+<p class="content">
+You'll also need several other Perl modules that Mason depends on, such as <code>Exception::Class</code>, <code>Class::Container</code>, and <a name="IXT-1-394"></a>
+<code>Params::Validate</code>. Since it can get fairly tedious to follow all these dependencies yourself,
+you may want to use the <code>CPAN.pm</code> module to help automate the process. In this case, you can start the <code>CPAN</code> shell with the command <code>perl -MCPAN -e shell</code>, and then type <code>install HTML::Mason</code> at the  prompt.
+</p>
+<a name="TOC-ANCHOR-17"></a>
+<h3>A mod_perl Installation</h3><p class="content">
+<a name="CHP-1-SECT-5.2"></a>
+
+</p>
+<p class="content">
+Most of the examples in this book will assume that <a name="perlhtmlmason-IDXTERM-100"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-101"></a>
+ Mason is being used in a web context. Most people using Mason also use it in
+conjunction with Apache and <code>mod_perl</code>. The main ingredients involved in setting up this paradigm are:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+Perl 5.005 or later</div>
+<p class="content">
+You can follow the same procedure as in the standalone scenario. Perl itself
+doesn't care how you're going to use Mason.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Apache</div>
+<p class="content">
+You can get Apache from <a href="tppmsgs/msgs0.htm#50" tppabs="http://httpd.apache.org/dist/httpd/">http://httpd.apache.org/dist/httpd/</a>. Mason has no direct dependencies on any specific version of Apache, but
+you'll probably want the latest version in the 1.3.x sequence, which is 1.3.26
+at the time of this writing. Mason has not yet been tested extensively with
+Apache 2.x, though it probably will be by the time this book hits the shelves.
+Instructions for installing Apache are included in its <u>INSTALL</u> file -- or, if you're building <code>mod_perl</code> too, you can just let <code>mod_perl</code> build and install Apache for you.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+mod_perl</div>
+<p class="content">
+You can get <code>mod_perl</code> from <a href="tppmsgs/msgs0.htm#51" tppabs="http://perl.apache.org/dist/">http://perl.apache.org/dist/</a>. <code>mod_perl</code> follows the standard installation procedure for a perl module (even though it
+is actually much more than that), so you can issue the same <code>perl Makefile.PL</code>, <code>make</code>, <code>make</code><code>test</code>, and <code>make</code><code>install</code> commands mentioned previously. Several configuration options are available in
+the first step -- for full Mason compatibility, build <code>mod_perl</code> with the command <code>perl Makefile.PL EVERYTHING=1</code>. We do <em>not</em> recommend building <code>mod_perl</code> as a Dynamic Shared Object (DSO), because that configuration has been
+associated with instability on several platforms.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Mason</div>
+<p class="content">
+After you've installed <code>mod_perl</code>, you can install Mason. The process is exactly the same as we described
+previously in the standalone configuration, but if <code>mod_perl</code> is installed, the <code>make test</code> step will test Mason with a live <code>mod_perl</code>-enabled Apache server. Make sure all the tests succeed before issuing the <code>make install</code> command.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Apache configuration files</div>
+<p class="content">
+<a name="IXT-1-395"></a>
+
+</p>
+<p class="content">
+In order to enable Mason for certain sections of your web site, you'll need to
+configure Apache so that it hands off requests for Mason components to Mason. A
+simple configuration that will suffice for many users is the following, put in
+the <u>httpd.conf</u> for the site:
+</p>
+<div class="example-code">
+<pre>  PerlModule HTML::Mason::ApacheHandler
+  &lt;LocationMatch &quot;\.html$&quot;&gt;
+   SetHandler perl-script
+   PerlHandler HTML::Mason::ApacheHandler
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+This tells Apache that all files ending in <u>.html</u> are Mason components and should be handled by the <code>HTML::Mason</code> module via <code>mod_perl</code>. Of course, you can use standard Apache configuration directives to specify
+different criteria for passing requests to Mason. For instance, if you'd rather
+restrict Mason's influence to a certain directory, you can use something like
+this:
+</p>
+<div class="example-code">
+<pre>  PerlModule HTML::Mason::ApacheHandler
+  &lt;Directory /path/to/subdirectory&gt;
+   &lt;LocationMatch &quot;\.html$&quot;&gt;
+    SetHandler perl-script
+    PerlHandler HTML::Mason::ApacheHandler
+   &lt;/LocationMatch&gt;
+  &lt;/Directory&gt;</pre>
+</div><p class="content">
+Lots of configurations are possible. If you have more complex needs for your
+site, you'll need to be familiar with Apache's configuration directives. The
+relevant documentation on general Apache configuration are available at <a href="tppmsgs/msgs0.htm#52" tppabs="http://httpd.apache.org/docs/">http://httpd.apache.org/docs/</a>, and more advanced  Mason configuration is discussed in <a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">Chapter 7</a>.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-18"></a>
+<h3>Trying It Out</h3><p class="content">
+<a name="CHP-1-SECT-5.3"></a>
+
+</p>
+<p class="content">
+Once <a name="perlhtmlmason-IDXTERM-104"></a>
+ Mason is installed, you can write a simple test program like the one in <a href="chapter-1.mhtml.htm#CHP-1-EX-9" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-9">Example 1-9</a> to show that it's actually working.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-9"></a>
+<div class="example">
+<span class="caption">Example 1-9.  handshake.pl</span>
+<div class="example-code">
+<pre>  #!/usr/bin/perl
+  
+  use strict;
+  use HTML::Mason;
+  my $interp = HTML::Mason::Interp-&gt;new( );
+  my $comp = $interp-&gt;make_component(comp_source =&gt; &lt;&lt;'END');
+   Greetings, &lt;% (&quot;Earthlings&quot;, &quot;Martians&quot;)[rand 2] %&gt;
+  END
+  $interp-&gt;exec($comp);
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+When you run this program, you should see either <code>Greetings, Earthlings</code> or <code>Greetings, Martians</code>. The code between the <code>&lt;% %&gt;</code> tags is just regular Perl code, not anything to do specifically with Mason. It
+randomly selects an element from the two-element list <code>(&quot;Earthlings&quot;, &quot;Martians&quot;)</code>. Of course, we'll explain the details of how the rest of the program works
+later in this book.
+</p>
+<p class="content">
+If you've installed <code>mod_perl</code> and configured Apache as we described earlier, then you should test out your
+setup now. Assuming the first configuration option we showed you, you can place
+the same component at the top level of your web server's documents directory,
+as shown in <a href="chapter-1.mhtml.htm#CHP-1-EX-10" tppabs="http://www.masonbook.com/book/chapter-1.mhtml#CHP-1-EX-10">Example 1-10</a>.
+</p>
+
+<p class="content">
+<a name="CHP-1-EX-10"></a>
+<div class="example">
+<span class="caption">Example 1-10.  handshake.html</span>
+<div class="example-code">
+<pre>  Greetings, &lt;% (&quot;Earthlings&quot;, &quot;Martians&quot;)[rand 2] %&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+When you request the URL <em>http://www.example.com/handshake.html</em> from your server, you should again see a random selection of either <code>Greetings, Earthlings</code> or <code>Greetings, Martians</code>.<sup><a href="#FOOTNOTE-ANCHOR-5">5</a></sup><a name="RETURN-ANCHOR-5"></a> Assuming you've gotten <a name="IXT-1-396"></a>
+ Mason installed properly and everything's working right, congratulations. If
+you've run into a problem that you can't figure out, several sources of help
+are available. First check out the Frequently Asked Questions file at <a href="tppmsgs/msgs0.htm#53" tppabs="http://www.masonhq.com/docs/faq/">http://www.masonhq.com/docs/faq/</a>, as it contains answers to the most commonly encountered problems. If you
+don't get any satisfaction there, try searching the archives of the Mason
+mailing list, available at <a href="tppmsgs/msgs0.htm#39" tppabs="http://www.masonhq.com/resources/mailing_lists.html">http://www.masonhq.com/resources/mailing_lists.html</a>, or post a message to <a href="mailto:mason-users@lists.sourceforge.net">mason-users@lists.sourceforge.net</a>. Try to be as specific as possible about your problems if you go this route.
+</p>
+<p class="content">
+Finally, a word of advice as you read this book -- try out all the examples!
+You'll have a lot more fun and you'll retain the techniques better if you take
+a hands-on approach. And of course, if you find any errors in the examples, be
+sure to let us  know.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. A caveat is necessary when using the term &quot;object-oriented&quot; to
+describe Mason's content-wrapping and inheritance schemes, because Mason merely
+borrows some ideas from the object-oriented world rather than employing Perl's
+(or any other language's) built-in object-oriented inheritance. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. A third-party PerlScript option is also available, but it is not as widely used
+as VBScript or JScript. -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-3"></a>
+<p class="content">
+3. Although Mason is also just a content generation module, it cooperates with the
+other request phases by virtue of <code>mod_perl</code>'s support for sharing information among the request phases. -- <a href="#RETURN-ANCHOR-3">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-4"></a>
+<p class="content">
+4. An excellent exposition on the importance of peace of mind when designing and
+maintaining systems is <em>Zen and the Art of Motorcycle Maintenance</em> by Robert M. Pirsig. -- <a href="#RETURN-ANCHOR-4">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-5"></a>
+<p class="content">
+5. Throughout this book, we'll use the fictional domain <em>example.com</em> for many of our examples. Unless you own this domain (and you don't, since
+it's reserved for examples in books like this one), you should replace it with
+the real name of your web server. -- <a href="#RETURN-ANCHOR-5">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<b>1</b>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

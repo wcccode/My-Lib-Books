@@ -1,0 +1,3873 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<b>8</b>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 8: Building a Mason Site</h1><p class="content">
+<a name="CHP-8"></a>
+
+</p>
+<p class="content">
+This chapter covers, in detail, a full-fledged working web application. Our
+application is the Perl Apprenticeship site at <a href="tppmsgs/msgs0.htm#59" tppabs="http://apprentice.perl.org/">http://apprentice.perl.org/</a>. Back at O'Reilly's 2001 Open Source Conference, Adam Turoff suggested that
+the Perl community needed a site where people who had project ideas, but either
+not enough time or not enough expertise, could hook up with other programmers
+who could supply the missing pieces.
+</p>
+<p class="content">
+An experienced developer with a really neat idea and not nearly enough time to
+do it can post a project idea and offer to mentor a less experienced developer
+in its implementation. Conversely, a less experienced developer with a really
+neat idea who isn't quite sure how to go forward on it can look for a mentor to
+help him bring that idea to life.
+</p>
+<p class="content">
+This is a pretty basic database-backed web application, the kind of thing that
+Mason gets used for all the time. It didn't require anything too terribly
+complicated, but it shows off a number of Mason's features quite well,
+including how components can be used to isolate individual site elements,
+autohandlers and dhandlers, and a simple use of <code>&lt;%method&gt;</code> blocks.
+</p>
+<p class="content">
+One thing worth noting is that for database access we chose to use <a name="IXT-8-953"></a>
+ Alzabo, which is a project created and maintained by Dave Rolsky. Alzabo is a <a name="IXT-8-954"></a>
+ database-to-object mapper built on top of the DBI. It allows us to easily
+create Perl objects representing things in our database, like users or
+projects. We will not be going into detail on our schema or our Alzabo-related
+code here, as this is largely incidental to the goal of this chapter. Our hope
+is that if you don't understand any particular piece of the Alzabo
+functionality, you can just treat it as<a name="IXT-8-955"></a>
+ pseudocode.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> More information on Alzabo is available online at <a href="tppmsgs/msgs0.htm#60" tppabs="http://www.alzabo.org/">http://www.alzabo.org/</a>. Alzabo is also available from the CPAN.
+</p>
+<p class="content">
+The code for the site is available at this book's site, <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/">http://www.masonbook.com/</a>. This includes an installer that should help you get the site up and running
+without too much trouble.<sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a>
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Functionality</h2><p class="content">
+<a name="CHP-8-SECT-1"></a>
+
+</p>
+<p class="content">
+The first issue at hand is determining what sort of functionality the site has
+to have in order to be useful. Our <a name="perlhtmlmason-IDXTERM-625"></a>
+ site is fairly simple. It needs to implement the following features:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+Index page</div>
+<p class="content">
+The <a name="IXT-8-956"></a>
+<a name="IXT-8-957"></a>
+ index page will have a welcome message, site news, and a featured project
+selected by the site administrator.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Consistent and context-sensitive menu</div>
+<p class="content">
+The lefthand side of the site is a <a name="IXT-8-958"></a>
+<a name="IXT-8-959"></a>
+ navigation menu that is context-sensitive. Logged-in users see different
+options than guest users. Users with site admin options see an additional set
+of options. However, these options remain the same from page to page.
+</p>
+<p class="content">
+Underneath the menu the site shows the five most recent projects entered into
+the system.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+User information</div>
+<p class="content">
+Some <a name="IXT-8-960"></a>
+ user information will be publicly viewable. This will be users' <a name="IXT-8-961"></a>
+ usernames and <a name="IXT-8-962"></a>
+ email addresses (displayed in an altered form to protect them from robots) and
+the list of projects with which they are involved. Their real names are not
+displayed.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Project browsing</div>
+<p class="content">
+<a name="IXT-8-963"></a>
+<a name="IXT-8-964"></a>
+
+</p>
+<p class="content">
+Since we do not anticipate an extremely large number of submissions, at least
+initially, we decided not to create any complicated search mechanism. The two
+ways to find projects will be to view a list of all the projects in the system
+or to browse the projects by category. The user can click on any displayed
+project to see more detailed information about it.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+User accounts</div>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-633"></a>
+ Users need to be able to create new accounts, retrieve a forgotten <a name="IXT-8-965"></a>
+ password, log in, and log out. In addition, we'd like to let them edit their
+own accounts.
+</p>
+<p class="content">
+Users have the following properties:
+</p>
+<ul>
+<li>
+Username</li>
+<li>
+Password</li>
+<li>
+Real name</li>
+<li>
+Email address</li>
+<li>
+Status -- available, semi-available, or busy</li>
+<li>
+<a name="IXT-8-966"></a>
+ Admin flag -- is this  user a site administrator?
+</ul>
+<li>
+<div class="book-list-item-heading">
+Project editing</div>
+<p class="content">
+Logged-in users should be able to add a new project and edit an existing one
+for which they have admin privileges. This includes the ability to add and
+remove <a name="IXT-8-967"></a>
+ project members.
+</p>
+<p class="content">
+Projects have the following properties:
+</p>
+<ul>
+<li>
+Name</li>
+<li>
+Description</li>
+<li>
+Creation date</li>
+<li>
+Difficulty -- from one to ten</li>
+<li>
+Project status -- idea or active</li>
+<li>
+Support level -- a lot, some, or a little. If the project is created by a
+mentor, this is how much support they can provide. If the project is created by
+an apprentice, this is how much support they think they need.</li>
+<li>
+Links -- each link has a URL and an optional description</li>
+<li>
+Categories -- a project has one or more categories such as database, GUI, and
+so on.</li>
+<li>
+Members -- a project member is either a mentor or an apprentice. Any project
+member may be given project admin access.
+</ul>
+<li>
+<div class="book-list-item-heading">
+Site administration</div>
+<p class="content">
+<a name="IXT-8-968"></a>
+
+</p>
+<p class="content">
+<a name="IXT-8-969"></a>
+ Site administrators should be able to edit any user or project. In addition,
+site admins can also edit the list of categories available for projects.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Security</div>
+<p class="content">
+<a name="IXT-8-970"></a>
+<a name="IXT-8-971"></a>
+
+</p>
+<p class="content">
+A careful reader will notice that passwords are stored in the database in plain
+text form. This means that someone who <a name="IXT-8-972"></a>
+ hacks into the system where the data is stored won't have to do any extra work
+to get all the passwords.
+</p>
+<p class="content">
+In our opinion, this is OK for several reasons. Even if we stored hashed
+passwords, anyone sophisticated enough to be able to hack the operating system
+is going to be capable of running a dictionary attack against these passwords
+once they are retrieved from the database.
+</p>
+<p class="content">
+Furthermore, we like being able to send people their actual passwords via email
+when they request it, which is a choice we made in light of the fact that this
+is a relatively low security site. There is always a trade-off between security
+and convenience. But don't give us the same password you use for your bank  account, OK?
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-2"></a>
+<h2>Directory Layout</h2><p class="content">
+<a name="CHP-8-SECT-2"></a>
+
+</p>
+<p class="content">
+Because of the nature of Mason's autohandler feature, <a name="IXT-8-973"></a>
+
+</p>
+<p class="content">
+<a name="IXT-8-974"></a>
+ directory layout is actually an important consideration when designing a site.
+Of course, you can always override a component's inheritance and inherit from
+any other component, but it makes sense to come up with a directory layout that
+minimizes the need to do this.
+</p>
+<p class="content">
+In the case of the Apprenticeship site, we only have one &quot;skin&quot; we
+want to apply to all components. This is done in the top-level autohandler. Our
+subdirectories are then used to implement access controls and dhandlers. <a href="chapter-8.mhtml.htm#CHP-8-TABLE-1" tppabs="http://www.masonbook.com/book/chapter-8.mhtml#CHP-8-TABLE-1">Table 8-1</a> shows our directory layout.
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="CHP-8-TABLE-1"></a>
+ <tr valign="top">
+  <td class="table-head">
+Directory  </td>
+  <td class="table-head">
+Purpose  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+/  </td>
+  <td>
+Contains most of the components that can be viewed by any user.  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-8-975"></a>
+ /users  </td>
+  <td>
+Contains components related to user accounts such as new user sign-up.  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-8-976"></a>
+ /project  </td>
+  <td>
+Contains a single dhandler that displays a project.  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-8-977"></a>
+ /logged_in  </td>
+  <td>
+Contains components accessible only to logged-in users such as new project
+creation.  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-8-978"></a>
+ /admin  </td>
+  <td>
+Contains components accessible only by site administrators.  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-8-979"></a>
+ /lib  </td>
+  <td>
+Contains components used by other components. These are not called as top-level
+components.   </td>
+ </tr>
+</table>
+<span class="caption">Table 8-1.  
+ Apprentice site layout</span>
+<a name="TOC-ANCHOR-3"></a>
+<h2>File Extensions</h2><p class="content">
+<a name="CHP-8-SECT-3"></a>
+
+</p>
+<p class="content">
+We decided to use several different extensions for our <a name="IXT-8-980"></a>
+<a name="IXT-8-981"></a>
+
+</p>
+<p class="content">
+<a name="IXT-8-982"></a>
+ components. Files ending in <u>.html</u> are top-level components processed by Mason, like <u>/index.html</u>. Files ending in <u>.mas</u> are called only by other components and are not accessible from a browser. In
+addition, we have a file ending in <u>.css</u> that is processed by Mason. This is our <a name="IXT-8-983"></a>
+ stylesheet.
+</p>
+<p class="content">
+The site has no images, so we don't need to worry about making sure they are
+served properly.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Apache Configuration</h2><p class="content">
+<a name="CHP-8-SECT-4"></a>
+
+</p>
+<p class="content">
+Our <a name="perlhtmlmason-IDXTERM-653"></a>
+<a name="perlhtmlmason-IDXTERM-654"></a>
+ Apache configuration will assume that our document root and component root are
+the same directory, <u>/home/apprentice/htdocs</u>. This is the simplest solution and is appropriate for a single-purpose web
+server.
+</p>
+<p class="content">
+Our configuration in <u>httpd.conf</u> begins as follows:
+</p>
+<div class="example-code">
+<pre>  PerlModule Apprentice</pre>
+</div><p class="content">
+The <code>Apprentice.pm</code> module loads all the Perl modules used by this application, including various <code>Apache::*</code> modules, <code>Digest::SHA1</code><a name="IXT-8-984"></a>
+ , <code>Time::Piece</code><a name="IXT-8-985"></a>
+ , and others.
+</p>
+<div class="example-code">
+<pre>  PerlSetVar  MasonCompRoot      /home/apprentice/htdocs
+  PerlSetVar  MasonDataDir       /var/mason
+  
+  PerlSetVar  MasonAllowGlobals  $Schema
+  PerlAddVar  MasonAllowGlobals  $User</pre>
+</div><p class="content">
+These two objects will be used throughout almost all of the components of our
+site. Rather than passing them as arguments to every component, which can
+become extremely tedious, we will create them in our top-level autohandler and
+limit their lifetime via the use of <code>local</code>().
+</p>
+<div class="example-code">
+<pre>  PerlModule HTML::Mason::ApacheHandler
+  
+  &lt;Directory /home/apprentice/htdocs&gt;
+   &lt;LocationMatch &quot;(\.html|\.css)$&quot;&gt;
+    SetHandler  perl-script
+    PerlHandler HTML::Mason::ApacheHandler
+   &lt;/LocationMatch&gt;
+  &lt;/Directory&gt;</pre>
+</div><p class="content">
+As mentioned before, any file ending with <u>.html</u> or <u>.css</u> should be handled by Mason.
+</p>
+<div class="example-code">
+<pre>  &lt;LocationMatch &quot;(\.mas|handler)$&quot;&gt;
+   SetHandler  perl-script
+   PerlModule  Apache::Constants
+   PerlHandler &quot;sub { return Apache::Constants::NOT_FOUND }&quot;
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+There's no reason to let anyone see our <u>.mas</u> components or our autohandlers and dhandlers, so in the interests of security
+we block them out. We return a <code>NOT FOUND</code> status so that a curious script kiddie won't even know that these files exist.
+</p>
+<p class="content">
+That's all we need in our  Apache configuration to get this site up and running.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h2>The Components</h2><p class="content">
+<a name="CHP-8-SECT-5"></a>
+
+</p>
+<p class="content">
+Now that the preliminaries are out of the way, it is time to look at the <a name="perlhtmlmason-IDXTERM-659"></a>
+<a name="perlhtmlmason-IDXTERM-660"></a>
+ components that make up this site. We will not be looking at them in
+line-by-line detail, since this would be excruciatingly dull for all of us. In
+addition, since a number of components are conceptually similar to one another,
+we will not show the source for every component, instead saying something along
+the lines of &quot;this one is mostly like that other one we looked at back
+there.&quot; But if you don't believe us, fear not, because this site's full
+source code is available at <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/">http://www.masonbook.com/</a>.
+</p>
+<p class="content">
+It is worth noting that this site does not use all of Mason's features. Trying
+to create a site that did that would result in a monstrosity of biblical
+proportions (and that's big!). Instead, we created a clean, working site that
+is as elegantly designed as possible. We've tried to err on the side of brevity
+and pedagogy -- we could certainly add more features.
+</p>
+<p class="content">
+We have done our best to make the <a name="IXT-8-986"></a>
+ HTML in these components compliant with the latest HTML 4.01 Transitional
+Standard, with one major exception. This standard forbids the presence of forms
+embedded inside tables, but our design would have been grossly complicated by
+following this restriction, so we ignored it. Yes, we know this is wrong and
+bad and that we'll burn in web standards hell for this, but we are lazy and we
+don't care.
+</p>
+<p class="content">
+We did our best to keep the HTML in this site relatively simple. For text
+colors and fonts, we have a simple stylesheet. For layout, we have used the
+nested tables approach. This produces ugly HTML, but CSS positioning doesn't
+work with Netscape 4.x or other early browsers. In general, we will not be
+explaining the HTML portions of the components we examine, since we want to
+talk about programming with Mason, not how to make nice HTML.
+</p>
+<p class="content">
+One rule we did follow is that any table or portion of a table, such as a <code>&lt;tr&gt;</code> or <code>&lt;td&gt;</code> tag, must start and end in the same component, because it can be extremely
+confusing when one component starts a table that another component finishes.
+</p>
+<p class="content">
+In addition, we have tried to make individual  components self-contained whenever possible, so individual components often
+consist of one or more complete tables. Since tables can be embedded in other
+tables' cells, this makes it safe to call components from within a single table
+cell.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h3>The Unrestricted Parts</h3><p class="content">
+<a name="CHP-8-SECT-5.1"></a>
+
+</p>
+<p class="content">
+A good place to start with the <a name="IXT-8-987"></a>
+ site is the index page and the other pages that are viewable by anybody
+without logging in.
+</p>
+<p class="content">
+Here are the components, in the order we'll discuss them:
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="ch08-8-fm2xml"></a>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/syshandler</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/news.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/project/dhandler</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/autohandler</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/featured_project.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/new_user.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/apprentice.css</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/all_projects.html</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/user_form.mas</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/left_side_menu.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/search_results.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/new_user_submit.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/lib/url.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/lib/paging_controls.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/login_submit.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/latest_projects.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/lib/redirect.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/logout.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/lib/format_date.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/lib/set_login_cookie.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/forgot_password.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/index.html</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/user.html</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/users/forgot_password_submit.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<ul>
+<li>
+<u>/welcome.mas</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/login_form.html</u>
+</ul>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/show_category.html</u>
+</ul>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+<ul>
+<li>
+<u>/browse.html</u>
+</ul>
+   </td>
+ </tr>
+</table>
+<span class="caption">Table 8-2.  </span>
+<p class="content">
+These components form the bulk of the site, with the remainder being those
+pieces intended for logged-in users and site administrators.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+/syshandler</div>
+<p class="content">
+<a name="ch08-idx-1007782-1"></a>
+<a name="ch08-idx-1007782-2"></a>
+
+</p>
+<p class="content">
+This is a component from which the top-level autohandler, <u>/autohandler</u>, inherits. Its job is to create a few objects that are used on almost every
+page. While some components don't inherit from the autohandler, they still
+inherit from this component in order to be able to use these objects. This is
+useful because some of our components don't need the look and feel wrapping
+provided by the top-level autohandler.
+</p>
+<p class="content">
+The component itself is fairly simple. In the <code>&lt;%once&gt;</code> section, we create our <a name="IXT-8-988"></a>
+<a name="IXT-8-989"></a>
+ schema object, <code>$Schema</code>, which is our point of entry for access to the database and therefore needed
+in almost every component. It is analogous to a DBI database handle, but at a
+higher level of abstraction. Since we need it everywhere and there is no point
+in re-creating it for each request, it is simply a global.
+</p>
+<p class="content">
+The <code>$User</code><a name="IXT-8-990"></a>
+ object represents the currently logged-in user or a guest user. Since the API
+for these two types of users is the same, the components don't need to care
+about whether or not a user has logged in when using the <code>$User</code> object.
+</p>
+<p class="content">
+The bit that deals with the cookie is simply checking to see if the user is who
+she claims to be, using a <a name="IXT-8-991"></a>
+ MAC (Message Authentication Code) generated by the <a name="IXT-8-992"></a>
+ SHA1 algorithm.
+</p>
+<p class="content">
+This is a fairly common authentication technique. When a user logs in, we use
+the <code>Digest::SHA1</code><a name="IXT-8-993"></a>
+ module to generate a unique string based on the user's user ID and a secret
+stored on the server (in our case the secret is a phrase). We then send the
+user a cookie containing this user ID and the generated MAC.
+</p>
+<p class="content">
+When the user returns to the site, we simply regenerate the MAC based on the
+user ID that the <a name="IXT-8-994"></a>
+ cookie claims to represent. If the MAC matches what we would expect, we know
+that it is a valid cookie. If not, either the cookie got corrupted or someone
+is trying to trick us. This component only checks the cookie's value; it
+doesn't generate it. The cookie is generated in a different component that we
+will discuss later.
+</p>
+<p class="content">
+We place the call to the <code>row_by_pk()</code><a name="IXT-8-995"></a>
+ method in an <code>eval{}</code> block because the method will throw an exception if the row doesn't exist, and
+we want to ignore this failure. This technique is used throughout the site.
+</p>
+<p class="content">
+Once we have some sort of user object, representing either a guest or a real
+user, we simply call the next component. In most cases, this will be the
+autohandler located at <u>/autohandler</u>.
+</p>
+<p class="content">
+We use the <code>inherit</code> flag to explicitly turn off inheritance for this component in order to prevent
+an inheritance loop between this component and the <u>/autohandler</u> component.
+</p>
+<p class="content">
+Although we promised not to spend too much time on Alzabo, we will point out
+that methods ending in <code>_t</code> return table objects, and that methods ending in <code>_c</code> return column objects, just in case you were curious.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%once&gt;
+   $Schema = Apprentice::Data-&gt;schema;
+  &lt;/%once&gt;
+  &lt;%init&gt;
+   my %cookies = Apache::Cookie-&gt;fetch;
+  
+   # A &quot;potential row&quot; is an object that looks like something from the
+   # database but that does not really exist.  However, it has the
+   # same interface so it is handy for things like a generic &quot;guest&quot;
+   # user.
+   my $guest = $Schema-&gt;User_t-&gt;potential_row( values =&gt; { username =&gt; 'Guest' } );
+   my $user;
+   if ( exists $cookies{apprentice_user_login} )
+   {
+       my %user_info = $cookies{apprentice_user_login}-&gt;value;
+  
+       if ( $user_info{user_id} &amp;&amp; $user_info{MAC} )
+       {
+           # This method of using a MAC to make sure a cookie is valid
+           # is discussed in the Eagle Book.
+           my $MAC = Digest::SHA1::sha1_hex
+                         ( $user_info{user_id}, $Apprentice::Secret );
+  
+           # If the cookie's MAC matches the one we generate, we know
+           # that the cookie has not been tampered with.
+           if ( $user_info{MAC} eq $MAC )
+           {
+               # This will be a _real_ row object, representing an
+               # actual entry in the User table
+               $user = eval { $Schema-&gt;User_t-&gt;row_by_pk
+                                 ( pk =&gt; $user_info{user_id} ) };
+           }
+       }
+   }
+  
+   local $User = $user || $guest;
+  
+   $m-&gt;call_next;
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; undef
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/autohandler</div>
+<p class="content">
+<a name="ch08-idx-1007790-1"></a>
+<a name="ch08-idx-1007790-2"></a>
+
+</p>
+<p class="content">
+This component establishes the look of the site though most of the work is
+delegated to other components and methods. The call to <code>SELF:title</code> allows individual components to override or add to the basic title of
+&quot;The Perl Apprenticeship Site,&quot; the default title.
+</p>
+<p class="content">
+We start a basic table, stick a title banner on the top of the page, and make a
+few component calls. The first component called, <u>/left_side_menu.mas</u><a name="IXT-8-996"></a>
+<a name="IXT-8-997"></a>
+ , generates a menu down the left side of the page. This menu is part of every
+page.
+</p>
+<p class="content">
+The next component, /<u>latest_projects.mas</u><a name="IXT-8-998"></a>
+<a name="IXT-8-999"></a>
+ , lists the five most recently created projects. This is a nice way to show
+what's new on the site.
+</p>
+<p class="content">
+Finally, we invoke the <code>call_next()</code> method of the request object to pass control onto the next component.
+</p>
+<p class="content">
+The Screen shot of the index page in <a href="chapter-8.mhtml.htm#CHP-8-FIG-1" tppabs="http://www.masonbook.com/book/chapter-8.mhtml#CHP-8-FIG-1">Figure 8-1</a> shows how this looks in practice.
+</p>
+
+<p class="content">
+<a name="CHP-8-FIG-1"></a>
+<br />
+<img src="mas_0801.png" tppabs="http://www.masonbook.com/book/figures/mas_0801.png" width="431" height="323" /><br />
+<span class="caption">Figure 8-1.  Perl
+ Apprentice site index page</span>
+
+</p>
+<p class="content">
+The parts handled by the autohandler are the title across the top that says
+&quot;The Perl Apprenticeship Site,&quot; and everything down the left side.
+These portions of the page remain more or less the same on every page of the
+site. The pieces in the right two-thirds of the page are generated by the page
+specified by the client's request (see <a href="chapter-8.mhtml.htm#CHP-8-FIG-2" tppabs="http://www.masonbook.com/book/chapter-8.mhtml#CHP-8-FIG-2">Figure 8-2)</a>. In this case, that part of the page was generated by the <u>/index.html</u><a name="IXT-8-1000"></a>
+
+</p>
+<p class="content">
+<a name="IXT-8-1001"></a>
+
+</p>
+<p class="content">
+component.
+</p>
+
+<p class="content">
+<a name="CHP-8-FIG-2"></a>
+<br />
+<img src="mas_0802.png" tppabs="http://www.masonbook.com/book/figures/mas_0802.png" width="466" height="278" /><br />
+<span class="caption">Figure 8-2.  Perl
+ Apprentice site divided into pieces</span>
+
+</p>
+<p class="content">
+As noted before, this <u>/autohandler</u> component inherits from the <u>/syshandler</u> component.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+  &lt;title&gt;&lt;&amp; SELF:title, %ARGS &amp;&gt;&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/apprentice.css' &amp;&gt;&quot;
+        type=&quot;text/css&quot;&gt;
+  &lt;/head&gt;
+  
+  &lt;body bgcolor=&quot;#FFFFFF&quot;&gt;
+  
+  &lt;table width=&quot;100%&quot; cellspacing=&quot;3&quot; cellpadding=&quot;0&quot;&gt;
+   &lt;tr valign=&quot;middle&quot;&gt;
+    &lt;td colspan=&quot;3&quot; bgcolor=&quot;#CCCCCC&quot; align=&quot;center&quot;&gt;
+     &lt;h1 class=&quot;headline&quot;&gt;The Perl Apprenticeship Site&lt;/h1&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td width=&quot;240&quot;&gt;
+  &lt;&amp; left_side_menu.mas, %ARGS &amp;&gt;
+  &lt;&amp; latest_projects.mas &amp;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+  % $m-&gt;call_next;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;
+  &lt;%method title&gt;
+   Perl Apprenticeship Site
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/apprentice.css</div>
+<p class="content">
+<a name="ch08-idx-1007795-1"></a>
+<a name="ch08-idx-1007795-2"></a>
+
+</p>
+<p class="content">
+Mason doesn't have to be used just to generate HTML. This component generates a
+stylesheet for the site. It is dynamic because we want to have a smaller body
+font if the browser is Internet Explorer. Other than that, it is just standard
+text. This stylesheet is based in part on one created by Ask Bj&oslash;rn
+Hansen for the <em>perl.org</em> sites, including <a href="tppmsgs/msgs0.htm#63" tppabs="http://dev.perl.org/">http://dev.perl.org/</a> and <a href="tppmsgs/msgs0.htm#64" tppabs="http://jobs.perl.org/">http://jobs.perl.org/</a>.
+</p>
+<p class="content">
+Setting the <code>inherit</code> flag to <code>undef</code> ensures that this component is not wrapped by any autohandler.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  /* Netscape 4 doesn't inherit from the body class so we need to
+     specify everything. */
+  body, table, td, p, span, ul
+  {
+    color: black; font-size: &lt;% $font_size %&gt;; font-family: serif
+  }
+  
+  h1
+  { font-size: 16pt;
+    font-weight: bold;
+    font-family: sans-serif
+  }
+  
+  h1.headline
+  { color: #003366;
+    line-height: 200%;
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: sans-serif
+  }
+  
+  h2
+  { font-size: 13pt;
+    font-weight: bold;
+    font-family: sans-serif
+  }
+  
+  h2.headline
+  {
+    color: #003399;
+    line-height: 150%;
+    font-size: 13pt;
+    font-weight: bold;
+    font-family: sans-serif
+  }
+  
+  h3
+  {
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: sans-serif
+  }
+  
+  td.heading
+  {
+    background-color: #AAAAAA
+  }
+  
+  .error
+  {
+    color: #CC3333;
+    font-size: 10pt
+  }
+  
+  a:vlink
+  { color: #690020 }
+  
+  a:active
+  { color: #003600 }
+  
+  a:hover
+  { color: #696040 }
+  
+  a:link
+  { color: #900000 }
+  
+  &lt;%init&gt;
+   $r-&gt;content_type('text/css');
+  
+   # For some reason IE seems to make fonts look bigger.
+   my $font_size = &quot;10pt&quot;;
+   $font_size = &quot;9pt&quot; if $r-&gt;header_in(&quot;User-Agent&quot;) =~ m/MSIE/;
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; undef
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/left_side_menu.mas</div>
+<p class="content">
+This <a name="perlhtmlmason-IDXTERM-679"></a>
+<a name="perlhtmlmason-IDXTERM-680"></a>
+ component is longer than any of the previous ones, but not significantly more
+complicated. Several features are worth noting here.
+</p>
+<p class="content">
+The first is that the menu changes based on whether or not the return value
+from <code>$User-&gt;is_logged_in()</code> is true. The <code>$User</code> object was generated in the <em>/syshandler</em> component and may represent either a guest user or a real logged-in user.
+</p>
+<p class="content">
+If a user has logged in, she sees options that allow her to create a new
+project, edit any projects for which she may have editing access, change her
+user account information, and log out. The link to edit projects appears only
+if she actually has editing access to one or more projects.
+</p>
+<p class="content">
+Note that we construct all<a name="IXT-8-1002"></a>
+ URLs using the <u>/lib/url.mas</u> component, which we will examine later. This component handles the
+construction of properly escaped URLs of arbitrary complexity. Using this
+component for all URLs would make it easy to add in something like URL-based
+sessions later on.
+</p>
+<p class="content">
+For the Logout URL, we are regenerating the URL, and query string, if any, for
+the current page. We do this because the component that handles logouts, <u>/users/logout.html</u>, will redirect the client back to the page where she clicked on the Logout
+link.
+</p>
+<p class="content">
+Getting back to the menu component, we can see that if the user is not logged
+in, we generate a form that POSTs to the <u>/user/login_submit.html</u> component. Again, we will be passing in the current URL and query string
+parameters to the login component so that it can send the user back where she
+came from, with either a cookie indicating a successful login or an error
+message. That error message is handled just above where the form starts, where
+we check the variable <code>$login_error</code>.
+</p>
+<p class="content">
+We take advantage of the fact that a POST request can also have a query string
+in order to put the <code>%caller_args</code> hash into the query string, where we can be sure that keys and values will be
+received by the server in the right order. If we put the keys and values in the
+form itself as hidden fields, there is no guarantee that the browser will
+submit them in the order we specify.
+</p>
+<p class="content">
+A bit further on, we see that if the <code>$User-&gt;is_admin()</code> method returns true we add a few extra links for the site administrators.
+</p>
+<p class="content">
+The <code>&lt;%filter&gt;</code> section for this component shows a common application of <a name="IXT-8-1003"></a>
+ filtering. We first determine the URL for our current page. Then, if there is
+a link in the menu that matches that page, we replace the anchor tag (<code>&lt;a&gt;</code><a name="IXT-8-1004"></a>
+ ) with a bold tag (<code>&lt;b&gt;</code><a name="IXT-8-1005"></a>
+ ).
+</p>
+<p class="content">
+We need to special-case the URL <u>/index.html</u> because the link for this particular page is simply <code>&lt;a href=&quot;/&quot;&gt;</code>. We do this with a regular expression so that it'll work properly if we decide
+to add links to other directories here in the future.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; bgcolor=&quot;#CCCCCC&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;center&quot; class=&quot;heading&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;The site&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table width=&quot;100%&quot; bgcolor=&quot;#CCCCCC&quot; cellspacing=&quot;0&quot; cellpadding=&quot;1&quot;&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Welcome, &lt;% $User-&gt;username %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/' &amp;&gt;&quot;&gt;Home&lt;/a&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Search&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, 
+                 path =&gt; '/all_projects.html' &amp;&gt;&quot;&gt;All the projects&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/browse.html' &amp;&gt;&quot;&gt;Browse by category&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % if ( $User-&gt;is_logged_in ) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/logged_in/new_project.html' &amp;&gt;&quot;&gt;Add a new project&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  %   if ( $User-&gt;has_projects ) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/logged_in/editable_project_list.html' &amp;&gt;&quot;&gt;
+      Edit one of your projects&lt;/a&gt;
+   &lt;/td&gt;
+   &lt;/tr&gt;
+  %   }
+  % }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+  % if ( $User-&gt;is_logged_in ) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/users/logout.html',
+                 query =&gt; { caller_url  =&gt; $r-&gt;uri,
+                            caller_args =&gt; \%query_args },
+               &amp;&gt;&quot;&gt;Logout&lt;/a&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/logged_in/edit_self.html' &amp;&gt;&quot;&gt;Edit your account&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % } elsif ( $r-&gt;uri !~ m,/login_form, ) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Login&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  %   if ($login_error) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;span class=&quot;error&quot;&gt;&lt;% $login_error | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  %   }
+   &lt;form action=&quot;&lt;&amp; /lib/url.mas,
+                    path =&gt; '/users/login_submit.html',
+                    query =&gt; { caller_url  =&gt; $r-&gt;uri,
+                               caller_args =&gt; \%query_args }
+                  &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Username:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Password:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;/form&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/users/forgot_password.html' &amp;&gt;&quot;&gt;Forgot my password&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/users/new_user.html' &amp;&gt;&quot;&gt;New user&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  % if ($User-&gt;is_admin) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Admin&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/admin/user_list.html' &amp;&gt;&quot;&gt;Edit users&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/admin/edit_categories.html' &amp;&gt;&quot;&gt;Edit categories&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;mailto:dave@perl.org&quot;&gt;Complaints / Compliments?&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;%args&gt;
+   $username =&gt; ''
+   $login_error =&gt; ''
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my %query_args = $m-&gt;request_args;
+  
+   # These arguments are intended for use on this page and do not need
+   # to be passed through to the login_submit.html component
+   delete @query_args{ 'username', 'login_error' };
+  &lt;/%init&gt;
+  &lt;%filter&gt;
+   (my $url = $r-&gt;uri) =~ s/index\.html$//;
+   $url = $m-&gt;scomp( '/lib/url.mas', path =&gt; $url );
+  
+   s{&lt;a href=&quot;$url&quot;&gt;([^&lt;]+)&lt;/a&gt;}
+    {&lt;b&gt;$1&lt;/b&gt;};
+  &lt;/%filter&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/url.mas</div>
+<p class="content">
+<a name="ch08-idx-1007799-1"></a>
+<a name="ch08-idx-1007799-2"></a>
+
+</p>
+<p class="content">
+The purpose of this component is to construct a properly escaped and formatted
+query string based on the parameters it receives.
+</p>
+<p class="content">
+It would not be able to handle nested data structures or objects as values of
+the <code>%query</code> hash. For these, it would be necessary for us to use a session mechanism
+rather than trying to pass them around in the URL.<sup><a href="#FOOTNOTE-ANCHOR-3">3</a></sup><a name="RETURN-ANCHOR-3"></a> Because the URI object's <code>query_form()</code><a name="IXT-8-1006"></a>
+ method doesn't allow hash references, we convert any hash references we find
+in the <code>%query</code> values to array references before passing <code>%query</code> to the <code>query_form()</code> method.
+</p>
+<p class="content">
+While right now we are not taking advantage of most of the parameters this
+component allows us to pass, these were easy to implement and may come in handy
+in the future.
+</p>
+<p class="content">
+The backslash at the end of the last line is there to ensure that we don't
+accidentally add a new line to the URL.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $scheme   =&gt; 'http'
+   $username =&gt; undef
+   $password =&gt; ''
+   $host     =&gt; undef
+   $port     =&gt; undef
+   $path
+   %query    =&gt; ( )
+   $fragment =&gt; undef
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $uri = URI-&gt;new;
+  
+   if ($host) {
+      $uri-&gt;scheme($scheme);
+  
+      if (defined $username) {
+        $uri-&gt;authority( &quot;$username:$password&quot; );
+      }
+  
+      $uri-&gt;host($host);
+      $uri-&gt;port($port) if $port;
+   }
+  
+   # Sometimes we may want to path in a query string
+   # but the URI module will escape the question mark.
+   my $q;
+  
+   if ( $path =~ s/\?(.*)$// ) {
+      $q = $1;
+   }
+  
+   $uri-&gt;path($path);
+  
+   # If there was a query string, we integrate it into the query
+   # parameter.
+   if ($q) {
+      %query = ( %query, split /[&amp;=]/, $q );
+   }
+  
+   # $uri-&gt;query_form doesn't handle hash ref values properly
+   while ( my ( $key, $value ) = each %query ) {
+      $query{$key} = ref $value eq 'HASH' ? [ %$value ] : $value;
+   }
+  
+   $uri-&gt;query_form(%query) if %query;
+  
+   $uri-&gt;fragment($fragment) if $fragment;
+  &lt;/%init&gt;
+  &lt;% $uri-&gt;canonical | n %&gt;\</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/latest_projects.mas</div>
+<p class="content">
+With this <a name="perlhtmlmason-IDXTERM-686"></a>
+<a name="perlhtmlmason-IDXTERM-687"></a>
+ component, we display the five most recently added projects. These projects
+are then displayed with their names and their creation dates. The<a name="IXT-8-1007"></a>
+<a name="IXT-8-1008"></a>
+ date, which is returned from MySQL in the format of <code>'YYYY-MM-DD'</code> , is formatted via the <u>/lib/format_date.mas</u> component.
+</p>
+<p class="content">
+This is the first time we have seen a project link. All project links are of
+the form <u>/project/&lt;project id number&gt;.html</u>. Obviously, we do not actually have files with names like <u>/project/10012491.html</u>. These URLs are intercepted by a dhandler instead. Underneath these links we
+show the total count of projects in the system.
+</p>
+<p class="content">
+Since we want this site to work properly from the moment it is made live, we
+also have to handle the case in which we have <em>no</em> projects in the system. Hopefully, this code path will not be followed for
+very long, but it is important.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; bgcolor=&quot;#CCCCCC&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;center&quot; class=&quot;heading&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Latest projects&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table width=&quot;100%&quot; bgcolor=&quot;#CCCCCC&quot; cellspacing=&quot;0&quot; cellpadding=&quot;3&quot;&gt;
+  % if ($count) {
+  %   while (my $project = $projects-&gt;next) {
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/project/' . $project-&gt;project_id . '.html' &amp;&gt;&quot;&gt;
+      &lt;% $project-&gt;name | h %&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+     &lt;&amp; /lib/format_date.mas, date =&gt; $project-&gt;creation_date, short =&gt; 1 &amp;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  %   }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;% $count %&gt; project&lt;% $count &gt; 1 ? 's' : '' %&gt; in the system.
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % } else {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;No projects in the system.&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $count = $Schema-&gt;Project_t-&gt;row_count;
+  
+   # This grabs a list of the five most recent projects, sorted first
+   # by descending creation date, and then by name in ascending.
+   my $projects = $Schema-&gt;Project_t-&gt;all_rows
+     ( order_by =&gt; [ $Schema-&gt;Project_t-&gt;creation_date_c, 'desc',
+                     $Schema-&gt;Project_t-&gt;name_c,          'asc' ],
+       limit =&gt; 5,
+     );
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/format_date.mas</div>
+<p class="content">
+<a name="ch08-idx-1007802-1"></a>
+<a name="ch08-idx-1007802-2"></a>
+
+</p>
+<p class="content">
+This simple component takes a <a name="IXT-8-1009"></a>
+ date as returned by MySQL and turns it into a friendlier format. It can
+produce either a short (&quot;Feb 4, 1970&quot;) or long (&quot;February 04,
+1970&quot;) date.
+</p>
+<p class="content">
+The particular formats used were chosen because they are understandable to
+(English-reading) users around the world. A purely numeric format such as
+&quot;02/10/2002&quot; can be ambiguous, depending on whether you are expecting
+the American or European ordering of the date components.
+</p>
+<p class="content">
+A smarter site might allow users to specify their preference as part of their
+account.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $date
+   $short =&gt; 0
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $format;
+  
+   if ( $short ) {
+       $format = '%b %d, %Y';
+   } else {
+       $format = '%B %e, %Y';
+   }
+  
+   # remove time if it exists
+   $date =~ s/ .*$//;
+  &lt;/%init&gt;
+  &lt;% Time::Piece-&gt;strptime( $date, '%Y-%m-%d' )-&gt;strftime($format)%&gt;\</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/index.html</div>
+<p class="content">
+Hey, there's nothing there!
+</p>
+<p class="content">
+Our <a name="IXT-8-1010"></a>
+<a name="IXT-8-1011"></a>
+ index page simply calls a number of other components and provides almost
+nothing of its own. It does override the title method defined in the <u>/autohandler</u> component. The <code>&lt;&amp; PARENT:title &amp;&gt;</code> method call will call the title method in the <u>/autohandler</u> component which, as we saw previously, simply produced the string <code>&quot;Perl Apprenticeship Site&quot;</code>. After this we add <code>&quot; - Home&quot;</code> to identify the page.
+</p>
+<p class="content">
+So now we should examine the components that actually make up our index page.
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; welcome.mas &amp;&gt;
+  &lt;&amp; news.mas &amp;&gt;
+  &lt;&amp; featured_project.mas &amp;&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - Home
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/welcome.mas</div>
+<p class="content">
+This <a name="perlhtmlmason-IDXTERM-693"></a>
+<a name="perlhtmlmason-IDXTERM-694"></a>
+ component contains exactly one piece of code. In the course of our paragraph
+encouraging participation in the site, we want to offer context-appropriate
+links. Guest users should be encouraged to log in if they have an account or to
+create a new account. But a user who has already logged in should see links to
+create a new project.
+</p>
+<p class="content">
+This was something we did just because we could. It makes the site a little
+smarter and was easy to do with Mason.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Welcome to the Perl Apprenticeship Site&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;p&gt;
+     Way back at OSCON 2001, Adam Turoff (a.k.a. Ziggy) suggested that
+     Perl needed a way to hook up people with lots of skill and
+     experience, but little time, with people who had a desire to
+     learn and free time, but not as much experience.  In other words,
+     we needed a Perl apprenticeship site.
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     Meanwhile, Ken Williams and I had just started working on the &lt;a
+     href=&quot;http://www.masonbook.com/&quot;&gt;Mason book&lt;/a&gt; and we knew we
+     wanted to have an example site as one of our chapters.  We also
+     knew we didn't want something like a web store.  Boring!  And
+     useless too, since neither of us needed a web store.  So when Ziggy
+     announced his idea, Ken suggested that we implement it for the
+     book.  It helps us because it gives us something to fill Chapter 8,
+     and it helps the Perl community too.  Perfect!
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     So that's our story.  Now it's your turn.  If you're someone who
+     has a neat project idea and not enough time to finish, but you
+     think you could guide a few 'apprentices', then
+  % if ($User-&gt;is_logged_in) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/logged_in/new_project.html' &amp;&gt;&quot;&gt;
+     post your project idea&lt;/a&gt;.
+     If you're someone with an idea but you need some guidance, then you
+     too can &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/logged_in/new_project.html' &amp;&gt;&quot;&gt;
+     post a project&lt;/a&gt;
+     and look for a mentor.
+  % } else {
+     log in over in the left menu or
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/users/new_user.html' &amp;&gt;&quot;&gt;create
+     a new account&lt;/a&gt;
+  % }
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     If you don't have an idea but you have some free time and a desire
+     to learn, then &lt;a href=&quot;&lt;&amp; /lib/url.mas, path =&gt; '/browse.html' &amp;&gt;&quot;&gt;
+     browse&lt;/a&gt; the project
+     listings and see if there's something that interests you.
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     - Dave Rolsky
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/news.mas</div>
+<p class="content">
+<a name="IXT-8-1012"></a>
+<a name="IXT-8-1013"></a>
+ New features of the site will be displayed with this component simply by
+editing its text.
+</p>
+<p class="content">
+We get the last modified time for the component by calling <code>stat()</code> on the component file. We figure that the only time this component will be
+changed is when there is new news. For now, the whole site is new, so there is
+not much news other than that.
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot;&gt;&lt;h2 class=&quot;headline&quot;&gt;What's New?&lt;/h2&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;p&gt;
+     The whole site, at this point.
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     &lt;em&gt;Last modified: &lt;% $last_mod %&gt;&lt;/em&gt;
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $comp_time = (stat $m-&gt;current_comp-&gt;source_file)[9];
+   my $last_mod =
+       Time::Piece-&gt;strptime( $comp_time, '%s' )-&gt;strftime( '%B %e, %Y %H:%M' );
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/featured_project.mas</div>
+<p class="content">
+This <a name="perlhtmlmason-IDXTERM-697"></a>
+<a name="perlhtmlmason-IDXTERM-698"></a>
+ component is something that can be used to feature a particular project if one
+catches the eye of the site admins. An admin can simply edit the value of the <code>$project_id</code> variable in the <code>&lt;%init&gt;</code> section. If this value is set to zero or <code>undef</code>, the component will simply return before generating any text, which gives us a
+way to not feature any project at all.
+</p>
+<p class="content">
+We could have stored information on the featured project in the database, and
+in the future we may go that route. But for now we decided to keep it simple
+and just assume that this task can be done by someone with access to component
+files on the web server.
+</p>
+<p class="content">
+Of course, this particular method of storing the featured project would not
+scale well if the site were served by multiple web servers.
+</p>
+<p class="content">
+It is also worth noting that we can easily feature more than one project.
+Imagine that the <code>&lt;%init&gt;</code> section started thusly:
+</p>
+<div class="example-code">
+<pre>  my @ids = (1, 3, 129, 440);
+  my $project_id = $ids[ rand @ids ];</pre>
+</div><p class="content">
+Now each time the page is generated, one of the four project IDs in the <code>@ids</code> variable will be chosen as the featured project. Simple.
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;2&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Featured Project&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;h2&gt;&lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                     path =&gt; &quot;/project/$project_id.html&quot; &amp;&gt;&quot;&gt;
+      &lt;% $project-&gt;name | h %&gt;&lt;/a&gt;&lt;/h2&gt;
+    &lt;/td&gt;
+    &lt;td&gt;Created: &lt;&amp; /lib/format_date.mas, date =&gt; $project-&gt;creation_date &amp;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;&lt;b&gt;Categor&lt;% @categories &gt; 1 ? 'ies' : 'y' %&gt;:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% join ', ', @categories %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Members&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % while ( my $user = $members-&gt;next ) {
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path  =&gt; '/user.html',
+                 query =&gt; { user_id =&gt; $user-&gt;user_id } &amp;&gt;&quot;&gt;
+      &lt;% $user-&gt;username | h %&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+  %   if ($project-&gt;user_is_admin($user)) {
+  &lt;b&gt;Admin&lt;/b&gt;
+  %   } else {
+  &amp;nbsp;
+  %   }
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;% HTML::FromText::text2html ( $project-&gt;description, paras =&gt; 1 ) %&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;p&gt;
+     Sure, it might be a dummy project but we think it is pretty cool
+     stuff.  Help out!
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $project_id = 1;
+  
+   return unless $project_id;
+  
+   my $project = eval { $Schema-&gt;Project_t-&gt;row_by_pk( pk =&gt; $project_id ) }
+       || return;
+  
+   # This grabs all of the project's members, ordered by their admin
+   # status and then their username.
+   my $members =
+       $Schema-&gt;join( select =&gt; $Schema-&gt;User_t,
+                      join   =&gt;
+                      [ $Schema-&gt;tables( 'ProjectMember', 'User' ) ],
+                      where  =&gt;
+                      [ $Schema-&gt;ProjectMember_t-&gt;project_id_c, '=', $project_id ],
+                      order_by =&gt;
+                      [ $Schema-&gt;ProjectMember_t-&gt;is_project_admin_c, 'desc',
+                        $Schema-&gt;User_t-&gt;username_c, 'asc' ] );
+  
+   my @categories =
+       map { $_-&gt;name }
+       $project-&gt;Categories( order_by =&gt; $Schema-&gt;Category_t-&gt;name_c )-&gt;all_rows;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+We used the handy <code>HTML::FromText</code> module (available on CPAN) to take the text description of the project and
+turn it into HTML. We tell it that the text is &quot;paragraph-oriented&quot;
+via the <code>paras =&gt; 1</code> parameter so that it will turn line breaks into the proper HTML  tags.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/all_projects.html</div>
+<p class="content">
+This <a name="perlhtmlmason-IDXTERM-701"></a>
+<a name="perlhtmlmason-IDXTERM-702"></a>
+ component actually delegates most of its work to the <u>/search_results.mas</u> component. All this component does is create a cursor representing the rows of
+interest for this query. In this case, the query is simply <code>'all projects'</code> . We take advantage of the limit and offset features of MySQL in order to
+select only those rows we are interested in. As we shall see in a moment, the <u>/search_results.mas</u> component displays paged results, 20 per page.
+</p>
+<p class="content">
+In addition, this component needs to get a count of how many rows this query <em>would</em> get without the limit. It also creates a textual description of the search it
+is doing so that this can be displayed to the user.
+</p>
+<p class="content">
+The <code>$start</code><a name="IXT-8-1014"></a>
+ and <code>$limit</code><a name="IXT-8-1015"></a>
+ arguments are part of the r<a name="IXT-8-1016"></a>
+ esults paging system, and any component that implements a search query must
+accept them in order for the paging system to work.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; search_results.mas,
+     count =&gt; $count,
+     projects =&gt; $projects,
+     summary =&gt; $summary,
+     start =&gt; $start,
+     limit =&gt; $limit,
+     %ARGS
+   &amp;&gt;
+  &lt;%args&gt;
+   $start =&gt; 0
+   $limit =&gt; 20
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $summary = 'all projects';
+  
+   my $count = $Schema-&gt;Project_t-&gt;row_count;
+  
+   my $projects =
+       $Schema-&gt;Project_t-&gt;all_rows
+           ( order_by =&gt;
+             [ $Schema-&gt;Project_t-&gt;creation_date_c, 'desc',
+               $Schema-&gt;Project_t-&gt;name_c,          'asc' ],
+             limit =&gt; [ $limit, $start ],
+           );
+  &lt;/%init&gt;
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - All projects
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/search_results.mas</div>
+<p class="content">
+This is where the actual work of displaying results is done. This <a name="perlhtmlmason-IDXTERM-706"></a>
+<a name="perlhtmlmason-IDXTERM-707"></a>
+ component is currently used by just two other components, but it is designed
+so that if we add more <a name="IXT-8-1017"></a>
+ search options, such as a <a name="IXT-8-1018"></a>
+ keyword search, it can handle those as well.
+</p>
+<p class="content">
+This component takes the <code>$summary</code> and <code>$count</code> arguments and uses them to tell the user what kind of search he just did (in
+case he forgot) and how many results there were in total.
+</p>
+<p class="content">
+If there are more results than can be shown on one page, it calls the <u>/lib/paging_controls.mas</u> component to do the work of generating links to all the other pages of
+results.
+</p>
+<p class="content">
+Finally, if there were results, it loops through the cursor and displays
+information about each project in turn.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;4&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Search Results&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;4&quot;&gt;
+     You searched for &lt;% $summary | h %&gt;.
+     There &lt;% $count == 1 ? 'is' : 'are' %&gt; &lt;% $count %&gt;
+     result&lt;% $count != 1 ? 's' : '' %&gt;.
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % if ($count &gt; $limit) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;4&quot;&gt;
+  &lt;&amp; /lib/paging_controls.mas, %ARGS &amp;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  % if ($count) {
+   &lt;tr&gt;
+    &lt;td width=&quot;40%&quot;&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;
+    &lt;td width=&quot;30%&quot;&gt;&lt;b&gt;Created on&lt;/b&gt;&lt;/td&gt;
+    &lt;td width=&quot;15%&quot;&gt;&lt;b&gt;Difficulty&lt;/b&gt;&lt;/td&gt;
+    &lt;td width=&quot;15%&quot;&gt;&lt;b&gt;Project status&lt;/b&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  %   while (my $project = $projects-&gt;next) {
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; '/project/' . $project-&gt;project_id . '.html' &amp;&gt;&quot;&gt;
+      &lt;% $project-&gt;name | h %&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;&lt;&amp; /lib/format_date.mas, date =&gt; $project-&gt;creation_date &amp;&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $project-&gt;difficulty %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $project-&gt;status %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  %   }
+  % }
+  &lt;/table&gt;
+  &lt;%args&gt;
+   $count
+   $projects
+   $summary
+   $start
+   $limit
+  &lt;/%args&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/paging_controls.mas</div>
+<p class="content">
+Generating <a name="perlhtmlmason-IDXTERM-710"></a>
+<a name="perlhtmlmason-IDXTERM-711"></a>
+ paged search results is a common need in web applications. If you have a
+database of hundreds, thousands, or more searchable items, you need a way to
+handle large result sets. The usual way to do this is to break the results into
+multiple pages, showing a certain number per page with links to other pages.
+</p>
+<p class="content">
+This component generates the links to the others pages, which look something
+like this:
+</p>
+<div class="example-code">
+<pre>  &lt;&lt;  1  2  3  4  5  6  7  8  &gt;&gt;</pre>
+</div><p class="content">
+The &quot;&lt;&lt;&quot; link moves one page back while the
+&quot;&gt;&gt;&quot; link moves one page forward. The page the user is
+currently viewing is marked with bold text instead of being a link. If the user
+is on the first or last page, the previous or next page links are not shown.
+</p>
+<p class="content">
+This is all fine until you have something like 100 pages. At that point you
+need another level of navigation, so we will end up with something like this:
+</p>
+<div class="example-code">
+<pre>  ...  &lt;&lt;  21  22  23  24  25  26  27  28  29  30  &gt;&gt;  ...</pre>
+</div><p class="content">
+The first &quot;...&quot; link will move back to the last page of the previous
+group of 10, in this case page 20. The end &quot;...&quot; link will move to
+the beginning of the next group of 10, in this case, page 31.
+</p>
+<p class="content">
+This design is capable of handling a large number of pages gracefully, although
+if you anticipated that you would often be generating result sets consisting of
+thousands of items, you might want to add additional navigation links that
+allowed the user to jump forward and backward in larger chunks.
+</p>
+<p class="content">
+One interesting aspect of this component is how it generates its links. Instead
+of requiring that a URL be passed in to the component, we use the Apache
+request object's <code>uri()</code> method to determine the current URL. To find out what arguments were passed to
+the page, we use the <code>$m-&gt;request_args()</code><a name="IXT-8-1019"></a>
+ method. We do this because we just want to reproduce the arguments passed in
+by the client, not any generated by component calls earlier in the call stack.
+We delete the <code>limit</code> and <code>start</code> arguments since we will be overriding them for each link.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot;&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Displaying results &lt;% $start + 1 %&gt; - &lt;% $last_shown %&gt;.&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table width=&quot;100%&quot;&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;7%&quot;&gt;
+  % if ( $previous_tenth &gt;= 10 ) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; $r-&gt;uri,
+                 query =&gt; { start =&gt; ($previous_tenth - 1) * $limit,
+                            limit =&gt; $limit,
+                            %query }
+               &amp;&gt;&quot;&gt;...&lt;/a&gt;
+  % } else {
+     &amp;nbsp;
+  % }
+    &lt;/td&gt;
+    &lt;td width=&quot;7%&quot;&gt;
+  % if ( $current_page &gt; 1 ) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; $r-&gt;uri,
+                 query =&gt; { start =&gt; $start - $limit,
+                            limit =&gt; $limit,
+                            %query }
+               &amp;&gt;&quot;&gt;&amp;lt;&amp;lt;&lt;/a&gt;
+  % }
+    &lt;/td&gt;
+  % foreach  my $page ( ($previous_tenth + 1)..($next_tenth - 1) ) {
+  %   if ( $page &lt;= $total_pages ) {
+    &lt;td width=&quot;7%&quot;&gt;
+  %     if ( $page != $current_page ) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; $r-&gt;uri,
+                 query =&gt; { start =&gt; ($page - 1) * $limit,
+                            limit =&gt; $limit,
+                            %query }
+               &amp;&gt;&quot;&gt;&lt;% $page %&gt;&lt;/a&gt;
+  %     } else {
+     &lt;b&gt;&lt;% $page %&gt;&lt;/b&gt;
+  %     }
+  %   } else {
+     &amp;nbsp;
+  %   }
+  % }
+    &lt;/td&gt;
+    &lt;td width=&quot;7%&quot;&gt;
+  % if ( $current_page &lt; $total_pages ) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; $r-&gt;uri,
+                 query =&gt; { start =&gt; $start + $limit,
+                            limit =&gt; $limit,
+                            %query }
+               &amp;&gt;&quot;&gt;&amp;gt;&amp;gt;&lt;/a&gt;
+  % } else {
+     &amp;nbsp;
+  % }
+    &lt;/td&gt;
+    &lt;td width=&quot;7%&quot;&gt;
+  % if ( $next_tenth &lt;= $total_pages ) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path =&gt; $r-&gt;uri,
+                 query =&gt; { start =&gt; ($next_tenth - 1) * $limit,
+                            limit =&gt; $limit,
+                            %query }
+               &amp;&gt;&quot;&gt;...&lt;/a&gt;
+  % } else {
+     &amp;nbsp;
+  % }
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;%args&gt;
+   $start
+   $limit
+   $count
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my %query = $m-&gt;request_args;
+   delete @query{ 'start', 'limit' };
+  
+   my $total_pages = int( $count / $limit );
+   $total_pages++ if $count % $limit;
+  
+   my $current_page = ( $start / $limit ) + 1;
+  
+   my $previous_tenth =
+       $current_page - 
+       ( $current_page % $limit ? $current_page % $limit : $limit );
+  
+   my $next_tenth = $previous_tenth + 11;
+  
+   my $last_shown = $start + $limit &gt; $count ? $count : $start + $limit;
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/browse.html</div>
+<p class="content">
+This <a name="IXT-8-1020"></a>
+<a name="IXT-8-1021"></a>
+ page simply iterates through all the different project categories. If a
+category has projects, then we generate a link to browse that category.
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot;&gt;&lt;h2 class=&quot;headline&quot;&gt;Browse by Category&lt;/h2&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % while (my $category = $categories-&gt;next) {
+   &lt;tr&gt;
+    &lt;td&gt;
+  %   if (my $count = $category-&gt;project_count) {
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path  =&gt; 'show_category.html',
+                 query =&gt; { category_id =&gt; $category-&gt;category_id } &amp;&gt;&quot;&gt;
+      &lt;% $category-&gt;name | h %&gt;&lt;/a&gt;
+     (&lt;% $count %&gt; project&lt;% $count &gt; 1 ? 's' : '' %&gt;)
+  %   } else {
+     &lt;% $category-&gt;name | h %&gt; (No projects)
+  %   }
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $categories =
+       $Schema-&gt;Category_t-&gt;all_rows( order_by =&gt; $Schema-&gt;Category_t-&gt;name_c );
+  &lt;/%init&gt;
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - Browse by category
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/show_category.html</div>
+<p class="content">
+This is what <u>/browse.html</u> links to for each category. This code is quite similar to what we saw in <u>/all_projects.html</u> and uses the same component, <u>/search_results.mas</u>, to do all the real work.
+</p>
+<p class="content">
+One feature new to this <a name="perlhtmlmason-IDXTERM-715"></a>
+<a name="perlhtmlmason-IDXTERM-716"></a>
+ component is that the title method dynamically adds the category name to the
+page title. We used a <code>&lt;%shared&gt;</code> section here in order to avoid creating the same category object twice. If the
+category ID we are given is invalid, then we simply redirect the user back to
+the home page. It's lazy but it's better than simply showing an error message.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; search_results.mas,
+     count =&gt; $count,
+     projects =&gt; $projects,
+     summary =&gt; $summary,
+     start =&gt; $start,
+     limit =&gt; $limit,
+     %ARGS
+   &amp;&gt;
+  &lt;%shared&gt;
+   my $category =
+       eval { $Schema-&gt;Category_t-&gt;row_by_pk
+                  ( pk =&gt; $m-&gt;request_args-&gt;{category_id} ) }
+            || $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+  &lt;/%shared&gt;
+  &lt;%args&gt;
+   $start =&gt; 0
+   $limit =&gt; 20
+   $category_id
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $summary = 'projects in the &quot;' . $category-&gt;name . '&quot; category';
+  
+   my $count = $category-&gt;project_count;
+  
+   my $projects =
+       $Schema-&gt;join( select =&gt; $Schema-&gt;Project_t,
+                      join   =&gt;
+                      [ $Schema-&gt;tables( 'Project', 'ProjectCategory' ) ],
+                      where  =&gt;
+                      [ $Schema-&gt;ProjectCategory_t-&gt;category_id_c, '=', 
+                        $category_id ],
+                      order_by =&gt;
+                      [ $Schema-&gt;Project_t-&gt;creation_date_c, 'desc',
+                        $Schema-&gt;Project_t-&gt;name_c,          'asc' ],
+                      limit =&gt; [ $limit, $start ],
+                    );
+  &lt;/%init&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - &lt;% $category-&gt;name | h %&gt; projects
+  &lt;/%method&gt;</pre>
+</div><p class="content">
+<a name="IXT-8-1022"></a>
+<a name="IXT-8-1023"></a>
+
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/user.html</div>
+<p class="content">
+This is our user info display component. There's not much here that we haven't
+seen before. Make some objects, display some information from the objects. Been
+there, done that.
+</p>
+<p class="content">
+Note that this isn't actually duplicating code from other components, though.
+It's just similar to them.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/project/dhandler</div>
+<p class="content">
+This <a name="perlhtmlmason-IDXTERM-719"></a>
+<a name="perlhtmlmason-IDXTERM-720"></a>
+ component is quite similar to the <u>/user.html</u> component but instead of being called with a query string, is called with a
+URL like <u>/project/77.html</u>, where 77 is the project ID. Using a dhandler here was an arbitrary choice,
+but it lets us have nice, search-engine-friendly URLs.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;2&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;&lt;% $project-&gt;name | h %&gt;&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     Created: &lt;&amp; /lib/format_date.mas, date =&gt; $project-&gt;creation_date &amp;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;% HTML::FromText::text2html ( $project-&gt;description, paras =&gt; 1 ) %&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;&lt;b&gt;Categor&lt;% @categories &gt; 1 ? 'ies' : 'y' %&gt;:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% join ', ', @categories %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;&lt;b&gt;Project status:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $project-&gt;status | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;&lt;b&gt;Support level:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $project-&gt;support_level | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Members&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % while (my $user = $members-&gt;next) {
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path  =&gt; '/user.html',
+                 query =&gt; { user_id =&gt; $user-&gt;user_id } &amp;&gt;&quot;&gt;
+      &lt;% $user-&gt;username | h %&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+  %   if ($project-&gt;user_is_admin($user)) {
+  &lt;b&gt;Admin&lt;/b&gt;
+  %   } else {
+  &amp;nbsp;
+  %   }
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  % if ( $Schema-&gt;ProjectLink_t-&gt;row_count
+  %          ( where =&gt; [ $Schema-&gt;ProjectLink_t-&gt;project_id_c, '=', $project_id ] ) ) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Links&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  %   while (my $link = $links-&gt;next) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;% $link-&gt;url %&gt;&quot;&gt;&lt;% $link-&gt;description | h %&gt;&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  %   }
+  % }
+  % if ($User-&gt;is_admin || $User-&gt;is_project_admin($project)) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path  =&gt; '/logged_in/edit_project.html',
+                 query =&gt; { project_id =&gt; $project-&gt;project_id } &amp;&gt;&quot;&gt;
+     Edit this project&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  &lt;/table&gt;
+  &lt;%shared&gt;
+    my ($project_id) = $m-&gt;dhandler_arg =~ /(\d+).html/; 
+    my $project = eval { $Schema-&gt;Project_t-&gt;row_by_pk( pk =&gt; $project_id ) }
+         || $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+  &lt;/%shared&gt;
+  &lt;%init&gt;
+   my $links = $project-&gt;Links( order_by =&gt; $Schema-&gt;ProjectLink_t-&gt;url_c );
+  
+   my $members =
+       $Schema-&gt;join( select =&gt; $Schema-&gt;User_t,
+                      join   =&gt;
+                      [ $Schema-&gt;tables( 'ProjectMember', 'User' ) ],
+                      where  =&gt;
+                      [ $Schema-&gt;ProjectMember_t-&gt;project_id_c, '=', $project_id ],
+                      order_by =&gt;
+                      [ $Schema-&gt;ProjectMember_t-&gt;is_project_admin_c, 'desc',
+                        $Schema-&gt;User_t-&gt;username_c,                  'asc' ] );
+  
+   my @categories =
+       map { $_-&gt;name }
+       $project-&gt;Categories( order_by =&gt; $Schema-&gt;Category_t-&gt;name_c )-&gt;all_rows;
+  &lt;/%init&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - &lt;% $project-&gt;name | h %&gt;
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/login_form.html</div>
+<p class="content">
+This is a simple <a name="perlhtmlmason-IDXTERM-721"></a>
+<a name="perlhtmlmason-IDXTERM-722"></a>
+ login form that forwards various parameters it receives, like <code>$success_url</code> and <code>%success_args</code>, to the <u>/users/login_submit.html</u> component.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;2&quot;&gt;&lt;h2 class=&quot;headline&quot;&gt;Login&lt;/h2&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % if ($message) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;% $message | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  % if ($login_error) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;% $login_error | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;form action=&quot;&lt;&amp; /lib/url.mas,
+                    path =&gt; '/users/login_submit.html',
+                    query =&gt; { caller_url   =&gt; $r-&gt;uri,
+                               success_url  =&gt; $success_url,
+                               success_args =&gt; \%success_args }
+                  &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Username:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&lt;% $username | h %&gt;&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Password:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+     &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;/form&gt;
+  &lt;/table&gt;
+  &lt;%args&gt;
+   $message =&gt; undef
+   $login_error =&gt; undef
+   $success_url =&gt; '/'
+   %success_args =&gt; ( )
+   $username =&gt; ''
+  &lt;/%args&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - Login
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/new_user.html</div>
+<p class="content">
+<a name="IXT-8-1024"></a>
+<a name="IXT-8-1025"></a>
+
+</p>
+<p class="content">
+This component delegates most of its work to the <u>/users/user_form.mas</u> component, which will do the actual work of generating the form.
+</p>
+<p class="content">
+The <code>$new_user</code><a name="IXT-8-1026"></a>
+ object represents a &quot;potential&quot; database row, which is an object
+that has the same API as a real user object. However, a potential row does not
+correspond to any actual data in the database. This simplifies creating the <u>/users/user_form.mas</u> component, as that component can simply use the row object API whether we are
+creating a new user or editing an existing one.
+</p>
+<p class="content">
+The <code>$available_status</code><a name="IXT-8-1027"></a>
+ object represents the row from the UserStatus table where the status is <code>'Available'</code> . We fetch this rather than hard-coding that column's id value.
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;2&quot;&gt;&lt;h2 class=&quot;headline&quot;&gt;New User&lt;/h2&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;&amp; user_form.mas, submit_to =&gt; 'new_user_submit.html', user =&gt; $new_user, %ARGS &amp;&gt;
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $available_status =
+       $Schema-&gt;UserStatus_t-&gt;one_row
+           ( where =&gt;
+            [ $Schema-&gt;UserStatus_t-&gt;column('status'), '=', 'Available' ] );
+  
+   my $new_user =
+       $Schema-&gt;User_t-&gt;potential_row
+           ( values =&gt;
+             { username       =&gt; '',
+               password       =&gt; '',
+               real_name      =&gt; '',
+               email_address  =&gt; '',
+               user_status_id =&gt; $available_status-&gt;user_status_id,
+             } );
+  &lt;/%init&gt;
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - New user
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/user_form.mas</div>
+<p class="content">
+<a name="ch08-idx-1007826-1"></a>
+<a name="ch08-idx-1007826-2"></a>
+
+</p>
+<p class="content">
+This form is used for both creating new users and editing existing ones. To
+prepopulate the form fields, it first looks at the <code>%ARGS</code><a name="IXT-8-1028"></a>
+ hash. If there are values for these fields here, it assumes that these have
+priority because the only way for <code>%ARGS</code> to have such values is if the form was submitted but then rejected for a data
+validation error, in which case the browser is redirected back to the
+submitting page. When that happens, we want to show the user the rejected
+values that were just entered into the form. If there is nothing in <code>%ARGS</code>, then we look at the <code>$user</code> object for these values.
+</p>
+<p class="content">
+Unless the user for whom this page is being generated is an admin user, we
+don't bother showing the checkbox that allows them to turn on the admin flag
+for a user since that checkbox is respected only when a site administrator
+submits the form.
+</p>
+<p class="content">
+The <code>$submit_to</code><a name="IXT-8-1029"></a>
+ variable is used to set the form's action attribute. This allows us to use
+this form for both creating new users and editing existing ones.
+</p>
+<p class="content">
+The<a name="IXT-8-1030"></a>
+<code>$return_to</code> value is simply passed through the form to the component that handles the form
+submission, which will use it to determine where to send the browser if the
+form submission is successful.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  % foreach my $err (@errors) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;span class=&quot;error&quot;&gt;&lt;% $err | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;form action=&quot;&lt;&amp; /lib/url.mas, path =&gt; $submit_to &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+   &lt;input type=&quot;hidden&quot; name=&quot;return_to&quot; value=&quot;&lt;% $return_to %&gt;&quot;&gt;
+  % if ($user-&gt;user_id) {
+   &lt;input type=&quot;hidden&quot; name=&quot;user_id&quot; value=&quot;&lt;% $user-&gt;user_id %&gt;&quot;&gt;
+  % }
+   &lt;tr&gt; 
+    &lt;td&gt;Username:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;text&quot; name=&quot;username&quot;
+            value=&quot;&lt;% $form_vals{username} | h %&gt;&quot; size=&quot;20&quot; maxlength=&quot;30&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Password:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;password&quot; name=&quot;password&quot;
+            value=&quot;&lt;% $form_vals{password} | h %&gt;&quot; size=&quot;20&quot; maxlength=&quot;100&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Confirm password:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;password&quot; name=&quot;password2&quot;
+            value=&quot;&lt;% $form_vals{password2} | h %&gt;&quot; size=&quot;20&quot; maxlength=&quot;100&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Real name:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;text&quot; name=&quot;real_name&quot;
+            value=&quot;&lt;% $form_vals{real_name} %&gt;&quot; size=&quot;20&quot; maxlength=&quot;75&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Email address:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;text&quot; name=&quot;email_address&quot;
+            value=&quot;&lt;% $form_vals{email_address} %&gt;&quot; size=&quot;20&quot; maxlength=&quot;150&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;How available are you?&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;user_status_id&quot;&gt;
+  % while (my $status = $user_statuses-&gt;next) {
+      &lt;option value=&quot;&lt;% $status-&gt;user_status_id %&gt;&quot;
+        &lt;% $form_vals{user_status_id} == $status-&gt;user_status_id ? 'selected=&quot;selected&quot;' : ''%&gt;&gt;
+       &lt;% $status-&gt;status | h %&gt;
+      &lt;/option&gt;
+  % }
+     &lt;/select&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % if ($User-&gt;is_admin) {
+   &lt;tr&gt;
+    &lt;td&gt;Site admin:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;checkbox&quot; name=&quot;is_admin&quot;
+            value=&quot;1&quot; &lt;% $form_vals{is_admin} ? 'checked=&quot;checked&quot;': '' %&gt;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;form&gt;
+  &lt;%args&gt;
+   $submit_to
+   $return_to =&gt; '/'
+   $user
+   @errors =&gt; ( )
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $user_statuses =
+       $Schema-&gt;UserStatus_t-&gt;all_rows
+           ( order_by =&gt; $Schema-&gt;UserStatus_t-&gt;status_c );
+  
+   my %form_vals;
+   foreach my $field ( qw( username password real_name email_address
+                           user_status_id is_admin ) ) {
+       $form_vals{$field} = 
+           exists $ARGS{$field} ? $ARGS{$field} : $user-&gt;$field( );
+   }
+  
+   $
+  form_vals{password2} =
+       exists $ARGS{password2} ? $ARGS{password2} :
+       exists $ARGS{password} ? $ARGS{password} :
+       $user-&gt;password;
+   &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/new_user_submit.html</div>
+<p class="content">
+<a name="ch08-idx-1007828-1"></a>
+<a name="ch08-idx-1007828-2"></a>
+
+</p>
+<p class="content">
+Because data validation is handled by our module code, this component doesn't
+have much to do. If the insert succeeds, we set the cookie used to indicate a
+successful login and redirect the client to whatever path is in the <code>$return_to</code> variable.
+</p>
+<p class="content">
+Note that we will never set the <code>is_admin</code> flag to true unless the submitting user is a site administrator.
+</p>
+<p class="content">
+One style point: this component calls a few other components, but it uses <code>$m-&gt;comp()</code><a name="IXT-8-1031"></a>
+<a name="IXT-8-1032"></a>
+ instead of <code>&lt;&amp; &amp;&gt;</code> tags to do so. This is partly just because it was convenient to call the
+components from within the <code>&lt;%init&gt;</code> section, but it also emphasizes the fact that those particular components
+don't generate any HTML output.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $return_to
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   # When inserting a new row, data validation checks are performed and an
+   # exception is thrown if any of the checks fail.
+   my $user =
+       eval { $Schema-&gt;User_t-&gt;insert
+                  ( values =&gt; 
+                    { ( map { $_ =&gt; $ARGS{$_} }
+                        qw( username password password2
+                            real_name email_address
+                            user_status_id ) ),
+                        is_admin  =&gt; $User-&gt;is_admin ? $ARGS{is_admin} : 0,
+                    }
+                  );
+            };
+  
+   # One or more data validation checks failed
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; 'new_user.html', query =&gt; { %ARGS, errors =&gt; $@-&gt;errors } )
+       if $@ &amp;&amp; UNIVERSAL::isa( $@, 'Apprentice::Exception::DataValidation' );
+  
+   # Some other unforeseen error happened
+   die $@ if $@;
+  
+   $m-&gt;comp( '/lib/set_login_cookie.mas', user =&gt; $user );
+  
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; $return_to );
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/redirect.mas</div>
+<p class="content">
+<a name="ch08-idx-1007830-1"></a>
+<a name="ch08-idx-1007830-2"></a>
+
+</p>
+<p class="content">
+With Mason's built-in <code>redirect()</code> method, this component is trivially simple. We use the <code>scomp()</code><a name="IXT-8-1033"></a>
+ method to get a URL in the form of a string from the <u>/lib/url.mas</u> component, then pass that to the <code>redirect()</code><a name="IXT-8-1034"></a>
+ method, which will generate the proper headers and send them to the  client.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $url = $m-&gt;scomp( '/lib/url.mas', %ARGS );
+  
+   $m-&gt;redirect($url);
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/login_submit.html</div>
+<p class="content">
+<a name="ch08-idx-1007834-1"></a>
+<a name="ch08-idx-1007834-2"></a>
+
+</p>
+<p class="content">
+This component is the target for the login form we saw back in <u>/left_side_menu.mas</u>, as well as <u>/login_form.html</u> page.
+</p>
+<p class="content">
+We check the given username to make sure it exists and that the password given
+matches the password in the database. If this is not the case, we simply
+redirect the user back to the calling page with an error.
+</p>
+<p class="content">
+Otherwise, we set the cookie that marks a successful login and issue a redirect
+to the URL specified in <code>$success_url</code>.
+</p>
+<p class="content">
+This is a common pattern in web applications. You have a URL that handles form
+submissions that needs to redirect the browser to a different page, so you make
+the submission-receiving component capable of taking a parameter indicating
+where to redirect the client.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $username
+   $password
+   $caller_url
+   %caller_args =&gt; ( )
+   $success_url =&gt; undef
+   %success_args =&gt; ( )
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $user =
+       $Schema-&gt;User_t-&gt;one_row
+           ( where =&gt; [ $Schema-&gt;User_t-&gt;username_c, '=', $username ] );
+  
+   unless ( $user &amp;&amp; $password eq $user-&gt;password ) {
+       $m-&gt;comp( '/lib/redirect.mas',
+                 path  =&gt; $caller_url,
+                 query =&gt; { caller_args =&gt; \%caller_args,
+                            username =&gt; $username,
+                            login_error =&gt; 'Invalid login.' },
+               );
+   }
+  
+   $m-&gt;comp( '/lib/set_login_cookie.mas', user =&gt; $user );
+  
+   # By default, we just send them back to the calling page.
+   $success_url = $caller_url unless defined $success_url &amp;&amp; length $success_url;
+   %success_args = %caller_args unless %success_args;
+  
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; $success_url, query =&gt; \%success_args );
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/set_login_cookie.mas</div>
+<p class="content">
+<a name="ch08-idx-1007836-1"></a>
+<a name="ch08-idx-1007836-2"></a>
+
+</p>
+<p class="content">
+We discussed using a MAC for authentication in our explanation of the <u>/syshandler</u> component. This is the flip side of that process. Here we simply set a cookie
+containing the user's user ID and a MAC based on that user ID.
+</p>
+<p class="content">
+A component that affects the headers sent to the client, such as this one, must
+be called <em>before</em> headers are sent. Since this site runs with autoflushing turned off, this is
+not a problem, because headers won't be sent until after all the content is
+generated.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $user
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   Apache::Cookie-&gt;new
+       ( $r,
+         -name  =&gt; 'apprentice_user_login',
+         -value =&gt; { user_id =&gt; $user-&gt;user_id,
+                     MAC =&gt; 
+                     Digest::SHA1::sha1_hex
+                         ( $user-&gt;user_id, $Apprentice::Secret ) },
+         -path  =&gt; '/',
+         -domain  =&gt; 'apprentice.perl.org',
+         -expires =&gt; '+1M',
+       )-&gt;bake;
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/logout.html</div>
+<p class="content">
+<a name="ch08-idx-1007838-1"></a>
+<a name="ch08-idx-1007838-2"></a>
+
+</p>
+<p class="content">
+Here we remove the login cookie set by the <u>/lib/set_login_cookie.mas</u> component by setting a cookie with an expiration date in the past, which
+removes the cookie from the browser.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $caller_url
+   %caller_args =&gt; ( )
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   Apache::Cookie-&gt;new
+       ( $r,
+         -name  =&gt; 'apprentice_user_login',
+         -value =&gt; '',
+         -path  =&gt; '/',
+         -domain  =&gt; 'apprentice.perl.org',
+         -expires =&gt; '-1d',
+       )-&gt;bake;
+  
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; $caller_url, query =&gt; \%caller_args );
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/users/forgot_password.html</div>
+<p class="content">
+<a name="IXT-8-1035"></a>
+<a name="IXT-8-1036"></a>
+
+</p>
+<p class="content">
+This is a simple form for users who forgot their password. A user enters her
+username, and the system sends her an email.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/users/forgot_password_submit.html</div>
+<p class="content">
+This <a name="IXT-8-1037"></a>
+<a name="IXT-8-1038"></a>
+ component does the actual sending of email for forgotten passwords. Assuming
+that there is a username matching that entered by the user, we generate a
+simple email telling her her password.
+</p>
+<p class="content">
+We use the <code>$r-&gt;register_cleanup()</code> method to delay sending email until after output has been sent to the client.
+This technique is useful for any sort of operation that might take a long time,
+but the downside is that if the callback fails, there is no easy way to
+communicate this to the user. If this is a problem, you will simply have to do
+this while the client waits for output.
+</p>
+<p class="content">
+The<a name="IXT-8-1039"></a>
+<a name="IXT-8-1040"></a>
+<code>$r-&gt;register_cleanup()</code> method is documented in the Apache module documentation as well as the books
+mentioned in the beginning of <a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">Chapter 7</a>.
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $username
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $user =
+       $Schema-&gt;User_t-&gt;one_row
+           ( where =&gt; [ $Schema-&gt;User_t-&gt;username_c, '=', $username ] );
+  
+   unless ( $user ) {
+       $m-&gt;comp( '/lib/redirect.mas',
+                 path =&gt; 'forgot_password.html',
+                 query =&gt; { error =&gt; 'Invalid username.' } );
+   }
+  
+   my $body = &quot;Your password is:\n\n&quot; . $user-&gt;password .
+              &quot;\n\nwebmaster\@apprentice.perl.org&quot;;
+  
+   $r-&gt;register_cleanup
+       ( sub { Apprentice::send_email
+                   ( to   =&gt; $user-&gt;email_address,
+                     from =&gt; 'webmaster@apprentice.perl.org',
+                     subject =&gt; 'Your password for apprentice.perl.org',
+                     body =&gt; $body ) } );
+  
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; '/index.html',
+             query =&gt; { login_error =&gt; 'Your password has been mailed to you.' } );
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div>
+</ul>
+<a name="TOC-ANCHOR-7"></a>
+<h2>Components with Access Controls</h2><p class="content">
+<a name="CHP-8-SECT-6"></a>
+
+</p>
+<p class="content">
+The <a name="IXT-8-1041"></a>
+ components we just looked at are available to anybody who comes to the site,
+with no login required. The rest of the components are divided into two
+directories: one for logged-in users and the other for site administrators. We
+will start with the components available for logged-in users only. They are:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/autohandler</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/lib/check_access_level.mas</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/edit_self.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/edit_user_submit.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/new_project.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/project_form.mas</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/new_project_submit.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/editable_project_list.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/edit_project.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/check_access_to_project.mas</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/edit_project_submit.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/edit_members.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/add_project_member.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/remove_project_member.html</u></div>
+</li>
+<li>
+<div class="book-list-item-heading">
+<u>/logged_in/delete_project.html</u></div>
+
+</ul>
+<p class="content">
+These components are all about editing things on the site. Let's take a look.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+/logged_in/autohandler</div>
+<p class="content">
+<a name="IXT-8-1042"></a>
+
+</p>
+<p class="content">
+All this component does is implement access checking for the directory. If you
+are not a logged-in user, you cannot look at any components in this directory.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   $m-&gt;comp( '/lib/check_access_level.mas', level =&gt; 'is_logged_in' );
+  
+   $m-&gt;call_next;
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/lib/check_access_level.mas</div>
+<p class="content">
+<a name="ch08-idx-1007845-1"></a>
+
+</p>
+<p class="content">
+This component simply redirects the user to the login form if he does not meet
+the access-level requirement. If the user logs in successfully, he'll be
+redirected back to the component he was originally prevented from accessing.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $level
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $requested_url = $r-&gt;uri;
+   my %query_args = $m-&gt;request_args;
+  
+   my $level_description = $level eq 'is_logged_in' ? 'a logged-in' : 'an admin';
+  
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; '/login_form.html',
+             query =&gt; { message =&gt; &quot;This area requires $level_description user.&quot;,
+                        success_url  =&gt; $requested_url,
+                        success_args =&gt; \%query_args,
+                      } )
+       unless $User-&gt;$level( );
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/edit_self.html</div>
+<p class="content">
+<a name="IXT-8-1043"></a>
+
+</p>
+<p class="content">
+Editing a user simply uses the handy <u>/users/user_form.mas</u> component we saw previously, this time with a different action attribute for
+the form, set via the <code>submit_to</code> parameter. It doesn't get any easier than that.
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;2&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Edit Your Account&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;&amp; /users/user_form.mas,
+     submit_to =&gt; 'edit_user_submit.html',
+     return_to =&gt; $r-&gt;uri,
+     user =&gt; $User,
+     %ARGS
+   &amp;&gt;
+  &lt;/table&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - Edit your account
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/edit_user_submit.html</div>
+<p class="content">
+<a name="ch08-idx-1007848-1"></a>
+
+</p>
+<p class="content">
+This component implements an additional access check. We want to make sure that
+the user submitting this form is either a site administrator or the owner of
+the account being edited. Otherwise, we simply send her away.
+</p>
+<p class="content">
+As with creating a new user, we always set the<a name="IXT-8-1044"></a>
+<code>is_admin</code> flag to a false value unless the submitting user is a site administrator.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $user_id
+   $return_to
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' )
+       unless $User-&gt;is_admin or $User-&gt;user_id == $user_id;
+  
+   my $user = 
+       eval { $Schema-&gt;User_t-&gt;row_by_pk( pk =&gt; $user_id ) }
+           || $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+  
+   eval {
+       $user-&gt;update( ( map { $_ =&gt; $ARGS{$_} }
+                        qw( username password password2
+                            real_name email_address
+                            user_status_id ) ),
+                      is_admin  =&gt; $User-&gt;is_admin ? $ARGS{is_admin} : 0,
+                    );
+   };
+  
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; $return_to, query =&gt; { %ARGS, errors =&gt; $@-&gt;errors } )
+       if $@ &amp;&amp; UNIVERSAL::isa( $@, 'Apprentice::Exception::DataValidation' );
+  
+   die $@ if $@;
+  
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; $return_to );
+  &lt;/%init&gt;
+  
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/new_project.html</div>
+<p class="content">
+<a name="IXT-8-1045"></a>
+
+</p>
+<p class="content">
+The project creation and editing pages are very similar to the pages for
+creating and adding users. In both cases, we were able to take advantage of
+Mason's component system to achieve a high level of reuse.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/project_form.mas</div>
+<p class="content">
+<a name="ch08-idx-1007851-1"></a>
+
+</p>
+<p class="content">
+This page is closely analogous to <u>/users/user_form.mas</u>. Once again, we need to handle prepopulating the form with existing values
+when editing projects or with defaults for new projects. We also need to take
+into account that we may have come here as the result of an error in data
+validation, in which case we want to preserve the values submitted by the user.
+</p>
+<p class="content">
+Once again, we take a <code>$submit_to</code> parameter to set the form's action attribute, just as with the user form
+component.
+</p>
+<p class="content">
+This component has more code simply because projects are more complicated than
+users. Projects can have multiple categorizations, zero or more links each with
+an optional description, and so on.
+</p>
+<p class="content">
+The manner in which links are handled is interesting. We need a way to
+distinguish between editing or deleting an existing link and adding a new one.
+We do this by giving the form fields different names. For existing links, the
+fields contain the link IDs, which we also store separately so that we can
+iterate over them in the <u>/logged_in/edit_project_submit.html</u> component, discussed later.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  % foreach my $err (@errors) {
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;span class=&quot;error&quot;&gt;&lt;% $err | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;form action=&quot;&lt;&amp; /lib/url.mas, path =&gt; $submit_to &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+  % if ($project-&gt;project_id) {
+   &lt;input type=&quot;hidden&quot; name=&quot;project_id&quot; value=&quot;&lt;% $project-&gt;project_id %&gt;&quot;&gt;
+  % }
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Name:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;input type=&quot;text&quot; name=&quot;name&quot;
+            value=&quot;&lt;% $form_vals{name} | h %&gt;&quot; size=&quot;20&quot; maxlength=&quot;30&quot;&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Description:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;textarea name=&quot;description&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;\
+  &lt;% $form_vals{description} | h %&gt;\
+  &lt;/textarea&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Categories&lt;br&gt;(1 or more):&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;category_ids&quot; multiple=&quot;1&quot; size=&quot;4&quot;&gt;
+  % while (my $category = $categories-&gt;next) {
+      &lt;option value=&quot;&lt;% $category-&gt;category_id %&gt;&quot;
+        &lt;% $current_categories{ $category-&gt;category_id } ? 
+           'selected=&quot;selected&quot;' : '' %&gt;&gt;
+       &lt;% $category-&gt;name | h %&gt;
+      &lt;/option&gt;
+  % }
+     &lt;/select&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Difficulty:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;difficulty&quot;&gt;
+  % foreach (1..10) {
+      &lt;option value=&quot;&lt;% $_ %&gt;&quot;
+       &lt;% $form_vals{difficulty} == $_ ? 'selected=&quot;selected&quot;' : '' %&gt;&gt;
+       &lt;% $_ %&gt;
+      &lt;/option&gt;
+  % }
+     &lt;/select&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Status:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;project_status_id&quot;&gt;
+  % while (my $status = $statuses-&gt;next) {
+      &lt;option value=&quot;&lt;% $status-&gt;project_status_id %&gt;&quot;
+       &lt;% $status-&gt;project_status_id == $form_vals{project_status_id} ?
+          'selected=&quot;selected&quot;' : '' %&gt;&gt;
+       &lt;% $status-&gt;status %&gt;
+      &lt;/option&gt;
+  % }
+     &lt;/select&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % unless ($member_count) {
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;
+    My role will be:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;role_id&quot;&gt;
+  %   while (my $role = $roles-&gt;next) {
+      &lt;option value=&quot;&lt;% $role-&gt;role_id %&gt;&quot;
+       &lt;% $form_vals{role_id} == $role-&gt;role_id ? 'selected=&quot;selected&quot;': '' %&gt;&gt;
+       &lt;% $role-&gt;role | h %&gt;
+      &lt;/option&gt;
+  %   }
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;p&gt;
+     If you chose the 'Mentor' role, then this is the
+     support level you will provide.  If you chose the
+     'Apprentice' role, then this is the support level you
+     think you require.
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td&gt;Support level:&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;project_support_level_id&quot;&gt;
+  % while (my $level = $support_levels-&gt;next) {
+      &lt;option value=&quot;&lt;% $level-&gt;project_support_level_id %&gt;&quot;
+       &lt;% $level-&gt;project_support_level_id == 
+          $form_vals{project_support_level_id} ?
+          'selected=&quot;selected&quot;' : '' %&gt;&gt;
+       &lt;% $level-&gt;support_level %&gt;
+      &lt;/option&gt;
+  % }
+     &lt;/select&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot;&gt;
+      &lt;tr valign=&quot;top&quot;&gt;
+       &lt;td colspan=&quot;2&quot;&gt;&lt;h3&gt;Links&lt;/h3&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr valign=&quot;top&quot;&gt;
+       &lt;td&gt;URL&lt;/td&gt;
+       &lt;td&gt;Description&lt;/td&gt;
+      &lt;/tr&gt;
+  % foreach my $link (@links) {
+      &lt;input type=&quot;hidden&quot; name=&quot;project_link_ids&quot; value=&quot;&lt;% $link-&gt;{id} %&gt;&quot;&gt;
+  %   next unless defined $link-&gt;{url};
+      &lt;tr valign=&quot;top&quot;&gt;
+       &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;url&lt;% $link-&gt;{id} %&gt;&quot;
+               value=&quot;&lt;% $link-&gt;{url} | h %&gt;&quot; size=&quot;30&quot; maxlength=&quot;200&quot;&gt;
+       &lt;/td&gt;
+       &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;description&lt;% $link-&gt;{id} %&gt;&quot;
+               value=&quot;&lt;% $link-&gt;{description} | h %&gt;&quot; size=&quot;50&quot; maxlength=&quot;200&quot;&gt;
+       &lt;/td&gt;
+      &lt;/tr&gt;
+  % }
+  % foreach (1..2) {
+      &lt;tr valign=&quot;top&quot;&gt;
+       &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;new_url&lt;% $_ %&gt;&quot;
+               value=&quot;&lt;% $ARGS{&quot;new_url$_&quot;} || '' | h %&gt;&quot; 
+               size=&quot;30&quot; maxlength=&quot;200&quot;&gt;
+       &lt;/td&gt;
+       &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;new_description&lt;% $_ %&gt;&quot;
+               value=&quot;&lt;% $ARGS{&quot;new_description$_&quot;} || '' | h %&gt;&quot; 
+               size=&quot;50&quot; maxlength=&quot;200&quot;&gt;
+       &lt;/td&gt;
+      &lt;/tr&gt;
+  % }
+     &lt;/table&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr valign=&quot;top&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;form&gt;
+  
+  &lt;%args&gt;
+   $submit_to
+   $project
+   @category_ids =&gt; ( )
+   @errors =&gt; ( )
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   my $statuses =
+       $Schema-&gt;ProjectStatus_t-&gt;all_rows
+           ( order_by =&gt; $Schema-&gt;ProjectStatus_t-&gt;status_c );
+  
+   my $support_levels =
+       $Schema-&gt;ProjectSupportLevel_t-&gt;all_rows
+           ( order_by =&gt; 
+             $Schema-&gt;ProjectSupportLevel_t-&gt;project_support_level_id_c );
+  
+   my $categories =
+       $Schema-&gt;Category_t-&gt;all_rows
+           ( order_by =&gt; $Schema-&gt;Category_t-&gt;name_c );
+  
+   my $links = $project-&gt;Links;
+  
+   my @links;
+   while (my $link = $links-&gt;next) {
+       my $id = $link-&gt;project_link_id;
+       # the link was deleted but we've returned to this page because
+       # of some error.
+       if (exists $ARGS{&quot;url$id&quot;} &amp;&amp; ! length $ARGS{&quot;url$id&quot;}) {
+           push @links, { id =&gt; $id, url =&gt; undef };
+       } elsif (exists $ARGS{&quot;url$id&quot;} &amp;&amp; length $ARGS{&quot;url$id&quot;}) {
+           push @links, { id =&gt; $id,
+                          url =&gt; $ARGS{&quot;url$id&quot;},
+                          description =&gt; $ARGS{&quot;description$id&quot;} };
+       } else {
+           push @links, { id =&gt; $id,
+                          url =&gt; $link-&gt;url,
+                          description =&gt; $link-&gt;description };
+       }
+   }
+  
+   my %current_categories;
+   if (@category_ids) {
+       %current_categories = map { $_ =&gt; 1 } @category_ids;
+   } else {
+       %current_categories = 
+           map { $_-&gt;category_id =&gt; 1 } $project-&gt;Categories-&gt;all_rows;
+   }
+  
+   my $member_count =
+       $Schema-&gt;ProjectMember_t-&gt;row_count
+           ( where =&gt;
+             [ $Schema-&gt;ProjectMember_t-&gt;project_id_c, 
+               '=', $project-&gt;project_id ] );
+  
+   my %form_vals;
+   foreach my $field ( qw( name description difficulty
+                           project_status_id project_support_level_id ) ) {
+  
+       $form_vals{$field} = 
+           exists $ARGS{$field} ? $ARGS{$field} : $project-&gt;$field( );
+   }
+  
+   $form_vals{role_id} = $ARGS{role_id} || 0;
+  
+   # Only used if a project has no members (i.e. a new project)
+   my $roles;
+   $roles =
+       $Schema-&gt;Role_t-&gt;all_rows( order_by =&gt; $Schema-&gt;Role_t-&gt;role_id_c )
+           unless $member_count;
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/new_project_submit.html</div>
+<p class="content">
+<a name="IXT-8-1046"></a>
+
+</p>
+<p class="content">
+Here we handle creating a new project, along with its associated members,
+categories, and links. It looks fairly similar to <u>/users/new_user_submit.html</u>.
+</p>
+<p class="content">
+Since this is a new project, we give it a single member, which is the
+submitting user. This user is flagged as having administrative access to the
+project, meaning that they can edit the project.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/editable_project_list.html</div>
+<p class="content">
+<a name="IXT-8-1047"></a>
+
+</p>
+<p class="content">
+This component is used to display a list of projects for which the current user
+has administrative privileges. It provides links to edit each project's data
+and membership as well as a project deletion link.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/edit_project.html</div>
+<p class="content">
+<a name="IXT-8-1048"></a>
+
+</p>
+<p class="content">
+There is nothing here that we haven't seen before. Let's move on, shall we?
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/check_access_to_project.mas</div>
+<p class="content">
+<a name="IXT-8-1049"></a>
+
+</p>
+<p class="content">
+This is a helper component that is called from several places in order to
+confirm that a user should be allowed to edit a given project. Basically, the
+user must be a site administrator or have administrative privileges for the
+project in question.
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $project
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   unless ($User-&gt;is_admin || $User-&gt;is_project_admin($project)) {
+       $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+   }
+  &lt;/%init&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/edit_project_submit.html</div>
+<p class="content">
+<a name="ch08-idx-1007857-1"></a>
+
+</p>
+<p class="content">
+While similar to the component used to edit users, this one is a bit more
+complicated. To detect the fact that a project should no longer be in a
+category, we need to check the project's current list of categories in the
+database against those submitted to this component. Similarly, we need to check
+the submitted list to see if there are any categories not already assigned to
+the project.
+</p>
+<p class="content">
+For links, we delete any existing link where the URL was erased from the text
+editing box. For others we simply update them. Then if new links were given, we
+add them to the database.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $project_id
+   @project_link_ids =&gt; ( )
+   @category_ids =&gt; ( )
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   my $project = 
+       eval { $Schema-&gt;Project_t-&gt;row_by_pk( pk =&gt; $project_id ) } 
+           || $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+  
+   $m-&gt;comp( 'check_access_to_project.mas', project =&gt; $project );
+  
+   eval {
+       $project-&gt;update
+           ( name =&gt; $ARGS{name},
+             description =&gt; $ARGS{description},
+             difficulty =&gt; $ARGS{difficulty},
+             project_status_id =&gt; $ARGS{project_status_id},
+             project_support_level_id =&gt; $ARGS{project_support_level_id},
+           );
+   };
+  
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; '/logged_in/edit_project.html',
+             query =&gt; { %ARGS, errors =&gt; $@-&gt;errors } )
+       if $@ &amp;&amp; UNIVERSAL::isa( $@, 'Apprentice::Exception::DataValidation' );
+  
+   my %current_categories = 
+       map { $_-&gt;category_id =&gt; 1 } $project-&gt;Categories-&gt;all_rows;
+  
+   foreach my $id (@category_ids) {
+       $Schema-&gt;ProjectCategory_t-&gt;insert( values =&gt; { project_id =&gt; $project_id,
+                                                       category_id =&gt; $id } )
+           unless exists $current_categories{$id};
+   }
+  
+   {
+       # This is the categories selected on the project editing page.
+       my %selected_categories = map { $_ =&gt; 1 } @category_ids;
+  
+       # These are categories the project currently has which were
+       # _not_ selected on the editing page.
+       my @to_delete;
+       foreach my $id (keys %current_categories) {
+           push @to_delete, $id unless $selected_categories{$id};
+       }
+  
+       if (@to_delete) {
+           foreach ( $Schema-&gt;ProjectCategory_t-&gt;rows_where
+                      ( where =&gt;
+                       [
+                        [ $Schema-&gt;ProjectCategory_t-&gt;project_id_c,  
+                          '=',  $project_id ],
+                        [ $Schema-&gt;ProjectCategory_t-&gt;category_id_c, 
+                          'IN', @to_delete  ]
+                       ]
+                      )-&gt;all_rows ) {
+               $_-&gt;delete;
+           }
+       }
+   }
+  
+   {
+       # This is basically the same logic as was used for categories
+       # except that if a link wasn't deleted, we may need to update
+       # it.
+       my @to_delete;
+       foreach my $id (@project_link_ids) {
+           if ( defined $ARGS{&quot;url$id&quot;} &amp;&amp; length $ARGS{&quot;url$id&quot;} ) {
+               my $link = 
+                   eval { $Schema-&gt;ProjectLink_t-&gt;row_by_pk( pk =&gt; $id ) }
+                       || next;
+               $link-&gt;update( url =&gt; $ARGS{&quot;url$id&quot;},
+                              description =&gt; $ARGS{&quot;description$id&quot;} );
+           } else {
+               push @to_delete, $id
+           }
+       }
+  
+       if (@to_delete) {
+           foreach ( $Schema-&gt;ProjectLink_t-&gt;rows_where
+                         ( where =&gt;
+                          [ $Schema-&gt;ProjectLink_t-&gt;project_link_id_c,
+                            'IN', @to_delete ] )-&gt;all_rows ) {
+               $_-&gt;delete;
+           }
+       }
+   }
+  
+   # Finally, insert any new links from the previous page. 
+   foreach (1..2) {
+       if (exists $ARGS{&quot;new_url$_&quot;} &amp;&amp; length $ARGS{&quot;new_url$_&quot;}) {
+           $Schema-&gt;ProjectLink_t-&gt;insert
+               ( values =&gt;
+                 { project_id =&gt; $project-&gt;project_id,
+                   url =&gt; $ARGS{&quot;new_url$_&quot;},
+                   description =&gt;
+                   defined $ARGS{&quot;new_description$_&quot;} ?
+                   $ARGS{&quot;new_description$_&quot;} : $ARGS{&quot;new_url$_&quot;},
+                 }
+               );
+       }
+   }
+  
+   $m-&gt;comp( '/lib/redirect.mas',
+             path =&gt; '/logged_in/edit_project.html',
+             query =&gt; { project_id =&gt; $project_id } );
+  &lt;/%init&gt;
+  
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/edit_members.html</div>
+<p class="content">
+<a name="ch08-idx-1007859-1"></a>
+
+</p>
+<p class="content">
+Because the project editing screen already had enough on it, we decided to give
+project member editing its own distinct page in order to avoid interface
+overload.
+</p>
+<p class="content">
+We intentionally do not allow a user to give or take away administrative
+privileges from an existing member. It would have complicated the interface
+with another button, and it is easy enough to simply remove the member and
+re-add them with changed privileges.
+</p>
+<p class="content">
+We also don't allow a user to remove himself from the project, because this is
+more likely to be something someone does by accident than intentionally. And if
+a user removes himself, he could end up leaving the project with no one capable
+of editing it other than the site admins.
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot; colspan=&quot;5&quot;&gt;
+     &lt;h2 class=&quot;headline&quot;&gt;Edit Project Members&lt;/h2&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;
+     &lt;a href=&quot;&lt;&amp; /lib/url.mas,
+                 path  =&gt; '/logged_in/edit_project.html',
+                 query =&gt; { project_id =&gt; $project-&gt;project_id } &amp;&gt;&quot;&gt;
+      Edit project&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;5&quot;&gt;&lt;h3&gt;Current members for &lt;% $project-&gt;name | h %&gt;&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % while (my $member = $members-&gt;next) {
+   &lt;tr&gt;
+    &lt;td&gt;&lt;% $member-&gt;username | h %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;% $member-&gt;role %&gt;&lt;/td&gt;
+    &lt;td&gt;
+  %   if ($member-&gt;is_project_admin) {
+     &lt;b&gt;Project admin&lt;/b&gt;
+  %   } else {
+     &amp;nbsp;
+  %   }
+    &lt;/td&gt;
+  %   if ( $member-&gt;username eq $User-&gt;username ) {
+    &lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+  %   } else {
+    &lt;form action=&quot;&lt;&amp; /lib/url.mas,
+                     path =&gt; 'remove_project_member.html' &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+     &lt;input type=&quot;hidden&quot; name=&quot;project_id&quot; value=&quot;&lt;% $project_id %&gt;&quot;&gt;
+     &lt;input type=&quot;hidden&quot; name=&quot;user_id&quot; value=&quot;&lt;% $member-&gt;user_id %&gt;&quot;&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Remove&quot;&gt;&lt;/td&gt;
+    &lt;/form&gt;
+  %   }
+   &lt;/tr&gt;
+  % }
+   &lt;tr&gt;
+    &lt;td colspan=&quot;5&quot;&gt;&lt;h3&gt;Add a new member&lt;/h3&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % if ($error) {
+   &lt;tr&gt;
+    &lt;td colspan=&quot;5&quot;&gt;&lt;span class=&quot;error&quot;&gt;&lt;% $error | h %&gt;&lt;/span&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+   &lt;form action=&quot;&lt;&amp; /lib/url.mas,
+                    path =&gt; 'add_project_member.html' &amp;&gt;&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;project_id&quot; value=&quot;&lt;% $project_id %&gt;&quot;&gt;
+   &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&lt;% $username | h %&gt;&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;
+     &lt;select name=&quot;role_id&quot;&gt;
+  %   while (my $role = $roles-&gt;next) {
+      &lt;option value=&quot;&lt;% $role-&gt;role_id %&gt;&quot;
+       &lt;% $role_id == $role-&gt;role_id ? 'selected=&quot;selected&quot;': '' %&gt;&gt;
+       &lt;% $role-&gt;role | h %&gt;
+      &lt;/option&gt;
+  %   }
+    &lt;/td&gt;
+    &lt;td&gt;
+     As admin?
+     &lt;input type=&quot;checkbox&quot; name=&quot;is_project_admin&quot;
+            value=&quot;1&quot; &lt;% $is_project_admin ? 'checked=&quot;checked&quot;': '' %&gt;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;Add&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;/form&gt;
+  &lt;/table&gt;
+  &lt;%shared&gt;
+  my $project =
+      eval { $Schema-&gt;Project_t-&gt;row_by_pk
+                 ( pk =&gt; $m-&gt;request_args-&gt;{project_id} ) }
+          || $m-&gt;comp( '/lib/redirect.mas', path =&gt; '/' );
+  &lt;/%shared&gt;
+  &lt;%args&gt;
+   $project_id
+   $username =&gt; ''
+   $role_id =&gt; 0
+   $is_project_admin =&gt; 0
+   $error =&gt; ''
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   $m-&gt;comp( 'check_access_to_project.mas', project =&gt; $project );
+  
+   my $members =
+       $Schema-&gt;join( select =&gt; $Schema-&gt;ProjectMember_t,
+                      join   =&gt;
+                      [ $Schema-&gt;tables( 'ProjectMember', 'User' ) ],
+                      where  =&gt;
+                      [ $Schema-&gt;ProjectMember_t-&gt;project_id_c, '=', $project_id ],
+                      order_by =&gt; $Schema-&gt;User_t-&gt;username_c );
+  
+   my $roles = $Schema-&gt;Role_t-&gt;all_rows( order_by =&gt; $Schema-&gt;Role_t-&gt;role_id_c );
+  &lt;/%init&gt;
+  
+  &lt;%method title&gt;
+   &lt;&amp; PARENT:title &amp;&gt; - Members of &lt;% $project-&gt;name | h %&gt;
+  &lt;/%method&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/add_project_member.html</div>
+<p class="content">
+<a name="IXT-8-1050"></a>
+
+</p>
+<p class="content">
+This component makes sure that the submitted username actually exists and,
+assuming it does, inserts a new row into the ProjectMember table.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/remove_project_member.html</div>
+<p class="content">
+<a name="IXT-8-1051"></a>
+
+</p>
+<p class="content">
+This component checks access, deletes a row from the database, and redirects.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/logged_in/delete_project.html</div>
+<p class="content">
+<a name="IXT-8-1052"></a>
+
+</p>
+<p class="content">
+This is much like the component used to remove a project member. The main
+difference here is that we try to be intelligent in determining where to
+redirect the user after deleting the project. If she still has projects, we
+send her back to her list of projects. Otherwise, we simply send her to the
+top-level page.
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $project_id
+   $redirect_to =&gt; undef
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $project = $Schema-&gt;Project_t-&gt;row_by_pk( pk =&gt; $project_id );
+  
+   $m-&gt;comp( 'check_access_to_project.mas', project =&gt; $project );
+  
+   $project-&gt;delete;
+  
+   unless ($redirect_to) {
+       $redirect_to =
+           $User-&gt;has_projects ? '/logged_in/editable_project_list.html' : '/';
+   }
+  
+   $m-&gt;comp( '/lib/redirect.mas', path =&gt; $redirect_to );
+  &lt;/%init&gt;
+  &lt;%flags&gt;
+   inherit =&gt; '/syshandler'
+  &lt;/%flags&gt;</pre>
+</div>
+</ul>
+<p class="content">
+The last components we have to look at are in the <u>/admin</u> directory. These are:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+/admin/autohandler</div>
+<p class="content">
+<a name="IXT-8-1053"></a>
+
+</p>
+<p class="content">
+This is almost identical to <u>/logged_in/autohandler</u> but with a different access check and title method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/user_list.html</div>
+<p class="content">
+<a name="IXT-8-1054"></a>
+
+</p>
+<p class="content">
+This component presents a paged list of users for site administrators to browse
+through. A link for each user allows the admin to edit that user.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/edit_user.html</div>
+<p class="content">
+<a name="IXT-8-1055"></a>
+
+</p>
+<p class="content">
+This one is almost identical to the <u>/logged_in/edit_self.html</u> component except that it takes a <code>$user_id</code> parameter in order to allow any user to be edited. It uses the <u>/users/user_form.mas</u> component, like other user editing components.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/edit_categories.html</div>
+<p class="content">
+<a name="IXT-8-1056"></a>
+
+</p>
+<p class="content">
+This component provides a form that allows categories to be edited, deleted, or
+added.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/alter_category.html</div>
+<p class="content">
+<a name="IXT-8-1057"></a>
+
+</p>
+<p class="content">
+An admin can alter a category's name.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/add_category.html</div>
+<p class="content">
+<a name="IXT-8-1058"></a>
+
+</p>
+<p class="content">
+This one adds a new category.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/admin/delete_category.html</div>
+<p class="content">
+<a name="IXT-8-1059"></a>
+
+</p>
+<p class="content">
+This component deletes an existing category.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-8"></a>
+<h2>All Done</h2><p class="content">
+<a name="CHP-8-SECT-7"></a>
+
+</p>
+<p class="content">
+And that is our site. Putting this site together took maybe 30-40 person-hours
+from start to finish, which is not too bad. Plenty of that time was spent
+fiddling with HTML, since that is not our strongest area. Doing this as a
+traditional CGI application without Mason would probably have either taken much
+longer to achieve a similar level of code reuse or just ended up as a sloppier
+application.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h2>Further Directions</h2><p class="content">
+<a name="CHP-8-SECT-8"></a>
+
+</p>
+<p class="content">
+As we mentioned at the beginning of this chapter, we wanted to make this site
+small enough to show you in a single chapter (albeit a rather long chapter),
+and we sometimes avoided using some features of Alzabo that could have
+simplified some of the code in order to avoid getting sidetracked into an
+Alzabo how-to. When you're designing your own sites, you won't have these
+constraints. Here are some things you might try adding to this site:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+More inheritance</div>
+<p class="content">
+<a name="IXT-8-1060"></a>
+
+</p>
+<p class="content">
+Note that the final three components, <u>/admin/add_category.html</u>, <u>/admin/alter_category.html</u>, and <u>/admin/delete_category.html</u>, all share certain properties, like the fact that they redirect to the same
+place and all inherit from <em>/syshandler</em>. It would be possible to encapsulate this common behavior in a component that
+all of them could inherit from.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Use Alzabo more effectively</div>
+<p class="content">
+Since <a name="perlhtmlmason-IDXTERM-740"></a>
+ Alzabo is able to provide <a name="IXT-8-1061"></a>
+ metadata about the database (such as column names, types, lengths, etc.), we
+could have made form widget components to create form elements with the proper <code>size</code> and <code>maxlength</code> attributes for a given column. In fact,  Alzabo includes Mason components for this purpose in its distribution, but in
+the interest of not turning this into an Alzabo tutorial, we chose not to use
+them.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Two-level component root</div>
+<p class="content">
+<a name="IXT-8-1062"></a>
+<a name="IXT-8-1063"></a>
+
+</p>
+<p class="content">
+If you plan to replicate this kind of site in more than one location, you have
+two options. The first is to install the components and modules separately in
+each location. The second is to create a common set of shared components for
+all sites in one component root, overriding only the portions you need to
+override in another component root. This creates a more portable site
+framework. See <a href="chapter-5.mhtml.htm#CHP-5-SECT-6.1" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-SECT-6.1">&quot;Inheritance and Multiple Component Roots&quot;</a> in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<p class="content">
+One way to start creating such a framework is to move all our components to a
+shared component root and override only the parts you need to override in your
+site-specific root. This approach will take some reengineering as you go, but
+it's a fairly painless approach to the problem of generalizing a site that was
+designed as a one-off.
+</p>
+
+</ul>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. Or pseudopseudocode, since it's actually code. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. Famous last words, no doubt. Bug reports are always welcome, of course. -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-3"></a>
+<p class="content">
+3. See <a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">Chapter 11</a> for some session code examples. -- <a href="#RETURN-ANCHOR-3">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<b>8</b>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

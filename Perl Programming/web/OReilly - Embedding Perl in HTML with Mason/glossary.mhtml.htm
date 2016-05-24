@@ -1,0 +1,431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<b>Glossary</b>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Glossary</h1><p class="content">
+<a name="GLOSS"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1374"></a>
+argument</div>
+<p class="content">
+In this book, generally used to refer to the arguments passed to a component,
+declared in an <code>&lt;%args&gt;</code> block.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1375"></a>
+attribute</div>
+<p class="content">
+A named property of a component that can be inherited via the inheritance
+hierarchy. Attributes are set using the <code>&lt;%attr&gt;</code> tag and queried using the <code>$component-&gt;attr()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1376"></a>
+autohandler</div>
+<p class="content">
+A component that &quot;wraps&quot; other components and serves as a default
+parent. See also <em>inheritance hierarchy</em> and <em>wrapping chain</em>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1377"></a>
+<a name="IXT-12-1378"></a>
+base component</div>
+<p class="content">
+The bottommost child of the current component as invoked in a component call.
+This may be the current component itself. Analogous to the &quot;self&quot; in
+object-oriented programming. The base component changes several times
+throughout a request as components call one another.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1379"></a>
+<a name="IXT-12-1380"></a>
+child component</div>
+<p class="content">
+The opposite of a &quot;parent&quot; component. Each component may have zero or
+more children. Children are not specified explicitly; rather, a component
+becomes a child by virtue of having a parent.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1381"></a>
+Compiler</div>
+<p class="content">
+A class responsible for turning a body of Mason source code into Perl code
+suitable for execution by the Interpreter. Available in Mason components as <code>$m-&gt;interp-&gt;compiler</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1382"></a>
+component</div>
+<p class="content">
+The basic building block of a Mason site. A component is usually defined in a
+source file inside the component tree, though one file may define several
+components. Components can also be created on the fly by feeding component
+source text to the Interpreter's <code>make_component()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1383"></a>
+component root</div>
+<p class="content">
+Depending on context, may refer to a named, ordered list of directories in
+which Mason will search for components or to a single element of this list.
+This linguistic ambiguity arises because Mason uses the parameter <code>comp_root</code> to refer to the entire list, but many people also use the phrase
+&quot;multiple component roots&quot; to refer to a component root with more
+than one element. See also <em>component tree</em>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1384"></a>
+component stack</div>
+<p class="content">
+The runtime chain of components that have invoked one another. Analogous to the
+runtime stack of subroutines in a typical programming language. Components call
+one another via <code>$m-&gt;comp()</code>, <code>$m-&gt;scomp()</code>, <code>$m-&gt;call_next()</code>,<code>$component-&gt;call_method()</code>, or <code>&lt;&amp; &amp;&gt;</code> tags. The current component is always at the bottom of the component stack,
+and the top-level autohandler is usually at the top.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1385"></a>
+component tree</div>
+<p class="content">
+An ordered list of directories in which Mason will search for components. See
+also <em>component root</em>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1386"></a>
+<a name="IXT-12-1387"></a>
+current component</div>
+<p class="content">
+The component currently executing at any given point in a Mason request.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1388"></a>
+<a name="IXT-12-1389"></a>
+data directory</div>
+<p class="content">
+A directory in which Mason will store temporary files, including object files
+and cached data.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1390"></a>
+dhandler</div>
+<p class="content">
+Stands for &quot;default handler.&quot; A component invoked when no component
+matching the requested component path exists.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1391"></a>
+flag</div>
+<p class="content">
+A named property of a component that controls how Mason treats it. Attributes
+are set using the <code>&lt;%flags&gt;</code> tag and queried using the <code>$component-&gt;flag()</code> method. Flags do not inherit via the inheritance hierarchy.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1392"></a>
+inheritance hierarchy</div>
+<p class="content">
+A tree of parent/child relationships among components. Each component may
+inherit by default from an autohandler, or it may specify its parent (or
+declare that it has no parent) by setting its &quot;inherit&quot; flag.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1393"></a>
+Interpreter</div>
+<p class="content">
+A class responsible for supervising a pool of components and creating Mason
+Request objects. Available in Mason components as <code>$m-&gt;interp</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1394"></a>
+Lexer</div>
+<p class="content">
+A class responsible for turning a body of Mason source code into meaningful
+chunks for the Compiler.
+</p>
+
+</ul>
+<ul>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1395"></a>
+method</div>
+<p class="content">
+A special kind of subcomponent that can be inherited via the inheritance
+hierarchy and called externally. Methods are defined using the <code>&lt;%method&gt;</code> tag and invoked via <code>$component-&gt;call_method()</code> or with the colon-containing <code>component:method</code> syntax in <code>$m-&gt;comp()</code> calls and the like.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1396"></a>
+object file</div>
+<p class="content">
+A filesystem-cached version of the Compiler's output for a single component
+source file.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1397"></a>
+parameter</div>
+<p class="content">
+In this book, generally used to refer to a settable property of any of the
+pieces of the Mason framework. Parameters for several classes can be passed to
+a single class's constructor method, and the <code>Class::Container</code> module will make certain that parameters get routed to their intended
+destination.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1398"></a>
+<a name="IXT-12-1399"></a>
+parent component</div>
+<p class="content">
+A single component that another component inherits from. Each component may
+have zero or one parent. See also <em>inheritance hierarchy</em>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1400"></a>
+request</div>
+<p class="content">
+Depending on context, may mean the Mason Request object <code>$m</code>, the Apache request object <code>$r</code>, or the HTTP request initiated by the end user in a web context. The three
+usually exist simultaneously in a one-to-one correspondence, so the term
+&quot;request&quot; may sometimes even refer to all three of these.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1401"></a>
+<a name="IXT-12-1402"></a>
+requested component</div>
+<p class="content">
+The component originally specified in the <code>exec()</code> Interpreter method, or if no such component exists, the first dhandler that
+accepts responsibility for the request. In a web-deployed Mason application,
+the requested component usually matches the URL seen in a web browser. The
+value of the requested component remains constant throughout a request.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1403"></a>
+Resolver</div>
+<p class="content">
+A class responsible for all interaction between the Interpreter and the
+underlying storage mechanism for component source files.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1404"></a>
+site</div>
+<p class="content">
+In this book, used to refer to any deployed Mason application. This is most
+commonly a web site but may be any collection of Mason components together with
+an Interpreter to render them.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1405"></a>
+source file</div>
+<p class="content">
+A file containing the Mason source code for a component. A single source file
+may contain several component definitions if it contains subcomponents or
+methods. See also <em>object file</em>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1406"></a>
+<a name="IXT-12-1407"></a>
+subcomponent</div>
+<p class="content">
+A privately scoped component defined in another component. Subcomponents are
+defined using the <code>&lt;%def&gt;</code> tag and invoked via the normal component-calling techniques.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+<a name="IXT-12-1408"></a>
+wrapping chain</div>
+<p class="content">
+A list of components constructed at the beginning of the request by finding the
+parent, grandparent, and so on of the requested component. The requested
+component is always at the bottom of the wrapping chain, and the top-level
+autohandler is usually at the top.
+</p>
+
+</ul>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<b>Glossary</b>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

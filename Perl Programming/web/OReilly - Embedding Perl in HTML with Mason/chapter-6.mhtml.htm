@@ -1,0 +1,895 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<b>6</b>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 6: The Lexer, Compiler, Resolver, and Interpreter Objects</h1><p class="content">
+<a name="CHP-6"></a>
+
+</p>
+<p class="content">
+Now that you're familiar with Mason's basic syntax and some of its more
+advanced features, it's time to explore the details of how the various pieces
+of the Mason architecture work together to process components. By knowing the
+framework well, you can use its pieces to your advantage, processing components
+in ways that match your intentions.
+</p>
+<p class="content">
+In this chapter we'll discuss four of the persistent objects in the <a name="IXT-6-794"></a>
+ Mason framework: the Interpreter, Resolver, Lexer, and Compiler. These objects
+are created once (in a <code>mod_perl</code> setting, they're typically created when the server is starting up) and then
+serve many Mason requests, each of which may involve processing many Mason
+components.
+</p>
+<p class="content">
+Each of these four objects has a distinct purpose. The <a name="IXT-6-795"></a>
+ Resolver is responsible for all interaction with the underlying component
+source storage mechanism, which is typically a set of directories on a
+filesystem. The main job of the Resolver is to accept a component path as input
+and return various properties of the component such as its source, time of last
+modification, unique identifier, and so on.
+</p>
+<p class="content">
+The <a name="IXT-6-796"></a>
+ Lexer is responsible for actually processing the component source code and
+finding the Mason directives within it. It interacts quite closely with the <a name="IXT-6-797"></a>
+ Compiler, which takes the Lexer's output and generates a Mason component
+object suitable for interpretation at runtime.
+</p>
+<p class="content">
+The <a name="IXT-6-798"></a>
+ Interpreter ties the other three objects together. It is responsible for
+taking a component path and arguments and generating the resultant output. This
+involves getting the component from the resolver, compiling it, then caching
+the compiled version so that next time the interpreter encounters the same
+component it can skip the resolving and compiling phases.
+</p>
+<p class="content">
+<a href="chapter-6.mhtml.htm#CHP-6-FIG-1" tppabs="http://www.masonbook.com/book/chapter-6.mhtml#CHP-6-FIG-1">Figure 6-1</a> illustrates the relationship between these four objects. The Interpreter has a Compiler and a Resolver, and the Compiler has a Lexer.
+</p>
+
+<p class="content">
+<a name="CHP-6-FIG-1"></a>
+<br />
+<img src="mas_0601.png" tppabs="http://www.masonbook.com/book/figures/mas_0601.png" width="199" height="217" /><br />
+<span class="caption">Figure 6-1.  The
+ Interpreter and its cronies</span>
+
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Passing Parameters to Mason Classes</h2><p class="content">
+<a name="CHP-6-SECT-1"></a>
+
+</p>
+<p class="content">
+An interesting feature of the <a name="perlhtmlmason-IDXTERM-458"></a>
+<a name="perlhtmlmason-IDXTERM-459"></a>
+<a name="perlhtmlmason-IDXTERM-460"></a>
+ Mason code is that, if a particular object contains another object, the
+containing object will accept constructor parameters intended for the contained
+object. For example, the Interpreter object will accept parameters intended for
+the Compiler or Resolver and do the right thing with them. This means that you
+often don't need to know exactly where a parameter goes. You just pass it to
+the object at the top of the chain.
+</p>
+<p class="content">
+Even better, if you decide to create your own Resolver for use with Mason, the
+Interpreter will take any parameters that your Resolver accepts -- not the
+parameters defined by Mason's default Resolver class.
+</p>
+<p class="content">
+Also, if an object creates multiple delayed instances of another class, as the
+Interpreter does with Request objects, it will accept the created class's
+parameters in the same way, passing them to the created class at the
+appropriate time. So if you pass the <code>autoflush</code> parameter to the Interpreter's constructor, it will store this value and pass
+it to any Request objects it creates later.
+</p>
+<p class="content">
+This system was motivated in part by the fact that many users want to be able
+to configure Mason from an Apache config file. Under this system, the user just
+sets a certain configuration directive (such as <code>MasonAutoflush</code><sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> to set the <code>autoflush</code> parameter) in her <u>httpd.conf</u> file, and it gets directed automatically to the Request objects when they are
+created.
+</p>
+<p class="content">
+The details of how this system works are fairly magical and the code involved
+is so funky its creators don't know whether to rejoice or weep, but it works,
+and you can take advantage of this if you ever need to create your own custom
+Mason classes. <a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">Chapter 12</a> covers this in its discussion of the <code>Class::Container</code> class, where all the funkiness is  located.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h2>The Lexer</h2><p class="content">
+<a name="CHP-6-SECT-2"></a>
+
+</p>
+<p class="content">
+Mason's built-in <a name="IXT-6-799"></a>
+ Lexer class is, appropriately enough, <code>HTML::Mason::Lexer</code><a name="IXT-6-800"></a>
+<a name="IXT-6-801"></a>
+ . All it does is parse the text of Mason components and pass off the sections
+it finds to the Compiler. As of Version 1.10, the Lexer doesn't actually accept
+any parameters that alter its behavior, so there's not much for us to say in
+this section.
+</p>
+<p class="content">
+Future versions of Mason may include other Lexer classes to handle alternate
+source formats. Some people -- crazy people, we assure you -- have expressed a
+desire to write Mason components in XML, and it would be fairly simple to plug
+in a new Lexer class to handle this. If you're one of these crazy people, you
+may be interested in <a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">Chapter 12</a> to see how to use objects of your own design as pieces of the Mason framework.
+</p>
+<p class="content">
+By the way, you may be wondering why the Lexer isn't called a Parser, since its
+main job seems to be to parse the source of a component. The answer is that
+previous implementations of Mason had a Parser class with a different interface
+and role, and a different name was necessary to maintain forward (though not
+backward) compatibility.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h2>The Compiler</h2><p class="content">
+<a name="CHP-6-SECT-3"></a>
+
+</p>
+<p class="content">
+By default, Mason will use the<a name="IXT-6-802"></a>
+<a name="IXT-6-803"></a>
+<code>HTML::Mason::Compiler::ToObject</code> class to do its compilation. It is a subclass of the generic<a name="IXT-6-804"></a>
+<a name="IXT-6-805"></a>
+<code>HTML::Mason::Compiler</code> class, so we describe here all parameters that the <code>ToObject</code> variety will accept, including parameters inherited from its parent:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+allow_globals</div>
+<p class="content">
+<a name="ch06-idx-1006253-1"></a>
+<a name="ch06-idx-1006253-2"></a>
+
+</p>
+<p class="content">
+You may want to allow access to certain Perl variables across all components
+without declaring or initializing them each time. For instance, you might want
+to let all components share access to a <code>$dbh</code><a name="IXT-6-806"></a>
+<a name="IXT-6-807"></a>
+ variable that contains a <code>DBI</code> database handle, or you might want to allow access to an <code>Apache::Session</code><code>%session</code> variable.
+</p>
+<p class="content">
+For cases like these, you can set the <code>allow_globals</code> parameter to an array reference containing the names of any global variables
+you want to declare. Think of it like a broadly scoped <code>use vars</code> declaration; in fact, that's exactly the way it's implemented under the hood.
+If you wanted to allow the <code>$dbh</code> and <code>%session</code> variables, you would pass an <code>allow_globals</code> parameter like the following:
+</p>
+<div class="example-code">
+<pre>  allow_globals =&gt; ['$dbh', '%session']</pre>
+</div><p class="content">
+Or in an Apache configuration file:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonAllowGlobals $dbh
+  PerlAddVar MasonAllowGlobals %session</pre>
+</div><p class="content">
+The <code>allow_globals</code> parameter can be used effectively with the Perl <code>local()</code> function in an autohandler. The top-level autohandler is a convenient place to
+initialize global variables, and <code>local()</code> is exactly the right tool to ensure that they're properly cleaned up at the
+end of the request:
+</p>
+<div class="example-code">
+<pre>  # In the top-level autohandler:
+  &lt;%init&gt;
+    # $dbh and %session have been declared using 'allow_globals'
+    local $dbh = DBI-&gt;connect(...connection parameters...);
+    local *session;  # Localize the glob so the tie() expires properly
+    tie %session, 'Apache::Session::MySQL',
+       Apache::Cookie-&gt;fetch-&gt;{session_id}-&gt;value,
+      { Handle =&gt; $dbh, LockHandle =&gt; $dbh };
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+Remember, don't go too crazy with  globals: too many of them in the same process space can get very difficult to
+manage, and in an environment like Mason's, especially under <code>mod_perl</code>, the process space can be very large and long-lasting. But a few well-placed
+and well-scoped globals can make life nice.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+default_escape_flags</div>
+<p class="content">
+<a name="IXT-6-808"></a>
+<a name="IXT-6-809"></a>
+<a name="IXT-6-810"></a>
+
+</p>
+<p class="content">
+This parameter allows you to set a global default for the escape flags in <code>&lt;%</code><code>$substitution %&gt;</code> tags. For instance, if you set <code>default_escape_flags</code> to '<code>h</code>', then all substitution tags in your components will pass through HTML
+escaping. If you decide that an individual substitution tag should not obey the <code>default_escape_flag</code> parameter, you can use the special escape flag '<code>n</code>' to ignore the default setting and add whatever additional flags you might
+want to employ for that particular substitution tag.
+</p>
+<div class="example-code">
+<pre>  in compiler settings:
+  default_escape_flags =&gt; 'h',
+  
+  in a component:
+  You have &lt;% $amount %&gt; clams in your aquarium.
+  This is &lt;% $difference |n %&gt; more than your rival has.
+  &lt;a href=&quot;emotion.html?emotion=&lt;% $emotion |nu %&gt;&quot;&gt;Visit 
+   your &lt;% $emotion %&gt; place!&lt;/a&gt;
+  
+  acts as if you had written:
+  You have &lt;% $amount |h %&gt; clams in your aquarium.
+  This is &lt;% $difference %&gt; more than your rival has.
+  &lt;a href=&quot;emotion.html?emotion=&lt;% $emotion |u %&gt;&quot;&gt;Visit 
+   your &lt;% $emotion |h %&gt; place!&lt;/a&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+use_strict</div>
+<p class="content">
+<a name="ch06-idx-1006256-1"></a>
+<a name="ch06-idx-1006256-2"></a>
+
+</p>
+<p class="content">
+By default, all components will be run under Perl's <code>strict</code> pragma, which forces you to declare any Perl variables you use in your
+component. This is a very good feature, as the <code>strict</code><a name="perlhtmlmason-IDXTERM-475"></a>
+ pragma can help you avoid all kinds of programming slip-ups that may lead to
+mysterious and intermittent errors. If, for some sick reason you want to turn
+off the <code>strict</code> pragma for all your components, you can set the <code>use_strict</code> parameter to a false value and watch all hell get unleashed as you shoot your
+Mason application in the foot.
+</p>
+<p class="content">
+A far better solution is to just insert <code>no strict;</code> into your code whenever you use a construct that's not allowed under the <code>strict</code> pragma; this way your casual usage will be allowed in only the smallest
+enclosing block (in the worst case, one entire component). Even better would be
+to find a way to achieve your goals while obeying the rules of the <code>strict</code> pragma, because the rules generally enforce good programming  practice.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+in_package</div>
+<p class="content">
+<a name="IXT-6-811"></a>
+<a name="IXT-6-812"></a>
+
+</p>
+<p class="content">
+The code written in <code>&lt;%perl&gt;</code> sections (or other component sections that contain Perl code) must be compiled
+in the context of some package, and the default package is <code>HTML::Mason::Commands</code><a name="IXT-6-813"></a>
+ .<sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a> To specify a different package, set the <code>in_package</code> compiler parameter. Under normal circumstances you shouldn't concern yourself
+with this package name (almost everything in Mason is done with lexically
+scoped <code>my</code> variables), but for historical reasons you're allowed to change it to whatever
+package you want.
+</p>
+<p class="content">
+Related settings are the Compiler's <code>allow_globals</code> parameter/method and the Interpreter's <code>set_global()</code><a name="IXT-6-814"></a>
+ method. These let you declare and assign to variables in the package you
+specified with <code>in_package</code>, without actually needing to specify that package again by name.
+</p>
+<p class="content">
+You may also want to control the package name in order to import symbols
+(subroutines, constants, etc.) for use in components. Although the importing of
+subroutines seems to be gradually going out of style as people adopt more
+strict object-oriented programming practices, importing constants is still
+quite popular, and especially useful in a web context, where various numerical
+values are used as HTTP status codes. The following example, meant for use in
+an Apache server configuration file, exports all the common Apache constants so
+they can be used inside the site's Mason components.
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonInPackage My::Application
+  &lt;Perl&gt;
+    {
+    package My::Application;
+    use Apache::Constants qw(:common);
+    }
+  &lt;/Perl&gt;</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+comp_class</div>
+<p class="content">
+<a name="IXT-6-815"></a>
+<a name="IXT-6-816"></a>
+
+</p>
+<p class="content">
+By default, components created by the compiler will be created by calling the <code>HTML::Mason::Component</code><a name="IXT-6-817"></a>
+ class's <code>new()</code> method. If you want the components to be objects of a different class, perhaps
+one of your own creation, you may specify a different class name in the <code>comp_class</code> parameter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+lexer</div>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-482"></a>
+<a name="perlhtmlmason-IDXTERM-483"></a>
+<a name="perlhtmlmason-IDXTERM-484"></a>
+<a name="perlhtmlmason-IDXTERM-485"></a>
+
+</p>
+<p class="content">
+As of Release 1.10 you can redesign Mason on the fly by subclassing one or more
+of Mason's core classes and extending (or reducing, if that's your game) its
+functionality. In an informal sense, we speak of Release 1.10 as having made
+Mason more &quot;pluggable.&quot;
+</p>
+<p class="content">
+By default, Mason creates a Lexer object in the <code>HTML::Mason::Lexer</code> class. By passing a <code>lexer</code> parameter to the Compiler, you can specify a different Lexer object with
+different behavior. For instance, if you like everything about Mason except for
+the syntax it uses for its component files, you could create a Lexer object
+that lets you write your components in a format that works well with your
+favorite WYSIWYG <a name="IXT-6-818"></a>
+ HTML editor, in a Python-esque whitespace soup, or however you like.
+</p>
+<p class="content">
+The <code>lexer</code> parameter should contain an object that inherits from the <code>HTML::Mason::Lexer</code> class. As an alternative to creating the object yourself and passing it to the
+Compiler, you may instead specify a <code>lexer_class</code> parameter, and the Compiler will create a new Lexer object for you by calling
+the specified package's <code>new()</code> method. This alternative is often preferable when it's inconvenient to create
+new Perl objects, such as when you're configuring Mason from a web server's
+configuration file. In this case, you should also pass any parameters that are
+needed for your Lexer's <code>new()</code> method, and they will find their way there.
+</p>
+<p class="content">
+<a name="IXT-6-819"></a>
+
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-4"></a>
+<h3>Altering Every Component's Content</h3><p class="content">
+<a name="CHP-6-SECT-3.1"></a>
+
+</p>
+<p class="content">
+Several access points let you step in to the compilation process and alter the
+text of each component as it gets processed. The <code>preprocess</code>, <code>postprocess_perl</code>, <code>postprocess_text</code>, <code>preamble</code>, and <code>postamble</code> parameters let you exert a bit of ad hoc control over Mason's processing of
+your components.<a name="perlhtmlmason-IDXTERM-492"></a>
+
+</p>
+<p class="content">
+<a href="chapter-6.mhtml.htm#CHP-6-FIG-2" tppabs="http://www.masonbook.com/book/chapter-6.mhtml#CHP-6-FIG-2">Figure 6-2</a> illustrates the role of each of these five parameters.
+</p>
+
+<p class="content">
+<a name="CHP-6-FIG-2"></a>
+<br />
+<img src="mas_0602.png" tppabs="http://www.masonbook.com/book/figures/mas_0602.png" width="463" height="99" /><br />
+<span class="caption">Figure 6-2.  Component
+ processing hooks</span>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+preprocess</div>
+<p class="content">
+With the <code>preprocess</code><a name="IXT-6-820"></a>
+<a name="IXT-6-821"></a>
+ parameter, you may specify a reference to a subroutine through which all
+components should be preprocessed before the compiler gets hold of them. The
+compiler will pass your subroutine the entire text of the component in a scalar
+reference. Your subroutine should modify the text in that reference directly --
+any return value will be ignored.
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-495"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-496"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-497"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-498"></a>
+
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+postprocess_perl</div>
+<p class="content">
+The sections of a Mason component can be coarsely divided into three
+categories: Perl sections (<code>%</code>-lines, <code>&lt;%init&gt;</code> blocks, and so on), sections for special Mason directives (<code>&lt;%args&gt;</code> blocks, <code>&lt;%flags&gt;</code> blocks, and so on), and plain text sections (anything outside the other two
+types of sections). The Perl and text sections can become part of the
+component's final output, whereas the Mason directives control how the output
+is created.
+</p>
+<p class="content">
+Similar to the <code>preprocess</code> directive, the <code>postprocess_perl</code> and <code>postprocess_text</code> directives let you step in and change a component's source before it is
+compiled. However, with these directives you're stepping into the action one
+step later, after the component source has been divided into the three types of
+sections just mentioned. Accordingly, the <code>postprocess_perl</code> parameter lets you process Perl sections, and the <code>postprocess_text</code> parameter lets you process text sections. There is no corresponding hook for
+postprocessing the special Mason sections.
+</p>
+<p class="content">
+As with the <code>preprocess</code> directive, the <code>postprocess</code> directives should specify a subroutine reference. Mason will pass the
+component source sections one at a time (again, as a scalar reference) to the
+subroutine you specify, and your subroutine should modify the text in-place.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+preamble</div>
+<p class="content">
+If you specify a string value for the<a name="IXT-6-822"></a>
+<a name="IXT-6-823"></a>
+<code>preamble</code> parameter, the text you provide will be prepended to every component that gets
+processed with this compiler. The string should contain Perl code, not Mason
+code, as it gets inserted verbatim into the component object after compilation.
+The default <code>preamble</code> is the empty string.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+postamble</div>
+<p class="content">
+The <code>postamble</code><a name="IXT-6-824"></a>
+<a name="IXT-6-825"></a>
+ parameter is just like the <code>preamble</code> parameter, except that the string you specify will get appended to the
+component rather than prepended. Like the <code>preamble</code>, the default <code>postamble</code> is the empty string.
+</p>
+<p class="content">
+One use for <code>preamble</code> and <code>postamble</code> might be an <a name="IXT-6-826"></a>
+ execution trace, in which you log the start and end events of each component.
+</p>
+<p class="content">
+One potential gotcha: if you have an explicit <code>return</code> statement in a component, no further code in that component will run,
+including code in its postamble. Thus it's not necessarily a good place to run <a name="IXT-6-827"></a>
+ cleanup code, unless you're positive you're never going to use <code>return</code> statements. Cleanup code is usually better placed in an autohandler or similar
+location. An alternate trick is to create objects in your preamble code and
+rely on their <code>DESTROY</code><a name="IXT-6-828"></a>
+ methods to tell you when they're going out of  scope.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Compiler Methods</h3><p class="content">
+<a name="CHP-6-SECT-3.2"></a>
+
+</p>
+<p class="content">
+Once an <code>HTML::Mason::Compiler::ToObject</code> object is created, the following methods may be invoked. Many of them simply
+return the value of a parameter that was passed (or set by default) when the <a name="perlhtmlmason-IDXTERM-511"></a>
+ Compiler was created. Some methods may be used by developers when building a
+site, while other methods should be called only by the various other pieces in
+the Mason framework. Though you may need to know how the latter methods work if
+you start plugging your own modules into the framework, you'll need to read the
+Mason documentation to find out more about those <a name="perlhtmlmason-IDXTERM-512"></a>
+<a name="perlhtmlmason-IDXTERM-513"></a>
+ methods, as we don't discuss them here.
+</p>
+<p class="content">
+The compiler methods are <code>comp_class()</code><a name="IXT-6-829"></a>
+ , <code>in_package()</code><a name="IXT-6-830"></a>
+ , <code>preamble()</code><a name="IXT-6-831"></a>
+ , <code>postamble()</code><a name="IXT-6-832"></a>
+ , <code>use_strict()</code><a name="IXT-6-833"></a>
+ , <code>allow_globals()</code><a name="IXT-6-834"></a>
+ , <code>default_escape_flags()</code><a name="IXT-6-835"></a>
+ , <code>preprocess()</code><a name="IXT-6-836"></a>
+ , <code>postprocess_perl()</code><a name="IXT-6-837"></a>
+ ,<a name="IXT-6-838"></a>
+<code>postprocess_text()</code> , and <code>lexer()</code><a name="IXT-6-839"></a>
+ .
+</p>
+<p class="content">
+Each of these methods returns the given property of the Compiler, which was
+typically set when the Compiler was created. If you pass an argument to these
+methods, you may also change the given property. One typically doesn't need to
+change any of the Compiler's properties after creation, but interesting effects
+could be achieved by doing so:
+</p>
+<div class="example-code">
+<pre>  % my $save_pkg = $m-&gt;interp-&gt;compiler-&gt;in_package;
+  % $m-&gt;interp-&gt;compiler-&gt;in_package('MyApp::OtherPackage');
+  &lt;&amp; /some/other/component &amp;&gt;
+  % $m-&gt;interp-&gt;compiler-&gt;in_package($save_pkg);</pre>
+</div><p class="content">
+The preceding example will compile the component <em>/some/other/component</em> -- and any components it calls -- in the package <code>MyApp::OtherPackage</code> rather than the default <code>HTML::Mason::Commands</code> package or whatever other package you specified using <code>in_package</code>.
+</p>
+<p class="content">
+Of course, this technique will work only if <em>/some/other/component</em> actually needs to be compiled at this point in the code; it may already be
+compiled and cached in memory or on disk, in which case changing the <code>in_package</code> property (or any other Compiler property) will have no effect. Because of
+this, changing  Compiler properties after the Compiler is created is neither a great idea nor
+officially supported, but if you know what you're doing, you can use it for
+whatever diabolical purposes you have in  mind.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h2>The Resolver</h2><p class="content">
+<a name="CHP-6-SECT-4"></a>
+
+</p>
+<p class="content">
+The default <a name="perlhtmlmason-IDXTERM-528"></a>
+ Resolver, <code>HTML::Mason::Resolver::File</code><a name="IXT-6-840"></a>
+ , finds components and their meta-information (for example, modification date
+and file length) on disk. The Resolver is a pretty simple thing, but it's
+useful to give it its own place in the pluggable Mason framework because it
+allows a developer to use whatever storage mechanism she wants for her
+components.
+</p>
+<p class="content">
+The <code>HTML::Mason::Resolver::File</code> class accepts only one parameter:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+comp_root</div>
+<p class="content">
+<a name="ch06-idx-1006280-1"></a>
+
+</p>
+<p class="content">
+The<a name="IXT-6-841"></a>
+<code>comp_root</code> parameter is Mason's component root. It specifies where components may be
+found on disk. It is roughly analogous to Perl's <code>@INC</code> array or the shell's <code>$PATH</code> variable. You may specify <code>comp_root</code> as a string containing the directory in which to search for components or as
+an array reference of array references like so:
+</p>
+<div class="example-code">
+<pre>  my $comp_root = [
+                   [web    =&gt; '/usr/local/httpd/documents'],
+                   [shared =&gt; '/usr/local/mason/comps'],
+                   [custom =&gt; '/home/ken/my_components'],
+                  ];
+  my $resolver = HTML::Mason::Resolver::File-&gt;new(comp_root =&gt; $comp_root);</pre>
+</div><p class="content">
+Every time the Resolver is asked to find a component on disk, it will search
+these three directories in the given order, as discussed in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<p class="content">
+After a  Resolver has been created, you may call its <code>comp_root()</code><a name="IXT-6-842"></a>
+ method, which returns the value of the <code>comp_root</code> parameter as it was set at creation time.
+</p>
+
+</ul>
+<p class="content">
+If you don't provide a <code>comp_root</code> parameter, it defaults to something reasonably sensible. In a web context it
+defaults to the server's <code>DocumentRoot</code>; otherwise, it defaults to the current working directory.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>The Interpreter</h2><p class="content">
+<a name="CHP-6-SECT-5"></a>
+
+</p>
+<p class="content">
+The <a name="perlhtmlmason-IDXTERM-534"></a>
+ Interpreter is the center of Mason's universe. It is responsible for
+coordinating the activities of the Compiler and Resolver, as well as creating
+Request objects. Its main task involves receiving requests for components and
+generating the resultant output of those requests. It is also responsible for
+several tasks behind the scenes, such as caching components in memory or on
+disk. It exposes only a small part of its object API for public use; its
+primary interface is via its constructor, the <code>new()</code><a name="IXT-6-843"></a>
+<a name="IXT-6-844"></a>
+ method.
+</p>
+<p class="content">
+The <code>new()</code><a name="IXT-6-845"></a>
+ method accepts lots of parameters. It accepts any parameter that its Resolver
+or Compiler (and through the Compiler, the Lexer) classes accept in their <code>new()</code> methods; these parameters will be transparently passed along to the correct
+constructor. It also accepts the following parameters of its own:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+autohandler_name</div>
+<p class="content">
+<a name="IXT-6-846"></a>
+<a name="IXT-6-847"></a>
+
+</p>
+<p class="content">
+This parameter specifies the name that Mason uses for autohandler files. The
+default name is &quot;autohandler.&quot;
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+code_cache_max_size</div>
+<p class="content">
+<a name="IXT-6-848"></a>
+
+</p>
+<p class="content">
+This <a name="IXT-6-849"></a>
+ parameter sets the limit, in bytes, of the in-memory cache for component code.
+The default is 10 megabytes (10 * 1024 * 1024). This is not the same thing as
+the on-disk cache for component code, which will keep growing without bound
+until all components are cached on disk. It is also different from the data
+caches, the sizes of which you control through the <code>$m-&gt;cache</code> and <code>$m-&gt;cache_self</code> methods.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+data_dir</div>
+<p class="content">
+<a name="IXT-6-850"></a>
+
+</p>
+<p class="content">
+This <a name="IXT-6-851"></a>
+ parameter specifies the directory under which Mason stores its various data,
+such as compiled components, cached data, and so on. This cannot be changed
+after the Interpreter is created.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+ignore_warnings_expr</div>
+<p class="content">
+<a name="IXT-6-852"></a>
+
+</p>
+<p class="content">
+Normally, warnings issued during the loading of a component are treated as
+fatal errors by Mason. Mason will ignore warnings that match the regular
+expression specified in this <a name="IXT-6-853"></a>
+ parameter. The default setting is <code>qr/Subroutine .* redefined/i</code>. If you change this parameter, you will probably want to make sure that this
+particular warning continues to be ignored, as this allows you to declare named
+subroutines in the <code>&lt;%once&gt;</code> section of components and not cause an error when the component is reloaded
+and the subroutine is redefined.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+preloads</div>
+<p class="content">
+<a name="IXT-6-854"></a>
+
+</p>
+<p class="content">
+This <a name="IXT-6-855"></a>
+ parameter takes a list of components to be preloaded when the Interpreter is
+created. In a <code>mod_perl</code> setting this can lead to substantial memory savings and better performance,
+since the components will be compiled in the server's parent process and
+initially shared among the server children. It also reduces the amount of
+processing needed during individual requests, as preloaded components will be
+standing at the ready.
+</p>
+<p class="content">
+The list of components can either be specified by listing each component path
+individually or by using <code>glob()</code>-style patterns to specify several component paths.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+static_source</div>
+<p class="content">
+<a name="IXT-6-856"></a>
+
+</p>
+<p class="content">
+Passing a true value for this <a name="IXT-6-857"></a>
+ parameter causes Mason to execute in &quot;static source&quot; mode, which
+means that it will compile a source file only once, ignoring subsequent
+changes. In addition, it will resolve a given path only once, so adding or
+removing components will not be noticed by the interpreter.
+</p>
+<p class="content">
+If you do want to make changes to components when Mason is in this mode, you
+will need to delete all of Mason's object files and, if you are running Mason
+under <code>mod_perl</code>, restart the Apache server.
+</p>
+<p class="content">
+This mode is useful in order to gain a small performance boost on a heavily
+trafficked site when your components don't change very often. If you don't need
+the performance boost, then don't bother turning this mode on, as it just makes
+for extra administrative work when you change components.
+</p>
+<p class="content">
+<a name="IXT-6-858"></a>
+<a name="IXT-6-859"></a>
+<a name="IXT-6-860"></a>
+<a name="IXT-6-861"></a>
+<a name="IXT-6-862"></a>
+<a name="IXT-6-863"></a>
+<a name="IXT-6-864"></a>
+<a name="IXT-6-865"></a>
+
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+compiler</div>
+<p class="content">
+As we mentioned before, each Interpreter object creates a Compiler and a
+Resolver object that it works with to serve requests. You can substantially
+alter the compilation or resolution tasks by providing your own Compiler or
+Resolver when creating the Interpreter, passing them as the values for the <code>compiler</code> or <code>resolver</code> parameters. Alternatively, you may pass <code>compiler_class</code> or <code>resolver_class</code> parameters (and any arguments required by those classes' <code>new()</code> methods) and allow the Interpreter to construct the Compiler or Resolver from
+the other  parameters you specify:
+</p>
+<div class="example-code">
+<pre>  my $interp = HTML::Mason::Interpreter-&gt;new
+    (
+     resolver_class =&gt; 'MyApp::Resolver',
+     compiler_class =&gt; 'MyApp::Compiler',
+     comp_root =&gt; '/home/httpd/docs',  # Goes to resolver
+     default_escape_flags =&gt; 'h',      # Goes to compiler
+    );</pre>
+</div><p class="content">
+By default, the Compiler will be an <code>HTML::Mason::Compiler::ToObject</code> object, and the Resolver will be an <code>HTML::Mason::Resolver::File</code> object.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-8"></a>
+<h3>Request Parameters Passed to the Interpreter</h3><p class="content">
+<a name="CHP-6-SECT-5.1"></a>
+
+</p>
+<p class="content">
+Besides the <a name="IXT-6-866"></a>
+ Interpreter's own parameters, you can pass the Interpreter any parameter that
+the Request object accepts. These parameters will be saved internally and used
+as defaults when making a new Request object.
+</p>
+<p class="content">
+The parameters that can be set are: <code>autoflush</code><a name="IXT-6-867"></a>
+<a name="IXT-6-868"></a>
+ , <code>data_cache_defaults</code><a name="IXT-6-869"></a>
+<a name="IXT-6-870"></a>
+ , <code>dhandler</code><a name="IXT-6-871"></a>
+<a name="IXT-6-872"></a>
+ , <code>error_mode</code><a name="IXT-6-873"></a>
+<a name="IXT-6-874"></a>
+ , <code>error_format</code><a name="IXT-6-875"></a>
+<a name="IXT-6-876"></a>
+ , and <code>out_method</code><a name="IXT-6-877"></a>
+<a name="IXT-6-878"></a>
+ .
+</p>
+<p class="content">
+Besides accepting these as constructor parameters, the Interpreter also
+provides get/set accessors for these attribute. Setting these attributes in the
+interpreter will change the attribute for all future Requests, though it will <em>not</em> change the current Request.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. All initialization parameters have corresponding Apache configuration names,
+found by switching from lower_case_with_underscores to StudlyCaps and
+prepending &quot;Mason.&quot; -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. This package name is purely historical; it may be changed in the future. -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<b>6</b>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

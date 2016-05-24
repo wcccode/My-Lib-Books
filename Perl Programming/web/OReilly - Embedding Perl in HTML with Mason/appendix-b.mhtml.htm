@@ -1,0 +1,653 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<b>B</b>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Appendix B: Object Constructor Parameters</h1><p class="content">
+<a name="APP-B"></a>
+
+</p>
+<p class="content">
+This appendix provides a quick reference to all the<a name="perlhtmlmason-IDXTERM-1173"></a>
+ constructor parameters of the major pieces of the Mason framework. See <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a> or the official Mason documentation for more detail, including information on how and where to specify them.
+</p>
+<p class="content">
+It's important to understand the relationships among the various pieces of
+Mason's framework; <a href="appendix-b.mhtml.htm#APP-B-FIG-1" tppabs="http://www.masonbook.com/book/appendix-b.mhtml#APP-B-FIG-1">Figure B-1</a> shows how they relate to one another. Keep in mind that you can pass any class's parameters to a class that contains it. For example, you can pass any Compiler parameters to the <code>new()</code> method of the Interpreter, ApacheHandler, or CGIHandler. In the figure, the
+solid arrows indicate a &quot;contains one&quot; relationship, and the dashed
+arrows indicate a &quot;contains many&quot; relationship.
+</p>
+
+<p class="content">
+<a name="APP-B-FIG-1"></a>
+<br />
+<img src="mas_ab01.png" tppabs="http://www.masonbook.com/book/figures/mas_ab01.png" width="349" height="182" /><br />
+<span class="caption">Figure B-1.  An
+ outline for the Mason framework</span>
+
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>HTML::Mason::Interp</h2><p class="content">
+<a name="APP-B-SECT-1"></a>
+<a name="IXT-B-213"></a>
+<a name="IXT-B-214"></a>
+<a name="IXT-B-215"></a>
+
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="appb-3-fm2xml"></a>
+ <tr valign="top">
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Type  </td>
+  <td class="table-head">
+Default  </td>
+  <td class="table-head">
+Description  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-216"></a>
+<a name="IXT-B-217"></a>
+ autohandler_name (MasonAutohandlerName)  </td>
+  <td>
+string  </td>
+  <td>
+autohandler  </td>
+  <td>
+The filename to use for Mason's 'autohandler' capability  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-218"></a>
+<a name="IXT-B-219"></a>
+ code_cache_max_size (MasonCodeCacheMaxSize)  </td>
+  <td>
+string  </td>
+  <td>
+10485760  </td>
+  <td>
+The maximum size of the component code cache  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-220"></a>
+<a name="IXT-B-221"></a>
+ compiler (MasonCompiler)  </td>
+  <td>
+object  </td>
+  <td>
+HTML::Mason::Compiler::ToObject-&gt;new  </td>
+  <td>
+A Compiler object for compiling components  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-222"></a>
+<a name="IXT-B-223"></a>
+ data_dir (MasonDataDir)  </td>
+  <td>
+string  </td>
+  <td>
+  </td>
+  <td>
+A directory for storing cache files and other state information  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-224"></a>
+<a name="IXT-B-225"></a>
+ ignore_warnings_expr (MasonIgnoreWarningsExpr)  </td>
+  <td>
+regex  </td>
+  <td>
+qr/Subroutine .* redefined/i  </td>
+  <td>
+A regular expression describing Perl warning messages to ignore  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-226"></a>
+<a name="IXT-B-227"></a>
+ preloads (MasonPreloads)  </td>
+  <td>
+list  </td>
+  <td>
+  </td>
+  <td>
+A list of components to load immediately when creating the Interpreter  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-228"></a>
+<a name="IXT-B-229"></a>
+ resolver (MasonResolverClass)  </td>
+  <td>
+object  </td>
+  <td>
+HTML::Mason::Resolver::File-&gt;new  </td>
+  <td>
+A Resolver object (or class) for fetching components from storage  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-230"></a>
+<a name="IXT-B-231"></a>
+ static_source (MasonStaticSource)  </td>
+  <td>
+boolean  </td>
+  <td>
+0  </td>
+  <td>
+When true, we only compile source files once  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-232"></a>
+<a name="IXT-B-233"></a>
+ use_object_files (MasonUseObjectFiles)  </td>
+  <td>
+boolean  </td>
+  <td>
+1  </td>
+  <td>
+Whether to cache component objects on disk   </td>
+ </tr>
+</table>
+<span class="caption">Table B-1.  </span>
+<a name="TOC-ANCHOR-2"></a>
+<h2>HTML::Mason::Request</h2><p class="content">
+<a name="APP-B-SECT-2"></a>
+<a name="IXT-B-234"></a>
+<a name="IXT-B-235"></a>
+<a name="IXT-B-236"></a>
+
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="appb-5-fm2xml"></a>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Type  </td>
+  <td class="table-head">
+Default  </td>
+  <td class="table-head">
+Description  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-237"></a>
+<a name="IXT-B-238"></a>
+ autoflush (MasonAutoflush)  </td>
+  <td>
+boolean  </td>
+  <td>
+0  </td>
+  <td>
+Whether output should be buffered or sent immediately  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-239"></a>
+<a name="IXT-B-240"></a>
+ data_cache_defaults (MasonDataCacheDefaults)  </td>
+  <td>
+hash  </td>
+  <td>
+  </td>
+  <td>
+A hash of default parameters for Cache::Cache  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-241"></a>
+<a name="IXT-B-242"></a>
+ dhandler_name (MasonDhandlerName)  </td>
+  <td>
+string  </td>
+  <td>
+dhandler  </td>
+  <td>
+The filename to use for Mason's 'dhandler' capability  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-243"></a>
+<a name="IXT-B-244"></a>
+ error_format (MasonErrorFormat)  </td>
+  <td>
+string  </td>
+  <td>
+text  </td>
+  <td>
+How error conditions are returned to the caller (brief, text, line or html)  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-245"></a>
+<a name="IXT-B-246"></a>
+ error_mode(MasonErrorMode)  </td>
+  <td>
+string  </td>
+  <td>
+fatal  </td>
+  <td>
+How error conditions are manifest (output or fatal)  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-247"></a>
+<a name="IXT-B-248"></a>
+ max_recurse (MasonMaxRecurse)  </td>
+  <td>
+string  </td>
+  <td>
+32  </td>
+  <td>
+The maximum recursion depth for component, inheritance, and request stack  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-249"></a>
+<a name="IXT-B-250"></a>
+ out_method (MasonOutMethod)  </td>
+  <td>
+code  </td>
+  <td>
+  sub { package HTML::
+  Mason::Request; 
+  print STDOUT 
+  grep({defined $_;}@_); }
+  </td>
+  <td>
+A subroutine or scalar reference through which all output will pass   </td>
+ </tr>
+</table>
+<span class="caption">Table B-2.  </span>
+<a name="TOC-ANCHOR-3"></a>
+<h2>HTML::Mason::Resolver::File</h2><p class="content">
+<a name="APP-B-SECT-3"></a>
+<a name="IXT-B-251"></a>
+
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="appb-7-fm2xml"></a>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Type  </td>
+  <td class="table-head">
+Default  </td>
+  <td class="table-head">
+Description  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-252"></a>
+<a name="IXT-B-253"></a>
+ comp_root (MasonCompRoot)  </td>
+  <td>
+list  </td>
+  <td>
+DocumentRoot in a web setting, current directory in a standalone setting  </td>
+  <td>
+A string or array of arrays indicating the search path for component calls   </td>
+ </tr>
+</table>
+<span class="caption">Table B-3.  </span>
+<a name="TOC-ANCHOR-4"></a>
+<h2>HTML::Mason::ApacheHandler</h2><p class="content">
+<a name="APP-B-SECT-4"></a>
+<a name="IXT-B-254"></a>
+<a name="IXT-B-255"></a>
+<a name="IXT-B-256"></a>
+
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="appb-9-fm2xml"></a>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Type  </td>
+  <td class="table-head">
+Default  </td>
+  <td class="table-head">
+Description  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-257"></a>
+<a name="IXT-B-258"></a>
+ apache_status_title (MasonApacheStatusTitle)  </td>
+  <td>
+string  </td>
+  <td>
+HTML::Mason status  </td>
+  <td>
+The title of the Apache::Status page  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-259"></a>
+<a name="IXT-B-260"></a>
+ args_method(MasonArgsMethod)  </td>
+  <td>
+string  </td>
+  <td>
+mod_perl  </td>
+  <td>
+Whether to use CGI.pm or Apache::Request for parsing the incoming HTTP request  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-261"></a>
+<a name="IXT-B-262"></a>
+ decline_dirs (MasonDeclineDirs)  </td>
+  <td>
+boolean  </td>
+  <td>
+1  </td>
+  <td>
+Whether Mason should decline to handle requests for directories  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-263"></a>
+<a name="IXT-B-264"></a>
+ interp (MasonInterpClass)  </td>
+  <td>
+object  </td>
+  <td>
+HTML::Mason::Interp-&gt;new  </td>
+  <td>
+A Mason interpreter object (or class) for processing components   </td>
+ </tr>
+</table>
+<span class="caption">Table B-4.  </span>
+<a name="TOC-ANCHOR-5"></a>
+<h2>HTML::Mason::Compiler</h2><p class="content">
+<a name="APP-B-SECT-5"></a>
+<a name="IXT-B-265"></a>
+<a name="IXT-B-266"></a>
+<a name="IXT-B-267"></a>
+
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="appb-11-fm2xml"></a>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Type  </td>
+  <td class="table-head">
+Default  </td>
+  <td class="table-head">
+Description  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-268"></a>
+<a name="IXT-B-269"></a>
+ allow_globals (MasonAllowGlobals)  </td>
+  <td>
+list  </td>
+  <td>
+[ ]  </td>
+  <td>
+An array of names of Perl variables that are allowed globally within components  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-270"></a>
+<a name="IXT-B-271"></a>
+ default_escape_flags (MasonDefaultEscapeFlags)  </td>
+  <td>
+string  </td>
+  <td>
+  </td>
+  <td>
+Escape flags that will apply by default to all Mason tag output  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-272"></a>
+<a name="IXT-B-273"></a>
+ lexer (MasonLexerClass)  </td>
+  <td>
+object  </td>
+  <td>
+HTML::Mason::Lexer-&gt;new  </td>
+  <td>
+A Lexer object (or class) that will scan component text during compilation  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-274"></a>
+<a name="IXT-B-275"></a>
+ postprocess_perl (MasonPostprocessPerl)  </td>
+  <td>
+code  </td>
+  <td>
+  </td>
+  <td>
+A subroutine through which all Perl code will be sent during compilation  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-276"></a>
+<a name="IXT-B-277"></a>
+ postprocess_text (MasonPostprocessText)  </td>
+  <td>
+code  </td>
+  <td>
+  </td>
+  <td>
+A subroutine through which all plain text will be sent during compilation  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+<a name="IXT-B-278"></a>
+<a name="IXT-B-279"></a>
+ preprocess (MasonPreprocess)  </td>
+  <td>
+code  </td>
+  <td>
+  </td>
+  <td>
+A subroutine through which all component text will be sent during  compilation   </td>
+ </tr>
+</table>
+<span class="caption">Table B-5.  </span>
+<a name="TOC-ANCHOR-6"></a>
+<h2>HTML::Mason::Component</h2><p class="content">
+<a name="APP-B-SECT-6"></a>
+<a name="IXT-B-280"></a>
+
+</p>
+<p class="content">
+None.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>HTML::Mason::Buffer</h2><p class="content">
+<a name="APP-B-SECT-7"></a>
+<a name="IXT-B-281"></a>
+<a name="IXT-B-282"></a>
+
+</p>
+<p class="content">
+None.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h2>HTML::Mason::CGIHandler</h2><p class="content">
+<a name="APP-B-SECT-8"></a>
+
+</p>
+<p class="content">
+None.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h2>HTML::Mason::Lexer</h2><p class="content">
+<a name="APP-B-SECT-9"></a>
+<a name="IXT-B-283"></a>
+
+</p>
+<p class="content">
+None.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<b>B</b>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2061 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<b>A</b>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Appendix A: The Mason API</h1><p class="content">
+<a name="APP-A"></a>
+
+</p>
+<p class="content">
+To provide a convenient reference to the main elements of the Mason class
+hierarchy, we've collected the <a name="IXT-A-1"></a>
+ APIs of the Interpreter, Resolver, Compiler, Lexer, ApacheHandler, CGIHandler,
+Component, and Request classes. The parameters to each class's <code>new()</code> method are listed in <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a>. Many of these parameters also correspond to simple accessor methods for getting/setting their values; those methods are not listed here, so see <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a complete list.
+</p>
+<p class="content">
+We have attempted to show the arguments taken by each method. Replaceable text
+is shown in angle brackets (<code>&lt;&gt;</code>). indicating a value you must specify. An ellipsis (<code>...</code>) indicates a list of values. Optional arguments are indicated by square
+brackets (<code>[]</code>). An optional list of arguments doesn't get both kinds of brackets, because we
+figure that's just a list with no elements in it. If alternate sets of
+parameters can be given (such as <code>comp_source</code> versus <code>comp_file</code> for the Interpreter's <code>make_component()</code> method), we sometimes indicate this by separate listings.
+</p>
+<p class="content">
+We intend this appendix to be a quick reference; in many cases the official
+Mason documentation will provide more detail.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Interpreter</h2><p class="content">
+<a name="APP-A-SECT-1"></a>
+<a name="IXT-A-2"></a>
+
+</p>
+<p class="content">
+The Interpreter is the main entry point for <a name="perlhtmlmason-IDXTERM-1061"></a>
+<a name="perlhtmlmason-IDXTERM-1062"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-1063"></a>
+ Mason and coordinates the efforts of several other classes. The default
+Interpreter class is <code>HTML::Mason::Interp</code><a name="IXT-A-3"></a>
+ .
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+Creates a new Mason Interpreter and returns it. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a list of parameters accepted.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-2"></a>
+<h3>Object Properties</h3><p class="content">
+<a name="APP-A-SECT-1.1"></a>
+<a name="appa-idx-1007036-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+compiler()</div>
+<p class="content">
+<a name="IXT-A-4"></a>
+
+</p>
+<p class="content">
+Returns the Compiler <a name="perlhtmlmason-IDXTERM-1065"></a>
+ object associated with this Interpreter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+resolver()</div>
+<p class="content">
+<a name="IXT-A-5"></a>
+
+</p>
+<p class="content">
+Returns the Resolver object associated with this Interpreter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+static_source()</div>
+<p class="content">
+<a name="IXT-A-6"></a>
+
+</p>
+<p class="content">
+Returns true or false, depending on whether the <code>static_source</code> parameter is currently set for this Interpreter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+autoflush([&lt;true or false&gt;])</div>
+<p class="content">
+<a name="IXT-A-7"></a>
+
+</p>
+<p class="content">
+Returns true or false, depending on whether the output buffers will be flushed
+immediately upon receiving output or not. An optional argument sets the value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+autohandler_name()</div>
+<p class="content">
+<a name="IXT-A-8"></a>
+
+</p>
+<p class="content">
+Returns the name of the file to be used for Mason's autohandler mechanism
+(i.e., <code>&quot;autohandler&quot;</code>).
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+dhandler_name([&lt;name&gt;])</div>
+<p class="content">
+<a name="IXT-A-9"></a>
+
+</p>
+<p class="content">
+Returns the name of the file to be used for Mason's dhandler mechanism (i.e., <code>&quot;dhandler&quot;</code>). An optional argument sets the value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+code_cache_max_size([&lt;size&gt;])</div>
+<p class="content">
+<a name="IXT-A-10"></a>
+
+</p>
+<p class="content">
+Returns the number of bytes allowed for caching of compiled component code. An
+optional argument sets the value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+ignore_warnings_expr([&lt;regex&gt;])</div>
+<p class="content">
+<a name="IXT-A-11"></a>
+
+</p>
+<p class="content">
+Returns a regular expression indicating warnings to ignore when calling or
+compiling components. An optional argument sets the value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+data_cache_defaults([&lt;hash reference&gt;])</div>
+<p class="content">
+<a name="IXT-A-12"></a>
+
+</p>
+<p class="content">
+Returns a hash reference of parameters that will be passed to the caching
+methods by default. An optional hash reference argument sets the value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+max_recurse([&lt;integer&gt;])</div>
+<p class="content">
+<a name="IXT-A-13"></a>
+
+</p>
+<p class="content">
+Returns an integer indicating the level of nesting allowed in component calls,
+as a deterrent to infinite component call loops. An optional argument sets the
+value.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+use_object_files()</div>
+<p class="content">
+<a name="IXT-A-14"></a>
+
+</p>
+<p class="content">
+Returns true or false, depending on whether the Interpreter will cache compiled
+components to disk as <a name="IXT-A-15"></a>
+ object files.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+preloads()</div>
+<p class="content">
+Returns reference to an array of glob-like patterns specifying components to be
+loaded when the Interpreter is created.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+files_written()</div>
+<p class="content">
+<a name="IXT-A-16"></a>
+
+</p>
+<p class="content">
+Returns a list of all files created by the Interpreter. This may be useful if
+you want to enforce certain file  permissions or  ownership.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-3"></a>
+<h3>Directories</h3><p class="content">
+<a name="APP-A-SECT-1.2"></a>
+<a name="appa-idx-1006888-2"></a>
+<a name="appa-idx-1006888-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+comp_root()</div>
+<p class="content">
+<a name="IXT-A-17"></a>
+
+</p>
+<p class="content">
+A pass-through method to the Resolver <a name="perlhtmlmason-IDXTERM-1069"></a>
+<a name="perlhtmlmason-IDXTERM-1070"></a>
+ method of the same name.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+object_dir()</div>
+<p class="content">
+<a name="IXT-A-18"></a>
+
+</p>
+<p class="content">
+Returns a string containing the name of the directory in which Mason's
+component objects will be cached.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+data_dir()</div>
+<p class="content">
+<a name="IXT-A-19"></a>
+
+</p>
+<p class="content">
+
+</p>
+<p class="content">
+ Returns the current value of the <code>data_dir</code> parameter.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-4"></a>
+<h3>Runtime Methods</h3><p class="content">
+<a name="APP-A-SECT-1.3"></a>
+<a name="IXT-A-20"></a>
+<a name="IXT-A-21"></a>
+<a name="IXT-A-22"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+exec(&lt;component&gt;, &lt;args...&gt;)</div>
+<p class="content">
+<a name="IXT-A-23"></a>
+
+</p>
+<p class="content">
+Initiates a new Mason request. The first argument should be the component to
+execute, specified either as an absolute pathname or as a component object. Any
+additional arguments will be passed to the component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+load(&lt;absolute component path&gt;)</div>
+<p class="content">
+<a name="IXT-A-24"></a>
+
+</p>
+<p class="content">
+Returns the component at the path specified by the argument. Throws an
+exception if no such component exists.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp_exists(&lt;absolute component path&gt;)</div>
+<p class="content">
+<a name="IXT-A-25"></a>
+
+</p>
+<p class="content">
+Returns true or false, depending on whether a component exists at the path
+specified by the argument.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+make_component(comp_file =&gt; &lt;path&gt; [, name =&gt; &lt;string&gt; ])</div>
+<p class="content">
+<a name="IXT-A-26"></a>
+
+</p>
+<p class="content">
+Creates a component object and returns it. The text of the component may be
+specified as a string in the <code>comp_source</code> parameter or as a filename in the <code>comp_file</code> parameter. You may also provide a <code>name</code> parameter to associate with this component. If no name is provided, the name
+will default to a string like <code>&quot;&lt;anonymous component&gt;&quot;</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+set_global(&lt;name&gt; =&gt; &lt;value&gt;)</div>
+<p class="content">
+<a name="IXT-A-27"></a>
+
+</p>
+<p class="content">
+Sets the value of a Perl global variable so that it will be available to
+components at runtime. The first argument names the variable in a string (i.e.,
+'$user'), including the leading <code>$</code>, <code>@</code>, or <code>%</code> character. The remaining arguments specify the value to assign. The name of
+the variable should <em>not</em> be fully package-qualified with <code>:</code>: characters; the variable will be created in the same package in which
+components  execute.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-5"></a>
+<h2>Request</h2><p class="content">
+<a name="APP-A-SECT-2"></a>
+
+</p>
+<p class="content">
+The <a name="perlhtmlmason-IDXTERM-1078"></a>
+<a name="perlhtmlmason-IDXTERM-1079"></a>
+ Request <a name="perlhtmlmason-IDXTERM-1080"></a>
+<a name="perlhtmlmason-IDXTERM-1081"></a>
+<a name="perlhtmlmason-IDXTERM-1082"></a>
+ class represents a chain of components executing in a particular context. A
+request is begun by invoking the Interpreter's <code>exec()</code><a name="IXT-A-28"></a>
+ method. The current Request object is available by default in components as
+the variable <code>$m</code>.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="appa-idx-1006901-1"></a>
+
+</p>
+<p class="content">
+Creates a new Request object. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a list of parameters accepted. Typically a Request is not created directly, but rather by invoking the Interpreter's <code>exec()</code> method. The default Request class is <code>HTML::Mason::Request</code><a name="IXT-A-29"></a>
+ , though it is different when using ApacheHandler or CGIHandler.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+instance()</div>
+<p class="content">
+<a name="IXT-A-30"></a>
+
+</p>
+<p class="content">
+Returns the Request currently running. This can be called as a class method
+(i.e., <code>HTML::Mason::Interp-&gt;instance()</code>) from code in which <code>$m</code> is unavailable. In a subrequest, the subrequest object, not the main request,
+will be  returned.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-6"></a>
+<h3>Object Properties</h3><p class="content">
+<a name="APP-A-SECT-2.1"></a>
+<a name="IXT-A-31"></a>
+<a name="IXT-A-32"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+interp()</div>
+<p class="content">
+<a name="IXT-A-33"></a>
+
+</p>
+<p class="content">
+Returns the Interpreter object associated with this Request.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+count()</div>
+<p class="content">
+<a name="IXT-A-34"></a>
+
+</p>
+<p class="content">
+Returns the Interpreter's counter value for this Request.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+error_mode([&lt;'fatal' or 'output'&gt;])</div>
+<p class="content">
+<a name="IXT-A-35"></a>
+
+</p>
+<p class="content">
+Returns the string <code>fatal</code> or <code>output</code>, depending on whether error conditions should trigger an exception (<code>fatal</code>) or display an error message in the regular output channel (<code>output</code>). The mode can be set with an optional argument.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+error_format([&lt;format&gt;])</div>
+<p class="content">
+<a name="IXT-A-36"></a>
+
+</p>
+<p class="content">
+Returns a string indicating how error messages will be formatted. The currently
+available choices are <code>brief</code>, <code>text</code>, <code>line</code>, and <code>html</code>. An optional argument sets the format.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+out_method([&lt;subroutine_reference or scalar_reference&gt;])</div>
+<p class="content">
+<a name="IXT-A-37"></a>
+
+</p>
+<p class="content">
+Returns the current value of the <code>out_method</code> parameter or optionally sets it if you pass a subroutine reference or a scalar
+reference as an argument.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+cgi_object()</div>
+<p class="content">
+<a name="IXT-A-38"></a>
+
+</p>
+<p class="content">
+This method is not present in the regular <code>HTML::Mason::Request</code> class, but it is added as a way to access the <code>CGI.pm</code> request object when using <code>HTML::Mason::CGIHandler</code>. It is also added when using <code>HTML::Mason::ApacheHandler</code> with the <code>CGI</code><code>args_method</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+ah()</div>
+<p class="content">
+Only available when using <code>HTML::Mason::ApacheHandler</code>, in which case the Apache Handler object is returned.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+apache_req()</div>
+<p class="content">
+Only available when using <code>HTML::Mason::ApacheHandler</code>, in which case the <code>mod_perl</code> request object <code>$r</code> is returned.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-7"></a>
+<h3>Altering the Request Flow</h3><p class="content">
+<a name="APP-A-SECT-2.2"></a>
+<a name="appa-idx-1007046-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+abort([&lt;value&gt;])</div>
+<p class="content">
+<a name="IXT-A-39"></a>
+
+</p>
+<p class="content">
+Terminates the current Request. You may optionally specify a value to be
+returned by the Interpreter's <code>exec()</code> method. In a web environment this value will ultimately become the HTTP
+response code. Accepts an optional exception argument to examine, otherwise <code>$@</code> will be examined.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+aborted()</div>
+<p class="content">
+<a name="IXT-A-40"></a>
+
+</p>
+<p class="content">
+Returns true if the current request was aborted (and caught by an <code>eval</code> block), or false otherwise. Accepts an exception argument to examine,
+otherwise <code>$@</code> will be examined.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+aborted_value()</div>
+<p class="content">
+<a name="IXT-A-41"></a>
+
+</p>
+<p class="content">
+If the current request was aborted, this returns the value passed to the <code>abort</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+decline()</div>
+<p class="content">
+<a name="IXT-A-42"></a>
+
+</p>
+<p class="content">
+Stops the execution of the current component and passes control to the next
+applicable dhandler. Any output already generated will be discarded. If no
+dhandler exists to handle this request, an exception will be thrown.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+dhandler_arg()</div>
+<p class="content">
+<a name="IXT-A-43"></a>
+
+</p>
+<p class="content">
+If the current request is being handled by a dhandler, this method will return
+the remainder of the request path with the dhandler's directory removed. If no
+dhandler is executing, this method will  return <code>undef</code>.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-8"></a>
+<h3>Caching</h3><p class="content">
+<a name="APP-A-SECT-2.3"></a>
+<a name="IXT-A-44"></a>
+<a name="IXT-A-45"></a>
+<a name="IXT-A-46"></a>
+
+</p>
+<p class="content">
+See <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a> for more information on the data <a name="IXT-A-47"></a>
+ cache and how to use it.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+cache(&lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-48"></a>
+
+</p>
+<p class="content">
+Returns the <code>Cache::Cache</code> object that manages this component's data cache.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+cache_self(&lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-49"></a>
+
+</p>
+<p class="content">
+Facilitates automatic caching of the current component's output and return
+value. The arguments to <code>cache_self()</code> specify how long the cached data should persist, whether it should be
+associated with a particular key, and the details of how the data should be
+cached.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-9"></a>
+<h3>Introspection</h3><p class="content">
+<a name="APP-A-SECT-2.4"></a>
+<a name="IXT-A-50"></a>
+<a name="IXT-A-51"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+caller()</div>
+<p class="content">
+<a name="IXT-A-52"></a>
+
+</p>
+<p class="content">
+Returns the component that invoked the currently executing <a name="IXT-A-53"></a>
+ component or <code>undef</code> if this is the topmost component executing.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+callers([&lt;n&gt;])</div>
+<p class="content">
+<a name="IXT-A-54"></a>
+
+</p>
+<p class="content">
+When called with no arguments, returns a list of all components currently
+executing. This is known as the 'component stack.' When called with an integer
+argument <code>n</code>, returns the component <code>n</code> levels up the execution stack. For instance, <code>$m-&gt;callers(1)</code> is equivalent to <code>$m-&gt;caller</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+caller_args(&lt;n&gt;)</div>
+<p class="content">
+<a name="IXT-A-55"></a>
+
+</p>
+<p class="content">
+Given an integer argument <code>n</code>, returns an array (if called in list context) or a hash reference (if called
+in scalar context) of the arguments passed to the component <code>n</code> levels up the execution stack.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+depth()</div>
+<p class="content">
+<a name="IXT-A-56"></a>
+
+</p>
+<p class="content">
+Returns the current depth of the component stack. For instance, with components <code>/autohandler</code>, <code>/dir/autohandler</code>, and <code>/dir/component.html</code> in the default setup, the depth will be 1 when queried in <code>/autohandler</code>, 2 in <code>/dir/autohandler</code>, and 3 in <code>/dir/component.html</code>. If <code>/dir/component.html</code> calls another component, the depth will be 4 inside that component.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-10"></a>
+<h3>Content and Output</h3><p class="content">
+<a name="APP-A-SECT-2.5"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+print(&lt;strings...&gt;)</div>
+<p class="content">
+<a name="IXT-A-57"></a>
+
+</p>
+<p class="content">
+A synonym for <code>print()</code>. This method will output the <a name="IXT-A-58"></a>
+ content of any arguments. In recent versions of Mason you may also print to
+Perl's STDOUT filehandle, as this is tied to Mason's buffers.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+clear_buffer()</div>
+<p class="content">
+<a name="IXT-A-59"></a>
+
+</p>
+<p class="content">
+Discards the contents of Mason's output buffers.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+flush_buffer()</div>
+<p class="content">
+<a name="IXT-A-60"></a>
+
+</p>
+<p class="content">
+Sends the contents of Mason's output buffers to their destination.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+content()</div>
+<p class="content">
+<a name="IXT-A-61"></a>
+
+</p>
+<p class="content">
+Returns the content block passed to the current component or <code>undef</code> if this component was called without a content block. The content block will
+be evaluated in the lexical context of the calling component. See <a href="chapter-2.mhtml.htm#CHP-2-SECT-3.3.1" tppabs="http://www.masonbook.com/book/chapter-2.mhtml#CHP-2-SECT-3.3.1">&quot;Components called with content&quot;</a> in <a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">Chapter 2</a> for more details.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+file(&lt;path&gt;)</div>
+<p class="content">
+<a name="IXT-A-62"></a>
+
+</p>
+<p class="content">
+Given a file path, Mason will look for this file and return its contents as a
+string.
+</p>
+<p class="content">
+An absolute path refers to a file on the filesystem. If a relative path is
+given, Mason will prepend the current component's directory, if it has one.
+Otherwise Mason will simply make the path absolute by prepending the system's
+root directory to the path.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-11"></a>
+<h3>Fetching/Running Components</h3><p class="content">
+<a name="APP-A-SECT-2.6"></a>
+
+</p>
+<p class="content">
+These methods deal with fetching and running <a name="perlhtmlmason-IDXTERM-1092"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-1093"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-1094"></a>
+ components. Some of the methods (in particular <code>comp()</code> and <code>scomp()</code>) let you specify the component by path or by supplying a component object,
+while other methods (<code>fetch_comp()</code> and <code>comp_exists()</code>) allow only a path. For any of these four methods, if a relative pathname is
+given, it is considered relative to the <code>dir_path</code> of the current component.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+fetch_comp(&lt;path&gt;)</div>
+<p class="content">
+<a name="IXT-A-63"></a>
+
+</p>
+<p class="content">
+Given a string argument specifying a component path, returns the component at
+that path or <code>undef</code> if no such component exists.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+fetch_next()</div>
+<p class="content">
+<a name="IXT-A-64"></a>
+
+</p>
+<p class="content">
+Fetches the next component in the content-wrapping chain. This is the same
+component that will be invoked by the <code>call_next()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+fetch_next_all()</div>
+<p class="content">
+<a name="IXT-A-65"></a>
+
+</p>
+<p class="content">
+Fetches all remaining components in the content-wrapping chain and returns them
+as a list. This is usually called from an autohandler and will return multiple
+components when multiple autohandlers are in use.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp(&lt;component&gt;, &lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-66"></a>
+
+</p>
+<p class="content">
+Calls a Mason component. The component is specified by the first argument,
+which should be either the name of the component to call or a component object.
+Any remaining arguments to <code>comp()</code> are fed to the called component, either as key/value pairs declared in the
+component's <code>&lt;%args&gt;</code> section, the special <code>%ARGS</code> variable, or the Perl argument array <code>@_</code>. Any component output will be sent to the current component's output stream,
+and the component's return value will become the return value of <code>comp()</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+scomp(&lt;component&gt;, &lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-67"></a>
+
+</p>
+<p class="content">
+Identical to the <code>comp()</code> method, but instead of sending the called component's output to the output
+stream, is returned as a string. Any return value from the component will be
+discarded.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp_exists(&lt;path&gt;)</div>
+<p class="content">
+<a name="IXT-A-68"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns true if a component exists with that path or
+false otherwise.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+call_next(&lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-69"></a>
+
+</p>
+<p class="content">
+Calls the next component in the component execution stack. Typically this is
+used by an autohandler to call the component it is wrapping around. Mason will
+pass any current component arguments (the <code>%ARGS</code> hash) to the next component, as well as any additional arguments passed to the <code>call_next()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+current_comp()</div>
+<p class="content">
+<a name="IXT-A-70"></a>
+
+</p>
+<p class="content">
+Returns an object representing the currently executing component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+request_comp()</div>
+<p class="content">
+<a name="IXT-A-71"></a>
+
+</p>
+<p class="content">
+Returns an object representing the component that was originally requested in
+the Interpreter's <code>exec()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+base_comp()</div>
+<p class="content">
+<a name="IXT-A-72"></a>
+
+</p>
+<p class="content">
+Returns the current base component for methods and attributes. The base
+component is initially set to the <code>request_comp()</code>. Calling a component method will set the base component to the component used
+in the method call. Calling a regular (nonmethod) component will set the base
+component to the called component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+request_args()</div>
+<p class="content">
+<a name="IXT-A-73"></a>
+
+</p>
+<p class="content">
+Returns the arguments passed to the originally requested component. If called
+in a list context, the arguments will be returned as a list. If called in a
+scalar context, the arguments will be  returned as a hash reference.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-12"></a>
+<h3>Subrequests</h3><p class="content">
+<a name="APP-A-SECT-2.7"></a>
+<a name="appa-idx-1006942-2"></a>
+<a name="appa-idx-1006942-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+make_subrequest(comp =&gt; &lt;path&gt;, args =&gt; [...],
+&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="IXT-A-74"></a>
+
+</p>
+<p class="content">
+Returns a new Request object with the given <a name="perlhtmlmason-IDXTERM-1098"></a>
+ parameters. Other parameters will be inherited from the current request.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+exec()</div>
+<p class="content">
+<a name="IXT-A-75"></a>
+
+</p>
+<p class="content">
+Sets the new request in motion with the given arguments passed to the given
+component. This should be used only when the request was created with the <code>make_subrequest()</code> method, since <code>exec()</code> can happen only once for each request. In particular, it is illegal to call <code>$m-&gt;exec(...)</code> inside a component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+subexec(&lt;component&gt;, &lt;arguments...&gt;)</div>
+<p class="content">
+<a name="IXT-A-76"></a>
+
+</p>
+<p class="content">
+Combines the <code>make_subrequest</code> and <code>exec</code> methods into one step. Any arguments are passed to the given component, and
+the subrequest created will inherit all inheritable  properties from  the current 
+</p>
+<p class="content">
+ request.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-13"></a>
+<h2>Component</h2><p class="content">
+<a name="APP-A-SECT-3"></a>
+
+</p>
+<p class="content">
+This <a name="IXT-A-77"></a>
+ class represents a <a name="perlhtmlmason-IDXTERM-1106"></a>
+<a name="perlhtmlmason-IDXTERM-1107"></a>
+<a name="perlhtmlmason-IDXTERM-1108"></a>
+ Mason component. It may be a file-based component on disk, a component created
+on the fly, or a method or subcomponent. The default Component class is <code>HTML::Mason::Component::FileBased</code>.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+Creates a new component. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a list of parameters that affect the component behavior.
+</p>
+<p class="content">
+The <code>new()</code><a name="IXT-A-78"></a>
+ method is <code>not</code> the proper way to create a component from scratch, since components must be
+associated with an Interpreter. See the <code>make_component()</code><a name="IXT-A-79"></a>
+ Interpreter method if you wish to create a component from scratch.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-14"></a>
+<h3>Object Properties</h3><p class="content">
+<a name="APP-A-SECT-3.1"></a>
+<a name="appa-idx-1007057-2"></a>
+<a name="appa-idx-1007057-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+title()</div>
+<p class="content">
+<a name="IXT-A-80"></a>
+
+</p>
+<p class="content">
+Returns a unique string identifying this component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+name()</div>
+<p class="content">
+<a name="IXT-A-81"></a>
+
+</p>
+<p class="content">
+Returns a short string identifying this component. There may be more than one
+component with the same name.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+path()</div>
+<p class="content">
+<a name="IXT-A-82"></a>
+
+</p>
+<p class="content">
+Returns the path of this component relative to the source root.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+dir_path()</div>
+<p class="content">
+<a name="IXT-A-83"></a>
+
+</p>
+<p class="content">
+Returns the component's notion of a current directory, relative to the
+component root.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+source_dir()</div>
+<p class="content">
+<a name="IXT-A-84"></a>
+
+</p>
+<p class="content">
+Returns the component's enclosing directory if it is a file-based component.
+Note that Mason does not actually <code>chdir()</code> to a component's directory before executing it, so you may need to use <code>source_dir</code> to establish context.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+object_file()</div>
+<p class="content">
+<a name="IXT-A-85"></a>
+
+</p>
+<p class="content">
+Returns the full pathname of the object file associated with this component or <code>undef</code> if this component is not associated with any object file.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+load_time()</div>
+<p class="content">
+<a name="IXT-A-86"></a>
+
+</p>
+<p class="content">
+Returns the time this component object (not its source file) was created, in
+number of seconds since the epoch.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+declared_args()</div>
+<p class="content">
+<a name="IXT-A-87"></a>
+
+</p>
+<p class="content">
+Returns a hash reference indicating the variables declared in this component's <code>&lt;%args&gt;</code> section. Each key in this hash reference is the name of a Perl variable
+(including the initial sigil, <code>$</code>, <code>@</code>, or <code>%</code>), and the value is a hash reference containing (at least) a <code>default</code> key. Its value, in turn, contains Perl code to be evaluated to get the default
+value for this component argument.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+flag(&lt;name&gt;)</div>
+<p class="content">
+<a name="IXT-A-88"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns the value of the Mason flag by that name for
+this component, as declared in a <code>&lt;%flags&gt;</code> section. Throws an exception if the argument is not the name of a valid Mason
+flag. Currently, there is only one flag allowed in <code>&lt;%flags&gt;</code> sections, the <code>inherit</code> flag that specifies a parent component.
+</p>
+<p class="content">
+Note that flag values do not inherit from parent components.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+is_subcomp()</div>
+<p class="content">
+<a name="IXT-A-89"></a>
+
+</p>
+<p class="content">
+Returns true if the component is a subcomponent or method or false otherwise.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+is_file_based()</div>
+<p class="content">
+<a name="IXT-A-90"></a>
+
+</p>
+<p class="content">
+Returns true if the  component was loaded from a source or object file or false otherwise.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-15"></a>
+<h3>Component Relationships</h3><p class="content">
+<a name="APP-A-SECT-3.2"></a>
+<a name="appa-idx-1007059-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+subcomps()</div>
+<p class="content">
+<a name="IXT-A-91"></a>
+
+</p>
+<p class="content">
+Returns a reference to a hash containing all subcomponents declared by this
+component, with names as keys and component objects as values. If you provide a
+string argument, returns only the subcomponent with that name or <code>undef</code> if no such subcomponent exists.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+methods()</div>
+<p class="content">
+<a name="IXT-A-92"></a>
+
+</p>
+<p class="content">
+Returns a reference to a hash containing all methods declared by this
+component, with names as keys and component objects as values. If you provide a
+string argument, returns only the method with that name or <code>undef</code> if no such subcomponent exists.
+</p>
+<p class="content">
+Note that this does <code>not</code> search for methods in any parent components. See the <code>method_exists</code> and <code>call_method</code> entries in the next section if you wish to perform such a search.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+parent()</div>
+<p class="content">
+<a name="IXT-A-93"></a>
+
+</p>
+<p class="content">
+Returns the parent component of this component or <code>undef</code> if this component has no parent.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+owner()</div>
+<p class="content">
+<a name="IXT-A-94"></a>
+
+</p>
+<p class="content">
+If this component is a subcomponent or method, returns the component object in
+which it was  declared.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-16"></a>
+<h3>Inheritance</h3><p class="content">
+<a name="APP-A-SECT-3.3"></a>
+<a name="IXT-A-95"></a>
+<a name="IXT-A-96"></a>
+<a name="IXT-A-97"></a>
+<a name="IXT-A-98"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+attr(&lt;name&gt;)</div>
+<p class="content">
+<a name="IXT-A-99"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns the value of the attribute (declared in an <code>&lt;%attr&gt;</code> block) by that name in this component or its parents. If no such attribute
+exists, an exception will be thrown.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+attr_exists(&lt;name&gt;)</div>
+<p class="content">
+<a name="IXT-A-100"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns true if an attribute by that name exists in
+this component or its parents or false otherwise.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+attr_if_exists([&lt;name&gt;])</div>
+<p class="content">
+<a name="IXT-A-101"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns the value of the attribute by that name in
+this component or its parents. If no such attribute exists, returns <code>undef</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+call_method(&lt;name&gt; [, &lt;arguments...&gt;])</div>
+<p class="content">
+<a name="IXT-A-102"></a>
+
+</p>
+<p class="content">
+Given a string argument, searches for a method by that name in this component
+or its parents and executes it. If no such method exists, a fatal exception
+will be thrown.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+scall_method(&lt;name&gt; [, &lt;arguments...&gt;])</div>
+<p class="content">
+<a name="IXT-A-103"></a>
+
+</p>
+<p class="content">
+Just like <code>call_method</code> , but returns the component's output as a string instead of outputting it. Any
+return value will be discarded.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+method_exists(&lt;name&gt;)</div>
+<p class="content">
+<a name="IXT-A-104"></a>
+
+</p>
+<p class="content">
+Given a string argument, returns true if a method by that name exists in this
+component or its parents or false  otherwise.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-17"></a>
+<h2>Resolver</h2><p class="content">
+<a name="APP-A-SECT-4"></a>
+
+</p>
+<p class="content">
+The <a name="perlhtmlmason-IDXTERM-1117"></a>
+<a name="perlhtmlmason-IDXTERM-1118"></a>
+<a name="perlhtmlmason-IDXTERM-1119"></a>
+<a name="perlhtmlmason-IDXTERM-1120"></a>
+ Resolver is responsible for handling the interactions between the Interpreter
+and the storage medium of component source files. The default resolver class is<a name="IXT-A-105"></a>
+<code>HTML::Mason::Resolver::File</code>.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+Returns a new Resolver object. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a list of parameters accepted by the<a name="IXT-A-106"></a>
+
+</p>
+<p class="content">
+<code>new()</code> method.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+get_info(&lt;path&gt; )</div>
+<p class="content">
+<a name="IXT-A-107"></a>
+
+</p>
+<p class="content">
+Given a component path, returns an <code>HTML::Mason::ComponentSource</code> object that may be queried to get information about the component source.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp_root([&lt;new_root&gt;])</div>
+<p class="content">
+<a name="appa-idx-1006974-1"></a>
+
+</p>
+<p class="content">
+Returns the current value of the component root. The value returned may be a
+string or a reference to an array of arrays, depending on whether you're using
+one or several component roots. Optionally sets the value of the component root
+if you provide an argument, whose form is the  same.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp_root_array()</div>
+<p class="content">
+<a name="IXT-A-108"></a>
+
+</p>
+<p class="content">
+Like <code>comp_root()</code>, but in a list context always returns a list of arrays, one per component
+root. If there is only one root and its name is unspecified, it will be given
+the name <code>MAIN</code>. In a scalar context, returns the number of component roots.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+glob_path(&lt;pattern&gt; )</div>
+<p class="content">
+<a name="IXT-A-109"></a>
+
+</p>
+<p class="content">
+Given a &quot;glob&quot;-style pattern, returns a list of paths of all
+components that match that pattern in the component root.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+apache_request_to_comp_path(&lt;Apache request object&gt;)</div>
+<p class="content">
+<a name="IXT-A-110"></a>
+
+</p>
+<p class="content">
+Given an Apache request object, this method is expected to return a component
+path, or <code>undef</code> if the request cannot be translated to a  component path.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-18"></a>
+<h2>ApacheHandler</h2><p class="content">
+<a name="APP-A-SECT-5"></a>
+
+</p>
+<p class="content">
+The <code>HTML::Mason::ApacheHandler</code> class provides the necessary glue between the Mason Interpreter and the Apache
+web server's <code>mod_perl</code> module. Its main task is to accept an incoming Apache request and invoke the
+Interpreter with the proper parameters for handling that request.
+</p>
+<p class="content">
+The <a name="perlhtmlmason-IDXTERM-1128"></a>
+<a name="perlhtmlmason-IDXTERM-1129"></a>
+<a name="perlhtmlmason-IDXTERM-1130"></a>
+<a name="perlhtmlmason-IDXTERM-1131"></a>
+ ApacheHandler class makes the Apache request object available inside
+components as the global variable <code>$r</code><a name="IXT-A-111"></a>
+<a name="IXT-A-112"></a>
+ . This may be an object blessed into the <code>Apache::Request</code> class or the <code>Apache</code> class, depending on whether the Mason administrator has configured the
+ApacheHandler to use the <code>mod_perl</code><code>args_method</code>.
+</p>
+<p class="content">
+ApacheHandler also turns <code>$m</code>, the Request object, into an <code>HTML::Mason::Request::ApacheHandler</code> object by subclassing <code>HTML::Mason::Request</code>.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="IXT-A-113"></a>
+
+</p>
+<p class="content">
+Creates a new<a name="IXT-A-114"></a>
+ ApacheHandler object. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a listing of the parameters accepted.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+interp([&lt;interpreter&gt;])</div>
+<p class="content">
+<a name="IXT-A-115"></a>
+
+</p>
+<p class="content">
+Returns the current Interpreter associated with this ApacheHandler. An optional
+argument sets the value to a new Interpreter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+handle_request($r)</div>
+<p class="content">
+<a name="IXT-A-116"></a>
+
+</p>
+<p class="content">
+Initiates a Mason request, processing any incoming arguments to the web server
+and calling the appropriate component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+handler($r)</div>
+<p class="content">
+<a name="IXT-A-117"></a>
+
+</p>
+<p class="content">
+A wrapper around <code>handle_request()</code> suitable for using as a <code>mod_perl</code> &quot;handler.&quot; You must enable <code>PERL_METHOD_HANDLERS</code> when compiling <code>mod_perl</code> in order to use this handler.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+prepare_request($r)</div>
+<p class="content">
+<a name="IXT-A-118"></a>
+
+</p>
+<p class="content">
+Returns a new Mason Request object for the given Apache Request or an HTTP
+status code if an error was encountered.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+apache_status_title([&lt;string&gt;])</div>
+<p class="content">
+<a name="IXT-A-119"></a>
+
+</p>
+<p class="content">
+Returns the title of the Mason status page generated by <code>Apache::Status</code>. An optional argument sets the title.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+args_method()</div>
+<p class="content">
+<a name="IXT-A-120"></a>
+
+</p>
+<p class="content">
+Returns the current <code>args_method</code> setting, which can be either <code>mod_perl</code> or <code>CGI</code> depending on whether you're using <code>Apache::Request</code> or <code>CGI.pm</code> for HTTP argument processing.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+decline_dirs([true or false])</div>
+<p class="content">
+<a name="IXT-A-121"></a>
+
+</p>
+<p class="content">
+Returns true or false, depending on whether requests for directories will be
+declined or accepted. An optional argument sets the value. If a request for a
+directory is accepted, it should usually be caught by using a dhandler
+mechanism, so Mason has a component to  execute.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-19"></a>
+<h2>CGIHandler</h2><p class="content">
+<a name="APP-A-SECT-6"></a>
+<a name="appa-idx-1006991-4"></a>
+<a name="appa-idx-1006991-3"></a>
+<a name="appa-idx-1006991-2"></a>
+<a name="appa-idx-1006991-1"></a>
+
+</p>
+<p class="content">
+The <code>HTML::Mason::CGIHandler</code><a name="IXT-A-122"></a>
+ class is similar to ApacheHandler but runs under the CGI paradigm instead of
+the <code>mod_perl</code> paradigm. Its task is to accept an incoming CGI request and invoke the Mason
+Interpreter with the proper parameters for handling that request.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="IXT-A-123"></a>
+
+</p>
+<p class="content">
+Creates a new CGIHandler object. See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a listing of the parameters accepted.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+handle_request()</div>
+<p class="content">
+<a name="IXT-A-124"></a>
+
+</p>
+<p class="content">
+Initiates a Mason request, processing any incoming arguments to the web server
+and calling the appropriate component. The initial component will be the one
+specified in <code>$ENV{PATH_INFO}</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+handle_comp(&lt;component&gt;)</div>
+<p class="content">
+<a name="IXT-A-125"></a>
+
+</p>
+<p class="content">
+Like <code>handle_request()</code>, but explicitly specifies the component as an argument, either as a component
+path or a component object.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+handle_cgi_object(&lt;CGI object&gt;)</div>
+<p class="content">
+<a name="IXT-A-126"></a>
+
+</p>
+<p class="content">
+Also like <code>handle_request()</code>, but takes component path from the given CGI object's <code>path_info</code> method. Additionally, this CGI object is available to the called components.
+</p>
+
+</ul>
+<p class="content">
+CGIHandler also turns <code>$r</code>, normally the Apache request object, into an <code>HTML::Mason::FakeApache</code> object. It provides the following methods for compatibility with a <code>mod_perl</code>-based setup:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+header_out(&lt;header&gt; =&gt; &lt;value&gt;)</div>
+<p class="content">
+<a name="IXT-A-127"></a>
+
+</p>
+<p class="content">
+Adds an outgoing header to the HTTP response.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+content_type()</div>
+<p class="content">
+<a name="IXT-A-128"></a>
+
+</p>
+<p class="content">
+Sets the content type of the response to the argument given. If you don't set
+the content type, the type will be set to <code>text/html</code> by  default.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-20"></a>
+<h2>Compiler</h2><p class="content">
+<a name="APP-A-SECT-7"></a>
+
+</p>
+<p class="content">
+The <a name="IXT-A-129"></a>
+ Compiler is <a name="perlhtmlmason-IDXTERM-1145"></a>
+<a name="perlhtmlmason-IDXTERM-1146"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-1147"></a>
+ responsible for turning a hierarchical component structure, as fed to it by
+the Lexer, into a usable form. The default Compiler is <code>HTML::Mason::Compiler::ToObject</code>, which creates a Component object.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="IXT-A-130"></a>
+
+</p>
+<p class="content">
+Creates a new Compiler object and returns it. Called by the Interpreter object.
+See <a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">Appendix B</a> for a list of parameters accepted.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-21"></a>
+<h3>Object Properties</h3><p class="content">
+<a name="APP-A-SECT-7.1"></a>
+<a name="appa-idx-1007065-2"></a>
+<a name="appa-idx-1007065-1"></a>
+
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+allow_globals([&lt;variables...&gt;])</div>
+<p class="content">
+<a name="IXT-A-131"></a>
+
+</p>
+<p class="content">
+Returns a list of variable names (including the initial <code>$</code>, <code>@</code>, or <code>%</code> type-identifying sigil) that have been declared as allowable globals within
+components or the number of such variables in a scalar context. The list of
+allowed globals can optionally be set by passing the variable names (again,
+including the initial sigils) as arguments. This replaces any previously set
+globals. To clear the list of allowed globals, pass an argument list containing
+the single element <code>undef</code>.
+</p>
+<div class="example-code">
+<pre>  my @allowed = $compiler-&gt;allow_globals;      # Get list of globals
+  $compiler-&gt;allow_globals('$dbh','%session'); # Set list of globals
+  $compiler-&gt;allow_globals(undef);             # Clear list of globals</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+add_allowed_globals(&lt;variables...&gt;)</div>
+<p class="content">
+<a name="IXT-A-132"></a>
+
+</p>
+<p class="content">
+Adds one or more variable names (including the initial <code>$</code>, <code>@</code>, or <code>%</code> type-identifying sigil) to the list of globals allowed within components.
+Returns a list of variable names (again, including the initial sigils) in a
+list context or the number of such variables in a scalar context.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+object_id()</div>
+<p class="content">
+<a name="IXT-A-133"></a>
+
+</p>
+<p class="content">
+Returns a string identifier that uniquely identifies this compiler and its
+current settings. This identifier is used mainly to make sure that components
+compiled under a different compiler, or under the same compiler with different
+settings, are declared stale.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+compile(comp_source =&gt; &lt;string&gt;, name =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-134"></a>
+
+</p>
+<p class="content">
+Compiles a component from source text and returns the compiled component. The
+source text is passed in a <code>comp_source</code> parameter, and a unique identifier for this component is passed in a mandatory <code>name</code> parameter. The compiled component may take any of several forms, but the
+default <code>HTML::Mason::Compiler::ToObject</code> class returns a bunch of Perl code in a  string.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-22"></a>
+<h3>Compilation Callbacks</h3><p class="content">
+<a name="APP-A-SECT-7.2"></a>
+
+</p>
+<p class="content">
+These are <a name="perlhtmlmason-IDXTERM-1150"></a>
+<a name="perlhtmlmason-IDXTERM-1151"></a>
+ methods called by the Lexer while processing a component source. You may wish
+to override some of these methods if you're implementing your own custom
+Compiler class.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+start_component()</div>
+<p class="content">
+<a name="IXT-A-135"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it starts processing a component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+end_component()</div>
+<p class="content">
+<a name="IXT-A-136"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it finishes processing a component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+start_block(block_type =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-137"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters an opening Mason block tag like <code>&lt;%perl&gt;</code> or <code>&lt;%args&gt;</code>. Its main purpose is to keep track of the nesting of different kinds of blocks
+within each other. The type of block ( <code>init</code> , <code>once</code> , etc.) is passed via the <code>block_type</code> parameter.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+end_block(block_type =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-138"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters a closing Mason block tag like <code>&lt;/%perl&gt;</code> or <code>&lt;/%args&gt;</code>. Like <code>start_block()</code>, its main purpose is to help maintain syntactic integrity.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+*_block(block =&gt; &lt;string&gt;, [ block_type =&gt; &lt;string&gt; ])</div>
+<p class="content">
+Several compiler methods like <code>doc_block()</code><a name="IXT-A-139"></a>
+ , <code>text_block()</code><a name="IXT-A-140"></a>
+ , and <code>raw_block()</code><a name="IXT-A-141"></a>
+ are called by the Lexer after <code>start_block()</code><a name="IXT-A-142"></a>
+ when it encounters blocks of certain types. These methods actually do the work
+of putting the body of a block into the compiled data structure.
+</p>
+<p class="content">
+The methods that follow this pattern are <code>init_block()</code><a name="IXT-A-143"></a>
+ , <code>perl_block()</code><a name="IXT-A-144"></a>
+ , <code>doc_block()</code>, <code>text_block()</code>, and <code>raw_block()</code>. The last method is called for all <code>&lt;%once&gt;</code>, <code>&lt;%cleanup&gt;</code>, <code>&lt;%filter&gt;</code>, <code>&lt;%init&gt;</code>, <code>&lt;%perl&gt;</code>, and <code>&lt;%shared&gt;</code> blocks.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+text(text =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-145"></a>
+
+</p>
+<p class="content">
+Inserts the text contained in a <code>text</code> parameter into the component for verbatim output.
+</p>
+<p class="content">
+This is called when the Lexer finds plain text in a component.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+variable_declaration( type =&gt; &lt;string&gt;, name =&gt; &lt;string&gt;,
+default =&gt; &lt;string&gt; )</div>
+<p class="content">
+<a name="IXT-A-146"></a>
+
+</p>
+<p class="content">
+Inserts a variable declaration from the <code>&lt;%args&gt;</code> section into the component.
+</p>
+<p class="content">
+The type will be either <code>$</code> , <code>@</code> , or <code>%</code> , indicating a scalar, array, or hash. The name is the variable name without
+the leading sigil. The default is everything found after the first <code>=&gt;</code> on an <code>&lt;%args&gt;</code> block line and may include a comment.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+key_value_pair(block_type =&gt; &lt;string&gt;, key =&gt; &lt;string&gt;, value
+=&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-147"></a>
+
+</p>
+<p class="content">
+Inserts a key/value pair from a <code>&lt;%flags&gt;</code> or <code>&lt;%attr&gt;</code> section into the component.
+</p>
+<p class="content">
+The <code>block_type</code> parameter will be either <code>flags</code> or <code>attr</code> .
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+start_named_block(block_type =&gt; &lt;string&gt;, name =&gt; &lt;name&gt;)</div>
+<p class="content">
+<a name="IXT-A-148"></a>
+
+</p>
+<p class="content">
+Analogous to <code>start_block</code> , earlier in this section, but starts a &quot;named&quot; block (<code>&lt;%method&gt;</code> or <code>&lt;%def&gt;</code>).
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+end_named_block()</div>
+<p class="content">
+<a name="IXT-A-149"></a>
+
+</p>
+<p class="content">
+Called by the Lexer to end a &quot;named&quot; block.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+substitution(substitution =&gt; &lt;string&gt;, escape =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-150"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters a substitution tag (<code>&lt;% ... %&gt;</code>).
+</p>
+<p class="content">
+The value of the <code>escape</code> parameter will be everything found after the pipe (|) in the substitution tag
+and may be more than one character such as <code>nh</code> .
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+component_call(call =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-151"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters a component call tag without embedded
+content (<code>&lt;&amp; ... &amp;&gt;</code>).
+</p>
+<p class="content">
+The <code>call</code> parameter contains the entire contents of the tag.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+component_content_call(call =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-152"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters a component call tag with embedded
+content (<code>&lt;&amp;| ... &amp;&gt;</code>).
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+component_content_call_end()</div>
+<p class="content">
+<a name="IXT-A-153"></a>
+
+</p>
+<p class="content">
+Called by the Lexer when it encounters an end tag for a component call with
+content (<code>&lt;/&amp;&gt;</code>). Note that there is no corresponding <code>component_call_end()</code> method for component calls without content, because these calls don't have end
+tags.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+perl_line(line =&gt; &lt;string&gt;)</div>
+<p class="content">
+<a name="IXT-A-154"></a>
+
+</p>
+<p class="content">
+Called by the  Lexer when it  encounters a <code>%</code>-line.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-23"></a>
+<h2>Lexer</h2><p class="content">
+<a name="APP-A-SECT-8"></a>
+
+</p>
+<p class="content">
+The Mason <a name="perlhtmlmason-IDXTERM-1163"></a>
+<a name="perlhtmlmason-IDXTERM-1164"></a>
+<a name="perlhtmlmason-IDXTERM-1165"></a>
+<a name="perlhtmlmason-IDXTERM-1166"></a>
+ Lexer has a very limited API, because it is mostly subservient to (and hidden
+by) the Compiler. The Compiler calls the Lexer's <code>new()</code> and <code>lex()</code> methods, then the Lexer calls various Compiler methods to generate the
+component. The Lexer has more methods than are listed here, but they're
+internal methods and should not be considered part of its formal API. The
+default Lexer class is <code>HTML::Mason::Lexer</code>.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+new(&lt;parameters...&gt;)</div>
+<p class="content">
+<a name="IXT-A-155"></a>
+
+</p>
+<p class="content">
+Creates a new Lexer object and returns it. In the current version of Mason, the <code>new()</code> method doesn't accept any parameters.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+lex(name =&gt; &lt;string&gt;, compiler =&gt; &lt;compiler&gt;, comp_source
+=&gt; string)</div>
+<p class="content">
+<a name="appa-idx-1007029-1"></a>
+
+</p>
+<p class="content">
+Begins the process of lexing a component. The <code>name</code> parameter specifies a unique name for this component. For a file-based
+component, this is its full path relative to the component root. The <code>compiler</code> parameter supplies the compiler object to use when processing this component.
+The <code>comp_source</code> parameter supplies the source to process.
+</p>
+<p class="content">
+The <code>lex()</code> method has no return value. If it encounters an error during processing, it
+will throw an exception.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+line_number()</div>
+<p class="content">
+<a name="IXT-A-156"></a>
+
+</p>
+<p class="content">
+Returns the Lexer's current line number in the component being processed.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+name(),</div>
+<p class="content">
+<a name="IXT-A-157"></a>
+
+</p>
+<p class="content">
+Returns the name of the component currently being processed (i.e., the value of
+the <code>name</code> parameter passed to the <code>lex()</code> method).
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+throw_syntax_error(&lt;error&gt;)</div>
+<p class="content">
+<a name="IXT-A-158"></a>
+
+</p>
+<p class="content">
+Throws an <code>HTML::Mason::Exception::Syntax</code><a name="IXT-A-159"></a>
+ error with the given error message as well as additional information about the  component source.
+</p>
+
+</ul>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<b>A</b>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

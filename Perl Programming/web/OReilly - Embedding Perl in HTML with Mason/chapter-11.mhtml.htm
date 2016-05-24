@@ -1,0 +1,2001 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<b>11</b>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 11: Recipes</h1><p class="content">
+<a name="CHP-11"></a>
+
+</p>
+<p class="content">
+No, we are not going teach you how to make a delicious tofu and soybean stew.
+But this is almost as good. This chapter shows how to do some common Mason
+tasks, some of them with more than one implementation.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Sessions</h2><p class="content">
+<a name="CHP-11-SECT-1"></a>
+
+</p>
+<p class="content">
+For many of our<a name="IXT-11-1187"></a>
+ session examples, we will be using the <code>Apache::Session</code><a name="perlhtmlmason-IDXTERM-833"></a>
+<a name="perlhtmlmason-IDXTERM-834"></a>
+ module. Despite its name, this module doesn't actually require <code>mod_perl</code> or Apache, though that is the context in which it was born and in which it's
+most often used. It implements a simple tied hash interface to a persistent
+object.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> It has one major gotcha: you must make sure that the session object gets
+cleaned up properly (usually by letting it go out of scope), so that it will be
+written to disk after each access.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h3>Without Touching httpd.conf</h3><p class="content">
+<a name="CHP-11-SECT-1.1"></a>
+<a name="ch11-idx-1007047-1"></a>
+
+</p>
+<p class="content">
+Here is an example that doesn't involve changing any of your Apache
+configuration settings. The following code should be placed in a top-level
+autohandler. Any component that needs to use the session will have to inherit
+from this component, either directly or via a longer inheritance chain.
+</p>
+<p class="content">
+It uses <a name="perlhtmlmason-IDXTERM-835"></a>
+<a name="perlhtmlmason-IDXTERM-836"></a>
+<a name="perlhtmlmason-IDXTERM-837"></a>
+ cookies to store the session.
+</p>
+<div class="example-code">
+<pre>  &lt;%once&gt;
+   use Apache::Cookie;
+   use Apache::Session::File;
+  &lt;/%once&gt;
+  &lt;%init&gt;
+   my %c = Apache::Cookie-&gt;fetch;
+   my $session_id =
+       exists $c{masonbook_session} ? $c{masonbook_session}-&gt;value : undef;</pre>
+</div><p class="content">
+First, it loads the necessary <a name="IXT-11-1188"></a>
+ modules. Normally we recommend that you do this at server startup via a <a name="IXT-11-1189"></a>
+ PerlModule directive in your <u>httpd.conf</u> file or in your <u>handler.pl</u> file to save memory, but we load them here just to show you which ones we are
+using. The component uses the <code>Apache::Cookie</code> module to fetch any cookies that might have been sent by the browser. Then we
+check for the existence of a cookie called <code>masonbook_session</code>, which if it exists should contain a valid session ID.
+</p>
+<div class="example-code">
+<pre>  local *MasonBook::Session;
+  
+  eval {
+      tie %MasonBook::Session, 'Apache::Session::File', $session_id, {
+          Directory =&gt; '/tmp/sessions',
+          LockDirectory =&gt; '/tmp/sessions',
+      };
+  };
+  
+  if ($@) {
+      die $@ unless $@ =~ /Object does not exist/;  # Re-throw
+  
+      $m-&gt;redirect('/bad_session.html');       
+  }</pre>
+</div><p class="content">
+The first line ensures that when this component ends, the session variable will
+go out of scope, which triggers <code>Apache::Session</code>'s cleanup mechanisms. This is quite important, as otherwise the data will
+never be written to disk. Even worse, <code>Apache::Session</code> may still be maintaining various locks internally, leading to deadlock. We use <code>local()</code><a name="IXT-11-1190"></a>
+
+</p>
+<p class="content">
+to localize the symbol table entry <code>*MasonBook::Session</code>; it's not enough to localize just the hash <code>%MasonBook::Session</code>, because the <code>tie()</code><a name="IXT-11-1191"></a>
+
+</p>
+<p class="content">
+magic is attached to the symbol table entry. It's also worth mentioning that we
+use a global variable rather than a lexical one, because we want this variable
+to be available to all components.
+</p>
+<p class="content">
+If the value in the <code>$session_id</code> variable is <code>undef</code>, that is not a problem. The <code>Apache::Session</code> module simply creates a new session ID. However, if <code>$session_id</code> is defined but does not represent a valid session, an exception will be
+thrown. This means either that the user's session has expired or that she's
+trying to feed us a bogus ID. Either way, we want to tell her what's happened,
+so we redirect to another page that will explain things. To trap the exception,
+we wrap the <code>tie()</code> in an <code>eval {}</code> block.
+</p>
+<p class="content">
+If an exception is thrown, we check <code>$@</code> to see whether the message indicates that the session isn't valid. Any other
+error is fatal. If the session isn't valid, we use the <code>redirect()</code> method provided by the request object.
+</p>
+<p class="content">
+Finally, we send the user a cookie:
+</p>
+<div class="example-code">
+<pre>  Apache::Cookie-&gt;new( $r,
+                       name =&gt; 'masonbook_session',
+                       value =&gt; $MasonBook::Session{_session_id},
+                       path =&gt; '/',
+                       expires =&gt; '+1d',
+                     )-&gt;bake;</pre>
+</div><p class="content">
+This simply uses the <code>Apache::Cookie</code><a name="IXT-11-1192"></a>
+<a name="IXT-11-1193"></a>
+ module to ensure that a cookie will be sent to the client with the response
+headers. This cookie is called <code>'masonbook_session'</code> and is the one we checked for earlier. It doesn't hurt to send the cookie
+every time a page is viewed, though this will reset the expiration time of the
+cookie each time it is set. If you want the cookie to persist for only a
+certain fixed length of time after the session is created, don't resend the  cookie.
+</p>
+<div class="example-code">
+<pre>  $m-&gt;call_next;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+This line simply calls the next component in the inheritance chain. Presumably,
+other components down the line may change the contents of <code>%MasonBook::Session</code>, and those modifications will be written to disk at the end of the request.
+</p>
+<p class="content">
+<a href="chapter-11.mhtml.htm#CHP-11-EX-1" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-1">Example 11-1</a> shows the entire component.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-1"></a>
+<div class="example">
+<span class="caption">Example 11-1.  session-autohandler-Apache-Session.comp</span>
+<div class="example-code">
+<pre>  &lt;%once&gt;
+   use Apache::Cookie;
+   use Apache::Session::File;
+  &lt;/%once&gt;
+  &lt;%init&gt;
+   my %c = Apache::Cookie-&gt;fetch;
+   my $session_id =
+       exists $c{masonbook_session} ? $c{masonbook_session}-&gt;value : undef;
+   
+   local *MasonBook::Session;
+   
+   eval {
+       tie %MasonBook::Session, 'Apache::Session::File', $session_id, {
+           Directory =&gt; '/tmp/sessions',
+           LockDirectory =&gt; '/tmp/sessions',
+       };
+   };
+   
+   if ($@) {
+       die $@ unless $@ =~ /Object does not exist/;  # Re-throw
+       
+       $m-&gt;redirect('/bad_session.html');
+   }
+   
+   Apache::Cookie-&gt;new( $r,
+                        name =&gt; 'masonbook_session',
+                        value =&gt; $MasonBook::Session{_session_id},
+                        path =&gt; '/',
+                        expires =&gt; '+1d',
+                      )-&gt;bake;
+   
+    $m-&gt;call_next;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h3>Predeclaring the Global via an httpd.conf File</h3><p class="content">
+<a name="CHP-11-SECT-1.2"></a>
+
+</p>
+<p class="content">
+It'd be nice to be able to simply use the global session variable without
+having to type the fully qualified name, <code>%MasonBook::Session</code> in every component. That can be done by adding this line to your <em>httpd.conf</em> file:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonAllowGlobals %session</pre>
+</div><p class="content">
+Of course, if you're running more than one Mason-based site that uses sessions,
+you may need to come up with a unique variable name.
+</p>
+<p class="content">
+Adding this to your <em>httpd.conf</em> means you can simply reference the <code>%session</code><a name="IXT-11-1194"></a>
+
+</p>
+<p class="content">
+variable in all of your components, without a qualifying package name. The <code>%session</code> variable would actually end up in the <code>HTML::Mason::Commands</code> package, rather than <code>MasonBook</code>.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h3>Predeclaring the Global via a handler.pl Script</h3><p class="content">
+<a name="CHP-11-SECT-1.3"></a>
+
+</p>
+<p class="content">
+If you have a <u>handler.pl</u><a name="IXT-11-1195"></a>
+ script, you could also use the session-making code we just saw. If you wanted
+to declare a <code>%session</code> global for all your components, you'd simply pass the <code>allow_globals</code> parameter to your interpreter when you make it, like this:
+</p>
+<div class="example-code">
+<pre>  my $ah =
+      HTML::Mason::ApacheHandler-&gt;new( comp_root =&gt; ...,
+                                       data_dir  =&gt; ...,
+                                       allow_globals =&gt; [ '%session' ] );</pre>
+</div><p class="content">
+You might also choose to incorporate the session-making code into your handler
+subroutine rather than placing it in a component. This would eliminate the need
+to make sure that all components inherit from the session-making component.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Using Cache::Cache for Sessions</h3><p class="content">
+<a name="CHP-11-SECT-1.4"></a>
+
+</p>
+<p class="content">
+Just to show you that you don't have to use <code>Apache::Session</code>, here is a simple alternate using <code>Cache::Cache</code><a name="perlhtmlmason-IDXTERM-851"></a>
+<a name="perlhtmlmason-IDXTERM-852"></a>
+<a name="perlhtmlmason-IDXTERM-853"></a>
+ , which is integrated into Mason via the request object's <code>cache()</code> method.
+</p>
+<p class="content">
+This version also sets up the session in a top-level <a name="IXT-11-1196"></a>
+ autohandler just like our first session example. It looks remarkably similar.
+</p>
+<div class="example-code">
+<pre>  &lt;%once&gt;
+   use Apache::Cookie;
+   use Cache::FileCache;
+   use Digest::SHA1;
+  &lt;/%once&gt;</pre>
+</div><p class="content">
+Again, for memory savings, you should load these modules at server startup.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $cache =
+       Cache::FileCache-&gt;new( { namespace  =&gt; 'Mason-Book-Session',
+                                cache_root =&gt; '/tmp/sessions',
+                                default_expires_in  =&gt; 60 * 60 * 24, # 1 day
+                                auto_purge_interval =&gt; 60 * 60 * 24, # 1 day
+                                auto_purge_on_set =&gt; 1 } );</pre>
+</div><p class="content">
+This creates a new cache object that will be used to store sessions. Without
+going into too much detail, this creates a new caching object that will store
+data on the filesystem under <u>/tmp/sessions</u>.<sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a> The <a name="IXT-11-1197"></a>
+ namespace is basically equivalent to a subdirectory in this case, and the
+remaining options tell the cache that, by default, stored data should be purged
+after one day and that it should check for purgeable items once per day.
+</p>
+<div class="example-code">
+<pre>  my %c = Apache::Cookie-&gt;fetch;
+  
+  if (exists $c{masonbook_session}) {
+      my $session_id = $c{masonbook_session}-&gt;value;
+      $MasonBook::Session = $cache-&gt;get($session_id);
+  }
+  
+  $MasonBook::Session ||=
+      { _session_id =&gt; Digest::SHA1::sha1_hex( time, rand, $$ ) };</pre>
+</div><p class="content">
+These lines simply retrieve an existing session based on the session ID from
+the cookie, if such a cookie exists. If this fails or if there was no session
+ID in the cookie, we make a new one with a randomly generated session ID. The
+algorithm used earlier for generating the session ID is more or less the same
+as the one provided by <code>Apache::Session</code>'s <code>Apache::Session::Generate::MD5</code><a name="IXT-11-1198"></a>
+ module, except that it uses the <a name="IXT-11-1199"></a>
+ SHA1 digest module. This algorithm should provide more than enough randomness
+to ensure that there will never be two identical session IDs generated. It may <em>not</em> be enough to keep people from guessing possible session IDs, though, so if you
+want make sure that a session cannot be hijacked, you should incorporate a
+secret into the digest algorithm input.
+</p>
+<div class="example-code">
+<pre>  Apache::Cookie-&gt;new( $r,
+                       name =&gt; 'masonbook_session',
+                       value =&gt; $MasonBook::Session-&gt;{_session_id},
+                       path =&gt; '/',
+                       expires =&gt; '+1d',
+                     )-&gt;bake;</pre>
+</div><p class="content">
+We then set a cookie in the browser that contains the session ID. This cookie
+will expire in one day. Again, this piece is identical to what we saw when
+using <code>Apache::Session</code>.
+</p>
+<div class="example-code">
+<pre>  eval { $m-&gt;call_next };
+  
+  $cache-&gt;set( $MasonBook::Session-&gt;{_session_id} =&gt; $MasonBook::Session );</pre>
+</div><p class="content">
+Unlike with <code>Apache::Session</code>, we need to explicitly tell our cache object to save the data. This means we
+need to wrap the call to <code>$m-&gt;call_next()</code><a name="IXT-11-1200"></a>
+<a name="IXT-11-1201"></a>
+ in an <code>eval {}</code> block in order to catch any exceptions thrown in other components. Otherwise,
+this part looks almost exactly like our example using <code>Apache::Session</code>.
+</p>
+<div class="example-code">
+<pre>   die $@ if $@;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+After saving the session, we rethrow any exception we may have gotten.
+</p>
+<p class="content">
+The entire component is shown in <a href="chapter-11.mhtml.htm#CHP-11-EX-2" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-2">Example 11-2</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-2"></a>
+<div class="example">
+<span class="caption">Example 11-2.  session-autohandler-Cache-Cache.comp</span>
+<div class="example-code">
+<pre>  &lt;%once&gt;
+   use Apache::Cookie;
+   use Digest::SHA1;
+  &lt;/%once&gt;
+  &lt;%init&gt; 
+   my $cache =
+       Cache::FileCache-&gt;new( namespace  =&gt; 'Mason-Book-Session',
+                              cache_root =&gt; '/tmp/sessions',
+                              default_expires_in  =&gt; 60 * 60 * 24, # 1 day
+                              auto_purge_interval =&gt; 60 * 60 * 24, # 1 day
+                              auto_purge_on_set =&gt; 1 } );
+   
+   my %c = Apache::Cookie-&gt;fetch;
+  
+   if (exists $c{masonbook_session}) {
+       my $session_id = $c{masonbook_session}-&gt;value;
+       $MasonBook::Session = $cache-&gt;get($session_id);
+   }
+  
+   $MasonBook::Session ||=
+       { _session_id =&gt; Digest::SHA1::sha1_hex( time, rand, $$ ) };
+   
+   Apache::Cookie-&gt;new( $r,
+                        name =&gt; 'masonbook_session',
+                        value =&gt; $MasonBook::Session-&gt;{_session_id},
+                        path =&gt; '/',
+                        expires =&gt; '+1d',
+                      )-&gt;bake;
+  
+   eval { $m-&gt;call_next };
+   
+   $cache-&gt;set( $MasonBook::Session-&gt;{_session_id} =&gt; $MasonBook::Session );
+   
+   die $@ if $@;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Sessions with <code>Cache::Cache</code> have these major differences from those with <code>Apache::Session</code>:
+</p>
+<ul>
+<li>
+The session itself is not a tied hash. Objects are faster than <a name="IXT-11-1202"></a>
+ tied hashes but not as transparent.</li>
+<li>
+No attempt is made to track whether or not the session has changed. It is <em>always</em> written to the disk at the end of a session. This trades the performance boost
+of <code>Apache::Session</code>'s behavior for the assurance that the data is always written to disk.<p class="content">
+When using <code>Apache::Session</code>, many programmers are often surprised that changes to a nested data structure
+in the session hash, like:
+</p>
+<div class="example-code">
+<pre>  $session{user}{name} = 'Bob';</pre>
+</div><p class="content">
+are not seen as changes to the top-level <code>%session</code> hash. If no changes to this hash are seen, <code>Apache::Session</code> will not write the hash out to storage.
+</p>
+<p class="content">
+As a workaround, some programmers may end up doing something like:
+</p>
+<div class="example-code">
+<pre>  $session{force_a_write}++;</pre>
+</div><p class="content">
+or:
+</p>
+<div class="example-code">
+<pre>  $session{last_accessed} = time( );</pre>
+</div><p class="content">
+after the session is created. Using <code>Cache::Cache</code> and explicitly saving the session every time incurs the same penalty as always
+changing a member of an <code>Apache::Session</code> hash.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-6"></a>
+<h3>Putting the Session ID in the URL</h3><p class="content">
+<a name="CHP-11-SECT-1.5"></a>
+
+</p>
+<p class="content">
+If you don't want to, or cannot, use cookies, you can store the<a name="perlhtmlmason-IDXTERM-864"></a>
+<a name="perlhtmlmason-IDXTERM-865"></a>
+<a name="perlhtmlmason-IDXTERM-866"></a>
+ session ID in the URL. This can be somewhat of a hassle because it means that
+you have to somehow process all the URLs you generate. Using Mason, this isn't
+as bad as it could be. There are two ways to do this:
+</p>
+<p class="content">
+One would be to put a filter in your top-level autohandler that looks something
+like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%filter&gt;
+   s/href=&quot;([^&quot;])+&quot;/add_session_id($1)/eg;
+   s/action=&quot;([^&quot;])+&quot;/add_session_id($1)/eg;
+  &lt;/%filter&gt;</pre>
+</div><p class="content">
+The <code>add_session_id()</code><a name="IXT-11-1203"></a>
+ subroutine, which should be defined in a module, would look something like
+this:
+</p>
+<div class="example-code">
+<pre>  sub add_session_id {
+      my $url = shift;
+      return $url if $url =~ m{^\w+://}; # Don't alter external URLs
+      if ($url =~ /\?/) {
+          $url =~ s/\?/?session_id=$MasonBook::Session{_session_id}&amp;/;
+      } else {
+          $url .= &quot;?session_id=$MasonBook::Session{_session_id}&quot;;
+      }
+  
+      return $url;
+  }</pre>
+</div><p class="content">
+This routine accounts for external links as well as links with or without an
+existing query string. However, it doesn't handle links with fragments
+properly.
+</p>
+<p class="content">
+The drawback to putting this in the <code>&lt;%filter&gt;</code> is that it filters URLs only in the content body, not in headers. Therefore
+you'll need to handle those cases separately.
+</p>
+<p class="content">
+The other solution would be to create all URLs (including those intended for
+redirects) via a dedicated component or subroutine that would add the session
+ID. This latter solution is probably a better idea, as it handles redirects
+properly. The drawback with this strategy is that you'll have a Mason component
+call for every link, instead of just regular HTML.
+</p>
+<p class="content">
+We'll add a single line (bolded in <a href="chapter-11.mhtml.htm#CHP-11-EX-3" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-3">Example 11-3)</a> to the <u>/lib/url.mas</u> component we saw in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a>. Now this component expects there to be a  variable named <code>%UserSession</code>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-3"></a>
+<div class="example">
+<span class="caption">Example 11-3.  url-plus-session-id.mas</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $scheme   =&gt; 'http'
+   $username =&gt; undef
+   $password =&gt; ''
+   $host     =&gt; undef
+   $port     =&gt; undef
+   $path
+   %query    =&gt; ( )
+   $fragment =&gt; undef
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $uri = URI-&gt;new;
+  
+   if ($host) {
+      $uri-&gt;scheme($scheme);
+      if (defined $username) {
+        $uri-&gt;authority( &quot;$username:$password&quot; );
+      }
+  
+      $uri-&gt;host($host);
+      $uri-&gt;port($port) if $port;
+   }
+  
+   # Sometimes we may want to path in a query string as part of the
+   # path but the URI module will escape the question mark.
+   my $q;
+  
+   if ( $path =~ s/\?(.*)$// ) {
+      $q = $1;
+   }
+  
+   $uri-&gt;path($path);
+   # If there was a query string, we integrate it into the query
+   # parameter.
+  
+   if ($q) {
+      %query = ( %query, split /[&amp;=]/, $q );
+   }
+  
+   $query{session_id} = $UserSession{session_id};
+  
+   # $uri-&gt;query_form doesn't handle hash ref values properly
+   while ( my ( $key, $value ) = each %query ) {
+      $query{$key} = ref $value eq 'HASH' ? [ %$value ] : $value;
+   }
+  
+   $uri-&gt;query_form(%query) if %query;
+  
+   $uri-&gt;fragment($fragment) if $fragment;
+  &lt;/%init&gt;
+  &lt;% $uri-&gt;canonical | n %&gt;\
+</pre>
+</div>
+</div>
+
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>Making Use of Autoflush</h2><p class="content">
+<a name="CHP-11-SECT-2"></a>
+<a name="ch11-idx-1007414-1"></a>
+
+</p>
+<p class="content">
+Every once in a while you may have to output a very large component or file to
+the client. Simply letting this accumulate in the buffer could use up a lot of
+memory. Furthermore, the slow response time may make the user think that the
+site has stalled.
+</p>
+<p class="content">
+<a href="chapter-11.mhtml.htm#CHP-11-EX-4" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-4">Example 11-4</a> sends out the contents of a potentially large file without sucking up lots of memory.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-4"></a>
+<div class="example">
+<span class="caption">Example 11-4.  send_file-autoflush.comp</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $filename
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   local *FILE;
+   open FILE, &quot;&lt; $filename&quot; or die &quot;Cannot open $filename: $!&quot;;
+   $m-&gt;autoflush(1);
+   while (&lt;FILE&gt;) {
+       $m-&gt;print($_);
+   }
+   $m-&gt;autoflush(0);
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+If each line wasn't too huge, you might just flush the buffer every once in a
+while, as in <a href="chapter-11.mhtml.htm#CHP-11-EX-5" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-5">Example 11-5</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-5"></a>
+<div class="example">
+<span class="caption">Example 11-5.  send_file-flush-every-10.comp</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $filename
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   local *FILE;
+   open FILE, &quot;&lt; $filename&quot; or die &quot;Cannot open $filename: $!&quot;;
+   while (&lt;FILE&gt;) {
+       $m-&gt;print($_);
+       $m-&gt;flush_buffer unless $. % 10;
+   }
+   $m-&gt;flush_buffer;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+The <code>unless $. % 10</code> bit makes use of the special Perl variable <code>$</code>., which is the current line number of the file being read. If this number
+modulo 10 is equal to zero, we flush the buffer. This means that we  flush the buffer every 10 lines. Replace the number 10 with any desired value.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h2>User Authentication and Authorization</h2><p class="content">
+<a name="CHP-11-SECT-3"></a>
+
+</p>
+<p class="content">
+One problem that <a name="IXT-11-1204"></a>
+<a name="IXT-11-1205"></a>
+ web sites have to solve over and over is user <a name="IXT-11-1206"></a>
+ authentication and <a name="IXT-11-1207"></a>
+ authorization. These two topics are related but not the same, as some might
+think. Authentication is the process of figuring out if someone is who he says
+he is, and usually involves checking passwords or keys of some sort.
+Authorization comes after this, when we want to determine whether or not a
+particular person is allowed to perform a certain action.
+</p>
+<p class="content">
+There are a number of modules on CPAN intended to help do these things under <code>mod_perl</code>. In fact, Apache has separate request-handling phases for both authentication
+and authorization that <code>mod_perl</code> can handle. It is certainly possible to use these modules with Mason.
+</p>
+<p class="content">
+You can also do authentication and authorization using Mason components (as
+seen in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8)</a>. Authentication will usually involve some sort of request for a login and password, after which you give the user some sort of token (either in a cookie or a session) that indicates that he has been authenticated. You can then check the validity of this token for each request.
+</p>
+<p class="content">
+If you have such a token, authorization simply consists of checking that the
+user to whom the token belongs is allowed to perform a given action.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h3>Using Apache::AuthCookie</h3><p class="content">
+<a name="CHP-11-SECT-3.1"></a>
+
+</p>
+<p class="content">
+The <code>Apache::AuthCookie</code><a name="perlhtmlmason-IDXTERM-876"></a>
+<a name="perlhtmlmason-IDXTERM-877"></a>
+<a name="perlhtmlmason-IDXTERM-878"></a>
+<a name="perlhtmlmason-IDXTERM-879"></a>
+ module, available from CPAN, handles both authentication and authorization via <code>mod_perl</code> and can be easily hooked into Mason. Let's just skip all the details of
+configuring <code>Apache::AuthCookie</code>, which requires various settings in your server config file, and show how to
+make the interface to Mason.
+</p>
+<p class="content">
+<code>Apache::AuthCookie</code> requires that you create a &quot;login script&quot; that will be executed the
+first time a browser tries to access a protected area. Calling this a script is
+actually somewhat misleading since it is really a page rather than a script
+(though it could be a script that generates a page). Regardless, using a Mason
+component for your login script merely requires that you specify the path to
+your Mason component for the login script parameter.
+</p>
+<p class="content">
+We'll call this script <u>AuthCookieLoginForm-login.comp</u>,as shown in <a href="chapter-11.mhtml.htm#CHP-11-EX-6" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-6">Example 11-6</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-6"></a>
+<div class="example">
+<span class="caption">Example 11-6.  AuthCookieLoginForm-login.comp</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;Mason Book AuthCookie Login Form&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p&gt;
+  Your attempt to access this document was denied
+  (&lt;% $r-&gt;prev-&gt;subprocess_env(&quot;AuthCookieReason&quot;) %&gt;).  Please enter
+  your username and password.
+  &lt;/p&gt;
+  
+  &lt;form action=&quot;/AuthCookieLoginSubmit&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;destination&quot; value=&quot;&lt;% $r-&gt;prev-&gt;uri %&gt;&quot;&gt;
+  &lt;table align=&quot;left&quot;&gt;
+   &lt;tr&gt;
+    &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Username:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;credential_0&quot; size=&quot;10&quot; maxlength=&quot;10&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Password:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;credential_1&quot; size=&quot;8&quot; maxlength=&quot;8&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Continue&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/form&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This component is a modified version of the example login script included with
+the <code>Apache::AuthCookie</code> distribution.
+</p>
+<p class="content">
+The action used for this form, <u>/AuthCookieLoginSubmit</u>, is configured as part of your AuthCookie configuration in your <u>httpd.conf</u> file.
+</p>
+<p class="content">
+That is about it for interfacing this module with Mason. The rest of
+authentication and authorization is handled by configuring <code>mod_perl</code> to use <code>Apache::AuthCookie</code> to protect anything on your site that needs authorization. A very simple
+configuration might include the following directives:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonBookLoginScript /AuthCookieLoginForm.comp
+  
+  &lt;Location /AuthCookieLoginSubmit&gt;
+    AuthType MasonBook::AuthCookieHandler
+    AuthName MasonBook
+    SetHandler  perl-script
+    PerlHandler MasonBook::AuthCookieHandler-&gt;login
+  &lt;/Location&gt;
+  
+  &lt;Location /protected&gt;
+    AuthType MasonBook::AuthCookieHandler
+    AuthName MasonBook
+    PerlAuthenHandler MasonBook::AuthCookieHandler-&gt;authenticate
+    PerlAuthzHandler  MasonBook::AuthCookieHandler-&gt;authorize
+    require valid-user
+  &lt;/Location&gt;</pre>
+</div><p class="content">
+The <code>MasonBook::AuthCookieHandler</code> module would look like this:
+</p>
+<div class="example-code">
+<pre>  package MasonBook::AuthCookieHandler;
+  
+  use strict;
+  
+  use base qw(Apache::AuthCookie);
+  
+  use Digest::SHA1;
+  
+  my $secret = &quot;You think I'd tell you?  Hah!&quot;;
+  
+  sub authen_cred {
+      my $self = shift;
+      my $r = shift;
+      my ($username, $password) = @_;
+  
+      # implementing _is_valid_user() is out of the scope of this chapter
+      if ( _is_valid_user($username, $password) ) {
+          my $session_key =
+            $username . '::' . Digest::SHA1::sha1_hex( $username, $secret );
+          return $session_key;
+      }
+  }
+  
+  sub authen_ses_key {
+      my $self = shift;
+      my $r = shift;
+      my $session_key = shift;
+  
+      my ($username, $mac) = split /::/, $session_key;
+  
+      if ( Digest::SHA1::sha1_hex( $username, $secret ) eq $mac ) {
+          return $session_key;
+      }
+  }</pre>
+</div><p class="content">
+This provides the minimal interface an <code>Apache::AuthCookie</code> subclass needs to provide to get authentication working.
+</p>
+<a name="TOC-ANCHOR-10"></a>
+<h3>Authentication Without Cookies</h3><p class="content">
+<a name="CHP-11-SECT-3.2"></a>
+
+</p>
+<p class="content">
+But what if you don't want to use <code>Apache::AuthCookie</code>? Your site may need to work without using cookies.
+</p>
+<p class="content">
+First, we will show an example <a name="perlhtmlmason-IDXTERM-884"></a>
+<a name="perlhtmlmason-IDXTERM-885"></a>
+ authentication system that uses only Mason and passes the authentication token
+around via the URL (actually, via a session).
+</p>
+<p class="content">
+This example assumes that we already have some sort of session system that
+passes the session ID around as part of the URL, as discussed previously.
+</p>
+<p class="content">
+We start with a quick login form. We will call this component <u>login_form.html</u>, as shown in <a href="chapter-11.mhtml.htm#CHP-11-EX-7" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-7">Example 11-7</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-7"></a>
+<div class="example">
+<span class="caption">Example 11-7.  login_form.html</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $username =&gt; ''
+   $password =&gt; ''
+   $redirect_to =&gt; ''
+   @errors =&gt; ( )
+  &lt;/%args&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;Mason Book Login&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+  
+  % if (@errors) {
+  &lt;h2&gt;Errors&lt;/h2&gt;
+  %   foreach (@errors) {
+  &lt;b&gt;&lt;% $_ | h %&gt;&lt;/b&gt;&lt;br&gt;
+  %   }
+  % }
+  
+  &lt;form action=&quot;login_submit.html&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;redirect_to&quot; value=&quot;&lt;% $redirect_to %&gt;&quot;&gt;
+  &lt;table align=&quot;left&quot;&gt;
+   &lt;tr&gt;
+    &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Login:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&lt;% $username %&gt;&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td align=&quot;right&quot;&gt;&lt;b&gt;Password:&lt;/b&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; value=&quot;&lt;% $password %&gt;&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Login&quot;&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/form&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This form uses some of the same techniques we saw in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a> to prepopulate the form and handle errors.
+</p>
+<p class="content">
+Now let's make the component that handles the form submission. This component,
+called <u>login_submit.html</u> and shown in <a href="chapter-11.mhtml.htm#CHP-11-EX-8" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-8">Example 11-8</a>, will check the username and password and, if they are valid, place an authentication token into the user's session.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-8"></a>
+<div class="example">
+<span class="caption">Example 11-8.  login_submit.html</span>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $username
+   $password
+   $redirect_to
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   if (my @errors = check_login($username, $password) {
+       $m-&gt;comp( 'redirect.mas',
+                  path =&gt; 'login_form.html',
+                  query =&gt; { errors =&gt; \@errors,
+                             username =&gt; $username,
+                             password =&gt; $password,
+                             redirect_to =&gt; $redirect_to } );
+   }
+   
+   $MasonBook::Session{username} = $username;
+   $MasonBook::Session{token} =
+       Digest::SHA1::sha1_hex( 'My secret phrase', $username );
+   
+   $m-&gt;comp( 'redirect.mas',
+             path =&gt; $redirect_to );
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This component simply checks (via magic hand waving) whether the username and
+password are valid and, if so, generates an authentication token that is added
+to the user's session. To generate this token, we take the username, which is
+also in the session, and combine it with a secret phrase. We then generate a
+MAC from those two things.
+</p>
+<p class="content">
+The authentication and authorization check looks like this:
+</p>
+<div class="example-code">
+<pre>  if ( $MasonBook::Session{token} ) {
+      if ( $MasonBook::Session{token} eq
+           Digest::SHA1::sha1_hex( 'My secret phrase',
+                                   $MasonBook::Session{username} ) {
+  
+          # ... valid login, do something here
+      } else {
+          # ... someone is trying to be sneaky!
+      }
+  } else { # no token
+       my $wanted_page = $r-&gt;uri;
+  
+       # Append query string if we have one.
+       $wanted_page .= '?' . $r-&gt;args if $r-&gt;args;
+  
+       $m-&gt;comp( 'redirect.mas',
+                  path =&gt; '/login/login_form.html',
+                  query =&gt; { redirect_to =&gt; $wanted_page } );
+  }</pre>
+</div><p class="content">
+We could put all the pages that require authorization in a single directory
+tree and have a top-level autohandler in that tree do the check. If there is no
+token to check, we redirect the browser to the login page, and after a
+successful login the user will return, assuming she submitted valid login  credentials.
+</p>
+<a name="TOC-ANCHOR-11"></a>
+<h3>Access Controls with Attributes</h3><p class="content">
+<a name="CHP-11-SECT-3.3"></a>
+
+</p>
+<p class="content">
+The components we saw previously assumed that there are only two access levels,
+unauthenticated and authenticated. A more complicated version of this code
+might involve checking that the user has a certain access level or role.
+</p>
+<p class="content">
+In that case, we'd first check that we had a valid <a name="perlhtmlmason-IDXTERM-888"></a>
+<a name="perlhtmlmason-IDXTERM-889"></a>
+<a name="perlhtmlmason-IDXTERM-890"></a>
+<a name="perlhtmlmason-IDXTERM-891"></a>
+<a name="perlhtmlmason-IDXTERM-892"></a>
+ authentication token and then go on to check that the user actually had the
+appropriate access rights. This is simply an extra step in the authorization
+process.
+</p>
+<p class="content">
+Using attributes, we can easily define access controls for different portions
+of our site. Let's assume that we have four<a name="IXT-11-1208"></a>
+<a name="IXT-11-1209"></a>
+ access levels, Guest, User, Editor, and Admin. Most of the site is public and
+viewable by anyone. Some parts of the site require a valid login, while some
+require a higher level of privilege.
+</p>
+<p class="content">
+We implement our access check in our top-level autohandler, <u>/autohandler</u>, from which all other components <em>must</em> inherit in order for the access control code to be effective.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $user = get_user( );  # again, hand waving
+  
+   my $required_access = $m-&gt;base_comp-&gt;attr('required_access');
+  
+   unless ( $user-&gt;has_access_level($required_access) ) {
+      # ... do something like send them to another page
+   }
+  
+   $m-&gt;call_next;
+  &lt;/%init&gt;
+  &lt;%attr&gt;
+   required_access =&gt; 'Guest'
+  &lt;/%attr&gt;</pre>
+</div><p class="content">
+It is crucial that we set a default access level in this autohandler. By doing
+this, we are saying that, by default, all components are accessible by all
+people, since every visitor will have at least Guest access.
+</p>
+<p class="content">
+We can override this default elsewhere. For example, in a component called <u>/admin/autohandler</u>, we might have:
+</p>
+<div class="example-code">
+<pre>  &lt;%attr&gt;
+   required_access =&gt; 'Admin'
+  &lt;/%attr&gt;</pre>
+</div><p class="content">
+As long as all the components in the<a name="IXT-11-1210"></a>
+<u>/admin/</u> directory inherit from the <u>/admin/autohandler</u><a name="IXT-11-1211"></a>
+ component and don't override the <code>required_access</code> attribute, we have effectively limited that directory (and its subdirectories)
+to admin users only. If we for some reason had an individual component in the <u>/admin/</u> directory that we wanted editors to be able to see, we could simply set the <code>required_access</code> attribute for that  component to <code>'Editor'</code> .
+</p>
+<a name="TOC-ANCHOR-12"></a>
+<h2>Co-Branding Color Schemes</h2><p class="content">
+<a name="CHP-11-SECT-4"></a>
+
+</p>
+<p class="content">
+One common business practice these days is to take a useful site and offer
+&quot;cobranded&quot; versions of it to other businesses. A co-branded <a name="IXT-11-1212"></a>
+<a name="IXT-11-1213"></a>
+ site might display different graphics and text for each client while retaining
+the same basic layout and functionality across all clients.
+</p>
+<p class="content">
+Mason is extremely well-suited to this task. Let's look at how we might apply a
+new color scheme to each co-brand.
+</p>
+<p class="content">
+For the purpose of these examples, we're going to assume that the name of the
+co-brand has already been determined and is being passed to our components as a
+variable called <code>$cobrand</code>. This variable could be set up by including the co-brand in the query string,
+in a session, or as part of a hostname.
+</p>
+<a name="TOC-ANCHOR-13"></a>
+<h3>With Stylesheets</h3><p class="content">
+<a name="CHP-11-SECT-4.1"></a>
+
+</p>
+<p class="content">
+One way to do this is to use stylesheets for all of your pages. Each cobrand
+will then have a different <a name="perlhtmlmason-IDXTERM-904"></a>
+<a name="perlhtmlmason-IDXTERM-905"></a>
+<a name="perlhtmlmason-IDXTERM-906"></a>
+ stylesheet. However, since most of the stylesheets will be the same for each
+client, you'll probably want to have a parent stylesheet that all the others
+inherit from.
+</p>
+<p class="content">
+Of course, while it is <em>supposed</em> to be possible to inherit stylesheets, some older browsers like Netscape 4.x
+don't support that at all, so we will generate the stylesheet on the fly using
+Mason instead. This gives you all the flexibility of inheritance without the
+compatibility headaches.
+</p>
+<p class="content">
+The stylesheet will be called via:
+</p>
+<div class="example-code">
+<pre>  &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles.css?cobrand=&lt;% $cobrand %&gt;&quot;&gt;</pre>
+</div><p class="content">
+Presumably, this snippet would go in a top-level autohandler.<sup><a href="#FOOTNOTE-ANCHOR-3">3</a></sup><a name="RETURN-ANCHOR-3"></a> The <u>styles.css</u> component might look something like <a href="chapter-11.mhtml.htm#CHP-11-EX-9" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-9">Example 11-9</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-9"></a>
+<div class="example">
+<span class="caption">Example 11-9.  styles.css</span>
+<div class="example-code">
+<pre>  % while (my ($name, $def) = each %styles) {
+  &lt;% $name %&gt; &lt;% $def %&gt;
+  % }
+  &lt;%args&gt;
+   $cobrand
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my %styles;
+   
+   die &quot;Security violation, style=$style&quot; unless $cobrand =~ /^\w+$/;
+   foreach my $file ('default.css', &quot;$cobrand.css&quot;) {
+       local *FILE;
+       open FILE, &quot;&lt; /var/styles/$file&quot;
+           or die &quot;Cannot read /var/styles/$file: $!&quot;;
+       while (&lt;FILE&gt;) {
+           next unless /(\S+) \s+ (\S.*)/x;
+           $styles{$1} = $2;
+       }
+       close FILE;
+   }
+   
+   $r-&gt;content_type('text/css');
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Of course, this assumes that each line of the stylesheet represents a single
+style definition, something like:
+</p>
+<div class="example-code">
+<pre>  .foo_class { color: blue }</pre>
+</div><p class="content">
+This isn't that hard to enforce for a project, but it limits you to just a
+subset of <a name="IXT-11-1214"></a>
+ CSS functionality. If this is not desirable, check out the <code>CSS</code> and <code>CSS::SAC</code> modules on CPAN.
+</p>
+<p class="content">
+This component first grabs all the default styles from the <u>default.css</u><a name="IXT-11-1215"></a>
+ file and then overwrites any styles that are defined in the co-brand-specific
+file.
+</p>
+<p class="content">
+One nice aspect of this method is that if the site designers are not
+programmers, they can just work with plain old  stylesheets, which should make them more comfortable.
+</p>
+<a name="TOC-ANCHOR-14"></a>
+<h3>With Code</h3><p class="content">
+<a name="CHP-11-SECT-4.2"></a>
+
+</p>
+<p class="content">
+Another way to do this is to store the color <a name="perlhtmlmason-IDXTERM-912"></a>
+<a name="perlhtmlmason-IDXTERM-913"></a>
+ preferences for each co-brand in a component or perhaps in the database. At
+the beginning of each request, you could fetch these colors and pass them to
+each component.
+</p>
+<p class="content">
+For example, in your top-level autohandler you might have:
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $cobrand = determine_cobrand( ); # magic hand waving again
+  
+   my %colors = cobrand_colors($cobrand);
+  
+   $m-&gt;call_next(%ARGS, colors =&gt; \%colors);
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+The <code>cobrand_colors()</code><a name="IXT-11-1216"></a>
+ subroutine could be made to use defaults whenever they were not overridden for
+a given co-brand.
+</p>
+<p class="content">
+Then the components might do something like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   %colors
+  &lt;/%args&gt;
+  
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body bgcolor=&quot;&lt;% $colors{body_bgcolor} %&gt;&quot;&gt;
+  ...</pre>
+</div><p class="content">
+This technique is a bit more awkward, as it requires that you have a color set
+for every possibility (<code>$colors{left_menu_table_cell}</code>, <code>$colors{footer_text}</code>, ad nauseam). It also works <em>only</em> for  colors, whereas stylesheets allow you to customize fonts and layouts. But if
+you're targeting browsers that don't support stylesheets or you don't know CSS,
+this is a possible alternative.
+</p>
+<a name="TOC-ANCHOR-15"></a>
+<h2>Developer Environments</h2><p class="content">
+<a name="CHP-11-SECT-5"></a>
+
+</p>
+<p class="content">
+Having a<a name="IXT-11-1217"></a>
+ development environment is a good thing for many reasons. Testing potential
+changes on your production server is likely to get you fired, for one thing.
+</p>
+<p class="content">
+Ideally, you want each developer to have his own playground where changes he
+makes don't affect others. Then, when something is working, it can be checked
+into source control and everyone else can use the updated version.
+</p>
+<a name="TOC-ANCHOR-16"></a>
+<h3>Multiple Component Roots</h3><p class="content">
+<a name="CHP-11-SECT-5.1"></a>
+
+</p>
+<p class="content">
+A fairly simple way to achieve this goal is by giving each developer his own <a name="perlhtmlmason-IDXTERM-918"></a>
+<a name="perlhtmlmason-IDXTERM-919"></a>
+<a name="perlhtmlmason-IDXTERM-920"></a>
+ component root, which will be checked before the main root.
+</p>
+<p class="content">
+Developers can work on components in their own private roots without fear of
+breaking anything for anyone else. Once changes are made, the altered component
+can be checked into source control and moved into the shared root, where
+everyone will see it.
+</p>
+<p class="content">
+This means that one <code>HTML::Mason::ApacheHandler</code> object needs to be created for each developer. This can be done solely by
+changing your server configuration file, but it is easiest to do this using an
+external handler.
+</p>
+<p class="content">
+The determination of which object to use can be made either by looking at the <a name="perlhtmlmason-IDXTERM-921"></a>
+ URL path or by using a different hostname for each developer.
+</p>
+<h4>By path</h4><p class="content">
+<a name="CHP-11-SECT-5.1.1"></a>
+
+</p>
+<p class="content">
+This example checks the URL to determine which developer's private root to use:
+</p>
+<div class="example-code">
+<pre>  use Apache::Constants qw(DECLINED);
+  
+  my %ah;
+  
+  sub handler {
+      my $r = shift;
+      my $uri = $r-&gt;uri;
+      $uri =~ s,^/(\w+),,;  # remove the developer name from the path
+  
+      my $developer = $1 or return DECLINED;
+  
+      $r-&gt;uri($uri);  # set the uri to the new path
+  
+      $ah{$developer} ||=
+        HTML::Mason::ApacheHandler-&gt;new
+            ( comp_root =&gt; [ [ dev  =&gt; &quot;/home/$developer/mason&quot; ],
+                             [ main =&gt; '/var/www' ] ],
+              data_dir =&gt; &quot;/home/$developer/data&quot; );
+  
+      return $ah{$developer}-&gt;handle_request($r);
+  }</pre>
+</div><p class="content">
+We first examine the URL of the request to find the developer name, which we
+assume will always be the first part of the path, like <u>/faye/index.html</u>. We use a regex to remove this from the  URL, which we then change to be the altered path.
+</p>
+<p class="content">
+If there is no developer name we simply decline the request.
+</p>
+<p class="content">
+The main problem with this approach is that it would then require that all URLs
+on the site be relative in order to preserve the developer's name in the path.
+In addition, some Apache features like<a name="IXT-11-1218"></a>
+ index files and <a name="IXT-11-1219"></a>
+ aliases won't work properly either. Fortunately, there is an even better way.
+</p>
+<h4>By hostname</h4><p class="content">
+<a name="CHP-11-SECT-5.1.2"></a>
+<a name="IXT-11-1220"></a>
+
+</p>
+<p class="content">
+This example lets you give each developer their own hostname:
+</p>
+<div class="example-code">
+<pre>  my %ah;
+  
+  sub handler {
+      my $r = shift;
+  
+      my ($developer) = $r-&gt;hostname =~ /^(\w+)\./;
+  
+      $ah{$developer} ||=
+        HTML::Mason::ApacheHandler-&gt;new
+            ( comp_root =&gt; [ [ dev  =&gt; &quot;/home/$developer/mason&quot; ],
+                             [ main =&gt; '/var/www' ] ],
+              data_dir =&gt; &quot;/home/$developer/data&quot; );
+  
+      return $ah{$developer}-&gt;handle_request($r);
+  }</pre>
+</div><p class="content">
+This example assumes that for each developer there is a DNS entry like <code>dave.dev.masonbook.com</code>. You could also insert a CNAME wildcard entry in your DNS. The important part
+is that the first piece is the developer name.
+</p>
+<p class="content">
+Of course, with either method, developers will have to actively manage their
+development directories. Any  component in their directories will block their access to a component of the
+same name in the main directory.
+</p>
+<a name="TOC-ANCHOR-17"></a>
+<h3>Multiple Server Configurations</h3><p class="content">
+<a name="CHP-11-SECT-5.2"></a>
+<a name="ch11-idx-1007082-2"></a>
+<a name="ch11-idx-1007082-1"></a>
+
+</p>
+<p class="content">
+The multiple component root method has several downsides:
+</p>
+<ul>
+<li>
+Modules are shared by all the developers. If a change is made to a module,
+everybody will see it. This means that API changes are forced out to everyone
+at once, and a runtime error will affect all the developers. Additionally, you
+may need to stop and start the server every time a module is changed,
+interrupting everyone (although you could use<a name="IXT-11-1221"></a>
+<a name="IXT-11-1222"></a>
+<code>Apache::Reload</code> from CPAN to avoid this).</li>
+<li>
+You can't test different server configurations without all the developers being
+affected.</li>
+<li>
+Truly catastrophic errors that bring down the web server affect everyone.</li>
+<li>
+The logs are shared, so if you like to send messages to the error log for
+debugging you'd better hope that no one else is doing the same thing or you'll
+have a mess.
+</ul>
+<p class="content">
+The alternative is to run a separate daemon for each developer, each on its own
+port. This means maintaining either one fairly complicated configuration file,
+with a lot of <code>&lt;IfDefine&gt;</code><a name="IXT-11-1223"></a>
+ directives or separate configuration files for each developer.
+</p>
+<p class="content">
+The latter is probably preferable as it gives each developer total freedom to
+experiment. The configuration files can be generated from a template (possibly
+using Mason) or a script. Then each developer's server can listen on a
+different hostname or port for requests.
+</p>
+<p class="content">
+You can have each server's component root be the developer's working directory,
+which should mirror the layout of the real site. This means that there is no
+need to tweak any paths in the components.
+</p>
+<p class="content">
+This method's downside is that it will inevitably use up more memory than
+having a single server. It also requires a greater initial time investment in
+order to generate the configuration file templates. But the freedom it gives to
+individual developers is very nice, and the time investment is fixed.
+</p>
+<p class="content">
+Of course, since each developer has a computer, there is nothing to stop a
+developer from simply setting up Apache and <code>mod_perl</code> locally. And the automation would be even easier since there's no need to
+worry about dealing with unique port numbers or shared system resources. Even
+better (or worse, depending on your point of view), a developer can check out
+the entire system onto a laptop and work on the code without needing to be on
+the office  network.
+</p>
+<a name="TOC-ANCHOR-18"></a>
+<h3>Managing DBI Connections</h3><p class="content">
+<a name="CHP-11-SECT-5.3"></a>
+
+</p>
+<p class="content">
+Not infrequently, we see people on the Mason users list asking questions about
+how to handle caching <a name="perlhtmlmason-IDXTERM-933"></a>
+<a name="perlhtmlmason-IDXTERM-934"></a>
+ DBI connections.
+</p>
+<p class="content">
+Our recipe for this is really simple:
+</p>
+<div class="example-code">
+<pre>  use Apache::DBI</pre>
+</div><p class="content">
+Rather than reinventing the wheel, use <code>Apache::DBI</code><a name="IXT-11-1224"></a>
+<a name="IXT-11-1225"></a>
+ , which provides the following features:
+</p>
+<ul>
+<li>
+It is completely transparent to use. Once you've used it, you simply call <code>DBI-&gt;connect()</code> as always and <code>Apache::DBI</code> gives you an existing handle if one is available.</li>
+<li>
+It makes sure that the handle is live, so that if your RDBMS goes down and then
+back up, your connections still work just fine.</li>
+<li>
+It does not cache handles made before Apache forks, as many  DBI drivers do not support using a handle after a fork.
+</ul>
+<a name="TOC-ANCHOR-19"></a>
+<h2>Using Mason Outside of Dynamic Web Sites</h2><p class="content">
+<a name="CHP-11-SECT-6"></a>
+
+</p>
+<p class="content">
+So far we've spent a lot of time telling you how to use Mason to generate
+spiffy web stuff on the fly, whether that be HTML, <a name="IXT-11-1226"></a>
+ WML, or even dynamic <a name="IXT-11-1227"></a>
+ SVG files.
+</p>
+<p class="content">
+But Mason can be used in lots of other contexts. For example, you could write a
+Mason app that recursively descends a directory tree and calls each component
+in turn to generate a set of static pages.
+</p>
+<p class="content">
+How about using Mason to generate configuration files from templates? This
+could be quite useful if you had to configure a lot of machines similarly but
+with each one slightly different (for example, a web server farm).
+</p>
+<a name="TOC-ANCHOR-20"></a>
+<h3>Generating a Static Site from Components</h3><p class="content">
+<a name="CHP-11-SECT-6.1"></a>
+
+</p>
+<p class="content">
+Many <a name="perlhtmlmason-IDXTERM-941"></a>
+<a name="perlhtmlmason-IDXTERM-942"></a>
+<a name="perlhtmlmason-IDXTERM-943"></a>
+<a name="perlhtmlmason-IDXTERM-944"></a>
+ sites might be best implemented as a set of static files instead of as a set
+of dynamically created responses to requests. For example, if a site's content
+changes only once or twice a week, generating each page dynamically upon
+request is probably overkill. In addition, you can often find much cheaper web
+hosting if you don't need a mechanism for generating pages dynamically.
+</p>
+<p class="content">
+But we'd still like some of the advantages a Mason site can give us. We'd like
+to build the site based on a database of content. We'd also like to have a nice
+consistent set of headers and footers, as well as automatically generate some
+bits for each page from the database. And maybe, just maybe, we also want to be
+able to make look-and-feel changes to the site without resorting to a
+multi-file find-and-replace. These requirements suggest that Mason is a good
+choice for site implementation.
+</p>
+<p class="content">
+For our example in this section, we'll consider a site of film reviews. It is
+similar to a site that one of the authors actually created for Hong Kong film
+reviews. Our example site will essentially be a set of pages that show
+information about films, including the film's title, year of release, director,
+cast, and of course a review. We'll generate the site from the Mason components
+on our home <a name="IXT-11-1228"></a>
+ GNU/Linux box and then upload the site to the host.
+</p>
+<p class="content">
+First, we need a directory layout. Assuming that we're starting in the
+directory <u>/home/dave/review-site</u>, here's the layout:
+</p>
+<div class="example-code">
+<pre>  /home/dave/review-site (top level)
+    /htdocs
+      - index.html
+        /reviews
+          - autohandler
+          - Anna_Magdalena.html
+          - Lost_and_Found.html
+          - ... (one file for each review)
+  
+    /lib
+      - header.mas
+      - footer.mas
+      - film_header_table.mas</pre>
+</div><p class="content">
+The index page will be quite simple. It will look like <a href="chapter-11.mhtml.htm#CHP-11-EX-10" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-10">Example 11-10</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-10"></a>
+<div class="example">
+<span class="caption">Example 11-10.  review-site/htdocs/index.html</span>
+<div class="example-code">
+<pre>  &lt;&amp; /lib/header.mas, title =&gt; 'review list' &amp;&gt;
+  &lt;h1&gt;Pick a review&lt;/h1&gt;
+  &lt;ul&gt;
+  % foreach my $title (sort keys %pages) {
+   &lt;li&gt;&lt;a href=&quot;&lt;% $pages{$title} | h %&gt;&quot;&gt;&lt;% $title | h %&gt;&lt;/a&gt;
+  % }
+  &lt;/li&gt;
+  &lt;%init&gt;
+   my %pages;
+  
+   local *DIR;
+   my $dir = File::Spec-&gt;catfile( File::Spec-&gt;curdir, 'reviews' );
+   opendir DIR, $dir
+       or die &quot;Cannot open $dir dir: $!&quot;;
+  
+   foreach my $file ( grep { /\.html$/ } readdir DIR ) {
+       next if $file =~ /index\.html$/;
+  
+       my $comp = $m-&gt;fetch_comp(&quot;reviews/$file&quot;)
+         or die &quot;Cannot find reviews/$file component&quot;;
+  
+       my $title = $comp-&gt;attr('film_title');
+  
+       $pages{$title} = &quot;reviews/$file&quot;;
+   }
+  
+   closedir DIR
+       or die &quot;Cannot close $dir dir: $!&quot;;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This component simply makes a list of the available reviews, based on the files
+ending in <u>.html</u> in the <u>/home/dave/review-site/reviews</u> subdirectory. We assume that the actual film title is kept as an attribute
+(via an <code>&lt;%attr&gt;</code> section) of the component, so we load the component and ask it for the <code>film_title</code> attribute. If it doesn't have one Mason will throw an exception, which we
+think is better than having an empty link. If this were a dynamic web site, we
+might want to instead simply skip that review and go on to the next one, but
+here we're assuming that this script is being executed by a human being capable
+of fixing the error.
+</p>
+<p class="content">
+We make sure to HTML-escape the filename and the film title in the <code>&lt;a&gt;</code><a name="IXT-11-1229"></a>
+ tag's <code>href</code> attribute. It's not unlikely that the film could contain an ampersand
+character (<code>&amp;</code>), and we want to generate proper HTML.
+</p>
+<p class="content">
+Next, let's make our autohandler for the <u>reviews</u> subdirectory (<a href="chapter-11.mhtml.htm#CHP-11-EX-11" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-11">Example 11-11)</a>, which will take care of all the repeated work that goes into displaying a review.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-11"></a>
+<div class="example">
+<span class="caption">Example 11-11.  review-site/htdocs/reviews/autohandler</span>
+<div class="example-code">
+<pre>  &lt;&amp; /lib/header.mas, title =&gt; $film_title &amp;&gt;
+  &lt;&amp; /lib/film_header_table.mas, comp =&gt; $m-&gt;base_comp &amp;&gt;
+  % $m-&gt;call_next;
+  &lt;&amp; /lib/footer.mas &amp;&gt;
+  
+  &lt;%init&gt;
+   my $film_title = $m-&gt;base_comp-&gt;attr('film_title');
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Again, a very simple page. We grab the film title so we can pass it to the
+header component. Then we call the <u>film_header_table.mas</u> component, which will use attributes from the component it is passed to
+generate a table containing the film's title, year of release, cast, and
+director.
+</p>
+<p class="content">
+Then we call the review component itself via <code>call_next()</code><a name="IXT-11-1230"></a>
+ and finish up with the footer.
+</p>
+<p class="content">
+Our header (<a href="chapter-11.mhtml.htm#CHP-11-EX-12" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-12">Example 11-12)</a> is quite straightforward.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-12"></a>
+<div class="example">
+<span class="caption">Example 11-12.  review-site/lib/header.mas</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;&lt;% $real_title | h %&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+  &lt;%args&gt;
+   $title
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $real_title = &quot;Dave's Reviews - $title&quot;;
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This is a nice, simple header that generates the basic HTML pieces every page
+needs. Its only special feature is that it will make sure to incorporate a
+unique title, based on what is passed in the <code>$title</code> argument.
+</p>
+<p class="content">
+The footer (<a href="chapter-11.mhtml.htm#CHP-11-EX-13" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-13">Example 11-13)</a> is the simplest of all.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-13"></a>
+<div class="example">
+<span class="caption">Example 11-13.  review-site/lib/footer.mas</span>
+<div class="example-code">
+<pre>  &lt;p&gt;
+  &lt;em&gt;Copyright &amp;copy; David Rolsky, 1996-2002&lt;/em&gt;.
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+  &lt;em&gt;All rights reserved.  No part of the review may be reproduced or
+  transmitted in any form or by any means, electronic or mechanical,
+  including photocopying, recording, or by any information storage and
+  retrieval system, without permission in writing from the copyright
+  owner.&lt;/em&gt;
+  &lt;/p&gt;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+There's one last building block piece left before we get to the reviews, the <u>/lib/film_header_table.mas</u> component (<a href="chapter-11.mhtml.htm#CHP-11-EX-14" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-14">Example 11-14)</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-14"></a>
+<div class="example">
+<span class="caption">Example 11-14.  review-site/lib/film_header_table.mas</span>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot;&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;&lt;h1&gt;&lt;% $film_title | h %&gt;&lt;/h1&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % foreach my $field ( grep { exists $data{$_} } @optional ) {
+   &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;&lt;% ucfirst $field %&gt;&lt;/strong&gt;:&lt;/td&gt;
+    &lt;td&gt;&lt;% $data{$field} | h %&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  % }
+  &lt;/table&gt;
+  
+  &lt;%args&gt;
+   $comp
+  &lt;/%args&gt;
+  
+  &lt;%init&gt;
+   my %data;
+   my $film_title = $comp-&gt;attr('film_title');
+   my @optional = qw( year director cast );
+   foreach my $field (@optional)  {
+       my $data = $comp-&gt;attr_if_exists($field);
+       next unless defined $data;
+       $data{$field} = ref $data ? join ', ', @$data : $data;
+   }
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This component just builds a table based on the attributes of the component
+passed to it. The required attribute is the film's title, but we can
+accommodate the year, director(s), and cast.
+</p>
+<p class="content">
+There are only two slightly complex lines.
+</p>
+<p class="content">
+The first is:
+</p>
+<div class="example-code">
+<pre>  % foreach my $field ( grep { exists $data{$_} } @optional ) {</pre>
+</div><p class="content">
+Here we are iterating through the fields in <code>@optional</code> that have matching keys in <code>%data</code>. We could have simply called <code>keys %data</code>, but we want to display things in a specific order while still skipping
+nonexistent keys.
+</p>
+<p class="content">
+The other line that bears some explaining is:
+</p>
+<div class="example-code">
+<pre>  $data{$field} = ref $data ? join ', ', @$data : $data;</pre>
+</div><p class="content">
+We check whether the value is a reference so that the attribute can contain an
+array reference, which is useful for something like the cast, which is probably
+going to have more than one person in it. If it is an array, we join all its
+elements together into a comma-separated list. Otherwise, we simply use it
+as-is.
+</p>
+<p class="content">
+Let's take a look at what one of the review components might look like:
+</p>
+<div class="example-code">
+<pre>  &lt;%attr&gt;
+   film_title =&gt; 'Lost and Found'
+   year =&gt; 1996
+   director =&gt; 'Lee Chi-Ngai'
+   cast =&gt; [ 'Kelly Chan Wai-Lan', 'Takeshi Kaneshiro', 'Michael Wong Man-Tak' ]
+  &lt;/%attr&gt;
+  
+  &lt;p&gt;
+   Takeshi Kaneshiro plays a man who runs a business called Lost and
+   Found, which specializes in searching for lost things and people. In
+   the subtitles, his name is shown as That Worm, though that seems
+   like a fairly odd name, cultural barriers notwithstanding. Near the
+   beginning of the film, he runs into Kelly Chan. During their first
+   conversation, she says that she has lost something. What she says
+   she has lost is hope. We soon find out that she has leukemia and
+   that the hope she seeks seems to be Michael Wong, a sailor who works
+   for her father's shipping company.
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+   blah blah blah...
+  &lt;/p&gt;</pre>
+</div><p class="content">
+This makes writing new reviews really easy. All we do is type in the review and
+a small number of attributes, and the rest of the framework is built
+automatically.
+</p>
+<p class="content">
+A more complex version of this site might store some or all of the data,
+including the reviews, in a database, which would make it easier to reuse the
+information in another context. But this is certainly good enough for a first
+pass.
+</p>
+<p class="content">
+All that's left is the script that will generate the static HTML files. See <a href="chapter-11.mhtml.htm#CHP-11-EX-15" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-15">Example 11-15</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-15"></a>
+<div class="example">
+<span class="caption">Example 11-15.  review-site/generate_html.pl</span>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use strict;  # Always use strict!
+  
+  use Cwd;
+  use File::Basename;
+  use File::Find;
+  use File::Path;
+  use File::Spec;
+  use HTML::Mason;
+  
+  # These are directories.  The canonpath method removes any cruft
+  # like doubled slashes.
+  my ($source, $target) = map { File::Spec-&gt;canonpath($_) } @ARGV;
+  
+  die &quot;Need a source and target\n&quot;
+      unless defined $source &amp;&amp; defined $target;
+  
+  # Make target absolute because File::Find changes the current working
+  # directory as it runs.
+  $target = File::Spec-&gt;rel2abs($target);
+  
+  my $interp =
+      HTML::Mason::Interp-&gt;new( comp_root =&gt; File::Spec-&gt;rel2abs(cwd) );
+  
+  find( \&amp;convert, $source );
+  
+  sub convert {
+      # We don't want to try to convert our autohandler or .mas
+      # components.  $_ contains the filename
+      return unless /\.html$/;
+  
+      my $buffer;
+      # This will save the component's output in $buffer
+      $interp-&gt;out_method(\$buffer);
+  
+      # We want to split the path to the file into its components and
+      # join them back together with a forward slash in order to make
+      # a component path for Mason
+      #
+      # $File::Find::name has the path to the file we are looking at,
+      # relative to the starting directory
+      my $comp_path = join '/', File::Spec-&gt;splitdir($File::Find::name);
+  
+      $interp-&gt;exec(&quot;/$comp_path&quot;);
+      # Strip off leading part of path that matches source directory
+      my $name = $File::Find::name;
+      $name =~ s/^$source//;
+  
+      # Generate absolute path to output file
+      my $out_file = File::Spec-&gt;catfile( $target, $name );
+      # In case the directory doesn't exist, we make it
+      mkpath(dirname($out_file));
+  
+      local *RESULT;
+      open RESULT, &quot;&gt; $out_file&quot; or die &quot;Cannot write to $out_file: $!&quot;;
+      print RESULT $buffer or die &quot;Cannot write to $out_file: $!&quot;;
+      close RESULT or die &quot;Cannot close $out_file: $!&quot;;
+  }
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+We take advantage of the <code>File::Find</code> module included with Perl, which can recursively descend a directory structure
+and invoke a callback for each file found. We simply have our callback (the <code>convert()</code><a name="IXT-11-1231"></a>
+ subroutine) call the <code>HTML::Mason::Interp</code> object's <code>exec()</code> method for each file ending in <em>.html</em>. We then write the results of the component call out to disk in the target
+directory.
+</p>
+<p class="content">
+We also use a number of other modules, including <code>Cwd</code>, <code>File::Basename</code>, <code>File::Path</code>, and <code>File::Spec</code>. These modules are distributed as part of the Perl core and provide useful
+functions for dealing with the filesystem in a cross-platform-compatible
+manner.
+</p>
+<p class="content">
+You may have noticed in <a href="chapter-9.mhtml.htm#CHP-9-EX-1" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-EX-1">Example 9-1</a> that when we invoked the Interpreter's <code>exec()</code> method directly, it didn't attempt to handle any of the web-specific elements
+of the request.
+</p>
+<p class="content">
+The same  method is employed again here in our HTML generation script, and this same
+methodology could be applied in other situations that have little or nothing to
+do with the web.
+</p>
+<a name="TOC-ANCHOR-21"></a>
+<h3>Generating Config Files</h3><p class="content">
+<a name="CHP-11-SECT-6.2"></a>
+
+</p>
+<p class="content">
+Config files are a good candidate for <a name="perlhtmlmason-IDXTERM-953"></a>
+<a name="perlhtmlmason-IDXTERM-954"></a>
+<a name="perlhtmlmason-IDXTERM-955"></a>
+ Mason. For example, your production and staging web server config files might
+differ in only a few areas. Changes to one usually will need to be propagated
+to another. This is especially true with <code>mod_perl</code>, where web server configuration can basically be part of a web-based
+application.
+</p>
+<p class="content">
+And if you adopt the per-developer server solution discussed earlier, a
+template-driven config file generator becomes even more appealing.
+</p>
+<p class="content">
+<a href="chapter-11.mhtml.htm#CHP-11-EX-16" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-16">Example 11-16</a> is a simple script to drive this generation.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-16"></a>
+<div class="example">
+<span class="caption">Example 11-16.  config_maker.pl</span>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use strict;
+  
+  use Cwd;
+  use File::Spec;
+  use HTML::Mason;
+  use User::pwent;
+  
+  my $comp_root =
+      File::Spec-&gt;rel2abs( File::Spec-&gt;catfile( cwd( ), 'config' ) );
+  
+  my $output;
+  my $interp =
+      HTML::Mason::Interp-&gt;new( comp_root  =&gt; $comp_root,
+                        out_method =&gt; \$output,
+                        );
+  
+  my $user = getpwuid($&lt;);
+  
+  $interp-&gt;exec( '/httpd.conf.mas', user =&gt; $user );
+  
+  my $file =  File::Spec-&gt;catfile( $user-&gt;dir, 'etc', 'httpd.conf' );
+  open FILE, &quot;&gt;$file&quot; or die &quot;Cannot open $file: $!&quot;;
+  print FILE $output;
+  close FILE;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+An <u>httpd.conf.mas</u> from the component might look like <a href="chapter-11.mhtml.htm#CHP-11-EX-17" tppabs="http://www.masonbook.com/book/chapter-11.mhtml#CHP-11-EX-17">Example 11-17</a>.
+</p>
+
+<p class="content">
+<a name="CHP-11-EX-17"></a>
+<div class="example">
+<span class="caption">Example 11-17.  config/httpd.conf.mas</span>
+<div class="example-code">
+<pre>  ServerRoot &lt;% $user-&gt;dir %&gt;
+  PidFile &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'logs', 'httpd.pid' ) %&gt;
+  LockFile &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'logs', 'httpd.lock' ) %&gt;
+  Port &lt;% $user-&gt;uid + 5000 %&gt;
+  
+  # loads Apache modules, defines content type handling, etc.
+  &lt;&amp; standard_apache_config.mas &amp;&gt;
+  
+  &lt;Perl&gt;
+   use lib &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'project', 'lib' ) %&gt;;
+  &lt;/Perl&gt;
+  
+  DocumentRoot &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'project', 'htdocs' ) %&gt;
+  
+  PerlSetVar MasonCompRoot &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'project', 'htdocs' ) %&gt;
+  PerlSetVar MasonDataDir &lt;% File::Spec-&gt;catfile( $user-&gt;dir, 'mason' ) %&gt;
+  PerlModule HTML::Mason::ApacheHandler
+  
+  &lt;LocationMatch &quot;\.html$&quot;&gt;
+   SetHandler  perl-script
+   PerlHandler HTML::Mason::ApacheHandler
+  &lt;/LocationMatch&gt;
+  
+  &lt;%args&gt;
+  $user
+  &lt;/%args&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+This points the server's document root to the developer's working directory.
+Similarly, it adds the <u>project/lib</u> directory the Perl's <code>@INC</code> via <code>use lib</code> so that the user's working copy of the project's modules are seen first. The
+server will listen on a port equal to the user's user id plus 5,000.
+</p>
+<p class="content">
+Obviously, this is an incomplete example. It doesn't specify where logs, or
+other necessary config items, will go. It also doesn't handle generating the  config file for a server intended to be run by the root user on a standard
+port.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. If you are not familiar with Perl's tied variable feature, we suggest reading
+the perltie manpages (<code>perldoc perltie</code>). -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. See the documentation accompanying the <code>Cache::Cache</code> modules for more detail. -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-3"></a>
+<p class="content">
+3. The overachieving reader may want to imagine a dhandler-based solution with
+URLs like <u>/styles/&lt;cobrand&gt;.css</u>. -- <a href="#RETURN-ANCHOR-3">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<b>11</b>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

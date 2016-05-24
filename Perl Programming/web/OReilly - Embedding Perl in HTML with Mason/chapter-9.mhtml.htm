@@ -1,0 +1,665 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<b>9</b>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 9: Mason and CGI</h1><p class="content">
+<a name="CHP-9"></a>
+
+</p>
+<p class="content">
+Although <code>mod_perl</code> is pretty cool, it's not the only way to use Mason to build a web site. In
+fact, plenty of times it's more advisable to use CGI than <code>mod_perl</code>, as we describe in this chapter. If you find yourself in such a situation,
+you're in luck -- Mason works just fine under CGI, and special care has gone
+into making sure the cooperation is smooth. The <code>HTML::Mason::CGIHandler</code> module provides the glue necessary to use Mason in most common CGI
+environments.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>CGI-Appropriate Situations</h2><p class="content">
+<a name="CHP-9-SECT-1"></a>
+
+</p>
+<p class="content">
+Before we get into the details of how to set up Mason under CGI, let's think
+about <em>why</em> you might want to use this setup. After all, isn't <code>mod_perl</code> supposed to be <em>better</em> than CGI? Well, yes and no. As in most things, context is everything. The
+following factors may conspire to make you choose clunky old <a name="perlhtmlmason-IDXTERM-743"></a>
+<a name="perlhtmlmason-IDXTERM-744"></a>
+ CGI over clunky new <code>mod_perl</code> in a particular situation:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+Need instant gratification</div>
+<p class="content">
+Installing <code>mod_perl</code> can be somewhat difficult if you've never done it before (heck, even if you <em>have</em> done it before), and it can take a while to get used to the peculiarities of
+developing in a <code>mod_perl</code> environment. If you want to try Mason out but don't want to spend time
+installing and configuring <code>mod_perl</code> (or you don't want to wait for the person who's going to come install it for
+you), you may be interested in using <code>HTML::Mason::CGIHandler</code> to start development, then switching over to <code>mod_perl</code> and <code>HTML::Mason::ApacheHandler</code><a name="IXT-9-1118"></a>
+ once you've gotten comfortable with <code>mod_perl</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Must share hosting environments</div>
+<p class="content">
+Many organizations simply don't have the money to pay for their own server and
+staff to administer it, so they sign up with a cheap virtual hosting service
+that lets them run CGI scripts. The key word &quot;virtual&quot; means that
+several organizations, inevitably of varying scruples, share the same web
+server on the same machine. Although some of these services say they offer <code>mod_perl</code>, you should not use it, because it is very insecure and very prone to
+catastrophic development errors.
+</p>
+<p class="content">
+It is insecure because all your code will run in the web server process, along
+with any other hooligan's code on your shared server. Unless you trust all
+those hooligans not to steal your passwords, harass your clients, delete your
+files, and plunder your village, you should avoid using <code>mod_perl</code> offered in a virtual hosting environment.
+</p>
+<p class="content">
+It is prone to development errors for the same reason: your code runs in the
+web server process, so if your Mason code accidentally gets into an infinite
+loop or hangs the server process, you bring the server down with you. Hosting
+services tend to dislike that. If you had enough money, you'd handle this
+problem by running separate servers for development and production, but you
+clearly don't have enough money for that, since you're using cheap virtual
+hosting.
+</p>
+<p class="content">
+Good old CGI, unpleasant as it is in other ways, provides a solution. Apache's <a name="IXT-9-1119"></a>
+<a name="IXT-9-1120"></a>
+ ExecCGI mechanism (and its equivalent in other servers) can be configured to
+use a &quot;setuid&quot; execution mechanism to make sure that your CGI scripts
+run as the user that owns them -- you. This means that you can make all your
+sensitive data files accessible only by you, that any files your scripts create
+are owned by you, and that if you make a big mistake, you don't anger the other
+people who share your server.
+</p>
+<p class="content">
+Of course, this argument is moot if your web hosting service doesn't support
+the ExecCGI model. Most good full-featured services do, and most crappy ones
+don't. Make sure you do the proper research.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Speed not critical</div>
+<p class="content">
+Alas, all the claims of the <code>mod_perl</code> crowd are true -- CGI is slower than <code>mod_perl</code>, and it doesn't provide nearly as much control over the server process.
+However, sometimes you don't care. If request speed doesn't mean too much on
+your site, and you don't need to do anything fancy with <code>mod_perl</code>'s various request phases and content management, then there are few, if any,
+reasons to use <code>mod_perl</code>. <code>mod_perl</code> itself isn't (necessarily) all that complicated, but the environment you
+deploy it in can be.
+</p>
+<p class="content">
+A strong factor in your decision should be rigorous benchmarking; if your site
+running under CGI can keep up with the amount of traffic you'll need to handle,
+then <code>HTML::Mason::CGIHandler</code> holds promise for you. As always, do the proper research.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Special memory usage situations</div>
+<p class="content">
+One of the particular constraints of <code>mod_perl</code> is that it can use a lot of memory. This is mainly due to the persistent
+nature of the embedded Perl interpreter; memory you allocate during one request
+may not get freed until many more requests are served and the child process is
+terminated. Even if you explicitly free the memory when you're done with it,
+using Perl's <code>undef()</code><a name="IXT-9-1121"></a>
+ function, most operating systems won't actually return the memory block to the
+general pool of free system memory; they'll just mark it as reusable within
+that same process. Because of this, <code>mod_perl</code> developers are often quite miserly with memory and will sometimes do
+convoluted things just to keep memory usage at a minimum.
+</p>
+<p class="content">
+The persistence of memory creates a problem when you need to have a large chunk
+of data resident in memory for processing. One of the most common instances of
+this is HTTP<a name="IXT-9-1122"></a>
+
+</p>
+<p class="content">
+<a name="IXT-9-1123"></a>
+ file uploads: if the user uploads a large file, that file will often end up in
+memory, creating a real problem in a <code>mod_perl</code> environment. However, if the user is uploading a large file, he'll typically
+have to wait around for the file to transfer over the network, which means that
+he won't really care (or notice) if the receiving script takes an extra
+half-second to execute. CGI can be useful in this situation, because any memory
+used during the request will be freed up immediately when the request is over.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Web server isn't Apache</div>
+<p class="content">
+Although <a name="IXT-9-1124"></a>
+ Apache is a great and flexible web server with a huge support team and
+developer community, it's not the only web server on the planet. If you find
+yourself needing to use a server other than Apache, of course you won't be able
+to use <code>mod_perl</code> either. Since most web servers support a CGI mechanism of some sort, CGI may
+be the best way to use Mason in an environment like this.
+</p>
+<p class="content">
+In fact, even when your web server <em>is</em> Apache, you may want to use a different execution model like <a name="IXT-9-1125"></a>
+ FastCGI. Mason's 
+</p>
+<p class="content">
+ CGI support extends well into situations like these.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-2"></a>
+<h2>CGI-Inappropriate Situations</h2><p class="content">
+<a name="CHP-9-SECT-2"></a>
+
+</p>
+<p class="content">
+In some situations, <a name="perlhtmlmason-IDXTERM-755"></a>
+ CGI just won't do. Depending on who you ask, these situations might be
+characterized with terms ranging from &quot;always&quot; to &quot;never.&quot;
+It's beyond the scope of this book to make all the arguments germane to the CGI
+versus <code>mod_perl</code> debate, but these factors might make choosing CGI impossible:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+Startup cost too great</div>
+<p class="content">
+The most commonly encountered argument in favor of <code>mod_perl</code> is that it reduces the<a name="IXT-9-1126"></a>
+ startup cost of each request by putting a<a name="IXT-9-1127"></a>
+ Perl interpreter in resident memory, allowing various resources to be
+allocated once per server child rather than once per request. This is true, and
+important.
+</p>
+<p class="content">
+This resource allocation scheme can produce tremendous speedups in several
+areas, most notably database connection time. Many modern dynamic sites rely on
+a database connection, and if you're using an industrial-strength database like
+Oracle that has to perform lots of tasks every time you connect, connections
+can take so long to obtain that connecting on every request is simply
+unacceptable. Other resources may suffer from this same constraint, so try to
+determine your needs before running full speed into the CGI camp.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+Advanced mod_perl features too tantalizing</div>
+<p class="content">
+Let's face it, <code>mod_perl</code> is cool. It's a window into the most advanced web server in the world, using
+the most fun and versatile language in the world. If you simply can't live
+without some of the more advanced <code>mod_perl</code> features like content negotiation, server-side subrequests, and multiple
+request phase hooks, you're forever going to feel fettered by CGI's inherent  limitations.
+</p>
+
+</ul>
+<a name="TOC-ANCHOR-3"></a>
+<h2>Creating a CGI-Based Site in Mason</h2><p class="content">
+<a name="CHP-9-SECT-3"></a>
+
+</p>
+<p class="content">
+You can get <a name="perlhtmlmason-IDXTERM-759"></a>
+<a name="perlhtmlmason-IDXTERM-760"></a>
+ Mason and CGI to work together in several different ways. One model is to
+write traditional CGI scripts that use Mason as a templating language,
+executing Mason components from inside the CGI program. See <a href="chapter-9.mhtml.htm#CHP-9-SECT-4" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-SECT-4">&quot;Using Mason Templates Inside Regular CGI Scripts&quot;</a> for how to set this up.
+</p>
+<p class="content">
+A better approach to building a Mason site under CGI is to let the components
+drive the site. You can configure your web server to invoke a CGI script of
+your choosing for certain requests, and that script can begin Mason processing
+on those files. In other words, you can have the same set of Mason components
+in your site you would have under <code>mod_perl</code>, but those components get executed under the CGI paradigm.
+</p>
+<p class="content">
+Your comrade in this endeavor is the <code>HTML::Mason::CGIHandler</code><a name="perlhtmlmason-IDXTERM-761"></a>
+<a name="perlhtmlmason-IDXTERM-762"></a>
+ module. Its role is similar to the <code>HTML::Mason::ApacheHandler</code> module, but since CGI is a bit clunkier than <code>mod_perl</code> and the CGIHandler is a bit younger than ApacheHandler, a bit more
+configuration is necessary. You'll need to combine four ingredients: directives
+in the server's configuration files (<u>httpd.conf</u> or <u>.htaccess</u> under Apache), a Mason wrapper CGI script, the Mason components themselves,
+and the <code>HTML::Mason::CGIHandler</code> module.
+</p>
+<p class="content">
+The necessary configuration directives are fairly straightforward. Here's an
+example for Apache:
+</p>
+<div class="example-code">
+<pre>  Action html-mason /cgi-bin/mason_handler.cgi
+  &lt;LocationMatch &quot;\.html$&quot;&gt;
+   SetHandler html-mason
+  &lt;/LocationMatch&gt;</pre>
+</div><p class="content">
+Here, the <u>mason_handler.cgi</u><a name="perlhtmlmason-IDXTERM-763"></a>
+ script can be located wherever you want, provided it's set up by the server to
+be run as a CGI script. The<a name="IXT-9-1128"></a>
+<em>/cgi-bin</em> directory is already configured on most systems using the <code>ScriptAlias</code> directive, so that's a reasonable place to put the handler script, though it's
+certainly not the only place.
+</p>
+<p class="content">
+Instead of passing all <u>.html</u> files through Mason as in the previous example, you might configure the server
+to Masonize all files in a certain directory (use a <code>&lt;Directory&gt;</code> block for this or an <u>.htaccess</u> file in that directory), only certain specific files (use a <code>&lt;Location&lt;gt</code>&gt; block or a different <code>&lt;LocationMatch&gt;</code><a name="IXT-9-1129"></a>
+ pattern to select those files), or some more complicated scheme. See your
+server's documentation for more configuration help. Remember, each CGI request
+will take a highly nonzero time to execute, so don't process a file with Mason
+unless it's actually a Mason component. In particular, make sure you don't
+accidentally pass image files to Mason, because each web page typically
+contains many images, and the extra processing time for those images will be a
+big waste if you invoke Mason unnecessarily, not to mention that Mason may
+mangle those images when processing them.
+</p>
+<p class="content">
+Next, you need to create your <u>mason_handler.cgi</u> script. It should be located wherever the <code>Action</code> directive indicates in the server configuration. Here's a <u>mason_handler.cgi</u> that will serve nicely for most sites. It's fairly simple, since most of the
+real work is done inside the <code>HTML::Mason::CGIHandler</code> module.
+</p>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use strict;
+  use HTML::Mason::CGIHandler;
+  
+  my $h = HTML::Mason::CGIHandler-&gt;new
+    (
+     data_dir  =&gt; &quot;$ENV{DOCUMENT_ROOT}/../mason-data&quot;,
+     allow_globals =&gt; [qw(%session $user)],
+    );
+  
+  $h-&gt;handle_request;</pre>
+</div><p class="content">
+The <code>data_dir</code> and <code>allow_globals</code> parameters should look familiar; they're just passed along to the Interpreter
+and Compiler, respectively. Note that the <code>data_dir</code> we use here may need to be changed for your setup. The main consideration is
+that your <code>data_dir</code> is somewhere outside the document root, so feel free to put it wherever makes
+sense for you.
+</p>
+<p class="content">
+Note that we didn't pass a <code>comp_root</code> parameter. If no <code>comp_root</code> is specified, <code>HTML::Mason::CGIHandler</code> will use <code>$ENV{DOCUMENT_ROOT}</code> as the document root.
+</p>
+<p class="content">
+With the server configuration and handler script in place, you're ready to use  Mason. You can create a hierarchy of components for your site just as you
+would under a <code>mod_perl</code> setup.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Using Mason Templates Inside Regular CGI Scripts</h2><p class="content">
+<a name="CHP-9-SECT-4"></a>
+<a name="ch09-idx-1006809-2"></a>
+<a name="ch09-idx-1006809-1"></a>
+
+</p>
+<p class="content">
+We have argued several times against the traditional CGI model, in which the
+response to each web request is driven primarily by a Perl script (or other
+executable program<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a>) that focuses on making all the logical decisions necessary for fulfilling
+that request. We tend to prefer template-based solutions driven by the content
+of the request, using concise sprinklings of programming to control the dynamic
+elements of the request. In other words, we prefer Mason components to CGI
+scripts.
+</p>
+<p class="content">
+However, the world is a strange place. For some odd reason, managers may not
+always be persuaded by the well-reasoned arguments their programmers make in
+favor of using Mason in its traditional way. They may even want to take an
+existing functional site based on badly written CGI scripts and use some basic
+Mason-based templating techniques to achieve the timeless goal of separating
+logic from presentation. In these situations, you may be called upon to use
+Mason as if it were one of the lightweight solutions mentioned in <a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">Chapter 1</a>.
+</p>
+<p class="content">
+Luckily, you won't be the first person to want such a thing. This path has been
+tread often enough that it's fairly easy to use Mason as a standalone
+templating language. To do this, you create a Mason Interpreter, then call the
+Interpreter's <code>exec()</code><a name="IXT-9-1130"></a>
+<a name="IXT-9-1131"></a>
+ method, passing it either a component path or component object as the first
+argument.
+</p>
+<p class="content">
+The <a name="IXT-9-1132"></a>
+ CGI script in <a href="chapter-9.mhtml.htm#CHP-9-EX-1" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-EX-1">Example 9-1</a> is sort of the &quot;Hello, World&quot; of <a name="IXT-9-1133"></a>
+ dynamic web programming. It lets the user enter text in an HTML form, submit
+the form, and see the resultant text in the server's response.
+</p>
+
+<p class="content">
+<a name="CHP-9-EX-1"></a>
+<div class="example">
+<span class="caption">Example 9-1.  Hello,
+ World in Mason with traditional CGI</span>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use strict;
+  use CGI;
+  use HTML::Mason;
+  
+  # Create a new query object, and print the standard header
+  my $q = CGI-&gt;new;
+  print $q-&gt;header;
+  
+  # Create a Mason Interpreter
+  my $interp = HTML::Mason::Interp-&gt;new( );
+  
+  # Generate a Component object from the given text
+  my $component = $interp-&gt;make_component(comp_source =&gt; &lt;&lt;'EOF');
+  &lt;%args&gt;
+   $user_input =&gt; '(no input)'
+  &lt;/%args&gt;
+  
+  &lt;HTML&gt;
+  &lt;HEAD&gt;&lt;TITLE&gt;You said '&lt;% $user_input |h %&gt;'&lt;/TITLE&gt;&lt;/HEAD&gt;
+  &lt;BODY&gt;
+  You said '&lt;% $user_input |h %&gt;'.  Type some text below and submit the form.&lt;BR&gt;
+  
+  &lt;FORM ACTION=&quot;&quot; METHOD=&quot;GET&quot;&gt;
+  &lt;INPUT NAME=&quot;user_input&quot; value=&quot;&quot;&gt;&lt;br&gt;
+  &lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit&quot;&gt;
+  &lt;/FORM&gt;
+  &lt;/BODY&gt;
+  &lt;/HTML&gt;
+  EOF
+  
+  my %vars = $q-&gt;Vars;
+  $vars{user_input} =~ s/^\s+|\s+$//g;  # Sanitize
+  
+  # Execute the component, with output going to STDOUT
+  $interp-&gt;exec($component, %vars);
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Notice a couple of things about the code. First, the Mason component is located
+in the middle of the code, surrounded by some fairly generic Perl code to fetch
+the query parameters and pass them to the component. Second, the Mason
+Interpreter is the main point of entry for most of the tasks performed. First
+we create an Interpreter, then we use the Interpreter's <code>make_component()</code><a name="IXT-9-1134"></a>
+ method to create a new Component object (see <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a> for more on the <code>make_component()</code> method), then we call the Interpreter's <code>exec()</code> method to set the Mason wheels in motion.
+</p>
+<p class="content">
+Also, notice that the example code calls the CGI method <code>Vars()</code><a name="IXT-9-1135"></a>
+ to get at the query parameters. This is relatively convenient but doesn't
+properly handle multiple key/value pairs with the same key. To do this better,
+we'd either have to use the CGI <code>param()</code><a name="IXT-9-1136"></a>
+ method and parse out the multiple keys ourselves or split the <code>Vars()</code> values on ASCII <code>\0</code> (thus disallowing <code>\0</code> in our data). You're probably not jumping for joy at the prospect of dealing
+with these kinds of minutiae, but this is the kind of thing you'll find
+yourself dealing with in CGI environments.
+</p>
+<p class="content">
+If you don't actually need to examine or alter the query parameters yourself
+before invoking the Mason template, you can take advantage of the <code>HTML::Mason::CGIHandler</code><code>handle_comp()</code><a name="IXT-9-1137"></a>
+ method, which will create a CGI object and parse out the query parameters,
+then invoke the component you pass it. <a href="chapter-9.mhtml.htm#CHP-9-EX-2" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-EX-2">Example 9-2</a> shows the previous example rewritten using the <code>handle_comp()</code> method.
+</p>
+
+<p class="content">
+<a name="CHP-9-EX-2"></a>
+<div class="example">
+<span class="caption">Example 9-2.  A
+ lazier approach to Mason in CGI</span>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use strict;
+  use HTML::Mason::CGIHandler;
+  
+  # Create a new CGIHandler object
+  my $h = HTML::Mason::CGIHandler-&gt;new( );
+  
+  # Generate a Component object from the given text
+  my $component = $h-&gt;interp-&gt;make_component(comp_source =&gt; &lt;&lt;'EOF');
+  &lt;%args&gt;
+   $user_input =&gt; '(no input)'
+  &lt;/%args&gt;
+  
+  &lt;HTML&gt;
+  &lt;HEAD&gt;&lt;TITLE&gt;You said '&lt;% $user_input %&gt;'&lt;/TITLE&gt;&lt;/HEAD&gt;
+  &lt;BODY&gt;
+  You said '&lt;% $user_input %&gt;'.  Type some text below and submit the form.&lt;BR&gt;
+  
+  &lt;FORM ACTION=&quot;&quot; METHOD=&quot;GET&quot;&gt;
+  &lt;INPUT NAME=&quot;user_input&quot; value=&quot;&quot;&gt;&lt;br&gt;
+  &lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit&quot;&gt;
+  &lt;/FORM&gt;
+  &lt;/BODY&gt;
+  &lt;/HTML&gt;
+  EOF
+  
+  # Invoke the component, with output going to STDOUT
+  $h-&gt;handle_comp($component);
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+As you can see, this hides all the CGI argument processing, ensuring that you
+don't make a silly mistake (or get lazy) in handling the query parameters. It
+also handles sending the HTTP headers. This approach is usually preferable to
+the one shown in <a href="chapter-9.mhtml.htm#CHP-9-EX-1" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-EX-1">Example 9-1</a>. Of course, if you're letting Mason handle all the details of the request, you have to wonder why you don't just use the <code>Action</code> directive with a generic CGI wrapper, as covered in <a href="chapter-9.mhtml.htm#CHP-9-SECT-3" tppabs="http://www.masonbook.com/book/chapter-9.mhtml#CHP-9-SECT-3">&quot;Creating a CGI-Based Site in Mason&quot;</a>.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Design Considerations</h3><p class="content">
+<a name="CHP-9-SECT-4.1"></a>
+
+</p>
+<p class="content">
+If you start building a site in this way, with each CGI script invoking Mason
+as a templating engine, you're going to face some design decisions. For
+instance, if your code needs to do some argument processing or other decision
+making that alters the output, should those decisions happen inside or outside
+the Mason template? If you do a bunch of important stuff outside the template
+that alters the behavior inside the template, you can create lots of nonobvious
+logical dependencies that can be a nightmare to maintain. It's somewhat better
+to put this stuff inside the template, but you run the risk of obscuring the
+template's real purpose, which is to generate HTML output.
+</p>
+<p class="content">
+To really make the right kinds of decisions, direct yourself to <a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">Chapter 10</a>, in which we try to convince you to use Mason for what Mason is good for and Perl modules for what Perl modules are good for. These design issues don't have much to do with the CGI approach per se, but as you can see from our example script, the flow is already a little convoluted even in the simplest of cases. Anything you can do to keep things tidy may save you a lot of pain later.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h2>Differences Between Mason Under CGI and mod_perl</h2><p class="content">
+<a name="CHP-9-SECT-5"></a>
+<a name="ch09-idx-1006817-3"></a>
+<a name="ch09-idx-1006817-2"></a>
+<a name="ch09-idx-1006817-1"></a>
+
+</p>
+<p class="content">
+The main functional difference between the environments provided by <code>HTML::Mason::CGIHandler</code><a name="perlhtmlmason-IDXTERM-781"></a>
+ and <code>HTML::Mason::ApacheHandler</code><a name="perlhtmlmason-IDXTERM-782"></a>
+ is that <code>$r</code>, the Apache request object, is much more limited in functionality under CGI.
+In fact, under CGI it's not a real Apache request object at all; it just
+emulates a few of the more useful methods. It can't emulate some methods
+because they make sense only in a <code>mod_perl</code> environment. For example, you won't be able to access the Apache subrequest
+mechanism through <code>lookup_uri()</code> or <code>lookup_file()</code>, you won't be able to get at the client connection through the <code>connection()</code> method, and you can't get configuration parameters via <code>dir_config()</code>.
+</p>
+<p class="content">
+However, <code>$r</code> does have methods to help you set headers in the outgoing response, including <code>Location</code><a name="IXT-9-1138"></a>
+ and<a name="IXT-9-1139"></a>
+<code>Content-Type</code> headers. This makes it relatively straightforward to send client-side
+redirects and to use Mason to generate plain text, XML, image data, or other
+formats besides the default HTML.
+</p>
+<p class="content">
+To set outgoing <a name="IXT-9-1140"></a>
+ headers, you can use the <code>$r-&gt;header_out()</code><a name="IXT-9-1141"></a>
+<a name="IXT-9-1142"></a>
+ and <code>$r-&gt;content_type()</code><a name="IXT-9-1143"></a>
+<a name="IXT-9-1144"></a>
+ methods in your components. They are very similar to their <code>mod_perl</code> counterparts of the same names. The <code>header_out()</code> method takes two arguments, the name of a header and the value it should be
+set to. If you pass only one argument, the header's value won't be set, but the
+method will return the current value of the header, as set by a previous call
+to <code>header_out()</code>.
+</p>
+<p class="content">
+The <code>content_type()</code><a name="IXT-9-1145"></a>
+ method is the &quot;official&quot; way to set the content type of the outgoing
+response. It's essentially just an abbreviation for passing <code>Content-Type</code> as the first argument to the <code>header_out()</code><a name="IXT-9-1146"></a>
+ method. If you pass an argument to <code>content_type()</code>, you'll set the outgoing content type. If you don't set the content type
+during the request, the <code>CGI</code> module will set the content type to <code>text/html</code>.
+</p>
+<p class="content">
+Under normal circumstances, <code>header_out()</code> and <code>content_type()</code> just pass along any headers you set to the <code>CGI</code> module's <code>header()</code><a name="IXT-9-1147"></a>
+ method. If you previously set a header that you want to unset, you can pass <code>undef</code> as the new value to <code>header_out()</code> or <code>content_type()</code>. Instead of setting the header's value to <code>undef</code> (which wouldn't make a lot of sense in the HTTP context), the header will be
+unset (i.e., removed from the table of headers to send to the client).
+</p>
+<p class="content">
+Like its cousin  ApacheHandler, CGIHandler adds an <code>$m-&gt;redirect()</code><a name="IXT-9-1148"></a>
+<a name="IXT-9-1149"></a>
+ method to the request object <code>$m</code>, so you can redirect browsers to a URL of your choosing in the same way you
+would under <code>mod_perl</code>.
+</p>
+<p class="content">
+Finally, if you want to access the <code>CGI</code> query object for the current request, you may do so by calling the <code>$m-&gt;cgi_object</code> method. In general it's best to avoid using the query object directly, because
+doing so will lead to nonportable code and you most likely won't be taking
+advantage of Mason's argument-processing and content-generation techniques.
+However, as with most things Perl, you can always get enough rope, even if it
+means you might end up in a hopelessly tangled mess, dangling by an ankle from
+the gallows pole of your own  code.
+</p>
+<p class="content">
+See the documentation for <code>HTML::Mason::CGIHandler</code> for more details.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. But who are we kidding, eh? Are you going to be writing these things in COBOL? -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<b>9</b>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

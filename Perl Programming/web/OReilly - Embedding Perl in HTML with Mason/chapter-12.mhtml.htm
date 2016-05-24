@@ -1,0 +1,1567 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<b>12</b>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 12: Custom Mason Subclasses</h1><p class="content">
+<a name="CHP-12"></a>
+
+</p>
+<p class="content">
+Something that we have tried very hard to do beginning with the 1.10 release of
+Mason is to make it easier to customize Mason's behavior. Jon Swartz was
+already on this track even back with the release of 0.80, which saw the first
+appearance of the <code>HTML::Mason::Resolver</code> classes, but 1.10 tries to bring this to new levels.
+</p>
+<p class="content">
+Starting with 1.10 it has become possible to subclass almost every core class
+that comes with Mason. Some obvious candidates for subclassing include the
+Lexer, Compiler, and Resolver. This chapter will demonstrate how you might go
+about implementing subclasses of various Mason objects.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Class::Container as a Superclass</h2><p class="content">
+<a name="CHP-12-SECT-1"></a>
+
+</p>
+<p class="content">
+A number of modules in Mason are subclasses of<a name="perlhtmlmason-IDXTERM-959"></a>
+<a name="perlhtmlmason-IDXTERM-960"></a>
+<a name="perlhtmlmason-IDXTERM-961"></a>
+<a name="perlhtmlmason-IDXTERM-962"></a>
+<code>Class::Container</code>. This is a class that was created to encapsulate some common behaviors for
+Mason objects. Originally, it was called <code>HTML::Mason::Container</code>, but Ken Williams decided to package this class separately and release it to
+CPAN, as it solves some fundamental problems of a large object-oriented system.
+Any Mason object that takes parameters to its constructor <em>must</em> inherit from this module. Of course, since all of the classes that you might
+consider subclassing inherit from <code>Class::Container</code> already, you shouldn't need to inherit from it directly. However, you may need
+to use some of its methods. We will briefly cover a few of them here, but see
+the <code>Class::Container</code> documentation for more details.
+</p>
+<p class="content">
+The modules in the Mason core distribution that are <code>Class::Container</code> subclasses are <code>HTML::Mason::ApacheHandler</code>, <code>HTML::Mason::CGIHandler</code>, <code>HTML::Mason::Interp</code>, <code>HTML::Mason::Compiler</code>, <code>HTML::Mason::Lexer</code>, <code>HTML::Mason::Resolver</code>, and <code>HTML::Mason::Request</code>.
+</p>
+<p class="content">
+The most important methods that <code>Class::Container</code> provides are <code>valid_params()</code> and <code>contained_objects()</code>, both of which are class methods.
+</p>
+<p class="content">
+The first,<a name="perlhtmlmason-IDXTERM-963"></a>
+<code>valid_params()</code>, is called in order to register the valid parameters for a class's <code>new()</code> constructor. The second method, <code>contained_objects()</code>, is used to register the objects, if any, that a given class contains.
+</p>
+<p class="content">
+The <code>contained_objects()</code><a name="perlhtmlmason-IDXTERM-964"></a>
+ method is not something you will have to use for all of your subclasses, since
+most of the time you won't be altering the structure of Mason's framework,
+you'll just be plugging your own classes into it. This method is called with a
+hash that contains as its keys parameter names that the class's constructor
+accepts and as its values the default name of the contained class.
+</p>
+<p class="content">
+For example, <code>HTML::Mason::Compiler</code> contains the following code:
+</p>
+<div class="example-code">
+<pre>  __PACKAGE__-&gt;contained_objects( lexer =&gt; 'HTML::Mason::Lexer' );</pre>
+</div><p class="content">
+This says that the <code>HTML::Mason::Compiler-&gt;new()</code><a name="IXT-12-1276"></a>
+ method will accept a <code>lexer</code> parameter and that, if no such parameter is given, then an object of the <code>HTML::Mason::Lexer</code> class will be constructed.
+</p>
+<p class="content">
+<code>Class::Container</code> also implements a bit of magic here, so that if <code>HTML::Mason::Compiler-&gt;new()</code> is called with a <code>lexer_class</code> parameter, it will load the class, instantiate a new object of that class, and
+use that for the lexer. In fact, it's even smart enough to notice if parameters
+given to <code>HTML::Mason::Compiler-&gt;new()</code> are really intended for this subclass, and it will make sure that they get
+passed along.
+</p>
+<p class="content">
+The <code>valid_params()</code> method is a bit more complex. It also takes a list of key/value pairs as
+arguments. The keys are the names of parameters accepted by the <code>new()</code> method, while the values are hash references defining a validation
+specification for the parameter. This specification is largely the same as that
+used by the <a name="IXT-12-1277"></a>
+<code>Params::Validate</code> module, with a few additions (but no subtractions).
+</p>
+<p class="content">
+One addition is that each parameter, excluding those that represent contained
+objects, may also define a value for <code>parse</code>. This tells Mason how to parse this parameter if it is defined as part of an
+Apache configuration file. If no <code>parse</code> parameter is provided, a sensible default will be guessed from the value of
+the <code>Params::Validate</code><code>type</code> argument.
+</p>
+<p class="content">
+The upshot of this is that your subclasses can define their own constructor
+parameters and Mason will then check for these parameters in an Apache
+configuration file.
+</p>
+<p class="content">
+As an example, <code>HTML::Mason::Compiler</code><a name="IXT-12-1278"></a>
+ contains the following:
+</p>
+<div class="example-code">
+<pre>  __PACKAGE__-&gt;valid_params
+      (
+       allow_globals =&gt;
+       { parse =&gt; 'list',   type =&gt; ARRAYREF, default =&gt; [ ],
+         descr =&gt; &quot;An array of names of Perl variables that are&quot; .
+                  &quot; allowed globally within components&quot; },
+  
+       default_escape_flags =&gt;
+            { parse =&gt; 'string', type =&gt; SCALAR,   default =&gt; '',
+              descr =&gt; &quot;Escape flags that will apply by default to&quot; .
+                  &quot; all Mason tag output&quot; },
+  
+       lexer =&gt;
+         { isa =&gt; 'HTML::Mason::Lexer',
+           descr =&gt; &quot;A Lexer object that will scan component&quot; .
+                  &quot; text during compilation&quot; },
+  
+       preprocess =&gt;
+         { parse =&gt; 'code',   type =&gt; CODEREF,  optional =&gt; 1,
+           descr =&gt; &quot;A subroutine through which all component text&quot; . 
+                  &quot; will be sent during compilation&quot; },
+  
+       postprocess_perl =&gt;
+         { parse =&gt; 'code',   type =&gt; CODEREF,  optional =&gt; 1,
+           descr =&gt; &quot;A subroutine through which all Perl code&quot; .
+                  &quot; will be sent during compilation&quot; },
+  
+       postprocess_text =&gt;
+         { parse =&gt; 'code',   type =&gt; CODEREF,  optional =&gt; 1,
+           descr =&gt; &quot;A subroutine through which all plain text will&quot; .
+                  &quot; be sent during compilation&quot; },
+      );
+  
+  __PACKAGE__-&gt;contained_objects( lexer =&gt; 'HTML::Mason::Lexer' );</pre>
+</div><p class="content">
+The <code>type</code><a name="IXT-12-1279"></a>
+<a name="IXT-12-1280"></a>
+<a name="IXT-12-1281"></a>
+<a name="IXT-12-1282"></a>
+<a name="IXT-12-1283"></a>
+<a name="IXT-12-1284"></a>
+ , <code>default</code>, and <code>optional</code> parameters are part of the validation specification used by <a name="IXT-12-1285"></a>
+<code>Params::Validate</code>. The various constants used, <code>ARRAYREF</code><a name="IXT-12-1286"></a>
+<a name="IXT-12-1287"></a>
+ , <code>SCALAR</code>, and so on, are all exported by <code>Params::Validate</code>. The parameters passed to <code>valid_params()</code> correspond to the <code>MasonAllowGlobals</code>, <code>MasonDefaultEscapeFlags</code>, <code>MasonLexerClass</code>, <code>MasonPreprocess</code>, <code>MasonPostprocessPerl</code>, and <code>MasonPostprocessText</code><u>httpd.conf</u><a name="IXT-12-1288"></a>
+ configuration variables. Yes, <code>Class</code> is added automatically to the <code>lexer</code> param because <code>lexer</code> was also given to the <code>contained_objects()</code> method.
+</p>
+<p class="content">
+The <code>descr</code><a name="IXT-12-1289"></a>
+<a name="IXT-12-1290"></a>
+ parameter is used when we generate the <code>HTML::Mason::Params</code> documentation and is probably not something you'd need to use.
+</p>
+<p class="content">
+For more details, see both the <code>Class::Container</code> and <code>Params::Validate</code> documentation.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h2>Syntax: Your Very Own Lexer</h2><p class="content">
+<a name="CHP-12-SECT-2"></a>
+
+</p>
+<p class="content">
+A request heard every so often on the <a name="perlhtmlmason-IDXTERM-986"></a>
+<a name="perlhtmlmason-IDXTERM-987"></a>
+ Mason users list is for some way to create an XML-based markup language that
+can be used with Mason and that can be compiled to a Mason component object.
+</p>
+<p class="content">
+Despite the panic the thought of such a thing inspires in us, in the interests
+of good documentation, we will show the beginnings of such a lexer.
+</p>
+<p class="content">
+This lexer object will make use of several modules from CPAN, including <code>XML::SAX::ParserFactory</code><a name="IXT-12-1291"></a>
+ and <code>XML::SAX::Base</code><a name="IXT-12-1292"></a>
+ . The former is what it sounds like, a factory for <a name="IXT-12-1293"></a>
+<a name="IXT-12-1294"></a>
+ SAX parsers (SAX2 parsers, actually). The latter is what any SAX2 handler
+should use as a base class. It implements a default no-op method for all the
+possible SAX2 methods, allowing you to simply implement those that you need.
+Our lexer will be a SAX2 handler, so we will inherit from <code>XML::SAX::Base</code>. <a name="perlhtmlmason-IDXTERM-992"></a>
+
+</p>
+<p class="content">
+A quick side note on<a name="IXT-12-1295"></a>
+ SAX (Simple API for XML): SAX is an event-based API for parsing XML. As the
+parser finds <a name="perlhtmlmason-IDXTERM-994"></a>
+ XML constructs, such as tags or character data, it calls appropriate methods
+in a SAX handler, such as <code>start_element()</code> or <code>characters()</code>. The parser is an event producer and the handler, like our Lexer, is an event
+consumer. In our case, the Lexer will also be generating events for the
+Compiler, though these will not be SAX events.
+</p>
+<p class="content">
+For more information on Perl's implementation of SAX2, see the <em>perl-xml</em> project on Sourceforge at <a href="tppmsgs/msgs0.htm#65" tppabs="http://perl-xml.sourceforge.net/">http://perl-xml.sourceforge.net/</a>.
+</p>
+<p class="content">
+For the purposes of our example, let's assume that any element that is not in
+the <code>mason</code> XML namespace will be output verbatim, as will any text. For tags, we'll just
+implement <code>&lt;mason:args&gt;</code>, <code>&lt;mason:init&gt;</code>, <code>&lt;mason:perl&gt;</code>, and <code>&lt;mason:output&gt;</code> in this example.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> The <code>&lt;mason:init&gt;</code> tag will contain XML-escaped Perl code, while the <code>&lt;mason:args&gt;</code> tag will contain zero or more <code>&lt;mason:arg&gt;</code> tags. Each <code>&lt;mason:arg&gt;</code> tag will have the attributes <code>name</code> and <code>default</code> , with <code>name</code> being required.
+</p>
+<p class="content">
+We will also implement a <code>&lt;mason:component&gt;</code> tag in order to provide a single top-level containing tag for the component,
+which is an XML requirement.
+</p>
+<p class="content">
+This is only a subset of the Mason syntax set, but it's enough to show you how
+to customize a fairly important part of the system.
+</p>
+<p class="content">
+Using these tags, we might have some XML like this:
+</p>
+<div class="example-code">
+<pre>  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;mason:component xmlns:mason=&quot;http://www.masonbook.com/&quot;&gt;
+   This is plain text.
+   &lt;b&gt;This is text in an HTML tag&lt;/b&gt;
+   &lt;mason:perl&gt;
+    my $x;
+    if ($y &amp;gt; 10) {
+        $x = 10;
+    } else {
+        $x = 100;
+    }
+   &lt;/mason:perl&gt;
+   $x is &lt;mason:output&gt;$x&lt;/mason:output&gt;
+   $y is &lt;mason:output&gt;$y&lt;/mason:output&gt;
+  
+   &lt;mason:args&gt;
+    &lt;mason:arg name=&quot;$y&quot; /&gt;
+    &lt;mason:arg name=&quot;@z&quot; default=&quot;(2,3)&quot; /&gt;
+   &lt;/mason:args&gt;
+   &lt;mason:init&gt;
+    $y *= $_ foreach @z;
+   &lt;/mason:init&gt;
+  &lt;/mason:component&gt;</pre>
+</div><p class="content">
+OK, that looks just beautiful!
+</p>
+<p class="content">
+Let's start with the preliminaries.
+</p>
+<div class="example-code">
+<pre>  package HTML::Mason::Lexer::XML;
+  $VERSION = '0.01';
+  
+  use strict;
+  
+  use HTML::Mason::Exceptions( abbr =&gt; [ qw( param_error syntax_error error ) ] );
+  
+  use HTML::Mason::Lexer;
+  use Params::Validate qw(:all);
+  use XML::SAX::Base;
+  use XML::SAX::ParserFactory;
+  use base qw(HTML::Mason::Lexer XML::SAX::Base);  # Lexer comes first</pre>
+</div><p class="content">
+As mentioned before, <code>XML::SAX::Base</code><a name="IXT-12-1296"></a>
+ provides default no-op methods for all of the possible SAX2 events, of which
+there are many. Since we're not interested in most of them, it's nice to have
+them safely ignored. We inherit from <code>HTML::Mason::Lexer</code><a name="IXT-12-1297"></a>
+ because it provides a few methods that the compiler class needs, such as <code>object_id()</code>.
+</p>
+<p class="content">
+Because we're staunch generalists, we won't insist that the XML namespace of
+our tags needs to be ' <code>mason'</code> . We'll let the user override this with a parameter if desired:
+</p>
+<div class="example-code">
+<pre>  __PACKAGE__-&gt;valid_params
+    (
+     xml_namespace =&gt; { parse =&gt; 'string', type =&gt; SCALAR, default =&gt; 'mason',
+                        descr =&gt; &quot;Prefix of XML tags indicating Mason sections&quot; },
+    );</pre>
+</div><p class="content">
+We don't need to make a separate <code>new()</code> method in our module, since we can just inherit the one provided by our base
+Lexer class. The main action will happen in the <code>lex()</code> method:
+</p>
+<div class="example-code">
+<pre>  sub lex {
+      my ($self, %p) = @_;
+  
+      local $self-&gt;{name} = $p{name};
+      local $self-&gt;{compiler} = $p{compiler};</pre>
+</div><p class="content">
+We need a convenient place to keep these, so we stick them into <code>$self</code> for the duration of lexing. Perl's <code>local()</code> function makes sure these entries expire at the end of the <code>lex()</code> method:
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{state} = [ ];</pre>
+</div><p class="content">
+We'll need to keep a stack of what tags we've seen so we can check that tags
+aren't improperly nested and in order to handle <code>characters()</code> events correctly:
+</p>
+<div class="example-code">
+<pre>      my $parser = XML::SAX::ParserFactory-&gt;parser( Handler =&gt; $self );</pre>
+</div><p class="content">
+We could have created the parser object in our <code>new()</code> method, but to store it we would have had to save it in the lexer object's
+structure, which would have created a circular reference. Doing it this way
+guarantees that the reference to the parser will go out of scope when we're
+finished using it.
+</p>
+<div class="example-code">
+<pre>      $parser-&gt;parse_string( $p{comp_source} );
+  }</pre>
+</div><p class="content">
+The last bit tells the parser to parse the component text we were given. That
+will cause the parser to in turn call methods for each SAX event that occurs
+while parsing the string.
+</p>
+<p class="content">
+Now we'll take a look at our event-handling methods. The first is <code>start_element()</code><a name="IXT-12-1298"></a>
+ , which will be called whenever an XML tag is first encountered:
+</p>
+<div class="example-code">
+<pre>  sub start_element {
+      my $self = shift;
+      my $elt  = shift;
+  
+      if ( ! defined $elt-&gt;{Prefix} ||
+           $elt-&gt;{Prefix} ne $self-&gt;{xml_namespace} ) {
+          $self-&gt;_verbatim_start_element($elt);
+          return;
+      }</pre>
+</div><p class="content">
+If we got something that isn't in our designated namespace we'll just pass it
+through to the compiler as text to be output:
+</p>
+<div class="example-code">
+<pre>      if ( $elt-&gt;{LocalName} eq 'component' ) {
+          $self-&gt;{compiler}-&gt;start_component;
+      }</pre>
+</div><p class="content">
+When the component starts, we notify the compiler so it can do any
+initialization that it needs to do:
+</p>
+<div class="example-code">
+<pre>      foreach my $block ( qw( init perl args ) ) {
+          if ( $elt-&gt;{LocalName} eq $block ) {
+              $self-&gt;_start_block($block);
+            last;
+          }
+      }
+
+      if ( $elt-&gt;{LocalName} eq 'output' ) {
+          $self-&gt;_start_output;
+      }
+
+      if ( $elt-&gt;{LocalName} eq 'arg' ) {
+          $self-&gt;_handle_argument($elt);
+      }
+  }</pre>
+</div><p class="content">
+The rest of this method is basically a switch statement. Depending on what type
+of element we receive, we call the appropriate internal method to handle that
+element.
+</p>
+<p class="content">
+Let's look at some of the individual methods that are called:
+</p>
+<div class="example-code">
+<pre>  sub _verbatim_start_element {
+      my $self = shift;
+      my $elt  = shift;
+      my $xml = '&lt;' . $elt-&gt;{Name};
+  
+      my @att;
+      foreach my $att ( values %{ $elt-&gt;{Attributes} } ) {
+          push @att, qq|$att-&gt;{Name}=&quot;$att-&gt;{Value}&quot;|;
+      }
+  
+      if (@att) {
+          $xml .= ' ';
+          $xml .= join ' ', @att;
+      }
+  
+      $xml .= '&gt;';
+  
+      $self-&gt;{compiler}-&gt;text( text =&gt; $xml );
+  }</pre>
+</div><p class="content">
+Basically, this method goes through some contortions to regenerate the original
+XML element and then passes it on to the compiler as plain text. It should be
+noted that this implementation will end up converting tags like <code>&lt;foo/&gt;</code><a name="IXT-12-1299"></a>
+ into tag pairs like <code>&lt;foo&gt;&lt;/foo&gt;</code>. This is certainly valid XML but it may be a bit confusing to users.
+Unfortunately, there is no easy way to retrieve the exact text of the source
+document to determine how a tag was originally written, and with XML you're not
+supposed to care anyway.
+</p>
+<p class="content">
+Back to our subclass. The next method to implement is our <code>_start_block()</code> method. This will handle the beginning of a number of blocks in a simple
+generic fashion:
+</p>
+<div class="example-code">
+<pre>  sub _start_block {
+      my $self  = shift;
+      my $block = shift;
+  
+      if ( $self-&gt;{state}[-1] &amp;&amp;
+           $self-&gt;{state}[-1] ne 'def' &amp;&amp;
+           $self-&gt;{state}[-1] ne 'method' ) {
+          syntax_error &quot;Cannot nest a $block tag inside a $self-&gt;{state}[-1] tag&quot;;
+      }</pre>
+</div><p class="content">
+What we are doing here is making it impossible to do something like nest a <code>&lt;mason:init&gt;</code> tag inside a <code>&lt;mason:perl&gt;</code> block. In fact, the only tags that can contain other tags are method and
+subcomponent definition tags, which are unimplemented in this example.
+</p>
+<p class="content">
+We notify the compiler that a new block has started and then push the block
+name onto our internal stack so we have access to it later:
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{compiler}-&gt;start_block( block_type =&gt; $block );
+
+      push @{ $self-&gt;{state} }, $block;
+  }</pre>
+</div><p class="content">
+Again, we check for basic logical errors:
+</p>
+<div class="example-code">
+<pre>  sub _start_output {
+      my $self = shift;
+  
+      if ( $self-&gt;{state}[-1] &amp;&amp;
+           $self-&gt;{state}[-1] ne 'def' &amp;&amp;
+           $self-&gt;{state}[-1] ne 'method' ) {
+          syntax_error &quot;Cannot nest an output tag inside a $self-&gt;{state}[-1] tag&quot;;
+      }</pre>
+</div><p class="content">
+Again, we push this onto the stack so we know that this was the last tag we
+saw:
+</p>
+<div class="example-code">
+<pre>      push @{ $self-&gt;{state} }, 'output';
+  }</pre>
+</div><p class="content">
+The variable name and default are expressed as attributes of the element. The
+weird '<code>{}name</code>' syntax is intentional. Read the Perl SAX2 spec mentioned earlier for more
+details on what this means.
+</p>
+<div class="example-code">
+<pre>  sub _handle_argument {
+      my $self = shift;
+      my $elt  = shift;
+  
+      my $var = $elt-&gt;{Attributes}{'{}name'}{Value};
+      my $default = $elt-&gt;{Attributes}{'{}default'}{Value};</pre>
+</div><p class="content">
+We want to check that the variable name is a valid Perl variable name:
+</p>
+<div class="example-code">
+<pre>      unless ( $var =~ /^[\$\@%][^\W\d]\w*/ ) {
+          syntax_error &quot;Invalid variable name: $var&quot;;
+      }</pre>
+</div><p class="content">
+Then we tell the compiler that we just found a variable declaration.
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{compiler}-&gt;variable_declaration( block_type =&gt; 'args',
+                                               type =&gt; substr( $var, 0, 1 ),
+                                               name =&gt; substr( $var, 1 ),
+                                               default =&gt; $default );
+  }</pre>
+</div><p class="content">
+That wraps up all the methods that <code>start_element()</code><a name="IXT-12-1300"></a>
+ calls. Now let's move on to handling a <code>characters()</code> SAX event. This happens whenever the SAX parser encounters data outside of an
+XML tag.
+</p>
+<div class="example-code">
+<pre>  sub characters {
+      my $self  = shift;
+      my $chars = shift;
+  
+      if ( ! $self-&gt;{state}[-1] ||
+           $self-&gt;{state}[-1] eq 'def' ||
+           $self-&gt;{state}[-1] eq 'method' ) {
+          $self-&gt;{compiler}-&gt;text( text =&gt; $chars-&gt;{Data} );
+          return;
+      }</pre>
+</div><p class="content">
+If we're in the main body of a component, subcomponent, or method, we simply
+pass the character data on as text:
+</p>
+<div class="example-code">
+<pre>      if ( $self-&gt;{state}[-1] eq 'init' ||
+           $self-&gt;{state}[-1] eq 'perl' ) {
+          $self-&gt;{compiler}-&gt;raw_block( block_type =&gt; $self-&gt;{state}[-1],
+                                        block =&gt; $chars-&gt;{Data} );
+          return;
+      }</pre>
+</div><p class="content">
+Character data in a <code>&lt;mason:init&gt;</code> or <code>&lt;mason:perl&gt;</code> section is passed to the compiler as the contents of that block. The compiler
+knows what type of tag is currently being processed and handles it
+appropriately.
+</p>
+<div class="example-code">
+<pre>      if ( $self-&gt;{state}[-1] eq 'output' ) {
+          $self-&gt;{compiler}-&gt;substitution( substitution =&gt; $chars-&gt;{Data} );
+      }
+  }</pre>
+</div><p class="content">
+If we are in a substitution tag, we call a different compiler method instead.
+Otherwise, we'll simply end up discarding the contents.
+</p>
+<p class="content">
+Since we may be dealing with text where whitespace is significant (as opposed
+to HTML), we'll want to pass on whitespace as if it were character data:
+</p>
+<div class="example-code">
+<pre>  sub ignorable_whitespace { $_[0]-&gt;characters($_[1]-&gt;{Data}) }</pre>
+</div><p class="content">
+This method may be called if the XML parser finds a chunk of &quot;ignorable<a name="IXT-12-1301"></a>
+ whitespace.&quot; Frankly, we can never ignore whitespace, because it is just <em>so</em> cool, and without it our code would be unreadable. But apparently XML parsers
+can ignore it.<sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a> The last thing we need to handle is an<a name="IXT-12-1302"></a>
+<code>end_element()</code> event:
+</p>
+<div class="example-code">
+<pre>  sub end_element {
+      my $self = shift;
+      my $elt  = shift;
+  
+      if ( ! defined $elt-&gt;{Prefix} ||
+           $elt-&gt;{Prefix} ne $self-&gt;{xml_namespace} ) {
+          $self-&gt;_verbatim_end_element($elt);
+          return;
+      }</pre>
+</div><p class="content">
+Again, XML elements not in our designated namespace are passed on verbatim to
+the compiler:
+</p>
+<div class="example-code">
+<pre>      if ( $elt-&gt;{LocalName} eq 'component' ) {
+          $self-&gt;{compiler}-&gt;end_component;
+          return;
+      }</pre>
+</div><p class="content">
+If we have reached the end tag of the component, we inform the compiler that
+the component is complete and we return:
+</p>
+<div class="example-code">
+<pre>      return if $elt-&gt;{LocalName} eq 'arg';</pre>
+</div><p class="content">
+We don't need to do anything to end argument declarations. The work needed to
+handle this element happened when we called <code>_handle_argument()</code> from our <code>start_element()</code> method.
+</p>
+<div class="example-code">
+<pre>      if ( $self-&gt;{state}[-1] ne $elt-&gt;{LocalName} ) {
+          syntax_error &quot;Something very weird happened.  &quot; .
+                       &quot;We encountered an ending tag for a $elt-&gt;{LocalName} tag &quot; .
+                       &quot;before ending our current tag ($self-&gt;{state}[-1]).&quot;;
+      }</pre>
+</div><p class="content">
+Actually, this should just never happen:  XML does not allow tag overlap and, if the parser finds overlapping tags, it
+should die rather than passing them to us. But we believe in being paranoid. If
+there is an error in the logic of this lexer code, this might help us in
+catching it.
+</p>
+<div class="example-code">
+<pre>      if ( $elt-&gt;{LocalName} eq 'output' ) {
+          pop @{ $self-&gt;{state} };
+          return;
+      }</pre>
+</div><p class="content">
+Any output that needed to be sent has already been dealt with via the <code>characters()</code><a name="IXT-12-1303"></a>
+ method so we simply need to change our state if the end tag was <code>&lt;/mason:output&gt;</code>:
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{compiler}-&gt;end_block( block_type =&gt; $elt-&gt;{LocalName} );
+
+      pop @{ $self-&gt;{state} };
+  }</pre>
+</div><p class="content">
+The only remaining possibilities at this point are either <code>&lt;mason:perl&gt;</code>, <code>&lt;mason:init&gt;</code>, or <code>&lt;mason:args&gt;</code>. For these we simply tell the compiler that the block is over, change our
+state, and finish.
+</p>
+<p class="content">
+The last method we need to write is <code>_verbatim_end_element()</code> to pass through tag endings for non-Mason tags:
+</p>
+<div class="example-code">
+<pre>  sub _verbatim_end_element {
+      my $self = shift;
+      my $elt  = shift;
+  
+      $self-&gt;{compiler}-&gt;text( text =&gt; &quot;&lt;/$elt-&gt;{Name}&gt;&quot; );
+  }</pre>
+</div><p class="content">
+This concludes our sample lexer subclass. Note that there are a couple of
+things missing here. First of all, there is no handling of subcomponents or
+methods. This wouldn't be too terribly hard as it's mostly an issue of calling
+the right methods on the compiler.
+</p>
+<p class="content">
+We also would want to handle line numbers. The default Mason lexer keeps track
+of line numbers in the source file so that the compiler can output appropriate <code>#line</code> directives in the object file, meaning that errors are reported relative to
+the source file. This feature isn't required but can be very nice to have.
+</p>
+<p class="content">
+Some of the unhandled potential tags like <code>&lt;mason:text&gt;</code> would be extremely trivial to implement. The <code>&lt;mason:flags&gt;</code> and <code>&lt;mason:attr&gt;</code> tags could be modeled on the code for handling <code>&lt;mason:args&gt;</code>. And of course, we need to handle component calls too. This is the point in
+this example where we say, &quot;finishing this is left as an exercise to the
+reader.&quot;
+</p>
+<p class="content">
+To use this new lexer class, we would either place the following in the <u>httpd.conf</u> file:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonLexerClass HTML::Mason::Lexer::XML</pre>
+</div><p class="content">
+or, when creating the ApacheHandler object, we would simply pass in '<code>HTML::Mason::Lexer::XML</code>' as the value of the <code>lexer_class</code> parameter.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h2>Output: Compiling to a Different Output</h2><p class="content">
+<a name="CHP-12-SECT-3"></a>
+
+</p>
+<p class="content">
+So you've decided that you really hate Mason and you want to use <a name="perlhtmlmason-IDXTERM-1007"></a>
+ Embperl instead. But you have a number of Mason components you've already
+written that you'd like to save. Well, you can create your own compiler to
+generate Embperl code from <a name="perlhtmlmason-IDXTERM-1008"></a>
+<a name="perlhtmlmason-IDXTERM-1009"></a>
+ Mason. In this case, we'll use the lexer as is and rewrite the compiler from
+scratch. There isn't really a one-to-one match between Mason and Embperl's
+features so this example will, like the lexer example, be limited in scope.
+Finding an intelligent way to convert Mason's methods and subcomponents to
+Embperl is beyond the scope of this book.
+</p>
+<p class="content">
+In case you are unfamiliar with Embperl, it uses the following syntax: <code>[+ +]</code><a name="IXT-12-1304"></a>
+ tags contain code whose results should be sent to the browser, like Mason's
+substitution tag (<code>&lt;% %&gt;</code>). The <code>[* *]</code><a name="IXT-12-1305"></a>
+ tags contain Perl code that is not intended to generate output. This is
+equivalent to Mason's <code>%</code> -lines and <code>&lt;%perl&gt;</code> blocks. Finally, Embperl also has a<a name="IXT-12-1306"></a>
+<code>[! !]</code> tag similar to Mason's <code>&lt;%once&gt;</code> block.
+</p>
+<p class="content">
+There are other Embperl tags but, once again, this is a simplified example.
+</p>
+<p class="content">
+Embperl does have a feature similar to Mason's inheritance system called <a name="IXT-12-1307"></a>
+ EmbperlObject, but translating between the two is nontrivial.
+</p>
+<p class="content">
+So let's make our new compiler:
+</p>
+<div class="example-code">
+<pre>  package HTML::Mason::Compiler::ToEmbperl;
+  
+  $VERSION = '0.01';
+  
+  use strict;
+  
+  use HTML::Mason::Lexer;
+  use HTML::Mason::Exceptions ( abbr =&gt; [qw(syntax_error)] );
+  use HTML::Mason::Compiler;
+  use base qw(HTML::Mason::Compiler);</pre>
+</div><p class="content">
+This pulls in the basic packages we'll need. Even though we really aren't
+inheriting much from <code>HTML::Mason::Compiler</code><a name="IXT-12-1308"></a>
+ , we still subclass it as anything expecting a compiler will check that what
+it is given is a subclass of <code>HTML::Mason::Compiler</code>.
+</p>
+<p class="content">
+Of course, in our case, we won't be using this compiler with the <code>HTML::Mason::Interp</code> class, so the point is moot but important to mention.
+</p>
+<div class="example-code">
+<pre>  sub compile {
+      my ($self, %p) = @_;
+  
+      $self-&gt;lexer-&gt;lex( comp_source =&gt; $p{comp_source}, 
+                         name =&gt; 'Embperl', 
+                         compiler =&gt; $self );
+  
+      return $self-&gt;component_as_embperl;
+  }</pre>
+</div><p class="content">
+The only parameter we expect is<a name="IXT-12-1309"></a>
+<a name="IXT-12-1310"></a>
+
+</p>
+<p class="content">
+<code>comp_source</code>. We tell the lexer the name of the component is <code>'Embperl'</code> since we don't really care what the name is in this context. Presumably we are
+being called by some sort of script that is simply going to take the
+Embperl-ized component and write it to disk somewhere. The name is used for
+reporting syntax errors when a component is run, but that won't be an issue in
+this case.
+</p>
+<div class="example-code">
+<pre>  sub start_component {
+      my $self = shift;
+  
+      $self-&gt;{once_header} = '';
+      $self-&gt;{header} = '';
+      $self-&gt;{body}   = '';
+      $self-&gt;{footer} = '';
+  
+      $self-&gt;{current_block} = '';
+  }</pre>
+</div><p class="content">
+This method is called to give the compiler a chance to reset its state, so
+that's what we do.
+</p>
+<p class="content">
+We will be storing blocks of code in each of the first four attributes. When we
+encounter a <code>&lt;%once&gt;</code><a name="IXT-12-1311"></a>
+ block, it will go in the <code>once_header</code><a name="IXT-12-1312"></a>
+ attribute. For <code>&lt;%init&gt;</code><a name="IXT-12-1313"></a>
+ blocks, we can put then in the<a name="IXT-12-1314"></a>
+<code>header</code> attribute. <code>%</code> -lines, <code>&lt;%perl&gt;</code><a name="perlhtmlmason-IDXTERM-1021"></a>
+ blocks, <code>&lt;%text&gt;</code><a name="perlhtmlmason-IDXTERM-1022"></a>
+ blocks, substitution tags, and text will be placed immediately into the <code>body</code> attribute. Finally, any <code>&lt;%cleanup&gt;</code><a name="IXT-12-1315"></a>
+ blocks will go into the <code>footer</code><a name="IXT-12-1316"></a>
+ attribute.
+</p>
+<p class="content">
+The <code>current_block()</code><a name="IXT-12-1317"></a>
+ attribute will be used to keep track of what type of block we are in after a
+call to our <code>start_block()</code><a name="IXT-12-1318"></a>
+ method.
+</p>
+<p class="content">
+This example will ignore other Mason syntax such as component calls,
+subcomponents, methods, and <code>&lt;%shared&gt;.</code> Again, this will be left as an exercise for the reader.
+</p>
+<div class="example-code">
+<pre>  sub start_block {
+      my ($self, %p) = @_;
+  
+      syntax_error &quot;Cannot nest a $p{block_type} inside a $self-&gt;{in_block} block&quot;
+          if $self-&gt;{in_block};</pre>
+</div><p class="content">
+This is to make sure that the component is following the syntax rules we
+expect.
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{in_block} = $p{block_type};
+  }</pre>
+</div><p class="content">
+Then we record what kind of block we are starting, which will be something like <code>init</code> or <code>perl</code> .
+</p>
+<p class="content">
+The next method, <code>raw_block()</code><a name="IXT-12-1319"></a>
+ , is called for all of the blocks that we handle except the <code>&lt;%text&gt;</code> block:
+</p>
+<div class="example-code">
+<pre>  sub raw_block {
+      my ($self, %p) = @_;
+  
+      for ($self-&gt;{in_block}) {
+          /^once$/     and   $self-&gt;{once_header} .= $p{block};
+          /^init$/     and   $self-&gt;{header}      .= $p{block};
+          /^perl$/     and   $self-&gt;{body}        .= &quot;[* $p{block} *]&quot;;
+          /^cleanup$/  and   $self-&gt;{footer}      .= $p{block};
+      }
+  }</pre>
+</div><p class="content">
+This switchlike statement stores the code given to us in the appropriate
+attribute. If it is a <code>&lt;%perl%&gt;</code> block, we wrap it in the relevant Embperl tag; otherwise, we simply store it
+as is in the appropriate slot.
+</p>
+<div class="example-code">
+<pre>  sub text_block {
+      my ($self, %p) = @_;
+      $self-&gt;{body} .= $p{block};
+  }
+  
+  sub text {
+      my ($self, %p) = @_;
+      $self-&gt;{body} .= $p{text};
+  }</pre>
+</div><p class="content">
+The first method is called when the lexer finds a<code>&lt;%text&gt;</code> block. The second is called for regular text. Both of these get placed into
+the <code>body</code><a name="IXT-12-1320"></a>
+ attribute for later use.
+</p>
+<div class="example-code">
+<pre>  sub substitution {
+      my ($self, %p) = @_;
+      $self-&gt;{body} .= &quot;[+ $p{substitution} +]&quot;;
+  }</pre>
+</div><p class="content">
+This method handles<a name="IXT-12-1321"></a>
+<a name="IXT-12-1322"></a>
+ substitution tags (<code>&lt;% %&gt;</code>) though it ignores the fact that this method can also be given an <code>escape</code><a name="IXT-12-1323"></a>
+<a name="IXT-12-1324"></a>
+
+</p>
+<p class="content">
+parameter. This could be handled via Embperl's <code>$escmode</code><a name="IXT-12-1325"></a>
+ variable (again, left as an exercise for the reader).
+</p>
+<div class="example-code">
+<pre>  sub perl_line {
+      my ($self, %p) = @_;
+      $self-&gt;{body} .= &quot;[* $p{line} *]&quot;;
+  }</pre>
+</div><p class="content">
+This method is called for <code>%</code> -lines.
+</p>
+<p class="content">
+Then we need to implement the <code>end_block()</code> method:
+</p>
+<div class="example-code">
+<pre>  sub end_block {
+      my ($self, %p) = @_;
+  
+      syntax_error &quot;end of $p{block_type} encountered while in $self-&gt;{in_block} block&quot;
+          unless $self-&gt;{in_block} eq $p{block_type};</pre>
+</div><p class="content">
+Another sanity check is in the <code>start_block()</code> method. It's always a good thing to make sure that the lexer is giving us the
+kind of input that we would expect.
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{in_block} = undef;
+  }</pre>
+</div><p class="content">
+And we reset our <code>in_block</code> attribute so that the next call to <code>start_block()</code> succeeds.
+</p>
+<p class="content">
+The last method to implement is the<a name="IXT-12-1326"></a>
+<code>component_as_embperl()</code> method, which simply will return a big block of text, our new Embperl page:
+</p>
+<div class="example-code">
+<pre>  sub component_as_embperl {
+      my $self = shift;
+  
+      my $page = '';
+  
+      if ( length $self-&gt;{once_header} ) {
+          $page .= &quot;[! $self-&gt;{once_header} !]\n&quot;;
+      }
+  
+      if ( length $self-&gt;{header} ) {
+          $page .= &quot;[* $self-&gt;{header} *]\n&quot;;
+      }
+  
+      if ( length $self-&gt;{body} ) {
+          $page .= &quot;$self-&gt;{body}\n&quot;;
+      }
+  
+      if ( length $self-&gt;{footer} ) {
+          $page .= &quot;[* $self-&gt;{footer} *]\n&quot;;
+      }
+  
+      return $page;
+  }</pre>
+</div><p class="content">
+And there you have it -- a perfectly good  Mason component brutally butchered and turned into an  Embperl page. I hope you're happy with yourself!
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Storage: Replacing the Resolver</h2><p class="content">
+<a name="CHP-12-SECT-4"></a>
+
+</p>
+<p class="content">
+Occasionally, people on the Mason users list wonder if they can store their
+component source in an RDBMS. The way to achieve this is to create your own<a name="IXT-12-1327"></a>
+<a name="IXT-12-1328"></a>
+<code>HTML::Mason::Resolver</code> subclass.
+</p>
+<p class="content">
+The resolver's job is take a component path and figure out where the
+corresponding component is.
+</p>
+<p class="content">
+We will show an example that connects to a <a name="perlhtmlmason-IDXTERM-1042"></a>
+<a name="perlhtmlmason-IDXTERM-1043"></a>
+<a name="perlhtmlmason-IDXTERM-1044"></a>
+<a name="perlhtmlmason-IDXTERM-1045"></a>
+ MySQL server containing the following table:
+</p>
+<div class="example-code">
+<pre>  MasonComponent
+  ----------------------------------------
+  path           VARCHAR(255)  PRIMARY KEY
+  component      TEXT          NOT NULL
+  last_modified  DATETIME      NOT NULL</pre>
+</div><p class="content">
+Our code starts as follows:
+</p>
+<div class="example-code">
+<pre>  package HTML::Mason::Resolver::MySQL;
+  $VERSION = '0.01';
+  
+  use strict;
+  
+  use DBI;
+  use Params::Validate qw(:all);
+  
+  use HTML::Mason::ComponentSource;
+  use HTML::Mason::Resolver;
+  use base qw(HTML::Mason::Resolver);
+  
+  __PACKAGE__-&gt;valid_params
+      (
+       db_name  =&gt; { parse =&gt; 'string', type =&gt; SCALAR },
+       user     =&gt; { parse =&gt; 'string', type =&gt; SCALAR, optional =&gt; 1 },
+       password =&gt; { parse =&gt; 'string', type =&gt; SCALAR, optional =&gt; 1 },
+      );</pre>
+</div><p class="content">
+<a name="IXT-12-1329"></a>
+ These parameters will be used to connect to the MySQL server containing our
+components. Readers familiar with the Perl DBI will realize that there are a
+number of other parameters that we could take.
+</p>
+<p class="content">
+Our constructor method, <code>new()</code>, needs to do a bit of initialization to set up the database connection, so we
+override our base class's method:
+</p>
+<div class="example-code">
+<pre>  sub new {
+      my $class = shift;
+      my $self = $class-&gt;SUPER::new(@_);</pre>
+</div><p class="content">
+We invoke the <code>new()</code> method provided by our superclass, which validates the parameters in <code>@_</code> and makes sure they get sent to the right contained objects. The latter
+concern doesn't seem so important in this case since we don't have any
+contained objects, but the point is that if somebody subclasses our <code>HTML::Mason::Resolver::MySQL</code> class and adds contained objects, our <code>new()</code> method will still do the right thing with its parameters.
+</p>
+<p class="content">
+Now we connect to the database in preparation for retrieving components later:
+</p>
+<div class="example-code">
+<pre>      $self-&gt;{dbh} =
+          DBI-&gt;connect
+              ( &quot;dbi:mysql:$self-&gt;{db_name}&quot;,
+                $self-&gt;{user}, $self-&gt;{password}, { RaiseError =&gt; 1 } );
+      
+      return $self;
+  }</pre>
+</div><p class="content">
+A resolver needs to implement two methods left unimplemented in the parent <code>HTML::Mason::Resolver</code> class. These are <code>get_info()</code><a name="IXT-12-1330"></a>
+<a name="IXT-12-1331"></a>
+ and <code>glob_path()</code>. The first is used to retrieve information about the component matching a
+particular component path. The second takes a glob pattern like <code>/path/*</code> or <code>/path/*/foo/*</code> and returns the component paths of all the components that match that wildcard
+path.
+</p>
+<p class="content">
+Additionally, if we want this resolver to be usable with the ApacheHandler
+module, we need to implement a method called <code>apache_request_to_comp_path()</code><a name="IXT-12-1332"></a>
+ , which takes an Apache object and translates it into a component path.
+</p>
+<p class="content">
+Given a path, we want to get the time when this component was last modified, in
+the form of a Unix timestamp, which is what Mason expects:
+</p>
+<div class="example-code">
+<pre>  sub get_info {
+      my ($self, $path) = @_;
+  
+      my ($last_mod) =
+          $self-&gt;{dbh}-&gt;selectrow_array
+              ( 'SELECT UNIX_TIMESTAMP(last_modified) 
+                 FROM MasonComponent WHERE path = ?',
+                {}, $path );
+
+      return unless $last_mod;</pre>
+</div><p class="content">
+If there was no entry in the database for the given path, we simply return,
+which lets Mason know that no matching component was found:
+</p>
+<div class="example-code">
+<pre>      return
+          HTML::Mason::ComponentSource-&gt;new
+              ( comp_path =&gt; $path,
+                friendly_name =&gt; $path,
+                last_modified =&gt; $last_mod,
+                comp_id =&gt; $path,
+                source_callback =&gt; sub { $self-&gt;_get_source($path) },
+              );
+  }</pre>
+</div><p class="content">
+The <code>get_info()</code> method returns its information in the form of a <code>HTML::Mason::ComponentSource</code><a name="IXT-12-1333"></a>
+ object. This is a very simple class that holds information about a component.
+</p>
+<p class="content">
+Its constructor accepts the following parameters:
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+comp_path</div>
+<p class="content">
+<a name="IXT-12-1334"></a>
+<a name="IXT-12-1335"></a>
+
+</p>
+<p class="content">
+This is the <a name="IXT-12-1336"></a>
+ component path as given to the resolver.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+friendly_name</div>
+<p class="content">
+<a name="IXT-12-1337"></a>
+<a name="IXT-12-1338"></a>
+
+</p>
+<p class="content">
+The string given for this parameter will be used to identify the component in
+error messages. For our resolver, the component path works for this parameter
+as well because it is the primary key for the MasonComponent table in the
+database, allowing us to uniquely identify a component.
+</p>
+<p class="content">
+For other resolvers, this might differ from the component path. For example,
+the filesystem resolver that comes with Mason uses the component's absolute
+path on the filesystem.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+last_modified</div>
+<p class="content">
+<a name="IXT-12-1339"></a>
+<a name="IXT-12-1340"></a>
+
+</p>
+<p class="content">
+This is the last modification time for the component, as seconds since the
+epoch.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+comp_id</div>
+<p class="content">
+<a name="IXT-12-1341"></a>
+<a name="IXT-12-1342"></a>
+
+</p>
+<p class="content">
+This should be a completely unique identifier for the component. Again, since
+the component path is our primary key in the database, it works well here.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+source_callback</div>
+<p class="content">
+<a name="IXT-12-1343"></a>
+<a name="IXT-12-1344"></a>
+
+</p>
+<p class="content">
+This is a subroutine reference that, when called, returns the source text of
+the component.
+</p>
+<p class="content">
+Mason could have had you simply create an <code>HTML::Mason::ComponentSource</code> subclass that implemented a <code>source()</code> method for your resolver, but we thought that rather than requiring you to
+write such a do-nothing subclass, it would be easier to simply use a callback
+instead.
+</p>
+<p class="content">
+Our <code>_get_source()</code> method is trivially simple:
+</p>
+<div class="example-code">
+<pre>  sub _get_source {
+      my $self = shift;
+      my $path = shift;
+  
+      return 
+          $self-&gt;{dbh}-&gt;selectrow_array
+              ( 'SELECT component FROM MasonComponent WHERE path = ?', {}, $path );
+  }</pre>
+</div></li>
+<li>
+<div class="book-list-item-heading">
+comp_class</div>
+<p class="content">
+<a name="IXT-12-1345"></a>
+<a name="IXT-12-1346"></a>
+
+</p>
+<p class="content">
+This is the component class into which this particular component should be
+blessed when it is created. This must be a subclass of <code>HTML::Mason::Component</code>. The default is <code>HTML::Mason::Component</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+extra</div>
+<p class="content">
+<a name="IXT-12-1347"></a>
+<a name="IXT-12-1348"></a>
+
+</p>
+<p class="content">
+This optional parameter should be a hash reference. It is used to pass
+information from the resolver to the component class.
+</p>
+<p class="content">
+This is needed since an <code>HTML::Mason::Resolver</code> subclass and an <code>HTML::Mason::Component</code> subclass can be rather tightly coupled, but they must communicate with each
+other through the interpreter (this may change in the future).
+</p>
+
+</ul>
+<p class="content">
+Next is our <code>glob_path()</code> method:
+</p>
+<div class="example-code">
+<pre>  sub glob_path {
+      my $self = shift;
+      my $pattern = shift;
+  
+      $pattern =~~ s/*/%/g;</pre>
+</div><p class="content">
+The pattern given will be something that could be passed to Perl's <code>glob()</code><a name="IXT-12-1349"></a>
+ function. We simply replace this with the SQL equivalent for a <code>LIKE</code> search:
+</p>
+<div class="example-code">
+<pre>      return
+          $self-&gt;{dbh}-&gt;selectcol_array
+              ( 'SELECT path FROM MasonComponent WHERE path LIKE ?', {}, $pattern );
+  }</pre>
+</div><p class="content">
+Then we return all the matching paths in the database.
+</p>
+<p class="content">
+Since we may want to use this resolver with ApacheHandler, we will also
+implement the<a name="IXT-12-1350"></a>
+<code>apache_request_to_comp_path()</code> method:
+</p>
+<div class="example-code">
+<pre>  sub apache_request_to_comp_path {
+      my $self = shift;
+      my $r = shift;
+  
+      my $path = $r-&gt;uri;
+  
+      return $path
+          if $self-&gt;{dbh}-&gt;selectrow_array
+              ( 'SELECT 1 FROM MasonComponent WHERE path = ?', {}, $path );
+  
+      return undef unless $r-&gt;path_info;
+  
+      $path .= $r-&gt;path_info;
+  
+      return $path
+          if $self-&gt;{dbh}-&gt;selectrow_array
+              ( 'SELECT 1 FROM MasonComponent WHERE path = ?', {}, $path );
+  
+      return undef;
+  }</pre>
+</div><p class="content">
+We generate a component path by taking the requested URI and looking for that
+in the database. If it doesn't exist, we will try appending the path info if
+possible or just give up. Finally, we try the altered path and, if that doesn't
+exist either, we just give up and return <code>undef</code>, which will cause the ApacheHandler module to return a <code>NOT FOUND</code> status for this request.
+</p>
+<p class="content">
+That's it, all done. And nothing left as an exercise for the reader this time.
+</p>
+<p class="content">
+As with the lexer, this can be used either via a <u>httpd.conf</u> directive:
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  PerlSetVar  MasonResolverClass  HTML::Mason::Resolver::MySQL</pre>
+</div><p class="content">
+or by passing the <code>resolver_class</code> parameter to the <code>new()</code> method for <code>HTML::Mason::Interp</code>.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h2>Request: A Request Object with a Built-in Session</h2><p class="content">
+<a name="CHP-12-SECT-5"></a>
+
+</p>
+<p class="content">
+Wouldn't it be cool to have a request object with a built-in session?
+&quot;Yes, it would,&quot; you answer. &quot;Child's play,&quot; we say.
+</p>
+<p class="content">
+When a request is made using this <a name="perlhtmlmason-IDXTERM-1054"></a>
+ object, it should either find an old session or create a new one. Then in our
+components we will simply call <code>$m-&gt;session()</code> to get back a hash reference that will persist between requests.
+</p>
+<p class="content">
+For simplicity's sake, we won't make this class configurable as to what type of
+session to use, though it could be done.<sup><a href="#FOOTNOTE-ANCHOR-3">3</a></sup><a name="RETURN-ANCHOR-3"></a>
+</p>
+<div class="example-code">
+<pre>  package HTML::Mason::Request::WithSession;
+  $VERSION = '0.01';
+  
+  use strict;
+  
+  # Import a subroutine error( ) which throws an HTML::Mason::Exception
+  # object
+  use HTML::Mason::Exceptions ( abbr =&gt; [ 'error' ] );
+  
+  use HTML::Mason::ApacheHandler;
+  use base qw(HTML::Mason::Request);</pre>
+</div><p class="content">
+One problem unique to subclassing to the Request object is that Mason already
+comes with two of its own Request subclasses. These are <code>HTML::Mason::Request::ApacheHandler</code> and <code>HTML::Mason::Request::CGIHandler</code>, which are used by the ApacheHandler and CGIHandler, respectively.
+</p>
+<p class="content">
+In order to cooperate with the ApacheHandler and CGIHandler modules, we want to
+subclass the appropriate class. However, we can't know which one to subclass
+when we are loaded, because it is possible that we will be loaded <em>before</em> the ApacheHandler or CGIHandler module. We'll take care of this in our <code>new()</code> method, which will be discussed momentarily.
+</p>
+<p class="content">
+Our session will be implemented using cookies and<a name="IXT-12-1351"></a>
+<code>Cache::FileCache</code> for storage, just as we saw in <a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">Chapter 11</a>:
+</p>
+<div class="example-code">
+<pre>  use Apache::Cookie;
+  use Cache::FileCache;
+  use Digest::SHA1;</pre>
+</div><p class="content">
+We solve our subclassing problem with the following code. There is nothing
+wrong with changing a class's inheritance dynamically in Perl, so that's what
+we do. The <code>alter_superclass()</code> method is provided by the <code>HTML::Mason::Request</code> base class, and does the right thing even given multiple inheritance. It also
+cooperates with <code>Class:Container</code> to make sure that it sees any changes made to the inheritance hierarchy:
+</p>
+<div class="example-code">
+<pre>  sub new {
+      my $class = shift;
+  
+          $class-&gt;alter_superclass( $HTML::Mason::ApacheHandler::VERSION ?
+                                'HTML::Mason::Request::ApacheHandler' :
+                                $HTML::Mason::CGIHandler::VERSION ?
+                                'HTML::Mason::Request::CGI' :
+                                'HTML::Mason::Request' );
+  
+      return $class-&gt;SUPER::new(@_);
+  }</pre>
+</div><p class="content">
+We make a session, call <code>exec()</code> in our parent class, taking care to preserve the caller's scalar/list context,
+and then save the session. If an exception is thrown, we simply rethrow it:
+</p>
+<div class="example-code">
+<pre>  sub exec {
+      my $self = shift;
+  
+      $self-&gt;_make_session;
+  
+      my @result;
+      if (wantarray) {
+          @result = eval { $self-&gt;SUPER::exec(@_) };
+      } elsif (defined wantarray) {
+          $result[0] = eval { $self-&gt;SUPER::exec(@_) };
+      } else {
+          eval { $self-&gt;SUPER::exec(@_) };
+      }
+  
+      # copy this in case _save_session overwrites $@
+      my $e = $@;
+  
+      $self-&gt;_save_session;
+  
+      die $e if $e;
+  
+      return wantarray ? @result : defined wantarray ? $result[0] : undef;
+  }</pre>
+</div><p class="content">
+Making a new session for subrequests is probably incorrect behavior, so we
+simply reuse our parent's session object if a subrequest is <code>exec()</code>'d:
+</p>
+<div class="example-code">
+<pre>  sub _make_session {
+      my $self = shift;
+  
+      if ( $self-&gt;is_subrequest ) {
+          $self-&gt;{session} = $self-&gt;parent_request-&gt;session;
+          return;
+      }</pre>
+</div><p class="content">
+This code is pulled almost verbatim from <a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">Chapter 11</a>:
+</p>
+<div class="example-code">
+<pre>      my %c = Apache::Cookie-&gt;fetch;
+      my $session_id =
+          exists $c{masonbook_session} ? $c{masonbook_session}-&gt;value : undef;
+
+      $self-&gt;{session_cache} =
+          Cache::FileCache-&gt;new( { cache_root =&gt; '/tmp',
+                                   namespace  =&gt; 'Mason-Book-Session',
+                                   default_expires_in  =&gt; 60 * 60 * 24, # 1 day
+                                   auto_purge_interval =&gt; 60 * 60 * 24, # 1 day
+                                   auto_purge_on_set =&gt; 1 } );
+
+      my $session;
+      if ($session_id) {
+          $session = $self-&gt;{session_cache}-&gt;get($session_id);
+      }
+
+      unless ($session) {
+          $session = { _session_id =&gt; Digest::SHA1::sha1_hex( time, rand, $$ ) };
+      }
+
+      Apache::Cookie-&gt;new( $self-&gt;apache_req,
+                           name =&gt; 'masonbook_session',
+                           value =&gt; $session-&gt;{_session_id},
+                           path =&gt; '/',
+                           expires =&gt; '+1d',
+                         )-&gt;bake;
+
+      $self-&gt;{session} = $session;
+  }</pre>
+</div><p class="content">
+Also just like <a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">Chapter 11</a>:
+</p>
+<div class="example-code">
+<pre>  sub _save_session {
+      my $self = shift;
+  
+      $self-&gt;{session_cache}-&gt;set
+          ( $self-&gt;{session}{_session_id} =&gt; $self-&gt;{session} );
+  }</pre>
+</div><p class="content">
+And to finish it off, a simple accessor method:
+</p>
+<div class="example-code">
+<pre>  sub session { $_[0]-&gt;{session} }</pre>
+</div><p class="content">
+Wow, nice and simple. Of course, this would need to be customized for your
+environment, or you can use the previously mentioned <code>HTML::Mason::Request::WithApacheSession</code> module available from CPAN.
+</p>
+<p class="content">
+Once again, you have two options to use this new subclass. If you are
+configuring Mason via your <u>httpd.conf</u> file, do this:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar  MasonRequestClass  HTML::Mason::Request::WithSession</pre>
+</div><p class="content">
+or in your <u>handler.pl</u> you can load the module and then pass a <code>request_class</code> parameter to the <code>HTML::Mason::ApacheHandler</code> class's constructor.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h2>Argument Munging: ApacheHandler</h2><p class="content">
+<a name="CHP-12-SECT-6"></a>
+
+</p>
+<p class="content">
+One of the main reasons that you might consider creating your own <a name="perlhtmlmason-IDXTERM-1057"></a>
+ ApacheHandler class is to change the way <a name="IXT-12-1352"></a>
+ arguments are processed. For example, we might want to create objects based on
+certain objects.
+</p>
+<p class="content">
+Our subclass starts like many others:
+</p>
+<div class="example-code">
+<pre>  package HTML::Mason::ApacheHandler::AddObjects;
+  $VERSION = '0.01';
+  
+  use strict;
+  
+  use HTML::Mason::ApacheHandler;
+  use base qw(HTML::Mason::ApacheHandler);</pre>
+</div><p class="content">
+This should look pretty familiar. Now we'll load a few more classes, which
+we'll be using to create objects:
+</p>
+<div class="example-code">
+<pre>  use Date::ICal;  # date object
+  use MyApp::User; # user object</pre>
+</div><p class="content">
+And now we override the argument-processing subroutine, <code>request_args()</code>:
+</p>
+<div class="example-code">
+<pre>  sub request_args {
+      my $self = shift;
+  
+      my ($args, $r, $cgi_object) = $self-&gt;SUPER::request_args(@_);</pre>
+</div><p class="content">
+ApacheHandler's <code>request_args()</code> method returns three items. The first is a hash reference containing the
+arguments that will be passed to the component. The second is the <code>Apache</code> or <code>Apache::Request</code> object for the current request, and the third is a <code>CGI.pm</code> object. The <code>CGI.pm</code> object is created only when the ApacheHandler's <code>args_method</code> attribute is set to <code>CGI</code> .
+</p>
+<div class="example-code">
+<pre>      if ( exists $args-&gt;{epoch} ) {
+          $args-&gt;{date} = Date::ICal-&gt;new( epoch =&gt; $args-&gt;{epoch} );
+      }
+
+      if ( exists $args-&gt;{user_id} ) {
+          $args-&gt;{user} = MyApp::User-&gt;new( user_id =&gt; $args-&gt;{user_id} );
+      }</pre>
+</div><p class="content">
+This bit of code simply creates some useful objects if certain incoming
+arguments exist. Finally we return the munged <code>$args</code> hash reference, along with the other return values from our superclass's <code>request_args()</code> method:
+</p>
+<div class="example-code">
+<pre>      return ($args, $r, $cgi_object);
+  }</pre>
+</div><p class="content">
+Now, whenever the client submits an argument called <code>epoch</code>, there will be an additional argument, <code>date</code>, a <code>Date::ICal</code> object, available in components. Similarly, a request with a <code>user_id</code> parameter means that there will be an argument <code>user</code> containing a <code>MyApp::User</code> object passed to components.
+</p>
+<p class="content">
+Using this class is a little different from what we've seen previously. In our <u>httpd.conf</u> file, we'd have something like this:
+</p>
+<div class="example-code">
+<pre>  &lt;Location /mason&gt;
+   SetHandler perl-script
+   PerlHandler HTML::Mason::ApacheHandler::AddObjects
+  &lt;/Location&gt;</pre>
+</div><p class="content">
+Similarly, in our <u>handler.pl</u> file, we'd simply create this object <em>instead</em> of an <code>HTML::Mason::ApacheHandler</code> object.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h2>More Reader Exercises</h2><p class="content">
+<a name="CHP-12-SECT-7"></a>
+
+</p>
+<p class="content">
+Consider the following possibilities for Mason subclasses:
+</p>
+<ul>
+<li>
+A resolver subclass that allows you to have two files per component. One file
+could be primarily HTML and the other would be code. The resolver subclass
+would simply concatenate the two together.</li>
+<li>
+A lexer subclass enabling ASP-style syntax.</li>
+<li>
+An ApacheHandler subclass that munges incoming strings into Unicode, using the <code>Encode</code> module from CPAN.</li>
+<li>
+A CGIHandler subclass that performs the same argument-to-object transformation
+seen in our example ApacheHandler subclass.
+</ul>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. The equivalent of <code>&lt;% %&gt;</code> in the sane world where people don't use XML for everything! -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. See Section 2.10 of the W3C XML 1.0 Recommendation for the definition of
+&quot;ignorable whitespace.&quot; -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-3"></a>
+<p class="content">
+3. This is left as an exercise... Actually, this was left to the one of the
+authors. Dave Rolsky recently created <code>MasonX::Request::WithApacheSession</code>, which is a highly configurable module that expands on the example shown in
+this section. This module is available from a CPAN mirror near you. -- <a href="#RETURN-ANCHOR-3">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<b>12</b>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

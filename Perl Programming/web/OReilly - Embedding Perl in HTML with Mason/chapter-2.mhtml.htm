@@ -1,0 +1,1457 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<b>2</b>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 2: Components</h1><p class="content">
+<a name="CHP-2"></a>
+
+</p>
+<p class="content">
+As mentioned in <a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">Chapter 1</a>, the basic building block of Mason is called a component. A component consists of text of any sort as well as Mason-specific markup syntax. This chapter briefly introduces some core Mason concepts and then goes into the nitty-gritty of component syntax.
+</p>
+<p class="content">
+In this chapter we'll introduce you to the <em>syntax</em> of Mason components, but we won't spend much time on semantics. In most of the
+sections, we refer to other parts of the book where you can find out more about
+each concept.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Mason from 10,000 Feet</h2><p class="content">
+<a name="CHP-2-SECT-1"></a>
+
+</p>
+<p class="content">
+In order to put Mason into perspective, a basic understanding of how <a name="perlhtmlmason-IDXTERM-107"></a>
+<a name="perlhtmlmason-IDXTERM-108"></a>
+ Mason processes a request is helpful. Each request is defined by an initial
+component path and a set of arguments to be passed to that component.
+</p>
+<p class="content">
+Requests are handled by the Interpreter object. You can use it directly or its
+API can be called by the ApacheHandler or CGIHandler modules provided with
+Mason.
+</p>
+<p class="content">
+The <a name="IXT-2-416"></a>
+ Interpreter asks the <a name="IXT-2-417"></a>
+ Resolver to fetch the requested component from the filesystem. Then the
+Interpreter asks the <a name="IXT-2-418"></a>
+ Compiler to create a &quot;compiled&quot; representation of the component.
+Mason's compilation process consists of turning Mason source code into Perl
+code, which is then executed in order to create an object representing the
+component. Mason stores this generated Perl code on disk, so that it doesn't
+need to go through the parsing and compilation process for every request, and
+stores the compiled code in an <a name="IXT-2-419"></a>
+ LRU (least recently used) cache in memory.
+</p>
+<p class="content">
+Once Mason has an object representing the initial component, it creates a <a name="IXT-2-420"></a>
+ request object and tells it to execute that component. The initial component
+might call several other components during the request. Any output a component
+generates is sent to STDOUT, which is a reasonable default for most
+environments in which Mason might be used. Of course, it is possible to change
+this default and send output elsewhere.
+</p>
+<p class="content">
+Several parameters can change how elements of this process happen, and you can
+replace the core Mason classes with your own customized subclasses for
+specialized behavior. When using the ApacheHandler module, all of these
+parameters can be specified in the web server's configuration file.
+</p>
+<p class="content">
+If a fatal error occurs during any part of this process, Mason throws an
+exception via Perl's built-in <code>die()</code><a name="IXT-2-421"></a>
+ function. In a <code>mod_perl</code> or CGI environment, Mason will make sure that this exception is handled in a
+reasonable way, by showing the error in the browser and/or recording the error
+in the server's error log. You can also catch exceptions in your own code and
+handle them as you  please.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h2>Core Concepts</h2><p class="content">
+<a name="CHP-2-SECT-2"></a>
+
+</p>
+<p class="content">
+Before diving into component syntax, it is important to understand a few basic <a name="perlhtmlmason-IDXTERM-117"></a>
+ Mason concepts, with the key concepts highlighted <em>in italics</em>.
+</p>
+<p class="content">
+First there is the <em>component</em><a name="IXT-2-422"></a>
+ . A component is a combination of text and Mason-specific markup. The markup
+sections may contain Perl code or special Mason directives. A component can
+correspond to a single web page, but more often a page is built up from several
+components. However, a component always corresponds to a single file.
+</p>
+<p class="content">
+A component is usually expected to generate output of some sort, whether HTML,
+an email message, or an image file. Components are closely analogous to Perl
+subroutines.
+</p>
+<p class="content">
+The <em>component root</em><a name="IXT-2-423"></a>
+ is a directory or list of <a name="IXT-2-424"></a>
+<a name="IXT-2-425"></a>
+ directories on the filesystem under which Mason expects to find all of your
+components. This is important in determining how component calls are resolved.
+If you ask Mason to execute the component <u>/view/books.comp</u>, Mason needs to know where to find such a thing. If your component root is <u>/var/www/mason</u>, Mason will look for a file called <u>/var/www/mason/view/books.comp</u>.
+</p>
+<p class="content">
+The process of resolving a <em>component path</em><a name="IXT-2-426"></a>
+ to a component can actually be a bit more complex than that, because you may
+actually specify multiple directories in which to search for components or use
+another storage mechanism altogether. We'll leave those complexities aside for
+now.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> When running under Apache, either via <code>mod_perl</code> or CGI, Mason will default to using the <a name="IXT-2-427"></a>
+
+</p>
+<p class="content">
+<a name="IXT-2-428"></a>
+ web server's document root as the component root. Mason may also be used in
+ways that don't require a component root at all, such as from a standalone perl
+script. Since the focus of this book is on building sites, we will generally
+assume that there is a component root unless we mention otherwise.
+</p>
+<p class="content">
+It is very important to understand that component paths, like URL paths, always
+use the <a name="IXT-2-429"></a>
+<a name="IXT-2-430"></a>
+ forward slash (/) as their directory separator, no matter what operating
+system Mason is running on. In other words, a component path can be thought of
+as a unique identifier for a particular component, in much the same way that a
+URL is a unique identifier for a particular resource. Also much like a URL, a
+component path usually corresponds to a file on disk with a related path, but
+it needn't  necessarily.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h2>Basic Component Syntax</h2><p class="content">
+<a name="CHP-2-SECT-3"></a>
+
+</p>
+<p class="content">
+Mason <a name="IXT-2-431"></a>
+<a name="IXT-2-432"></a>
+ parses components by taking the text of a <a name="IXT-2-433"></a>
+ component and translating it into actual Perl code. This Perl code, when
+executed, creates a new <code>HTML::Mason::Component</code><a name="IXT-2-434"></a>
+ object. This object, in turn, can be used to generate the text originally
+found in the component. In a sense, this inverts the component, turning it from
+text with embedded Perl into Perl with embedded text.
+</p>
+<p class="content">
+The markup language <a name="IXT-2-435"></a>
+<a name="IXT-2-436"></a>
+ Mason uses can give certain parts of the component special semantics, just
+like any other markup language such as XML or HTML. In this case, the syntax is
+used to tell Mason that certain parts of the component's text represent either
+Perl code, special instructions for Mason, or in some cases both.
+</p>
+<p class="content">
+The markup language used for Mason components contains a simple tag to do
+in-place substitution of Perl expressions, a way to mark a single line as being
+a line of Perl, and a set of block tags, most of which contain Perl code that
+is given a special meaning based on the particular tag being used (see <a href="chapter-2.mhtml.htm#CHP-2-TABLE-1" tppabs="http://www.masonbook.com/book/chapter-2.mhtml#CHP-2-TABLE-1">Table 2-1)</a>.
+</p>
+
+<table cellspacing="0" cellpadding="4">
+<a name="CHP-2-TABLE-1"></a>
+ <tr valign="top">
+  <td class="table-head">
+Tag  </td>
+  <td class="table-head">
+Name  </td>
+  <td class="table-head">
+Contains  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+&lt;% ... %&gt;  </td>
+  <td>
+Substitution  </td>
+  <td>
+Perl that is evaluated and sent as output  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+% ...  </td>
+  <td>
+Perl line  </td>
+  <td>
+A single line of Perl code <sup><a href="#FOOTNOTE-ANCHOR-2">2</a></sup><a name="RETURN-ANCHOR-2"></a>  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+&lt;%perl&gt; ... &lt;/%perl&gt;  </td>
+  <td>
+Perl block  </td>
+  <td>
+Perl code  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+&lt;&amp; ... &amp;&gt;  </td>
+  <td>
+Component call  </td>
+  <td>
+A call to another component, possibly with arguments  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+&lt;%init&gt; ... &lt;/%init&gt;  </td>
+  <td>
+init block  </td>
+  <td>
+Perl code that executes before the main body of the component  </td>
+ </tr>
+ <tr valign="top">
+  <td>
+&lt;%args&gt; ... &lt;/%args&gt;  </td>
+  <td>
+args block  </td>
+  <td>
+A component's input argument declarations   </td>
+ </tr>
+</table>
+<span class="caption">Table 2-1.  
+ A portion of Mason's markup language</span>
+<a name="TOC-ANCHOR-4"></a>
+<h3>Substitution Tags: &lt;% %&gt;</h3><p class="content">
+<a name="CHP-2-SECT-3.1"></a>
+
+</p>
+<p class="content">
+The simplest kind of Mason tag is the <a name="perlhtmlmason-IDXTERM-134"></a>
+<a name="perlhtmlmason-IDXTERM-135"></a>
+ substitution tag, used to insert the results of a Perl expression into your
+text. This tag is quite similar to those found in other templating systems. A
+simple example might look like this:
+</p>
+<div class="example-code">
+<pre>  % $cd_count = 207; # this is embedded Perl
+  You have &lt;% $cd_count %&gt; CDs.</pre>
+</div><p class="content">
+The output of this example would be:
+</p>
+<div class="example-code">
+<pre>  You have 207 CDs.</pre>
+</div><p class="content">
+The contents of the tag are evaluated in a list context and joined together
+just as if they had been passed as arguments to Perl's built-in <code>print()</code><a name="IXT-2-437"></a>
+ function.
+</p>
+<p class="content">
+It is possible, and often desirable, to put more complicated Perl expressions
+into your substitution tags. For example, to handle plurals properly, the
+second line in the previous example could be rewritten as:
+</p>
+<div class="example-code">
+<pre>  You have &lt;% $cd_count %&gt; CD&lt;% $cd_count != 1 ? 's': '' %&gt;</pre>
+</div><p class="content">
+This could output any of the following, depending on the value of the <code>$cd_count</code> variable:
+</p>
+<div class="example-code">
+<pre>  You have 207 CDs.
+  You have 1 CD.
+  You have 0 CDs.</pre>
+</div><p class="content">
+The contents of the substitution tag are evaluated as Perl code, so whitespace
+is ignored, meaning <code>&lt;%$cd_count%&gt;</code> would be perfectly valid, though perhaps a bit difficult to read. Our style is
+to always include <a name="IXT-2-438"></a>
+ whitespace in a  substitution tag.
+</p>
+<h4>Escaping substitutions</h4><p class="content">
+<a name="CHP-2-SECT-3.1.1"></a>
+
+</p>
+<p class="content">
+One very useful feature provided by Mason is the ability to escape the contents
+of a tag before it is sent as output. <a name="IXT-2-439"></a>
+ Escaping is the process of making unsafe characters safe. In a web context,
+safe means that we do not generate output that could be mistaken for HTML. In
+addition, we may need to do URL-style escaping as well.
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-141"></a>
+<a name="perlhtmlmason-IDXTERM-142"></a>
+ Substitution escaping is indicated with a <a name="IXT-2-440"></a>
+<a name="IXT-2-441"></a>
+ pipe (<code>|</code>) followed by one or more escape flags placed before the close of the tag.
+Currently, there are three valid<a name="IXT-2-442"></a>
+ escape flags, <code>h</code><a name="IXT-2-443"></a>
+ for HTML entity escaping (i.e., <code>&gt;</code> into <code>&amp;gt;</code> ), <code>u</code><a name="IXT-2-444"></a>
+ for URI escaping (i.e., <code>&gt;</code> into <code>%3E</code> ), and <code>n</code><a name="IXT-2-445"></a>
+ for no escaping. The <a name="IXT-2-446"></a>
+ HTML and URI escape flags can be combined (i.e., <code>hu</code>) or used separately. An example might look like:
+</p>
+<div class="example-code">
+<pre>  Name: &lt;% $name | h %&gt;
+  Homepage: &lt;a href=&quot;redirect?url=&lt;% $homepage | u %&gt;&quot;&gt;</pre>
+</div><p class="content">
+The HTML escaping mode escapes the string using the <code>HTML::Entities</code> module, which means that all control and high-bit characters are escaped, as
+well as the <a name="IXT-2-447"></a>
+<a name="IXT-2-448"></a>
+ greater-than and l<a name="IXT-2-449"></a>
+<a name="IXT-2-450"></a>
+ ess-than signs (<code>&lt;</code> and <code>&gt;</code>), the<a name="IXT-2-451"></a>
+<a name="IXT-2-452"></a>
+ ampersand (<code>&amp;</code>), and the <a name="IXT-2-453"></a>
+<a name="IXT-2-454"></a>
+ double quote character (<code>&quot;</code>).
+</p>
+<p class="content">
+HTML escaping is particularly useful when you're populating a page with data
+from an external data source like a database. For instance, consider the
+following code:
+</p>
+<div class="example-code">
+<pre>  &lt;textarea name=&quot;foo&quot;&gt;&lt;% $foo_data %&gt;&lt;/textarea&gt;</pre>
+</div><p class="content">
+If <code>$foo_data</code> contains the string <code>&lt;/textarea&gt;</code>, your HTML will be broken. Guard against this possibility by escaping the
+output:
+</p>
+<div class="example-code">
+<pre>  &lt;textarea name=&quot;foo&quot;&gt;&lt;% $foo_data | h %&gt;&lt;/textarea&gt;</pre>
+</div><p class="content">
+Mason uses <code>HTML::Entities</code> internally but does not provide a way to tell <code>HTML::Entities</code><a name="IXT-2-455"></a>
+<a name="IXT-2-456"></a>
+ not to escape certain characters. By default, <code>HTML::Entities</code> assumes that you are using the<a name="IXT-2-457"></a>
+ ISO-8859-1 character set and escapes characters accordingly. If you are
+generating text for another character set, such as <a name="IXT-2-458"></a>
+<a name="IXT-2-459"></a>
+ Big5, you will need to override the way this escaping is done.
+</p>
+<p class="content">
+The URI escaping mode escapes any character besides alphanumerics, the <a name="IXT-2-460"></a>
+<a name="IXT-2-461"></a>
+<a name="IXT-2-462"></a>
+<a name="IXT-2-463"></a>
+<a name="IXT-2-464"></a>
+ underscore ( <code>_</code> ), dash ( <code>-</code> ), and period ( <code>.</code> ).
+</p>
+<p class="content">
+The &quot;no escape&quot; escaping mode is used when you have set a default
+escaping mode via the <code>default_escape_flags</code> parameter (see <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a> for details). The <code>n</code> flag turns off the default escaping for the substitution tag in which it is
+used.
+</p>
+<p class="content">
+If you want to escape using a different mode than the default, you can combine
+the <code>n</code> escape with another flag, for example:
+</p>
+<div class="example-code">
+<pre>  # default is 'u'
+  &lt;% $contains_html | nh %&gt;</pre>
+</div><p class="content">
+The use of spaces around the pipe is optional.
+</p>
+<p class="content">
+The purist will note that <code>$variable | h</code> is perfectly valid Perl syntax for obtaining the value of <code>$variable</code> bitwise OR'ed against the output of the <code>h</code> subroutine (or perhaps the bareword string <code>h</code> ), and therefore this valid Perl construct has a different meaning in <code>&lt;% %&gt;</code> tags than it has in other Perl environments. If you <em>really</em> mean to do the bitwise OR (in which case we strongly suspect you really <em>shouldn't</em> mean to), a workaround looks like this:
+</p>
+<div class="example-code">
+<pre>  &lt;% ($variable | h) %&gt;</pre>
+</div><p class="content">
+No doubt this will cause much consternation among those who write code that
+involves OR-ing together variables and the output of subroutines with single
+character names, who are being made second-class citizens in the Mason world.
+Sorry, but we're standing firm here.
+</p>
+<p class="content">
+As of version 1.14, Mason supports user-defined escapes so that you can create
+your own escaping flags, or override existing flags. This is not documented in
+the book at present, so please see the documentation for the <code>HTML::Mason::Interp</code> module in a recent release of Mason for details.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Embedded Perl: % Lines and &lt;%perl&gt; Blocks</h3><p class="content">
+<a name="CHP-2-SECT-3.2"></a>
+<a name="ch02-idx-1006881-2"></a>
+<a name="ch02-idx-1006881-1"></a>
+
+</p>
+<p class="content">
+There are two ways to embed Perl code into <a name="perlhtmlmason-IDXTERM-170"></a>
+<a name="perlhtmlmason-IDXTERM-171"></a>
+<a name="perlhtmlmason-IDXTERM-172"></a>
+ text with Mason. The first, the Perl line, is a line that starts with a
+percent sign ( <code>%</code> ). The rest of that line (up to the newline character) is interpreted as Perl
+code. This percent sign cannot be preceded by any horizontal whitespace such as
+spaces or tabs. A typical use of these lines is to implement Perl control
+structures. For example:
+</p>
+<div class="example-code">
+<pre>  % foreach my $person (@people) {
+    Name: &lt;% $person-&gt;{name} %&gt;
+    Age: &lt;% $person-&gt;{age} %&gt;
+    Height: &lt;% $person-&gt;{height} %&gt;
+    Weight: &lt;% $person-&gt;{weight} %&gt;
+  % }</pre>
+</div><p class="content">
+You can put any valid piece of Perl code on these lines. It is possible to use
+a Perl line for a larger chunk of code too -- the previous code could have been
+equivalently written like the following:
+</p>
+<div class="example-code">
+<pre>  % foreach my $person (@people) {
+  %   print &quot;Name: &quot;, $person-&gt;{name}, &quot;\n&quot;;
+  %   print &quot;Age: &quot;, $person-&gt;{age}, &quot;\n&quot;;
+  %   print &quot;Height: &quot;, $person-&gt;{height}, &quot;\n&quot;;
+  %   print &quot;Weight: &quot;, $person-&gt;{weight}, &quot;\n&quot;;
+  % }</pre>
+</div><p class="content">
+If you have more than a few lines of Perl code in a row, however, it is
+probably best to use a Perl block instead. A Perl block is equivalent to a
+bunch of Perl lines in a row. It begins with the start tag <code>&lt;%perl&gt;</code> and ends with the end tag <code>&lt;/%perl&gt;</code>. The contents of these blocks may be any valid  Perl code.
+</p>
+<p class="content">
+You may want to use this tag if you need to do some data processing in the
+midst of your text. For example:
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%perl&gt;
+   my @words = $sentence =~ /\b(\S+)\b/g;
+   my @small_words = grep { length $_ &lt;= 3 } @words;
+   my @big_words = grep { length $_ &gt; 3 } @words;
+  &lt;/%perl&gt;
+  There were &lt;% scalar @words %&gt; in the sentence.
+  The big words were:
+  % foreach my $word (@big_words) {
+    &lt;% $word %&gt;
+  % }
+  The small words were:
+  % foreach my $word (@small_words) {
+    &lt;% $
+  word %&gt;
+  % }</pre>
+</div><a name="TOC-ANCHOR-6"></a>
+
+<br />
+<h3>Calling Other Components: &lt;&amp; &amp;&gt; Tags</h3><p class="content">
+<a name="CHP-2-SECT-3.3"></a>
+
+</p>
+<p class="content">
+One of the most powerful features in Mason is the ability of one <a name="perlhtmlmason-IDXTERM-176"></a>
+<a name="perlhtmlmason-IDXTERM-177"></a>
+<a name="perlhtmlmason-IDXTERM-178"></a>
+ component to execute another, causing the called component's output to appear
+inside the calling component's output. The called component can, in turn, call
+other components, and so on. There are several ways to call components, but the
+simplest way is via the ampersand tag, like this:
+</p>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;The Goober Guide&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1&gt;Welcome to The Goober Guide!&lt;/h1&gt;
+  &lt;&amp; menu &amp;&gt;
+  ...
+  &lt;/body&gt;
+  &lt;/html&gt;</pre>
+</div><p class="content">
+The <code>menu</code> component might contain a navigation bar used on all the pages for a site.
+Other example calls might look like this:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; /path/to/menu &amp;&gt;
+  &lt;&amp; $component &amp;&gt;
+  &lt;&amp; menu, width =&gt; 640, admin =&gt; 1 &amp;&gt;</pre>
+</div><p class="content">
+These calls illustrate several facets of Mason's component call tag. First, the
+component can be specified either directly using its name in plain text or
+indirectly as the result of Perl expression like <code>$component</code> in the example. In addition, component calls can take arguments (like <code>width</code> and <code>admin</code> in the third example) just like a Perl subroutine -- internally, they actually <em>are</em> subroutines.
+</p>
+<p class="content">
+How does Mason figure out which component calls are specified directly and
+which indirectly? It applies some simple parsing rules. In a component call
+tag, if the first nonwhitespace character is a letter, number, underscore ( <code>_</code> ), slash ( <code>/</code> ), or period ( <code>.</code> ), Mason assumes that this text is a plain text component path rather than a
+Perl expression. In that case, everything up to the first comma or end of the
+tag (<code>&amp;&gt;</code>), whichever comes first, is assumed to be a string specifying the component
+path. Anything after a comma, if present, will be considered a list of
+arguments to pass to the called component.
+</p>
+<p class="content">
+If the first nonwhitespace character is something else, it is assumed that the
+component call contains a Perl expression (perhaps a variable or function call)
+whose value indicates the desired component.
+</p>
+<p class="content">
+These rules may seem a little arcane, but they manage to capture most people's
+expectations pretty well. Most of the time you can just specify the component
+in the most natural way, and it will just work. If you want to use a Perl
+expression (the &quot;indirect&quot; syntax) starting with one of the special
+characters mentioned in the previous paragraph, however, it is necessary to do
+something to force Mason to see it as Perl. An easy way to do this is to wrap
+the Perl expression in parentheses or to prefix it with Perl's no-op unary plus
+operator (<code>+</code>). For example:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; ( component_path_returner( ) ) &amp;&gt;
+  &lt;&amp; +component_path_returner( ) &amp;&gt;</pre>
+</div><p class="content">
+An alternative to the <code>&lt;&amp; &amp;&gt;</code> syntax for calling other components is the <code>$m-&gt;comp()</code> method. The <code>$m</code> variable contains the <code>HTML::Mason::Request</code> object for the current request, and you may use the <code>$m-&gt;comp()</code> method in Perl code just as you would use a <code>&lt;&amp; &amp;&gt;</code> tag in the component body.<sup><a href="#FOOTNOTE-ANCHOR-3">3</a></sup><a name="RETURN-ANCHOR-3"></a> In fact, in the current version of Mason, the <code>&lt;&amp;</code><code>&amp;&gt;</code> tag is implemented internally with the <code>$m-&gt;comp()</code> method. So the following two lines are equivalent to each other:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; menu, width =&gt; 640, admin =&gt; 1 &amp;&gt;
+  % $m-&gt;comp('menu', width =&gt; 640, admin =&gt; 1);</pre>
+</div><p class="content">
+Notice how we used a Perl line, starting with a <code>%</code>, to embed the <code>$m-&gt;comp()</code> call in the component.
+</p>
+<p class="content">
+In this section we have been intentionally vague about how a Perl expression
+&quot;specifies&quot; a component. There are two ways it may do so: it may
+either evaluate to a string that gives the path to the component or evaluate to
+a component <em>object</em>,<sup><a href="#FOOTNOTE-ANCHOR-4">4</a></sup><a name="RETURN-ANCHOR-4"></a> rather than a path, and that object will then be executed. There are a few
+idioms in which this is useful, but they're used fairly rarely, and you'll
+mostly call components by their  paths.
+</p>
+<h4>Components called with content</h4><p class="content">
+<a name="CHP-2-SECT-3.3.1"></a>
+
+</p>
+<p class="content">
+With Version 1.10, Mason introduced support for a powerful new construct, which
+we call &quot;components called with content.&quot; Using this construct, it is
+possible to pass a Mason content block as part of a <a name="perlhtmlmason-IDXTERM-182"></a>
+<a name="perlhtmlmason-IDXTERM-183"></a>
+<a name="perlhtmlmason-IDXTERM-184"></a>
+ component call. Here is an example:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $name
+  &lt;/%args&gt;
+  &lt;&amp;| /i18n/itext, lang =&gt; $lang &amp;&gt;
+  %# The bits in here will be available from $m-&gt;content in the /i18/text
+    &lt;en&gt;Hello, &lt;% $name %&gt;.  These words are in English.&lt;/en&gt;
+    &lt;fr&gt;Bonjour, &lt;% $name %&gt;, ces mots sont franE&lt;#xC3&gt;E&lt;#xA7&gt;ais.&lt;/fr&gt;
+    &lt;pig&gt;Ellohay &lt;% substr($name,2) . substr($name,0,1) . 'ay' %&gt;, 
+         esethay ordsway areyay inyay Igpay Atinlay.&lt;/pig&gt;
+  &lt;/&amp;&gt;</pre>
+</div><p class="content">
+Presumably, we expect the <code>/i18n/itext</code> component to filter this text so that only the correct language, as specified
+in <code>$lang</code>, is used. The <code>/i18n/itext</code> component would probably look something like this, using the <code>$m-&gt;content()</code> method to retrieve the content block:
+</p>
+<div class="example-code">
+<pre>  &lt;% $text %&gt;
+  &lt;%args&gt;
+   $lang
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my ($text) = $m-&gt;content =~ m{&lt;$lang&gt;(.+?)&lt;/$lang&gt;}s;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+The content block gets executed when <code>$m-&gt;content()</code> is called, but it still has access to the variables as declared in the
+original component, such as <code>$name</code>. Components called with content will be covered in more  depth in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h3>Other Named Blocks</h3><p class="content">
+<a name="CHP-2-SECT-3.4"></a>
+
+</p>
+<p class="content">
+Mason has a variety of other<a name="IXT-2-465"></a>
+ named blocks. These all have the same start and end tag syntax as <code>&lt;%perl&gt;</code> blocks, and most of them contain plan Perl. However, these other blocks are
+interpreted as having special meanings by Mason.
+</p>
+<p class="content">
+If any of these blocks, or a <code>&lt;%perl&gt;</code> block, is immediately followed by a newline, then that newline is discarded
+from the text output. This is a convenience to prevent you from having to do
+this all over the place:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   ...
+  &lt;/%args&gt;&lt;%init&gt;
+   ...
+  &lt;/%init&gt;&lt;%perl&gt;
+   ...
+  &lt;/%perl&gt;This is the start of the component ...</pre>
+</div>
+<br />
+<h4>&lt;%init&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.1"></a>
+<a name="IXT-2-466"></a>
+<a name="IXT-2-467"></a>
+
+</p>
+<p class="content">
+This is one of the most commonly used Mason blocks. The Perl code it contains
+is run before any other code except for code in <code>&lt;%once&gt;</code> or <code>&lt;%shared&gt;</code> blocks. It is run every time the component is called.
+</p>
+<p class="content">
+Using this block achieves the same effect as putting a <code>&lt;%perl&gt;</code> block at the top of a component but may be aesthetically more pleasing,
+because it allows you to isolate code at the bottom of a component, out of the
+way of the component's main body.
+</p>
+<p class="content">
+The <code>&lt;%init&gt;</code> block is typically used for doing things like checking arguments, creating
+objects, or retrieving data from a database. The variables created here are
+used in substitutions and perl lines throughout the rest of the component.
+</p>
+<div class="example-code">
+<pre>  It is currently &lt;% $temp %&gt; degrees.
+  &lt;%init&gt;
+   my ($temp) = $dbh-&gt;selectrow_array(&quot;SELECT temperature FROM current_weather&quot;);
+  &lt;/%init&gt;</pre>
+</div>
+<br />
+<h4>&lt;%args&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.2"></a>
+<a name="IXT-2-468"></a>
+<a name="IXT-2-469"></a>
+
+</p>
+<p class="content">
+As we have mentioned, components can take a variety of arguments, from either
+an external source (an HTTP request, for example) or an internal one (one
+component calling another).
+</p>
+<p class="content">
+It is usually desirable to declare the names and datatypes of the arguments
+that a component expects, as well as default values for these arguments, if
+they have any. This is done via the <code>&lt;%args&gt;</code> block. A typical block might look like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $color
+   $size  =&gt; 20  # A default value
+   @items =&gt; ( 1, 2, 'something else' )
+   %pairs =&gt; ( key1 =&gt; 1, key2 =&gt; 'value' )
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+This example demonstrates all the syntax possibilities for this block. First of
+all, we have argument types and names. The valid types are scalar, array, and
+hash, represented by their corresponding Perl sigil (<code>$</code>, <code>@</code>, or <code>%</code>), exactly as would be expected.
+</p>
+<p class="content">
+It is possible to give an argument a default value to be used if none is
+provided when the component is called. Any argument without a default is
+considered a <em>required</em> argument. Calling a component without specifying all its required arguments
+will cause a fatal exception to be thrown.
+</p>
+<p class="content">
+An argument's default can refer to an earlier argument, so this is completely
+legal:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $x
+   $y =&gt; $x * 2 &gt; 20 ? 50 : 100
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+While this block looks as if it contains Perl, it is important to realize that
+its syntax is actually something unique to Mason. Importantly, lines should not
+end with a semicolon or comma, and each variable definition must be on a single
+line.
+</p>
+<p class="content">
+It is possible to have comments both after an argument declaration and on their
+own line. Comments start with the <code>#</code> character and continue to the end of the line, just as in Perl. Blank lines
+are also allowed.
+</p>
+<h4>&lt;%filter&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.3"></a>
+<a name="ch02-idx-1006771-2"></a>
+<a name="ch02-idx-1006771-1"></a>
+
+</p>
+<p class="content">
+A <code>&lt;%filter&gt;</code> block is called after a component has finished running. It is given the entire
+output of the component in the <code>$_</code> variable, and any changes to this variable are reflected in the output of the
+component. For example, this filter uppercases all of the component's  output:
+</p>
+<div class="example-code">
+<pre>  &lt;%filter&gt;
+   s/(\w+)/\U$1/g
+  &lt;/%filter&gt;</pre>
+</div>
+<br />
+<h4>&lt;%once&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.4"></a>
+<a name="IXT-2-470"></a>
+<a name="IXT-2-471"></a>
+
+</p>
+<p class="content">
+This block is executed whenever the component is loaded into memory. It is
+executed before any other block (including an <code>&lt;%init&gt;</code> block). Any variables declared here remain in existence (and in scope) until
+the component is flushed from memory or the Perl interpreter running Mason
+shuts down, whichever comes first. The <code>&lt;%once&gt;</code> section is useful for things like creating database handles or instantiating
+large, resource-intensive objects.
+</p>
+<div class="example-code">
+<pre>  The universe is this big: &lt;% $size %&gt;
+  &lt;%once&gt;
+   my $size = calculate_size_of_universe( );
+  &lt;/%once&gt;</pre>
+</div>
+<br />
+<h4>&lt;%cleanup&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.5"></a>
+<a name="IXT-2-472"></a>
+<a name="IXT-2-473"></a>
+
+</p>
+<p class="content">
+The cleanup block is executed right before the component exits and is the
+counterpart to the <code>&lt;%init&gt;</code> block. It is useful if you have created resources -- such as circular
+references -- that need to be freed. Technically, it is the same as placing a <code>&lt;%perl&gt;</code> block at the end of a component.
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $resource = get_a_resource( );
+  &lt;/%init&gt;
+  
+  ... do something interesting with that resource
+  
+  &lt;%cleanup&gt;
+   $resource-&gt;dispose;
+  &lt;/%cleanup&gt;</pre>
+</div><p class="content">
+Since cleanup code tends to be put at the end of the component anyway, <code>&lt;%cleanup&gt;</code> blocks aren't very common. Their chief advantage is that their name is <code>cleanup</code> .
+</p>
+<p class="content">
+Cleanup blocks are <em>not</em> executed if the component dies or aborts.
+</p>
+<h4>&lt;%text&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.6"></a>
+<a name="IXT-2-474"></a>
+<a name="IXT-2-475"></a>
+
+</p>
+<p class="content">
+The contents of this block are output exactly as they are, without any parsing.
+This if useful if you need to write a component containing text about Mason.
+For example:
+</p>
+<div class="example-code">
+<pre>  &lt;%text&gt;
+   Substitution tags look like this: &lt;% $var %&gt;.
+  &lt;/%text&gt;</pre>
+</div>
+<br />
+<h4>&lt;%doc&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.7"></a>
+<a name="IXT-2-476"></a>
+<a name="IXT-2-477"></a>
+
+</p>
+<p class="content">
+This block is intended for use by component authors for documentation purposes.
+Its contents are completely ignored. In the future Mason may do something more
+useful with them.
+</p>
+<div class="example-code">
+<pre>  &lt;%doc&gt;
+  =head1 My Story
+  
+  This is the part where I tell you what the component does.  But I'd
+  rather tell you a story about my childhood.  When I was but a
+  child, my mother said to me ...
+  &lt;/%doc&gt;</pre>
+</div><p class="content">
+As you can see, there's no reason not to use POD (Perl's Plain Old
+Documentation markup language) in these blocks, and you can even run <code>perldoc</code> on a component file.
+</p>
+<h4>&lt;%flags&gt; and &lt;%attr&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.8"></a>
+<a name="IXT-2-478"></a>
+<a name="IXT-2-479"></a>
+<a name="IXT-2-480"></a>
+<a name="IXT-2-481"></a>
+
+</p>
+<p class="content">
+These two blocks share the same syntax and are used to declare one or more
+key/value pairs. The key can contain only letters, numbers, and the underscore
+character ( <code>_</code> ). The value can be any Perl expression whose results can fit into a scalar
+(such as a number, string, reference, or <code>undef</code> ).
+</p>
+<p class="content">
+As in the <code>&lt;%args&gt;</code> block, the syntax in these blocks <em>looks</em> like Perl, but it is not. First, you cannot end a line with a comma or
+semicolon. Second, the whole key/value pair <em>must</em> be on a single line.
+</p>
+<p class="content">
+The difference between these two is that the <code>&lt;%flags&gt;</code> block may contain only official Mason flags, which are used to affect the
+component's behavior. Currently, there is only one flag defined, <code>inherit</code>. This is used to specify the component's parent component. Component
+inheritance is discussed in <a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">Chapter 3</a>.
+</p>
+<p class="content">
+The <code>&lt;%attr&gt;</code> block may contain any keys that you want, as the variables defined in this
+block are not used by Mason but may be used in your code. Its contents are
+available by calling the object's <code>attr()</code> method and giving the desired key as the argument. See <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a> for the details.
+</p>
+<div class="example-code">
+<pre>  &lt;%flags&gt;
+   inherit =&gt; '/some/other/component'
+  &lt;/%flags&gt;
+  
+  &lt;%attr&gt;
+   color =&gt; &quot;I'm so blue&quot;
+   size =&gt; 'mucho grande'
+  &lt;/%attr&gt;
+  
+  My color: &lt;% $m-&gt;base_comp-&gt;attr('color') %&gt;</pre>
+</div><p class="content">
+There is one other important difference between flags and attributes: flags
+refer to only the current component, whereas attributes are part of Mason's
+inheritance scheme, discussed in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<h4>&lt;%def&gt; and &lt;%method&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.9"></a>
+<a name="IXT-2-482"></a>
+<a name="IXT-2-483"></a>
+<a name="IXT-2-484"></a>
+<a name="IXT-2-485"></a>
+
+</p>
+<p class="content">
+These two blocks use a syntax slightly different from any other Mason block
+because their contents are, in turn, components. The <code>&lt;%def&gt;</code> block contains a <em>subcomponent</em>, an embedded component that can be called via the normal Mason component
+calling syntax. A <code>&lt;%method&gt;</code> block also contains an embedded component, but one that may be inherited by a
+component's children. <code>&lt;%def&gt;</code> and <code>&lt;%method&gt;</code> blocks require a name in the initial tag. In the following example, a
+subcomponent named <code>.make_a_link</code> is defined:
+</p>
+<div class="example-code">
+<pre>  &lt;%def .make_a_link&gt;
+   &lt;a href=&quot;&lt;% $url %&gt;&quot;&gt;&lt;% $text %&gt;&lt;/a&gt;
+   &lt;%args&gt;
+    $path
+    %query =&gt; ( )
+    $text
+   &lt;/%args&gt;
+   &lt;%init&gt;
+    my $url = ...
+   &lt;/%init&gt;
+  &lt;/%def&gt;</pre>
+</div><p class="content">
+The name of a subcomponent or method may contain alphanumerics, underscores ( <code>_</code> ), dashes ( <code>-</code> ), or periods ( <code>.</code> ). Customarily, a period is the first character of subcomponent names, in
+order to distinguish them from nonembedded components. Methods generally do not
+follow this convention; they have names without leading periods.
+</p>
+<p class="content">
+The main difference between subcomponents and methods is simply that
+subcomponents are visible only within the component in which they are defined,
+whereas methods are visible outside of the component and can be inherited via
+Mason's component inheritance mechanism. Subcomponents and methods are covered
+in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<h4>&lt;%shared&gt; blocks</h4><p class="content">
+<a name="CHP-2-SECT-3.4.10"></a>
+<a name="IXT-2-486"></a>
+<a name="IXT-2-487"></a>
+
+</p>
+<p class="content">
+This block also contains Perl code. Code in this block is executed once per
+request, before the <code>&lt;%init&gt;</code> block, but unlike in an <code>&lt;%init&gt;</code> block, the variables declared in this block are in scope both in the
+component's main body and in any subcomponents or methods it may contain. This
+is useful for sharing a common chunk of code between all the parts of a single
+component. The uses of this block are discussed in <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h3>Escaping a Newline</h3><p class="content">
+<a name="CHP-2-SECT-3.5"></a>
+<a name="IXT-2-488"></a>
+<a name="IXT-2-489"></a>
+
+</p>
+<p class="content">
+When using Mason, you may find that you want to suppress a newline in your
+text. A typical example is this:
+</p>
+<div class="example-code">
+<pre>  &lt;pre&gt;
+  I am
+  % if ($height &lt; 5) {
+   not
+  % } elsif ( $height &lt; 5.75 ) {
+   not very
+  % } elsif ( $height &gt; 6.25 ) {
+   very
+  % }
+  tall
+  &lt;/pre&gt;</pre>
+</div><p class="content">
+This will generate the following output if <code>$height</code> is less than 5:
+</p>
+<div class="example-code">
+<pre>  &lt;pre&gt;
+  I am
+   not
+  tall
+  &lt;/pre&gt;</pre>
+</div><p class="content">
+The newlines in the output are not desirable but are unavoidable because of the
+need for the Perl code to exist on separate lines. Mason therefore provides the
+ability to get rid of a newline simply by preceding it with a backslash ( <code>\</code> ).
+</p>
+<p class="content">
+If we rewrote the preceding example with escaped newlines, it would look like
+this:
+</p>
+<div class="example-code">
+<pre>  &lt;pre&gt;
+  I am\
+  % if ($height &lt; 5) {
+   not\
+  % } elsif ( $height &lt; 5.75 ) {
+   not very\
+  % } elsif ( $height &gt; 6.25 ) {
+   very\
+  % }
+  tall
+  &lt;/pre&gt;</pre>
+</div><p class="content">
+Given this, the output for a <code>$height</code> less than 5 would then be:
+</p>
+<div class="example-code">
+<pre>  &lt;pre&gt;
+  I am not tall
+  &lt;/pre&gt;</pre>
+</div><p class="content">
+This example could be redone on a single line using multiple <code>&lt;%perl&gt;</code> blocks, but it would be pretty hideous looking.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h2>Component Arguments</h2><p class="content">
+<a name="CHP-2-SECT-4"></a>
+
+</p>
+<p class="content">
+Most <a name="IXT-2-490"></a>
+<a name="IXT-2-491"></a>
+ components will expect to receive named arguments, and these can be passed in
+one of two ways. Components can receive arguments as the result of external
+requests, such as those via HTTP, or they can receive arguments when they are
+called from another component. These arguments are available in the called
+component via several mechanisms. But from a component's perspective, how it is
+called is largely irrelevant.
+</p>
+<a name="TOC-ANCHOR-10"></a>
+<h3>&lt;%args&gt; Block Revisited</h3><p class="content">
+<a name="CHP-2-SECT-4.1"></a>
+
+</p>
+<p class="content">
+Since we are talking about arguments, it is worth revisiting the <code>&lt;%args&gt;</code><a name="perlhtmlmason-IDXTERM-193"></a>
+<a name="perlhtmlmason-IDXTERM-194"></a>
+ block discussed previously. This block is used to declare the arguments that a
+component expects. In addition, it can also be used to specify a default value
+if none is given when the component is called.
+</p>
+<p class="content">
+The block we used earlier was:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $color
+   $size =&gt; 20
+   @items =&gt; ( 1, 2, 'something else' )
+   %pairs =&gt; ( key1 =&gt; 1, key2 =&gt; 'value' )
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+This says, in English, that this component expects two scalars, one named <code>color</code> , which is mandatory, and one named <code>size</code> , which is not mandatory and defaults to 20. It also expects an array named <code>items</code> , which defaults to <code>(1, 2, '</code><code>something else'</code><code>)</code> and a hash named <code>pairs,</code> which defaults to <code>(</code><code>key1 =&gt; 1, key2 =&gt; 'value'</code> ). Neither of these latter two arguments is mandatory.
+</p>
+<p class="content">
+These arguments are all available in your component as lexically scoped
+variables. For example, your component will have a lexically scoped <code>$color</code> variable available. You do not need to declare it anywhere but in the <code>&lt;%args&gt;</code> block.
+</p>
+<p class="content">
+If a mandatory argument (one with no default) is not provided in the call to
+the component, an exception is thrown. If an argument with a default is not
+given a value, the default is transparently assigned to the variable. Just to
+be clear, we will explicitly note that <code>undef</code> is a valid value for an argument. It is the absence of an argument that causes
+the  exception.
+</p>
+<a name="TOC-ANCHOR-11"></a>
+<h3>%ARGS</h3><p class="content">
+<a name="CHP-2-SECT-4.2"></a>
+
+</p>
+<p class="content">
+In addition to any lexically scoped variables created via their declaration in
+an <code>&lt;%args&gt;</code> block, each component body also has a lexically scoped hash called<a name="perlhtmlmason-IDXTERM-197"></a>
+<a name="perlhtmlmason-IDXTERM-198"></a>
+<code>%ARGS</code>. This hash contains all of the arguments with which the component was called.
+</p>
+<p class="content">
+One point of confusion for those new to Mason is the difference between <code>%ARGS</code> and the <code>&lt;%args&gt;</code> block. The <code>%ARGS</code> hash contains the arguments exactly as they were <em>passed</em> to a component, whether or not they are declared in the <code>&lt;%args&gt;</code> block. The keys of the <code>%ARGS</code> hash do not contain the Perl sigils (<code>$</code>, <code>@</code>, or <code>%</code>). An argument declared as <code>$color</code> in the <code>&lt;%args&gt;</code> block would therefore be available via <code>$ARGS{color}</code>. Any assignment of defaults by the <code>&lt;%args&gt;</code> block is not visible in <code>%ARGS</code>; the values are given exactly as they were passed.
+</p>
+<p class="content">
+In addition, the <code>%ARGS</code> hash is always present,<sup><a href="#FOOTNOTE-ANCHOR-5">5</a></sup><a name="RETURN-ANCHOR-5"></a> but the <code>&lt;%args&gt;</code> block is optional.
+</p>
+<p class="content">
+If you are expecting input with a large number of similarly named items, such
+as <code>input1</code> , <code>input2</code> , and so on through <code>input20</code> , declaring all of them in an <code>&lt;%args&gt;</code> block may be a bit unwieldy. In this case, the <code>%ARGS</code> hash can be quite handy.
+</p>
+<p class="content">
+<code>%ARGS</code> is also useful if you expect arguments with names that cannot be used for Perl
+variables. For example, when submitting a web form by clicking on an image
+named <code>submit</code> , the browser will generate two additional form values, called <code>submit.x</code> and <code>submit.y</code> . You cannot have a Perl variable named <code>$submit.x</code>, so the only way to get at this argument is to check <code>$ARGS{'submit.x'}</code>.
+</p>
+<p class="content">
+There are other ways to retrieve the  arguments passed to a component, which are discussed in <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a>.
+</p>
+<a name="TOC-ANCHOR-12"></a>
+<h3>%ARGS Versus @_</h3><p class="content">
+<a name="CHP-2-SECT-4.3"></a>
+
+</p>
+<p class="content">
+The Mason tradition has always been to use named arguments. However, for simple
+components, you may prefer to use <code>@_</code> to access the <a name="IXT-2-492"></a>
+ arguments, just as in Perl subroutines. There are several caveats here. If
+your component contains an <code>&lt;%args&gt;</code> section, Mason expects it to receive an even number of arguments in <code>@_</code> so that it can assign <code>@_</code> to <code>%ARGS</code>. If it receives an odd number of arguments, a fatal error will occur. But
+regardless of how arguments are passed, <code>@_</code> is always available in components.
+</p>
+<p class="content">
+So the following pieces of code are near-identical when a component receives an
+even number of arguments:
+</p>
+<div class="example-code">
+<pre>  % foreach (sort %ARGS) {
+    &lt;% $_ %&gt;
+  % }
+  
+  % foreach (sort @_) {
+    &lt;% $_ %&gt;
+  % }</pre>
+</div><a name="TOC-ANCHOR-13"></a>
+
+<br />
+<h3>Argument Examples</h3><p class="content">
+<a name="CHP-2-SECT-4.4"></a>
+
+</p>
+<p class="content">
+Let's take a look at a number of scenarios involving <a name="perlhtmlmason-IDXTERM-202"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-203"></a>
+ argument passing, first via an HTTP URL query string and then via an internal
+component call. Then we will see how this interacts with the component's <code>&lt;%args&gt;</code> block and the <code>%ARGS</code> hash.
+</p>
+<p class="content">
+Arguments submitted via<a name="IXT-2-493"></a>
+<a name="IXT-2-494"></a>
+ POST and GET requests are treated in exactly the same way, and if both are
+present they are merged together before the component is called.
+</p>
+<p class="content">
+Let's assume that the component being called contains this <code>&lt;%args&gt;</code> block:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $colors
+   @colors
+   %colors
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+For each example, we show you two ways to call that component. The first is via
+an HTTP query string, which is how a component is called to generate a web
+page. The second is via a component call tag, as a component would be called
+from another Mason component.
+</p>
+<ul>
+<li>
+<div class="book-list-item-heading">
+/some/component?colors=blue &lt;&amp; /some/component, colors =&gt; 'blue'
+&amp;&gt;</div>
+<p class="content">
+In both cases, <code>$colors</code> is the string &quot;blue&quot; and <code>@colors</code> is a single-element array containing <code>('blue')</code>. In addition, <code>$ARGS{colors}</code> would be the string &quot;blue&quot; as well.
+</p>
+<p class="content">
+This component will die when it is called, however, because Mason does not
+allow you to assign an odd number of elements to a hash, so the assignment to <code>%colors</code> is fatal.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/some/component?colors=blue&amp;colors=red&amp;colors=green &lt;&amp;
+/some/component, colors =&gt; [ 'blue', 'red', 'green' ] &amp;&gt;</div>
+<p class="content">
+Again the URL and internal example give the same result. The <code>$colors</code> variables contains a reference to a three-element array, <code>['blue',</code><code>'red',</code><code>'green']</code>. This time, <code>$ARGS{colors}</code> contains the same three-element array reference as <code>$colors</code> and the <code>@colors</code> array contains a three-element array with those same elements.
+</p>
+<p class="content">
+Again, assigning an odd number of elements to the <code>%colors</code> hash causes a fatal error.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+/some/component?colors=blue&amp;colors=cyan&amp;colors=green&amp;colors=mint
+&lt;&amp; /some/component, colors =&gt; [ 'blue', 'cyan', 'green', 'mint' ]
+&amp;&gt;</div>
+<p class="content">
+Now, <code>$colors</code> contains a reference to a four-element array, and the <code>@colors</code> array has four elements as well. Finally, the assignment to <code>%colors</code> works without an error and will result in a hash containing <code>(</code><code>'blue'=&gt;'cyan','green'=&gt;'mint'</code> ). <code>$ARGS{colors}</code> contains the same <em>array</em><a name="IXT-2-495"></a>
+ reference as <code>$colors</code>.
+</p>
+</li>
+<li>
+<div class="book-list-item-heading">
+&lt;&amp; /some/component, colors =&gt; { blue =&gt; 'cyan', green =&gt; 'mint'
+} &amp;&gt;</div>
+<p class="content">
+This set of arguments isn't representable with a query string, because there's
+no way to indicate that the arguments are structured in a hash via a web
+request.
+</p>
+<p class="content">
+In this call, <code>$colors</code> contains a reference to a hash, not an array, though the <code>@colors</code> array contains four elements, just as in the previous example. The <code>%colors</code> hash is likewise the same as the previous example. Now, the <code>$ARGS{colors}</code> hash entry contains a <em>hash</em> reference.
+</p>
+
+</ul>
+<p class="content">
+This discrepancy in how hash assignments are treated, depending on the way a
+call is made, is probably not too important because Mason simply does the right
+thing based on the contents of <code>%args</code>. You declare <code>%colors</code> as an argument, and as long as an even number of <code>colors</code> elements are passed in, you get a  hash.
+</p>
+<a name="TOC-ANCHOR-14"></a>
+<h3>Arguments via Component Calls</h3><p class="content">
+<a name="CHP-2-SECT-4.5"></a>
+
+</p>
+<p class="content">
+When calling another component that expects named <a name="IXT-2-496"></a>
+
+</p>
+<p class="content">
+<a name="IXT-2-497"></a>
+ arguments, it is important to remember that arrays and hashes need to be
+passed as references. For example, a component named <code>/display</code> with an <code>&lt;%args&gt;</code> block like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   @elements
+   %labels
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+Should be called like this:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; /display, elements =&gt; \@some_data, labels =&gt; \%data_labels &amp;&gt;</pre>
+</div><p class="content">
+Mason will do the right thing and translate the references back into an array
+and a hash in the <code>/display</code> component.
+</p>
+<a name="TOC-ANCHOR-15"></a>
+<h3>Arguments via HTTP Requests</h3><p class="content">
+<a name="CHP-2-SECT-4.6"></a>
+
+</p>
+<p class="content">
+When using Mason to make a web application, you must understand the details of
+how external <a name="perlhtmlmason-IDXTERM-211"></a>
+<a name="perlhtmlmason-IDXTERM-212"></a>
+ HTTP requests are converted into component calls. Specifically, we are
+interested in how query string and POST parameters are converted into
+arguments.
+</p>
+<p class="content">
+These requests are expected to be in the standard name/value pair scheme used
+by most web interfaces. If a parameter is given only once (i.e., <code>component?foo=1&amp;bar=2</code>), it will be present in the <code>%ARGS</code> hash as a simple scalar, regardless of how it is declared in the <code>&lt;%args&gt;</code> section.
+</p>
+<p class="content">
+If a parameter is declared as a scalar (<code>$foo</code>) but given multiple values (i.e., <code>component?foo=1&amp;foo=2</code>), the <code>$foo</code> parameter will end up containing a reference to an array, as will <code>$ARGS{foo}</code>. Future versions of Mason may provide the ability to coerce these arguments
+into specific data structures.
+</p>
+<p class="content">
+If a parameter is declared as an array (<code>@foo</code>), it will contain zero or more values depending on what is in the query string
+and/or POST data. A hash is treated more or less like an array, except that
+giving a parameter declared as a hash an odd number of values will cause a
+fatal error.
+</p>
+<p class="content">
+One caution: the key/value associations in a declared hash are determined by
+the order of the input. Let's assume we have a component with this <code>&lt;%args&gt;</code> block:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   %foo
+  &lt;/%args&gt;</pre>
+</div><p class="content">
+A request for <code>component?foo=1&amp;foo=2</code> will result in a different hash from <code>component?foo=2&amp;foo=1</code>. This isn't generally a problem because you can usually control the order of
+the arguments by their position in an HTML form. However, neither the HTTP or
+HTML specifications specify that a client needs to respect this ordering when
+submitting the form, and, even if it were, some browsers would probably screw
+it up eventually.<sup><a href="#FOOTNOTE-ANCHOR-6">6</a></sup><a name="RETURN-ANCHOR-6"></a> It's not a great idea, therefore, to use hashes as arguments in a top-level
+component that may be called via an HTTP request generated by a form. When you
+can control the query string yourself, this is not a  problem.
+</p>
+<a name="TOC-ANCHOR-16"></a>
+<h2>Component Return Values</h2><p class="content">
+<a name="CHP-2-SECT-5"></a>
+
+</p>
+<p class="content">
+So far, we know three ways to call c<a name="IXT-2-498"></a>
+ omponents: by using the inline component call tag (<code>&lt;&amp; &amp;&gt;</code>), by using the <code>$m-&gt;comp()</code><a name="IXT-2-499"></a>
+ method, or via a URL. When using a component call tag, the called component's
+output is placed exactly where the tag was. When a component is called via a
+URL, its output is sent to the client. The <code>$m-&gt;comp()</code> tag offers an additional channel of component output: the return value. By
+default, Mason components return <code>undef</code>. If you want to return something else, you can add an explicit <code>return()</code> statement inside that component, such as this:
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my $size = 20;
+   return $size;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+Perl's <code>return()</code><a name="IXT-2-500"></a>
+ function will end processing of the component, and any values specified will
+be the return value of <code>$m-&gt;comp()</code>. Since Perl's normal rules of scalar/list context apply, a component may
+return either a scalar or a list.
+</p>
+<a name="TOC-ANCHOR-17"></a>
+<h2>Special Globals</h2><p class="content">
+<a name="CHP-2-SECT-6"></a>
+
+</p>
+<p class="content">
+All Mason components are given access to certain special variables. We have
+already discussed <code>%ARGS</code>, which is lexically scoped for each component. Mason also has a few special <a name="IXT-2-501"></a>
+ global variables available.
+</p>
+<a name="TOC-ANCHOR-18"></a>
+<h3>$m</h3><p class="content">
+<a name="CHP-2-SECT-6.1"></a>
+<a name="IXT-2-502"></a>
+<a name="IXT-2-503"></a>
+
+</p>
+<p class="content">
+This variable is an <code>HTML::Mason::Request</code> object, which has a number of methods that allow you to do things such as
+retrieve information on the current request, call other components, or affect
+the flow of execution. This object is discussed in detail in <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a>.
+</p>
+<a name="TOC-ANCHOR-19"></a>
+<h3>$r</h3><p class="content">
+<a name="CHP-2-SECT-6.2"></a>
+<a name="IXT-2-504"></a>
+<a name="IXT-2-505"></a>
+
+</p>
+<p class="content">
+If Mason is running under <code>mod_perl</code> (as is the case in most Mason setups), all components also have access to the
+Apache request object via the global variable <code>$r</code>. Mason's special hooks into <code>mod_perl</code> are covered in <a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">Chapter 7</a>.
+</p>
+<a name="TOC-ANCHOR-20"></a>
+<h2>Sample Component</h2><p class="content">
+<a name="CHP-2-SECT-7"></a>
+
+</p>
+<p class="content">
+The component shown in <a href="chapter-2.mhtml.htm#CHP-2-EX-1" tppabs="http://www.masonbook.com/book/chapter-2.mhtml#CHP-2-EX-1">Example 2-1</a> is part of our sample site and the focus of <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a>. The component here is responsible for displaying news about the site. It is called <u>news.mas</u> and is not intended to standalone by itself, but rather to form one part of a
+complete page.
+</p>
+<p class="content">
+It demonstrates a typical small Mason component. Its <code>&lt;%init&gt;</code> block does some very simple work to figure out the time that the file was last
+altered, and then it turns that time into a human-readable string.
+</p>
+
+<p class="content">
+<a name="CHP-2-EX-1"></a>
+<div class="example">
+<span class="caption">Example 2-1.  news.mas</span>
+<div class="example-code">
+<pre>  &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot;&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;heading&quot;&gt;&lt;h2 class=&quot;headline&quot;&gt;What's New?&lt;/h2&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;p&gt;
+     The whole site, at this point.
+     &lt;/p&gt;
+  
+     &lt;p&gt;
+     &lt;em&gt;Last modified: &lt;% $last_mod %&gt;&lt;/em&gt;
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;%init&gt;
+   my $comp_time = (stat $m-&gt;current_comp-&gt;source_file)[9];
+   my $last_mod =
+       Time::Piece-&gt;strptime( $comp_time, '%s' )-&gt;strftime( '%B %e, %Y %H:%M' );
+  &lt;/%init&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+No single component can demonstrate all of Mason's features, so if you're
+curious to see more, browse some of the components shown in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a>.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. For the curious, these issues are covered in <a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">Chapter 3</a>, <a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">Chapter 5</a>, and <a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">Chapter 12</a>. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-2"></a>
+<p class="content">
+2. The percent sign (%) must occur at the beginning of the line. -- <a href="#RETURN-ANCHOR-2">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-3"></a>
+<p class="content">
+3. The <code>HTML::Mason::Request</code> object provides access to several properties and methods concerning the
+currently executing chain of components. It is treated in detail in <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a>. -- <a href="#RETURN-ANCHOR-3">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-4"></a>
+<p class="content">
+4. Component objects are returned by several of the <code>HTML::Mason::Request</code> and <code>HTML::Mason::Interp</code> methods, covered in detail in <a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">Chapter 4</a> and <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a>. -- <a href="#RETURN-ANCHOR-4">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-5"></a>
+<p class="content">
+5. Unless the component is called with an odd number of arguments. See the next
+section for details on this exception. -- <a href="#RETURN-ANCHOR-5">Return</a>.
+</p>
+<a name="FOOTNOTE-ANCHOR-6"></a>
+<p class="content">
+6. We know of no browsers that actually screw it up, but surely there must be some
+out there. Browsers have a history of simply making up their own unique
+behaviors, even when there <em>is</em> a specification. -- <a href="#RETURN-ANCHOR-6">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<b>2</b>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

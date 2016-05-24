@@ -1,0 +1,1404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<b>5</b>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 5: Advanced Features</h1><p class="content">
+<a name="CHP-5"></a>
+
+</p>
+<p class="content">
+In the previous chapters you have been introduced to the basic features of
+Mason, and you should have a fairly good idea by now of how you might actually
+go about constructing a dynamic web site from Mason components. You have seen a
+few of Mason's unique features, such as the autohandler mechanism, the dhandler
+mechanism, and the ability to pass arbitrary data between components.
+</p>
+<p class="content">
+In this chapter we'll go beyond the basics and learn more about advanced ways
+to use Mason components to design large dynamic sites. You'll learn how to
+define multiple components in the same text file, how to create components on
+the fly from Perl strings, how to manage multiple component root directories,
+and (finally!) how to use all of Mason's object-oriented features.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Subcomponents</h2><p class="content">
+<a name="CHP-5-SECT-1"></a>
+
+</p>
+<p class="content">
+Although we often imagine a one-to-one correspondence between text files and
+Mason components, it is actually possible to define multiple components in a
+single text file. This is achieved by using a <code>&lt;%def&gt;&lt;/%def&gt;</code> block, a special Mason directive that defines one component from within
+another. The component embedded within the <code>&lt;%def&gt;</code><a name="perlhtmlmason-IDXTERM-362"></a>
+ block is called a <em>subcomponent</em><a name="perlhtmlmason-IDXTERM-363"></a>
+ , and it is visible only to the component within which it resides: component A
+may not access component B's subcomponents directly.
+</p>
+<p class="content">
+The subcomponent may use any of the standard Mason component directives, such
+as <code>&lt;%args&gt;</code>, <code>&lt;%init&gt;</code>, <code>%</code>-lines, and so on. The only exceptions are that you may not use <code>&lt;%def&gt;</code> or <code>&lt;%method&gt;</code> blocks within subcomponents nor may you use &quot;global&quot; blocks like <code>&lt;%once&gt;</code> or <code>&lt;%shared&gt;</code>.
+</p>
+<p class="content">
+Subcomponents are most useful when you have some piece of processing to repeat
+several times that is used only in a certain specific situation and doesn't
+merit its own separate component file.
+</p>
+<p class="content">
+Here is an example of defining and calling a subcomponent. Note that the
+component is assigned a name inside the <code>&lt;%def&gt;</code> tag (the name often starts with a period, purely by convention) and that you
+use the regular component-calling mechanisms (<code>$m-&gt;comp()</code> or a <code>&lt;&amp; &amp;&gt;</code> tag) to invoke it.
+</p>
+<div class="example-code">
+<pre>  &lt;h2&gt;Information about certain Minnesota cities:&lt;/h2&gt;
+  
+  % my @cities = (&quot;Young America&quot;, &quot;Sleepy Eye&quot;, &quot;Nisswa&quot;, &quot;Embarrass&quot;,
+  %               &quot;Saint Cloud&quot;, &quot;Little Canada&quot;, &quot;Burnsville&quot;, &quot;Luverne&quot;);
+  % foreach my $name (@cities) {
+   &lt;hr&gt;
+   &lt;&amp; .city_info, city =&gt; $name, state =&gt; 'MN' &amp;&gt;
+  % }
+  
+  &lt;%def .city_info&gt;
+  &lt;%args&gt;
+   $city
+   $state
+  &lt;/%args&gt;
+   &lt;table border=&quot;2&quot;&gt;
+    &lt;tr&gt; &lt;th colspan=&quot;2&quot;&gt;&lt;% $city %&gt;&lt;/th&gt; &lt;/tr&gt;
+    &lt;tr&gt; &lt;td&gt;Population:&lt;/td&gt;  &lt;td&gt;&lt;% $population %&gt;&lt;/td&gt;             &lt;/tr&gt;
+    &lt;tr&gt; &lt;td&gt;Coordinates:&lt;/td&gt; &lt;td&gt;&lt;% &quot;$latitude, $longitude&quot; %&gt;&lt;/td&gt; &lt;/tr&gt;
+    &lt;tr&gt; &lt;td&gt;Mayor:&lt;/td&gt;       &lt;td&gt;&lt;% $mayor %&gt;&lt;/td&gt;                  &lt;/tr&gt;
+   &lt;/table&gt;
+  &lt;%init&gt;
+   my ($population, $latitude, $longitude, $mayor) =
+     $dbh-&gt;selectrow_array(&quot;SELECT population, latitude, longitude, mayor
+                            FROM cities 
+                            WHERE city=? and state=?&quot;,
+                            undef, $city, $state);
+  &lt;/%init&gt;
+  &lt;/%def&gt;</pre>
+</div><p class="content">
+Since a subcomponent is visible only to the component that defines, and because
+it has all the capabilities that regular components have, you may think of
+subcomponents as roughly analogous to privately scoped anonymous subroutine  references in Perl.
+</p>
+<a name="TOC-ANCHOR-2"></a>
+<h2>Creating Components on the Fly</h2><p class="content">
+<a name="CHP-5-SECT-2"></a>
+
+</p>
+<p class="content">
+You may encounter situations in which you want to use Mason's templating
+features and data management tools, but you don't want to create a full-blown
+component root hierarchy on disk to house your components. Perhaps you want to
+create a component from an isolated file or directly from a string containing
+the <a name="perlhtmlmason-IDXTERM-365"></a>
+ component text.
+</p>
+<p class="content">
+For these situations, the Mason interpreter provides the <code>make_component()</code><a name="perlhtmlmason-IDXTERM-366"></a>
+ method. It accepts a <code>comp_file</code> or <code>comp_source</code> parameter (letting you create a component from a file or a string,
+respectively) and returns a Component object.
+</p>
+<div class="example-code">
+<pre>  # Creating a component from scratch
+  #!/usr/bin/perl -w
+  
+  use strict;
+  use HTML::Mason;
+  
+  my $source = &lt;&lt;'EOF';
+  &lt;%args&gt;
+   $planet
+  &lt;/%args&gt;
+  Hello, &lt;% $planet %&gt;!
+  EOF
+  
+  my $interp = HTML::Mason::Interp-&gt;new( );
+  my $comp = $interp-&gt;make_component(comp_source =&gt; $source);
+  $interp-&gt;exec($comp, planet =&gt; 'Neptune');</pre>
+</div><p class="content">
+And here is a component that creates another component at runtime:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp; $comp &amp;&gt;
+  
+  &lt;%init&gt;
+   my $comp = $m-&gt;interp-&gt;make_component(
+     comp_file =&gt; '/home/slappy/my_comps/foo',
+   );
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+Of course, creating  components at runtime is slower than creating them ahead of time, so if you
+need to squeeze out all the performance you possibly can, you might need to
+think of a speedier method to achieve your goals. And as always, benchmark
+everything so you really know what the effects are.
+</p>
+<p class="content">
+If the compiler encounters syntax errors when attempting to compile the  component, a fatal exception will be thrown inside the <code>make_component()</code> method. If you want to trap these errors, you may wrap the <code>make_component()</code> method in Perl's <code>eval</code><a name="IXT-5-731"></a>
+<code>{}</code> block, and check <code>$@</code> after the method call.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h2>Sharing Data Among Component Sections</h2><p class="content">
+<a name="CHP-5-SECT-3"></a>
+
+</p>
+<p class="content">
+By default, the scope of variables created within an <code>&lt;%init&gt;</code><a name="IXT-5-732"></a>
+<a name="IXT-5-733"></a>
+ block, a Perl line, or any other Mason markup sections is the entire <a name="perlhtmlmason-IDXTERM-373"></a>
+ component. This is tremendously convenient, because it lets you initialize
+variables in the <code>&lt;%init&gt;</code> block, then use their values across the rest of the component. So most of the
+time, the techniques discussed in this section won't be needed.
+</p>
+<p class="content">
+There is one limitation to variables created within the <code>&lt;%init&gt;</code> section, however: their values won't be seen by any subcomponents you might
+define. This is true for two reasons. First, the subcomponents may themselves
+contain an <code>&lt;%init&gt;</code> section, so the relevance of the main component's <code>&lt;%init&gt;</code> section isn't necessarily clear. Second, a subcomponent may actually be a <em>method</em> (more on this later), in which case it is accessible to the outside world
+without first calling the main component, so the <code>&lt;%init&gt;</code> section never has a chance to run.
+</p>
+<p class="content">
+Sometimes you need to share data between a component and its subcomponents,
+however, and for these situations Mason provides the <code>&lt;%shared&gt;</code><a name="perlhtmlmason-IDXTERM-374"></a>
+<a name="perlhtmlmason-IDXTERM-375"></a>
+<a name="perlhtmlmason-IDXTERM-376"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-377"></a>
+
+</p>
+<p class="content">
+and <code>&lt;%once&gt;</code> blocks. A <code>&lt;%shared&gt;</code> block runs before the main component or any of its methods or subcomponents
+and may run initialization code. Any variables created here will be visible to
+the entire main component and any of its subcomponents, including the main
+component's <code>&lt;%init&gt;</code> section, if any. The <code>&lt;%once&gt;</code> block is similar -- the only difference is that code in the <code>&lt;%once&gt;</code> block won't run every time the component is called. It will run only when the
+component itself is loaded. The initialized values will remain intact for the
+lifetime of the component object, which may be until you make changes to the
+component source file and Mason reloads it or until the web server child
+expires and gets replaced by a new one.
+</p>
+<p class="content">
+A <code>&lt;%shared&gt;</code> section is great when a component and its subcomponents have a tight
+relationship and may make complicated use of shared data. In contrast, <code>&lt;%once&gt;</code> sections are useful for caching values that change infrequently but may take a
+long time to compute. See <a href="chapter-5.mhtml.htm#CHP-5-EX-1" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-1">Example 5-1</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-1"></a>
+<div class="example">
+<span class="caption">Example 5-1.  sharing_example.mas</span>
+<div class="example-code">
+<pre>  &lt;%def .subcomponent&gt;
+   visible $color in .subcomponent is &lt;% $color %&gt;
+  &lt;/%def&gt;
+  
+  visible $color in main component is &lt;% $color %&gt;
+  &lt;&amp; .subcomponent &amp;&gt;
+  
+  &lt;%shared&gt;
+   my $color = 'bone';
+  &lt;/%shared&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+A similar example, but using a <code>&lt;%once&gt;</code> section, is shown in <a href="chapter-5.mhtml.htm#CHP-5-EX-2" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-2">Example 5-2</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-2"></a>
+<div class="example">
+<span class="caption">Example 5-2.  once_example.mas</span>
+<div class="example-code">
+<pre>  &lt;%def .subcomponent&gt;
+   visible $flavor in .subcomponent is &lt;% $flavor %&gt;
+  &lt;/%def&gt;
+  
+  visible $flavor in main component is &lt;% $flavor %&gt;
+  &lt;&amp; .subcomponent &amp;&gt;
+  
+  &lt;%once&gt;
+   my $flavor = 'gamey';
+  &lt;/%once&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+A cautionary note about the <code>&lt;%shared&gt;</code> and <code>&lt;%once&gt;</code> sections: they do <em>not</em> let you transparently share data among Apache children (this would require
+actual shared memory segments and can be done with modules like <code>IPC::Shareable</code><a name="IXT-5-734"></a>
+ ), or among multiple components (this can easily be done with global
+variables). It is also unwise to use variables created in a <code>&lt;%once&gt;</code> section for saving state information that you intend to change, since the next
+time the component is loaded your changes will be lost.
+</p>
+<p class="content">
+You should also remember that variables defined via an <code>&lt;%args&gt;</code> block are not visible in a <code>&lt;%shared&gt;</code> block, meaning that the only access to arguments inside a  shared block is via the <code>%ARGS</code> hash or one of the request object methods such as <code>request_args</code>.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Methods and Attributes</h2><p class="content">
+<a name="CHP-5-SECT-4"></a>
+
+</p>
+<p class="content">
+The ability to use Mason's component-level object-oriented methods and
+attributes can give you powerful techniques for managing your site.
+</p>
+<p class="content">
+As explained in <a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">Chapter 3</a>, one of the major benefits of object-oriented techniques is that they help you reduce redundancy in your site. <a name="IXT-5-735"></a>
+<a name="IXT-5-736"></a>
+ Site redundancy is a much bigger problem than most people realize. How many
+times have you forgone a site revision because performing the revision would be
+&quot;too intrusive,&quot; and you can't afford the downtime? How many Internet
+web sites have you seen that look promising at first, but fail to fix problems
+and don't adapt to usage patterns over the long run? Nobody likes to be stuck
+with an unmaintainable site, and the only way to avoid it is to design the site
+to be adaptable and extensible in the first place. Eliminating redundancy goes
+a long way toward this goal.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h3>Methods</h3><p class="content">
+<a name="CHP-5-SECT-4.1"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-386"></a>
+ Methods in Mason are actually quite simple. A method is just like a
+subcomponent, but instead of defining it with a <code>&lt;%def&gt;</code> section, you use a <code>&lt;%method&gt;</code> section:
+</p>
+<div class="example-code">
+<pre>  &lt;%method .my_method&gt;
+   Any regular component syntax here...
+  &lt;/%method&gt;</pre>
+</div><p class="content">
+The difference between <a name="IXT-5-737"></a>
+ subcomponents and methods is primarily in how they can be invoked from other
+components. A method can only be invoked using special method syntax. We
+present three ways of doing this here:
+</p>
+<div class="example-code">
+<pre>  # Fetch the bottommost child of the current component
+  my $self = $m-&gt;base_comp;
+  $self-&gt;call_method('.my_method');
+  
+  # Shortcut for the above two lines
+  $m-&gt;comp('SELF:.my_method');
+  
+  # Same thing, using &lt;&amp; &amp;&gt; syntax
+  &lt;&amp; SELF:.my_method &amp;&gt;</pre>
+</div><p class="content">
+Let's think about what happens when you invoke a method. Suppose there is a
+component called <u>/staff/flintoff.mas</u>, whose parent is <u>/staff/autohandler</u>, whose parent is in turn <u>/autohandler</u>. While <em>any</em> of these components are executing (which might be when a top-level request
+comes in for <u>/staff/flintoff.mas</u> or when <u>/staff/flintoff.mas</u> is called from another component), calling <code>$m-&gt;base_comp</code> from within any of these three components will return a component object
+representing <u>/staff/flintoff.mas</u>. In the example, that component object is stored in <code>$self</code>. Invoking <code>call_method('.my_method')</code> will search <code>$self</code> and its hierarchy of parents for a method called <code>.my_method</code>, starting the search at <code>$self</code> and proceeding upward. If such a method is found, it gets executed. If no such
+method is found, a fatal error occurs. You may want to call <code>$self-&gt;method_exists('.my_method')</code> first if you're not sure whether the method exists.
+</p>
+<p class="content">
+Remember that methods are full-blown subcomponents, so you may also pass them
+arguments when you invoke them. <a href="chapter-5.mhtml.htm#CHP-5-EX-3" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-3">Example 5-3</a> and <a href="chapter-5.mhtml.htm#CHP-5-EX-4" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-4">Example 5-4</a> demonstrate a more sophisticated example of method invocation.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-3"></a>
+<div class="example">
+<span class="caption">Example 5-3.  /autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;&amp; $m-&gt;call_next &amp;&gt;
+  &lt;/html&gt;
+  &lt;%method .body_tag&gt;
+   &lt;%args&gt;
+    $bgcolor =&gt; 'white'
+    $textcolor =&gt; 'black'
+   &lt;/%args&gt;
+   &lt;body onLoad=&quot;prepare_images( )&quot; bgcolor=&quot;&lt;% $bgcolor %&gt;&quot; text=&quot;&lt;% $textcolor %&gt;&quot;&gt;
+  &lt;/%method&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-4"></a>
+<div class="example">
+<span class="caption">Example 5-4.  /important_advice.mas</span>
+<div class="example-code">
+<pre>  &lt;head&gt;&lt;title&gt;A Blue Page With Red Text&lt;/title&gt;&lt;/head&gt;
+  
+  &lt;&amp; SELF:.body_tag, bgcolor=&gt;'blue', textcolor=&gt;'red' &amp;&gt;
+   Never put anything bigger than your elbow into your ear.
+  &lt;/body&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+The central thing to note about this example is the way the main component and
+the autohandler cooperate to produce the <code>&lt;body&gt;</code><a name="IXT-5-738"></a>
+ tag. The designer of this site has chosen to make the <code>bgcolor</code> and <code>textcolor</code> page attributes configurable by each page, and the autohandler will generate
+the rest, including the call to the JavaScript function <code>prepare_images()</code><a name="IXT-5-739"></a>
+ .
+</p>
+<p class="content">
+Incidentally, note that the autohandler took responsibility for the <code>&lt;html&gt;</code><a name="IXT-5-740"></a>
+ and <code>&lt;/html&gt;</code> tags, while the main component generated everything in the <code>&lt;head&gt;</code><a name="IXT-5-741"></a>
+ and <code>&lt;body&gt;</code> sections. This is not necessarily good design -- you must determine the right
+factorization for each site you create -- but it made the example
+straightforward.
+</p>
+<p class="content">
+Now that you know what  methods are and how they work, we can explore some ways that you can use them
+to design your site to be flexible and maintainable.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h3>Using Methods for Titles and Headers</h3><p class="content">
+<a name="CHP-5-SECT-4.2"></a>
+
+</p>
+<p class="content">
+The most familiar example of commonality within a site's structure is probably
+the overall design of pages. Most web sites want to have a common design
+structure across multiple pages, including common colors and fonts, common
+navigational elements and headers, common keywords in <code>&lt;META&gt;</code><a name="IXT-5-742"></a>
+ tags, and so on. In this section, we explore how you can use methods for the
+specific problem of generating commonly styled headers and titles for your
+pages.
+</p>
+<p class="content">
+Generating titles and headers was the major motivation behind developing
+Mason's <a name="perlhtmlmason-IDXTERM-394"></a>
+<a name="perlhtmlmason-IDXTERM-395"></a>
+<a name="perlhtmlmason-IDXTERM-396"></a>
+<a name="perlhtmlmason-IDXTERM-397"></a>
+ method capabilities in the first place. Consider for a moment the &quot;title
+and header problem&quot;: it is often desirable to control the top and bottom
+of an HTML page centrally, for all the reasons we've tried to drum into your
+skull throughout this chapter. However, while large portions of the top and
+bottom of the page may be the same for all pages on your site, certain small
+pieces may be different on every page -- titles and headers often fall into
+this category. So, you would like a way to generate the large common portions
+of your pages centrally but insert the noncommon titles and headers where they
+belong.
+</p>
+<p class="content">
+Mason's methods provide a perfect answer. Each title and header can be
+specified using a method. Then an autohandler can generate the common headers
+and footers, calling the base component's title and header methods to insert
+the page-specific information in its proper place (<a href="chapter-5.mhtml.htm#CHP-5-EX-5" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-5">Example 5-5</a> and <a href="chapter-5.mhtml.htm#CHP-5-EX-6" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-6">Example 5-6)</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-5"></a>
+<div class="example">
+<span class="caption">Example 5-5.  autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;&lt;&amp; SELF:title &amp;&gt;&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+   &lt;center&gt;&lt;h3&gt;&lt;&amp; SELF:header &amp;&gt;&lt;/h3&gt;&lt;/center&gt;
+  % $m-&gt;call_next;
+   &lt;center&gt;&lt;a href=&quot;/&quot;&gt;-home-&lt;/a&gt;&lt;/center&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  &lt;%method title&gt;
+   www.Example.com
+  &lt;/%method&gt;
+  &lt;%method header&gt;
+   Welcome to Example.com
+  &lt;/%method&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-6"></a>
+<div class="example">
+<span class="caption">Example 5-6.  fancy_page.html</span>
+<div class="example-code">
+<pre>  &lt;p&gt;This page isn't all &lt;i&gt;that&lt;/i&gt; fancy, but it might be the
+  fanciest one we've seen yet.&lt;/p&gt;
+  &lt;%method title&gt;
+   Fancy Page
+  &lt;/%method&gt;
+  
+  &lt;%method header&gt;
+   A Very Fancy Page
+  &lt;/%method&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+The autohandler provides a default title and header, so if the base component <code>fancy_page.html</code> didn't provide a title or header method, the autohandler would use its default
+values. If none of the components in the parent hierarchy (<em>autohandler</em> and <em>fancy_page.html</em> in this case) defines a certain method and that method is invoked, a fatal
+exception will be thrown. If you don't want to have a default title and header,
+ensuring that each page sets its own, you can simply omit the default methods
+in the autohandler. If a page fails to set its title or header, you will know
+it pretty quickly in the development cycle.
+</p>
+<p class="content">
+Remember that  methods are Mason components, so they can contain more than just static text.
+You might compute a page's title or header based on information determined at
+runtime, for example.
+</p>
+<a name="TOC-ANCHOR-7"></a>
+<h3>Methods with Dynamic Content</h3><p class="content">
+<a name="CHP-5-SECT-4.3"></a>
+
+</p>
+<p class="content">
+As you know, <a name="perlhtmlmason-IDXTERM-402"></a>
+<a name="perlhtmlmason-IDXTERM-403"></a>
+ methods and inheritance may be used to let a page and its autohandler share
+the responsibility for generating page elements like headers and titles. Since
+these elements may often depend on user input or other environmental conditions
+(e.g., &quot;Welcome, Jon Swartz!&quot; or &quot;Information about your
+9/13/2001 order&quot;), you'll need a way to set these properties (like
+&quot;Jon Swartz&quot; or &quot;9/13/2001&quot;) at run-time. Why is this an
+issue? Well, the following <em>won't</em> work:
+</p>
+<div class="example-code">
+<pre>  &lt;%method title&gt;
+   &lt;!-- this method is invoked in the autohandler --&gt;
+   Information about your &lt;% $order_date %&gt; order
+  &lt;/%method&gt;
+  
+  Your order included the following items:
+   ...generate item listing here...
+  
+  &lt;%init&gt;
+   my $order_date = $session{user}-&gt;last_order_date;
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+The reason that won't work is that variables set in the <code>&lt;%init&gt;</code> block won't be visible inside the <code>&lt;%method title&gt;</code> block. Even if the scope of <code>$order_date</code> included the <code>&lt;%method title&gt;</code><a name="perlhtmlmason-IDXTERM-404"></a>
+ block (it doesn't), the sequence of events at runtime wouldn't allow its value
+to be seen:
+</p>
+<ol>
+<li>
+A request for <em>/your_order.html</em> is received. Mason constructs the runtime inheritance hierarchy, assigning <em>/autohandler</em> as <em>/your_order.html</em>'s parent.</li>
+<li>
+Mason executes the <em>/autohandler</em> component, which invokes its <code>SELF:title</code> method. The <code>title</code> method invoked is the one contained in <em>/your_order.html</em>.</li>
+<li>
+The <code>/your_order.html:title</code> method runs, and the value of the <code>$order_date</code> is still unset -- in fact, the variable is undeclared, so Perl will complain
+that the <code>Global symbol &quot;$order_date&quot; requires explicit package name</code>. Let's suppose you trapped this error with <code>eval {}</code>, so that we can continue tracing the sequence of events.</li>
+<li>
+Control returns to <em>/autohandler</em>, which eventually calls <code>$m-&gt;call_next</code> and passes control to <em>/your_order.html</em>.</li>
+<li>
+<em>/your_order.html</em> runs its <code>&lt;%init&gt;</code> section and then its main body. Note that it would set <code>$order_date</code> much too late to affect the <code>title</code> method back in step 3.</li>
+<li>
+<em>/your_order.html</em> finishes and passes control back to <em>/autohandler</em>, and the request ends.
+</ol>
+<p class="content">
+What's a Mason designer to do? The solution is simple: use a <code>&lt;%shared&gt;</code> block instead of an <code>&lt;%init&gt;</code> block to set the <code>$order_date</code> variable. This way, the variable can be shared among all the methods of the <em>/your_order.html</em> component, and it will be set at the proper time (right before step 2 in the
+previous listing) for it to be useful when the methods are invoked.
+</p>
+<p class="content">
+The proper code is remarkably similar to the improper code; the only difference
+is the name of the  block in which the <code>$order_date</code> variable is set:
+</p>
+<div class="example-code">
+<pre>  &lt;%method title&gt;
+   &lt;!-- this method is invoked in the autohandler --&gt;
+   Information about your &lt;% $order_date %&gt; order
+  &lt;/%method&gt;
+  
+  Your order included the following items:
+   ...generate item listing here...
+  
+  &lt;%shared&gt;
+   my $order_date = $session{user}-&gt;last_order_date;
+  &lt;/%shared&gt;</pre>
+</div><p class="content">
+<code>&lt;%shared&gt;</code><a name="perlhtmlmason-IDXTERM-406"></a>
+ blocks are executed only once per request, whenever the first component
+sharing the block needs it. Its scope lasts only to the end of the request.
+Because of this, <code>&lt;%shared&gt;</code> blocks are ideal for sharing scoped variables or performing component-specific
+initialization code that needs to happen only once per request.
+</p>
+<p class="content">
+Now imagine another scenario, one in which the method needs to examine the
+incoming arguments in order to generate its output. For instance, suppose you
+request <code>/view_user.html?id=2982</code>, and you want the title of the page to display some information about user
+2982. You'll have to make sure that the user ID is available to the method,
+because under normal conditions it isn't. The two most common ways to get this
+information in the method are either for the method to call <code>$m-&gt;request_args()</code> or for the autohandler to pass its <code>%ARGS</code> to the method when calling it. The method could then either declare <code>$id</code> in an <code>&lt;%args&gt;</code> block or examine the incoming <code>%ARGS</code> hash directly. An example using <code>request_args()</code><a name="IXT-5-743"></a>
+ follows:
+</p>
+<p class="content">
+
+</p>
+<div class="example-code">
+<pre>  &lt;%method title&gt;
+   &lt;!-- this method is invoked in the autohandler --&gt;
+   User page for &lt;% $user-&gt;name %&gt;
+  &lt;/%method&gt;
+  
+   ... display information about $user ...
+  
+  &lt;%shared&gt;
+   my $user = MyApp::User-&gt;new(id =&gt; $m-&gt;request_args-&gt;{id});
+  &lt;/%shared&gt;</pre>
+</div><p class="content">
+Note that we cached the <code>$user</code> object with a shared variable so that we didn't have to create a new user
+object  twice.
+</p>
+<a name="TOC-ANCHOR-8"></a>
+<h3>Attributes</h3><p class="content">
+<a name="CHP-5-SECT-4.4"></a>
+
+</p>
+<p class="content">
+Sometimes you want to take advantage of Mason's <a name="perlhtmlmason-IDXTERM-410"></a>
+<a name="perlhtmlmason-IDXTERM-411"></a>
+ inheritance system, but you don't necessarily need to inherit the full
+components. For instance, in our first title and header example, the title and
+header methods contained just plain text and didn't use any of the dynamic
+capabilities of components. You might therefore consider it wasteful in this
+case to bring the full component-processing system to bear on the generation of
+headers and footers.
+</p>
+<p class="content">
+If you find yourself in this situation, Mason's component <em>attributes</em> may be of interest. An attribute is like a method in the way its inheritance
+works, but the value of an attribute is a Perl scalar variable, not a Mason
+component.
+</p>
+<p class="content">
+<a href="chapter-5.mhtml.htm#CHP-5-EX-7" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-7">Example 5-7</a> and <a href="chapter-5.mhtml.htm#CHP-5-EX-8" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-8">Example 5-8</a> rewrite our previous autohandler example using attributes instead of methods.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-7"></a>
+<div class="example">
+<span class="caption">Example 5-7.  autohandler</span>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;&lt;title&gt;&lt;% $m-&gt;base_comp-&gt;attr('title') %&gt;&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+   &lt;center&gt;&lt;h3&gt;&lt;% $m-&gt;base_comp-&gt;attr('header') %&gt;&lt;/h3&gt;&lt;/center&gt;
+  % $m-&gt;call_next;
+   &lt;center&gt;&lt;a href=&quot;/&quot;&gt;-home-&lt;/a&gt;&lt;/center&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  
+  &lt;%attr&gt;
+   title  =&gt; &quot;FancyMasonSite.Example.com&quot;
+   header =&gt; &quot;Welcome to FancyMasonSite.Example.com&quot;
+  &lt;/%attr&gt;
+</pre>
+</div>
+</div>
+
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-8"></a>
+<div class="example">
+<span class="caption">Example 5-8.  fancy_page.html</span>
+<div class="example-code">
+<pre>  &lt;p&gt;This page isn't all &lt;i&gt;that&lt;/i&gt; fancy, but it might be the
+  fanciest one we've seen yet.&lt;/p&gt;
+  
+  &lt;%attr&gt;
+   title  =&gt; &quot;Fancy Page&quot;
+   header =&gt; &quot;A Very Fancy Page&quot;
+  &lt;/%attr&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Attributes can be used like this, for small bits of text that become part of
+every page, but whose values vary from page to page. They can also be used to
+set properties of the component, such as whether to display a certain
+navigation bar or to omit it, whether the user must have certain
+characteristics in order to view this page,<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> and so on.
+</p>
+<p class="content">
+In the current version of Mason, each attribute in an<a name="IXT-5-744"></a>
+<code>&lt;%attr&gt;</code> block must be on a single line. This means that you cannot use multiple lines
+for clarity or to specify multiline values. Future versions of Mason may
+provide additional syntax options for multiline attributes. If you run up
+against this limitation, you may want to use a method instead of an attribute
+anyway, since methods can more easily deal with more complex definitions.
+</p>
+<p class="content">
+Another limitation of  attributes in the current version of Mason is that their values are completely
+static properties of the component and can't change from one request to the
+next. This may or may not be addressed by a future version of Mason. In any
+case, if you think you need dynamic attributes, you probably actually need to
+use methods instead.
+</p>
+<a name="TOC-ANCHOR-9"></a>
+<h3>Top-Down Versus Bottom-Up Inheritance</h3><p class="content">
+<a name="CHP-5-SECT-4.5"></a>
+
+</p>
+<p class="content">
+The attentive reader will have noticed that there are two distinct facets to
+Mason's <a name="IXT-5-745"></a>
+<a name="IXT-5-746"></a>
+<a name="IXT-5-747"></a>
+ inheritance -- the first is the &quot;<a name="IXT-5-748"></a>
+ content wrapping&quot; behavior, by which a parent component can output some
+content, then call its child component, then output some more content. The
+typical example of this is an <a name="IXT-5-749"></a>
+ autohandler that generates headers and footers, wrapped around the output of
+its base component. The second facet of inheritance is the method and attribute
+system, by which designers can define general behavior and properties in the
+parent components and specific behavior in the children.
+</p>
+<p class="content">
+A major difference between these two facets is the direction of inheritance.
+Mason will begin the search for methods and attributes by starting with the
+bottommost child and working its way toward the parent, but it will begin the
+component's content generation by starting at the topmost parent and working
+its way toward the bottommost child (assuming each parent calls <code>$m-&gt;call_next</code>).
+</p>
+<p class="content">
+Although this behavior may seem odd if this is the first time you've
+encountered it, the inheritance system will seem like second nature after
+you've worked with it for a while. To help form an intuitive notion of what's
+happening, simply remember that autohandlers (or other parent components)
+specify general behavior, whereas top-level (i.e., child; i.e.,
+&quot;regular&quot;) components dictate specific behavior, overriding the
+parents.
+</p>
+<a name="TOC-ANCHOR-10"></a>
+<h2>Calling Components with Content Blocks</h2><p class="content">
+<a name="CHP-5-SECT-5"></a>
+
+</p>
+<p class="content">
+As you saw earlier, <code>&lt;%filter&gt;</code><a name="perlhtmlmason-IDXTERM-420"></a>
+ blocks can be quite handy. The example we showed in <a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">Chapter 3</a> altered the <code>src</code> attribute of <code>&lt;img&gt;</code> tags in order to point them to a different server.
+</p>
+<p class="content">
+In <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a> we will show an example that filters a link menu of <code>&lt;a href&gt;</code><a name="IXT-5-750"></a>
+ tags to find the link for the current page and changes it to a<a name="IXT-5-751"></a>
+<code>&lt;b&gt;</code> tag instead, in order to highlight the current page.
+</p>
+<p class="content">
+Both of these examples work just fine as long as we are willing to filter the
+output of an entire <a name="perlhtmlmason-IDXTERM-423"></a>
+<a name="perlhtmlmason-IDXTERM-424"></a>
+<a name="perlhtmlmason-IDXTERM-425"></a>
+ component, but sometimes we'd like to limit the filtering to just one section
+of the component. Consider the following autohandler:
+</p>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;&lt;&amp; SELF:title &amp;&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+  &lt;&amp; SELF:top_menu, %ARGS &amp;&gt;
+  
+  % $m-&gt;call_next;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;</pre>
+</div><p class="content">
+This component calls the <code>top_menu</code><a name="IXT-5-752"></a>
+ method, expecting it to produce some sort of menu of links. We'd like to use
+the menu-filtering trick just mentioned, but using a regular <code>&lt;%filter&gt;</code> block in this component would filter not only the menu of links but also the
+entire page. That's a waste of processing, not to mention a potential source of
+bugs -- and we hate bugs.
+</p>
+<p class="content">
+Another option would be to insert a <code>&lt;%filter&gt;</code> block directly into the source of the <code>top_menu</code> method. However, the method may be defined in many different places; the whole
+point of using a method instead of a regular component call is that any
+component may redefine the method as it chooses. So we'd end up adding the <em>same</em> filter block to every definition of the <code>top_menu</code> method. That's a pretty poor solution.
+</p>
+<p class="content">
+What we really want is a solution that allows us to write the code once but
+apply it to only the portion of the output that we choose. Of course, there is
+such a thing called a &quot;component call with content,&quot; introduced in
+Mason Version 1.10. It looks just like a regular <code>&lt;&amp; &amp;&gt;</code> component call, except that there's an extra <a name="IXT-5-753"></a>
+<a name="IXT-5-754"></a>
+ pipe (<code>|</code>) character to distinguish it and a corresponding end tag, <code>&lt;/&amp;&gt;</code>. Using a component call with content, we can apply the desired filter to just
+the menu of links:
+</p>
+<div class="example-code">
+<pre>  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;&lt;&amp; SELF:title &amp;&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+  &lt;&amp;| .top_menu_filter &amp;&gt;
+   &lt;&amp; SELF:top_menu, %ARGS &amp;&gt;
+  &lt;/&amp;&gt;
+  
+  % $m-&gt;call_next;
+  
+  &lt;/body&gt;
+  &lt;/html&gt;</pre>
+</div><p class="content">
+So the <code>.top_menu_filter</code> component -- presumably a subcomponent defined in the same file -- is somehow
+being passed the output from the call to <code>&lt;&amp; SELF:top_menu,</code><code>%ARGS &amp;&gt;</code>. The <code>.top_menu_filter</code> component would look something like this:
+</p>
+<div class="example-code">
+<pre>  &lt;%def .top_menu_filter&gt;
+  % my $text = $m-&gt;content;
+  % my $uri = $r-&gt;uri;
+  % $text =~ s,&lt;a href=&quot;\Q$uri\E[^&quot;]*&quot;&gt;([^&lt;]+)&lt;/a&gt;,&lt;b&gt;$1&lt;/b&gt;,;
+  &lt;% $text %&gt;
+  &lt;/%def&gt;</pre>
+</div><p class="content">
+This looks more or less like any other <code>&lt;%filter&gt;</code> block, but with two main differences. First, the body of a <code>&lt;%filter&gt;</code> block contains plain Perl code, but since <code>.top_menu_filter</code> is a subcomponent, it contains Mason code. Second, we access the text to
+filter via a call to <code>$m-&gt;content</code> instead of in the <code>$_</code> variable. The <code>$m-&gt;content()</code> method returns the evaluated output of the content block, which in this case
+is the output of the <code>SELF:top_menu</code> component.
+</p>
+<p class="content">
+Mason goes through some contortions in order to trick the wrapped portion of
+the component into thinking that it is still in the original component. If we
+had a component named <u>bob.html</u>, as shown in the example below:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp;| .uc &amp;&gt;
+  I am in &lt;% $m-&gt;current_comp-&gt;name %&gt;
+  &lt;/&amp;&gt;
+  
+  &lt;%def .uc&gt;
+  &lt;% uc $m-&gt;content %&gt;
+  &lt;/%def&gt;</pre>
+</div><p class="content">
+we would expect the output to be:
+</p>
+<div class="example-code">
+<pre>  I AM IN BOB.HTML</pre>
+</div><p class="content">
+And indeed, that is what will happen. You can also nest these sorts of calls:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp;| .ucfirst &amp;&gt;
+    &lt;&amp;| .reverse &amp;&gt;
+  I am in &lt;% $m-&gt;current_comp-&gt;name %&gt;
+    &lt;/&amp;&gt;
+  &lt;/&amp;&gt;
+  
+  &lt;%def .reverse&gt;
+  &lt;% scalar reverse $m-&gt;content %&gt;
+  &lt;/%def&gt;
+  &lt;%def .ucfirst&gt;
+  &lt;% join ' ', map {ucfirst} split / /, $m-&gt;content %&gt;
+  &lt;/%def&gt;</pre>
+</div><p class="content">
+This produces:
+</p>
+<div class="example-code">
+<pre>  Lmth.bob Ni Ma I</pre>
+</div><p class="content">
+As you can see, the filtering components are called from innermost to
+outermost.
+</p>
+<p class="content">
+It may have already occurred to you, but this can actually be used to implement
+something in Mason that looks a lot like <a name="IXT-5-755"></a>
+ Java Server Page <a name="IXT-5-756"></a>
+ taglibs. Without commenting on whether the taglib concept is conducive to
+effective site management or not, we'll show you how to create a similar effect
+in Mason. Here's a simple SQL select expressed in something like a taglib
+style:
+</p>
+<div class="example-code">
+<pre>  &lt;table&gt;
+   &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+   &lt;/tr&gt;
+  &lt;&amp;| /sql/select, query =&gt; 'SELECT name, age FROM User' &amp;&gt;
+   &lt;tr&gt;
+    &lt;td&gt;%name&lt;/td&gt;
+    &lt;td&gt;%age&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/&amp;&gt;
+  &lt;/table&gt;</pre>
+</div><p class="content">
+The idea is that the <code>query</code> argument specifies the <a name="IXT-5-757"></a>
+ SQL query to run, and the content block dictates how each row returned should
+be displayed. Fields are indicated here by a <code>%</code> and then the name of the field.
+</p>
+<p class="content">
+Now let's write the <u>/sql/select</u> component.
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $query
+  &lt;/%args&gt;
+  &lt;%init&gt;
+   my $sth = $dbh-&gt;prepare($query);
+  
+   while ( my $row = $sth-&gt;fetchrow_hashref ) {
+     my $content = $m-&gt;content;
+     $content =~ s/%(\w+)/$row-&gt;{$1}/g;
+     $m-&gt;print($content);
+   }
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+Obviously, this example is grossly simplified (it doesn't handle things like
+bound SQL variables, and it doesn't handle extra embedded <code>%</code> characters very well), but it demonstrates the basic technique.
+</p>
+<p class="content">
+Seeing all this, you may wonder if you can somehow use this feature to
+implement control structures, again a taglib-esque idea. The answer is yes,
+with some caveats. We say &quot;with caveats&quot; because due to the way this
+feature is implemented, with closures, you have to jump through a few hoops.
+Here is something that will <em>not</em> work:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp;| /loop, items =&gt; ['one', 'two', 'three'] &amp;&gt;
+  &lt;% $item %&gt;
+  &lt;/&amp;&gt;</pre>
+</div><p class="content">
+And in <u>/loop</u>:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   @items
+  &lt;/%args&gt;
+  % foreach my $item (@items) {
+  &lt;% $m-&gt;content %&gt;
+  % }</pre>
+</div><p class="content">
+Remember, the previous example will not work. The reason should be obvious. At
+no time is the variable <code>$item</code> declared in the calling component, either as a global or lexical variable, so
+a syntax error will occur when the component is compiled.
+</p>
+<p class="content">
+So how can this idea be made to work? Here is one way. Rewrite the calling
+component first:
+</p>
+<div class="example-code">
+<pre>  % my $item;
+  &lt;&amp;| /loop, items =&gt; ['one', 'two', 'three'], item =&gt; \$item &amp;&gt;
+  &lt;% $item %&gt;
+  &lt;/&amp;&gt;</pre>
+</div><p class="content">
+Then rewrite <u>/loop</u>:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   $item
+   @items
+  &lt;/%args&gt;
+  % foreach (@items) {
+  %   $$item = $_;
+  &lt;% $m-&gt;content %&gt;
+  % }</pre>
+</div><p class="content">
+This takes advantages of how Perl treats lexical variables inside closures, but
+explaining this in detail is <em>way</em> beyond the scope of this book.
+</p>
+<p class="content">
+You can also achieve this same thing with a global variable. This next version
+assumes that <code>$item</code> has been declared using <code>allow_globals</code>:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp;| /loop, items =&gt; ['one', 'two', 'three'] &amp;&gt;
+  &lt;% $item %&gt;
+  &lt;/&amp;&gt;</pre>
+</div><p class="content">
+And <u>/loop</u> becomes this:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   @items
+  &lt;/%args&gt;
+  % foreach $item (@items) {
+  &lt;% $m-&gt;content %&gt;
+  % }</pre>
+</div><p class="content">
+This version is perhaps a little less funky, but it could lead to having more
+globals than you'd really like.
+</p>
+<p class="content">
+An in-between solution using Perl's special <code>$_</code><a name="IXT-5-758"></a>
+ variable can solve many of these problems. This variable is a global but is
+automatically localized by loop controls like <code>foreach</code> or <code>while</code>. So we can now write:
+</p>
+<div class="example-code">
+<pre>  &lt;&amp;| /loop, items =&gt; ['one', 'two', 'three'] &amp;&gt;
+  &lt;% $_ %&gt;
+  &lt;/&amp;&gt;</pre>
+</div><p class="content">
+And for <u>/loop</u>:
+</p>
+<div class="example-code">
+<pre>  &lt;%args&gt;
+   @items
+  &lt;/%args&gt;
+  % foreach (@items) {
+  &lt;% $m-&gt;content %&gt;
+  % }</pre>
+</div><p class="content">
+Magic. It isn't perfect, but it looks kind of neat.
+</p>
+<p class="content">
+In any case, Mason was designed to use Perl's built-in control structures, so
+we don't feel too bad that it's awkward to build your  own.
+</p>
+<a name="TOC-ANCHOR-11"></a>
+<h2>Advanced Inheritance</h2><p class="content">
+<a name="CHP-5-SECT-6"></a>
+
+</p>
+<p class="content">
+In <a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">Chapter 3</a> we introduced you to the concept of component inheritance, and in this chapter we have discussed some of the ways you can use inheritance to create flexible, maintainable Mason sites. Now we show how <a name="perlhtmlmason-IDXTERM-437"></a>
+<a name="perlhtmlmason-IDXTERM-438"></a>
+ inheritance interacts with other Mason features, such as multiple component
+roots and multiple autohandlers.
+</p>
+<a name="TOC-ANCHOR-12"></a>
+<h3>Inheritance and Multiple Component Roots</h3><p class="content">
+<a name="CHP-5-SECT-6.1"></a>
+<a name="ch05-idx-1006511-2"></a>
+<a name="ch05-idx-1006511-1"></a>
+<a name="ch05-idx-1006493-2"></a>
+<a name="ch05-idx-1006493-1"></a>
+
+</p>
+<p class="content">
+It is possible to tell Mason to search for components in more than one
+directory -- in other words, to specify more than one component root. This is
+analogous to telling Perl to look for modules in the various <code>@INC</code> directories or to telling Unix or Windows to look for executable programs in
+your <code>PATH</code>. In <a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">Chapter 6</a> and <a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">Chapter 7</a> you will learn more about how to configure Mason; for now, we will just show by example:
+</p>
+<div class="example-code">
+<pre>  my $ah = HTML::Mason::ApacheHandler-&gt;new(
+    comp_root =&gt; [
+                  [main =&gt; '/usr/http/docs'],
+                  [util =&gt; '/usr/http/mason-util'],
+                 ]
+  );</pre>
+</div><p class="content">
+or, in an Apache configuration file:
+</p>
+<div class="example-code">
+<pre>  PerlSetVar MasonCompRoot 'main =&gt; /usr/http/docs'
+  PerlAddVar MasonCompRoot 'util =&gt; /usr/http/mason-util'</pre>
+</div><p class="content">
+This brings up some interesting inheritance questions. How do components from
+the two component roots relate to each other? For instance, does a component in <em>/usr/http/docs</em> inherit from a top-level autohandler in <em>/usr/http/mason-util</em>? With this setup, under what conditions will a component call from one
+directory find a component in the other directory? The answers to these
+questions are not obvious unless you know the rules.
+</p>
+<p class="content">
+The basic rule is that Mason always searches for components based on their
+component paths, not on their source file paths. It will be perfectly happy to
+have a component in one component root inherit from a component in another
+component root. When calling one component from another, you always specify
+only the path, not the particular component root to search in, so Mason will
+search all roots.
+</p>
+<p class="content">
+If it helps you conceptually, you might think of the multiple component roots
+as getting merged together into one big &uuml;ber-root that contains all the
+files from all the multiple roots, with conflicts resolved in favor of the
+earliest-listed root.
+</p>
+<p class="content">
+Let's think about some specific cases. Using the two component roots given
+previously, suppose you have a component named <em>/dir/top_level.mas</em> in the <code>main</code> component root and a component named <em>/dir/autohandler</em> in the <code>util</code> component root. <em>/dir/top_level.mas</em> will inherit from <em>/dir/autohandler</em> by default. Likewise, if <em>/dir/top_level.mas</em> calls a component called <em>other.mas</em>, Mason will search for <em>other.mas</em> first in the <code>main</code> component root, then in the <code>utils</code> root. It makes no difference whether the component call is done by using the
+component path <em>other.mas</em> or <em>/dir/other.mas</em>; the former gets transformed immediately into the latter by prepending the <em>/dir/top_level.mas</em>'s <code>dir_path</code>.
+</p>
+<p class="content">
+If there are two components with the same path in the <code>main</code> and <code>util</code> roots, you won't be able to call the one in the <code>util</code> root by path no matter how hard you try, because the one in <code>main</code> overrides it.
+</p>
+<p class="content">
+This behavior is actually quite handy in certain situations. Suppose you're
+creating lots of sites that function similarly, but each individual site needs
+to have some small tweaks. There might be small differences in the functional
+requirements, or you might need to put a different &quot;look and feel&quot; on
+each site. One simple way to do this is to use multiple component roots, with
+each site having its own private root and a shared root:
+</p>
+<div class="example-code">
+<pre>  my $interp = HTML::Mason::Interp-&gt;new(
+    comp_root =&gt; [
+                  [mine   =&gt; '/etc/httpd/sites/bobs-own-site'],
+                  [shared =&gt; '/usr/local/lib/mason/common'],
+                 ]
+  );</pre>
+</div><p class="content">
+The <code>shared</code> root can provide a top-level autohandler that establishes a certain generic
+look and feel to the site, and the <code>mine</code> root can create its own top-level autohandler to override the one in <code>shared</code>.
+</p>
+<p class="content">
+Using this setup, any component call -- no matter whether it occurs in a
+component located in the <code>mine</code> or <code>shared</code> component root -- will look for the indicated component, first in <code>mine</code>, then in <code>shared</code> if none is  found in <code>mine</code>.
+</p>
+<a name="TOC-ANCHOR-13"></a>
+<h3>An Advanced Inheritance Example</h3><p class="content">
+<a name="CHP-5-SECT-6.2"></a>
+
+</p>
+<p class="content">
+An example can help showcase several of the topics we've discussed in this
+chapter. The component in this section was originally written by John Williams,
+though we've removed a few features for the pedagogical purposes of this book.
+It implements an autohandler that allows you to run predefined SQL queries via
+a Mason component interface. For example, you might use the component as in <a href="chapter-5.mhtml.htm#CHP-5-EX-9" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-9">Example 5-9</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-9"></a>
+<div class="example">
+<span class="caption">Example 5-9.  A
+ calling component</span>
+<div class="example-code">
+<pre>  &lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Part Number&lt;/th&gt;&lt;th&gt;Quantity&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;/tr&gt;
+  &lt;&amp;| /query/order_items:exec, bind =&gt; [$OrderID] &amp;&gt;
+  &lt;tr&gt;
+     &lt;td&gt;&lt;% $_-&gt;{PARTNUM} %&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;% $_-&gt;{QUANTITY} %&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;% $_-&gt;{PRICE} %&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;% $_-&gt;{QUANTITY} * $_-&gt;{PRICE} %&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/&amp;&gt;
+  &lt;/table&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Note that we're passing a content block to the <code>/query/order_items:exec</code> method call. The idea is that the method will repeat the content block for
+every database row returned by an SQL query, and the <code>$_</code> variable will hold the data for each row, as returned by the <code>DBI</code> method <code>fetchrow_hashref()</code>. The query itself is specified in the <u>/query/order_items</u> file, which could look like <a href="chapter-5.mhtml.htm#CHP-5-EX-10" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-10">Example 5-10</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-10"></a>
+<div class="example">
+<span class="caption">Example 5-10.  /query/order_items</span>
+<div class="example-code">
+<pre>  SELECT * FROM items WHERE order_id = ?
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Yes, it's just one line. Where is the <code>exec</code> method we called earlier? It's in the parent component, which (since we didn't
+specify otherwise with an <code>inherit</code> flag) is <em>query/autohandler</em>. This autohandler is the component that does all the work; see <a href="chapter-5.mhtml.htm#CHP-5-EX-11" tppabs="http://www.masonbook.com/book/chapter-5.mhtml#CHP-5-EX-11">Example 5-11</a>.
+</p>
+
+<p class="content">
+<a name="CHP-5-EX-11"></a>
+<div class="example">
+<span class="caption">Example 5-11.  /query/autohandler</span>
+<div class="example-code">
+<pre>  &lt;%flags&gt;
+   inherit =&gt; undef
+  &lt;/%flags&gt;
+  
+  &lt;%method exec&gt;
+   &lt;%args&gt;
+    @bind =&gt; ( )
+   &lt;/%args&gt;
+   
+   &lt;%init&gt;
+    local $dbh-&gt;{RaiseError} = 1;
+    
+    # Get the SQL from the base component
+    my $sql = $m-&gt;scomp($m-&gt;base_comp, %ARGS);
+    my $q = $dbh-&gt;prepare($sql);
+    $q-&gt;execute(@bind);
+    
+    # Return now if called without content
+    # (useful for insert/update/delete statements).
+    return $dbh-&gt;rows unless defined $m-&gt;content;
+    
+    # Call the content block once per row
+    local $_;
+    while ($_ = $q-&gt;fetchrow_hashref('NAME_uc')) {
+      $m-&gt;print( $m-&gt;content );
+    }
+    
+    # Don't print any of the whitespace in this method
+    return;
+   &lt;/%init&gt;
+  &lt;/%method&gt;
+</pre>
+</div>
+</div>
+
+</p>
+<p class="content">
+Let's step our way through the autohandler. The only code outside the <code>exec</code> method ensures that this component is parentless. It's not strictly necessary,
+but we include it to make sure this example is isolated from any other
+interaction.
+</p>
+<p class="content">
+We access the database inside the <code>exec</code> method. Since we haven't declared the <code>$dbh</code> variable, it's assumed that it's already set up for us as a global variable,
+probably initialized in the site's top-level autohandler. The first thing we do
+is make sure that the code will throw an exception if anything goes wrong
+during the query, so we locally set <code>$dbh-&gt;{RaiseError}</code> to <code>1</code>. Any exceptions thrown will be the responsibility of someone higher up the
+calling chain.
+</p>
+<p class="content">
+Next, we get the text of the SQL query. It's contained in our base component,
+which in our example was <em>/query/order_items</em>. We call this component to get its output. Note that we also pass <code>%ARGS</code> to our base component, which lets us do additional substitutions into the SQL
+statement. For example, we could have a query that sorts by one of several
+different fields, using <code>ORDER BY &lt;% $ARGS{sort} %&gt;</code> inside the SQL statement.
+</p>
+<p class="content">
+After we fetch the SQL and prepare the query, we execute the query, passing any
+bound variables to the <code>$q-&gt;execute()</code> method. If there was no content block passed to us, then we're done -- this
+allows the component to be used for INSERT/UPDATE/DELETE statements in addition
+to SELECT statements.
+</p>
+<p class="content">
+Finally, we iterate through the rows returned by the query, storing the data
+for each row in <code>$_</code>. Note that we localize <code>$_</code> before using it, since blowing away any value that's already in there would be
+extremely impolite.
+</p>
+<p class="content">
+Be sure to notice that the <code>$m-&gt;content</code> body is reexecuted for each row. Because of this, its execution happens within
+the scope of the current <code>$_</code> variable. This is really the only way this all could work, but it's subtle
+enough that we had to point it out.
+</p>
+<p class="content">
+The advantage of using inheritance this way is that you capture the complicated
+parts of a task in a single component, and then all the rest of the components
+become very simple. If you get familiar with Mason's  inheritance model, you can create very sophisticated applications with a
+minimum of redundancy and hassle.
+</p>
+<a name="TOC-ANCHOR-14"></a>
+<h2>Subrequests</h2><p class="content">
+<a name="CHP-5-SECT-7"></a>
+
+</p>
+<p class="content">
+Once in a while you may want to call one component from another as if it were a
+top-level component, having it go through the full content-wrapping and
+dhandler-checking process. This is what <em>subrequests</em><a name="perlhtmlmason-IDXTERM-445"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-446"></a>
+ are for, and the manner in which they work is similar to how subrequests work
+in Apache. Subrequests were introduced in Mason Version 1.10.
+</p>
+<p class="content">
+When executing a subrequest, you may simply execute it via the request object's <code>subexec()</code> method, or you may first create the object via <code>make_subrequest()</code><a name="perlhtmlmason-IDXTERM-447"></a>
+ and then execute it via <code>exec()</code>. The <code>subexec()</code> method takes the same arguments as the <code>comp()</code> method:
+</p>
+<div class="example-code">
+<pre>  Calling /some/comp:
+  % $m-&gt;subexec( '/some/comp', foo =&gt; 1 );</pre>
+</div><p class="content">
+The output of the subrequest goes to the same place as normal component output,
+but can be captured in a variable fairly easily by using <code>make_subrequest()</code> to provide explicit arguments when creating the request:
+</p>
+<div class="example-code">
+<pre>  &lt;%perl&gt;
+   my $output;
+   my $req = $m-&gt;make_subrequest
+       ( comp =&gt; '/some/comp', args =&gt; [ foo =&gt; 1 ], out_method =&gt; \$output );
+   $req-&gt;exec;
+   $output =~ s/something/something else/g;
+  &lt;/%perl&gt;
+  /some/comp produced:
+  &lt;% $output %&gt;</pre>
+</div><p class="content">
+As this illustrates, one of the interesting things you can do with a subrequest
+is override some of the parameters provided by its parent request. So we can
+do:
+</p>
+<div class="example-code">
+<pre>  Calling /some/comp:
+  &lt;%perl&gt;
+   my $req = $m-&gt;make_subrequest
+       ( comp =&gt; '/some/comp', autoflush =&gt; 1 );
+   $req-&gt;exec;
+  &lt;/%perl&gt;</pre>
+</div><p class="content">
+In both cases, the request object created by the <code>make_subrequest</code> method inherits its parameters from the parent  request, except for those that are explicitly overridden.
+</p>
+<a name="TOC-ANCHOR-15"></a>
+<h3>A Caution About Autohandler Inheritance</h3><p class="content">
+<a name="CHP-5-SECT-7.1"></a>
+
+</p>
+<p class="content">
+Remember that Mason determines the default parent of every component but that
+you can always specify a different parent using the special <code>inherit</code> flag in the <code>&lt;%flags&gt;</code> section. This applies not just to regular components, but to autohandlers too:
+any component, including the top-level autohandler, can inherit from a
+component of your choosing.
+</p>
+<p class="content">
+However, specifying an <a name="IXT-5-759"></a>
+<a name="IXT-5-760"></a>
+ autohandler's inheritance explicitly can easily lead to an infinite
+inheritance chain if you're not careful. Suppose you set the parent of the
+top-level autohandler to a component called <u>/syshandler</u>. In setting up the inheritance chain at runtime, Mason will attempt to find
+the parent of <em>/syshandler</em>, and the default is (you guessed it) <code>autohandler</code> in the same directory. So unless you've overridden <u>/syshandler</u>'s parent, you'll have <u>/autohandler</u> inheriting from <u>/syshandler</u>, and <u>/syshandler</u> inheriting from <u>/autohandler</u>. Not a good situation: it will cause a fatal runtime error due to the
+inheritance loop. The solution is to set the <code>inherit</code> flag for <u>/syshandler</u> to <code>undef</code>, terminating the inheritance chain. Yes, this sounds a bit like SCSI; perhaps
+someday someone will invent the equivalent of USB in the Mason world. Until
+then, just make sure you don't create any loops.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. In a <code>mod_perl</code> setting, authentication and authorization often happen before the content
+generation phase (i.e., before Mason even steps into the picture). However, you
+may wish to bypass the <code>auth</code> control phases and do your own authorization in the autohandler, just so that
+you can use Mason's attributes to control the behavior. For instance, you might
+give an unauthenticated user a different view of a certain page, rather than
+denying access outright. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<b>5</b>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<a href="chapter-10.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-10.mhtml">10</a>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>

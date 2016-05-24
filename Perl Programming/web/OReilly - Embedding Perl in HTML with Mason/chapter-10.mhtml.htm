@@ -1,0 +1,669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="pragma" content="no-cache">
+<title>
+The Mason Book
+</title>
+<link rel="stylesheet" type="text/css" href="tppmsgs/msgs0.htm#1" tppabs="http://www.masonbook.com/masonbook.mcss?no_style=0">
+</head>
+
+<body>
+
+<div class="bodybox">
+
+ <div class="titlebox">
+
+  <div class="titleboximage">
+   <a href="tppmsgs/msgs0.htm#2" tppabs="http://www.masonbook.com/"><img src="cover_small.jpg" tppabs="http://www.masonbook.com/i/cover_small.jpg" width="110" height="144" class="smallcover" alt="Small cover"></a>
+  </div>
+
+  <div class="titleboxtext">
+
+   <span class="booktitle">Embedding Perl in HTML with Mason</span><br>
+   <span class="bookauthors">Dave Rolsky<br>Ken Williams</span>
+
+  </div>
+
+ </div>
+
+ <div class="mainbox">
+  <div class="mainbox2">
+
+   <div class="menubox">
+    <h4 id="here">Here</h4>
+
+
+    <a href="tppmsgs/msgs0.htm#4" tppabs="http://www.masonbook.com/index.mhtml">Home</a><br>
+    <a href="tppmsgs/msgs0.htm#5" tppabs="http://www.masonbook.com/news/">News</a><br>
+    <b>Read it online</b><br>
+    <a href="tppmsgs/msgs0.htm#6" tppabs="http://www.masonbook.com/source/">Example Code</a><br>
+    <a href="tppmsgs/msgs0.htm#7" tppabs="http://www.masonbook.com/authors.mhtml">Authors</a><br>
+    <a href="tppmsgs/msgs0.htm#8" tppabs="http://www.masonbook.com/errata.mhtml">Errata</a><br>
+    <a href="tppmsgs/msgs0.htm#9" tppabs="http://www.masonbook.com/quotes.mhtml">Praise</a><br>
+    <a href="tppmsgs/msgs0.htm#10" tppabs="http://www.masonbook.com/contact.mhtml">Contact us</a><br>
+    <a href="tppmsgs/msgs0.htm#11" tppabs="http://www.masonbook.com/buy.mhtml">Buy the book!</a>
+
+
+    <h4 class="menu">There</h4>
+    <a href="tppmsgs/msgs0.htm#12" tppabs="http://www.masonhq.com/">Mason HQ</a><br>
+    <a href="tppmsgs/msgs0.htm#13" tppabs="http://www.oreilly.com/">O'Reilly</a><br>
+    <a href="tppmsgs/msgs0.htm#14" tppabs="http://perl.apache.org/">mod_perl</a>
+   </div>
+
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<b>10</b>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+
+
+
+<hr width="80%" align="left">
+
+<a name="TOC-ANCHOR-0"></a>
+<h1>Chapter 10: Scalable Design</h1><p class="content">
+<a name="CHP-10"></a>
+
+</p>
+<p class="content">
+So now that you know how to do things with Mason, it's time to start thinking
+about how to do things cleanly, scalably, and maintainably. Mason is a good
+tool, but it is not magic, and you still need to think about design when you
+use it.
+</p>
+<a name="TOC-ANCHOR-1"></a>
+<h2>Modules Versus Components</h2><p class="note">
+This book was written before MasonX::WebApp and MasonX::Interp::WithCallbacks
+were available or widely used. Both of these were written to help move
+application logic out of Mason components into modules.
+</p>
+<p class="content">
+<a name="CHP-10-SECT-1"></a>
+
+</p>
+<p class="content">
+<a name="perlhtmlmason-IDXTERM-800"></a>
+<a name="perlhtmlmason-IDXTERM-801"></a>
+<a name="perlhtmlmason-IDXTERM-802"></a>
+ Mason is a powerful tool for generating content. Its combination of easy
+templating syntax, powerful component structures, and features like
+autohandlers, dhandlers, and component inheritance all combine to make it much
+like Perl itself: it makes easy things easy, and difficult things possible.
+</p>
+<p class="content">
+However, exactly like Perl itself, the facilities it provides can make it all
+too tempting to do things the easy way, and Mason makes no attempt to enforce
+any sort of discipline in your design. Instead, this is your responsibility as
+a programmer and application designer. This is where the responsibility always
+lies, no matter what language or tool you are using.
+</p>
+<p class="content">
+Though Mason is at its core a text templating tool, it also provides much more
+functionality. One such piece of functionality is that individual components
+are almost exactly like subroutines. They can be called anywhere in your
+processing and they can, in turn, call other components, generate output,
+and/or return values to the caller. And, like Perl's subroutines, variables
+defined inside a component are lexically scoped to that component.
+</p>
+<p class="content">
+It is this similarity between components and subroutines that can lead to
+design trouble. As long-time Mason users, we have come to believe that Mason
+components should be used almost exclusively for generating output. For data
+processing, we believe that Perl modules are the better solution. In our
+experience, this division of labor leads to long-term benefits in
+maintainability and clarity of design.
+</p>
+<p class="content">
+When we say &quot;generating output,&quot; we mean generating binary or text
+output of any sort (HTML, XML, plain text, images, etc.) to be sent somewhere
+(STDOUT, a web client, etc.). In a web environment, this includes things like
+sending redirect headers or custom error responses as well as HTML. When we say
+&quot;data processing,&quot; we mean the work of retrieving data from an
+external data source such as a database, processing data and constructing
+useful objects or data structures, doing calculations, implementing business
+logic, or munging data.
+</p>
+<p class="content">
+Our exception to this rule is when the data processing is entirely part of the
+UI that Mason is generating. For example, in a web context, it may be necessary
+to do some munging of POSTed data or to translate data from the manner in which
+it is presented in the UI to a format suitable for your backend.
+</p>
+<p class="content">
+But Mason is not the right tool for all jobs, and it should not form the entire
+infrastructure of any project.
+</p>
+<p class="content">
+The rest of this discussion will assume a web environment, as that is Mason's
+primary domain, though this discussion can apply to any environment in which
+Mason could be used.
+</p>
+<p class="content">
+Another important goal is to minimize duplication of code. You will never
+eliminate this entirely, but this should always be your goal. Duplicated code
+leads to bugs when one piece changes and the other doesn't, increases the
+difficulty of understanding the entire code base, and increases implementation
+time for bug fixes and changes.
+</p>
+<p class="content">
+Obviously, the line between generating output and data processing is extremely
+blurry. Given that fact, perhaps the best goal is to reduce the data processing
+in Mason components to the minimal amount necessary to properly generate
+output. All other application logic should be placed in Perl modules and called
+from your components.
+</p>
+<p class="content">
+The line that needs to be drawn is one that makes the code flow in both your
+modules and your components as natural as possible. We don't want to go into
+impossible contortions in order to eliminate four lines of processing from a
+component, nor do we want to put knowledge about Mason or our components into
+our modules. Like all design tasks, there is as much art as skill involved.
+</p>
+<p class="content">
+For example, as mentioned before, we consider it entirely appropriate for Mason
+components to handle incoming request argument processing. A component could
+use these arguments to determine what library function to call or what object
+to instantiate. It might also use these arguments to change the way it
+generates output, for example if there were a parameter indicating that no
+images should be included on a page.
+</p>
+<p class="content">
+There is little reason to handle this particular processing task with a module.
+Indeed, this would be creating exactly the kind of dependency we believe is so
+problematic in using Mason for application logic. Your modules should be
+generically useful and if they depend on being called by Mason components, they
+are useless outside of the Mason environment.
+</p>
+<p class="content">
+What exactly is the danger of blurring these lines? Well, Mason is a fine
+system for generating HTML or other forms of output. However, let's assume that
+you plan to also provide your data via an email interface. A user may write an
+email to you with a specific body such as &quot;fetch file 1,&quot; and your
+application will respond with the contents of file 1.
+</p>
+<p class="content">
+In a case such as this, you just want to execute some application logic to
+fetch a file and then spit it out to your mailer. It is unlikely that any of
+Mason's powerful features would be necessary in order to perform this task; in
+fact, Mason would probably get in the way.
+</p>
+<p class="content">
+Another example can illustrate this issue further. Let's assume we want to
+build an application to serve as the backend for a new web site focused on news
+about Hong Kong movies. Let's assume you intelligently decide to make a single
+component to generate a story box. A story box has a headline, an author, and
+the first 500 characters of the story. If there are more, it has a link to read
+the whole thing.
+</p>
+<p class="content">
+Here's the HTML-making portion of the component:
+</p>
+<div class="example-code">
+<pre>  &lt;h1&gt;&lt;% $story{headline} | h %&gt;&lt;/h1&gt;
+  
+  &lt;p&gt;
+  written by &lt;b&gt;&lt;% $story{author} | h %&gt;&lt;/b&gt;
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+  &lt;% substr ($story{body}, 0, 500) | h %&gt;
+  &lt;/p&gt;
+  % if ( length $story{body} &gt; 500 ) {
+  &lt;p&gt;
+  &lt;a href=&quot;full_story.html?story_id=&lt;% $story{story_id} %&gt;&quot;&gt;
+  Read the full story
+  &lt;/a&gt;
+  &lt;/p&gt;
+  % }</pre>
+</div><p class="content">
+Pretty simple, no? The component contains <em>some</em> application logic, of course. It checks the length of the story's body and
+changes the output depending on it. But the real question is where the <code>%story</code> hash comes from. Let's assume that we call another component to get it. So
+then we have this:
+</p>
+<div class="example-code">
+<pre>  &lt;%init&gt;
+   my %story = $m-&gt;comp('get_newest_story.mas');
+  &lt;/%init&gt;</pre>
+</div><p class="content">
+So what's the problem? Well, there is none as long as the only time you want to
+get the newest story is in a Mason environment. But what if you wanted to send
+out the top story anytime someone sent an email to you at <em>newest_story@hkmovienews.example.com</em>?
+</p>
+<p class="content">
+Hmm, let's write a quick program to do that:
+</p>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use HTML::Mason::Interp;
+  
+  my $outbuf;
+  my $interp = HTML::Mason::Interp-&gt;new( out_method =&gt; \$outbuf );
+  
+  my %story = $interp-&gt;exec('/path/to/get_newest_story.mas');
+  send_story_mail(%story);
+  
+  # imagine the mail is sent</pre>
+</div><p class="content">
+Not so bad, we suppose. Here are some issues to consider:
+</p>
+<ul>
+<li>
+You just loaded a couple of thousand lines of Perl code in order to do a simple
+database fetch and then send an email. And because this email interface has
+become quite popular, it's happening a few times every minute. Your sysadmin is
+looking for you and she's carrying a big spiked club!</li>
+<li>
+The return value of <code>$interp-&gt;exec()</code> may not be what you'd expect. If the component you called did an <code>$m-&gt;abort('something')</code> internally, the return value will be <code>'something'</code>. This works fine when using the Mason ApacheHandler code, but it isn't what
+you expected in this situation.</li>
+<li>
+If any component you call (or that it calls) references <code>$r</code> (the Apache request object), it will fail spectacularly. It's nice to feel
+free to access <code>$r</code> in your components, but if you were trying to make a multipurpose Mason system
+you'd have to be sure not to use <code>$r</code> in any component that might be used outside of a web context, and you would
+feel fettered and stifled.
+</ul>
+<p class="content">
+Now imagine that you multiply this by 40 more data processing and application
+logic components. Then remember that if you try to do <code>'perldoc get_newest_story'</code> from the command line, it won't do anything! And remember that you have 40
+separate files, one per API call. Now imagine that you take advantage of
+Mason's inheritance and other fancy features in your data processing code. Now
+imagine trying to debug this later.
+</p>
+<p class="content">
+If, however, you put the <code>'get_newest_story'</code> functionality into a module, you could call this module from both your
+component and your email sending program, looking something like this:
+</p>
+<div class="example-code">
+<pre>  #!/usr/bin/perl -w
+  
+  use MyApplication;
+  
+  my %story = MyApplication-&gt;get_newest_story( );
+  MyApplication-&gt;send_story_mail(%story);</pre>
+</div><p class="content">
+The advantages include:
+</p>
+<ul>
+<li>
+You can easily preload your shared library code in the main Apache server at
+startup, resulting in a memory savings.</li>
+<li>
+Performancewise, calling a subroutine in a module is much more lightweight than
+calling a Mason component. A Mason component call involves calling a subroutine
+and also performing a bunch of overhead tasks like checking the age of the
+component file, checking required arguments and types, and so on.</li>
+<li>
+Perl modules have well-known mechanisms for documentation and regression
+testing. Psychologically, we feel that an API is more stable when we have a
+documented module that instantiates it. A tree of components feels more
+mutable, and we hate feeling as if we've built a shaky house of logic that we
+don't necessarily understand in the  end.
+</ul>
+<a name="TOC-ANCHOR-2"></a>
+<h3>The Other Side</h3><p class="content">
+<a name="CHP-10-SECT-1.1"></a>
+
+</p>
+<p class="content">
+However, that's not to say you don't lose anything. Here's a summary of a
+number of arguments we've heard on the possible advantages of using Mason <a name="perlhtmlmason-IDXTERM-806"></a>
+<a name="perlhtmlmason-IDXTERM-807"></a>
+<a name="perlhtmlmason-IDXTERM-808"></a>
+ components for data processing, along with our responses.
+</p>
+<ul>
+<li>
+Data processing in Mason components provides developers with a unified way of
+writing both display and processing code. This is especially appreciated by
+less experienced developers not accustomed to writing modules.<p class="content">
+Perl modules are one of the fundamental tools for writing reusable code and
+creating maintainable applications. It may be convenient to use Mason for data
+processing in the short term, but in the long term you'll be better served by
+moving to a more formalized approach involving separate mechanisms for
+processing and display.
+</p>
+</li>
+<li>
+For rapid development environments, it's hands-down faster to create a new
+component, and you are less likely to have a merge conflict with another
+person's work.<p class="content">
+Once a module is created, adding a new function or method to it is fairly
+trivial, but the initial process does require some thought. And yes, merge
+conflicts are more likely when using version control because you will have
+fewer files, though in our experience this is not terribly common.
+</p>
+</li>
+<li>
+Mason has support for private versions of processing code. One person said that
+where they work everyone has a version of the site checked out from version
+control and views his version through TransHandler magic via
+&lt;name&gt;.dev.example.com. Developers can change their own version of the
+processing components and preview the changes. If the processing code were in
+modules, every developer would need his own Perl interpreter, thus a separate
+server.<p class="content">
+It is <em>possible</em>, though not completely trivial, to provide every developer a unique copy of
+the modules in his own server. This can be more of a maintenance hassle,
+particularly when adding new developers, though some automation can eliminate
+the hassle. Again, this is a case of investing time up front as an investment
+in the future. This issue is discussed in <a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">Chapter 11</a>.
+</p>
+<p class="content">
+For example, giving each developer his own Apache daemon is relatively easy,
+running it on a unique high-numbered port. Each developer's server can then use
+the developer's local copies of the code, modules, and components, so the
+developer can work in isolation and feel free to break things without slowing
+anyone else down.
+</p>
+<p class="content">
+Or, just as easily, each developer can run a daemon locally on his own
+computer, perhaps connecting to a central test database or even running a RDBMS
+locally.<sup><a href="#FOOTNOTE-ANCHOR-1">1</a></sup><a name="RETURN-ANCHOR-1"></a> Most importantly, nothing can replace solid coding guidelines, development
+practices, and testing, coupled with tools like version control.
+</p>
+</li>
+<li>
+Components give you many fringe benefits over Perl subroutines: named argument
+passing and checking, result caching, a lightweight hierarchical naming
+structure, component logging, and so on.<p class="content">
+<a name="IXT-10-1166"></a>
+
+</p>
+<p class="content">
+We can't really argue with this. It's true. However, we have yet to find
+ourselves really wishing for this functionality when developing application
+logic. Named arguments are nice, but <a name="IXT-10-1165"></a>
+ CPAN provides several nice solutions for validating named arguments, including <code>Params::Validate</code>, which Mason uses internally.
+</p>
+
+</ul>
+<p class="content">
+There have been times when shoving data processing into a Mason component was
+exactly what we've needed. The code sits there right next to the code that
+calls it, not off in <u>site_perl/</u>, which should usually have some tight controls over what gets put in it. In a
+matter of seconds you can try things out without worrying about module naming,
+namespace collisions, server restarts, and so forth. Then when you've had a
+chance to think about what a good interface should be like, you can migrate the
+code to a module. It's all well and good to extol the virtues of good planning,
+but the creative process is seldom very plannable unless you've done a similar
+task before.
+</p>
+<p class="content">
+On yet another hand, you can always maintain your own module directories and
+add them to Perl's search path via a quick <code>use lib</code>.
+</p>
+<p class="content">
+We are certainly not advocates of the &quot;design everything and make sure
+it's perfect before coding&quot; school of design. Our points are more about
+the end product than the development process itself. Your process should lead
+to the creation of clean, maintainable code. If you make a mess while writing
+it, we certainly won't criticize as long as it gets cleaned up in the end.
+</p>
+<p class="content">
+Our summary is simple. Writing your application logic and data processing as
+Mason components is a shortcut that can bite you later. Like many design
+trade-offs, it speeds up initial time to release while guaranteeing maintenance
+pain in the  future.
+</p>
+<a name="TOC-ANCHOR-3"></a>
+<h2>Components as Independent Units</h2><p class="content">
+<a name="CHP-10-SECT-2"></a>
+
+</p>
+<p class="content">
+Like subroutines in any language, Mason <a name="IXT-10-1167"></a>
+ components are vulnerable to the disease known as &quot;jumboitis.&quot;
+Symptoms of this disease include monstrous chains of <code>if</code>-<code>elsif</code> clauses as well as a general excess of code. This disease, untreated, can lead
+to developer confusion, application fragility, and apathetic mindset toward
+fixing bugs because &quot;it doesn't matter, the code will still suck.&quot;
+</p>
+<p class="content">
+It is never a good idea to pack all your decisions into a single component.
+Even if you're not planning to reuse a particular piece of Mason code, it
+doesn't hurt to turn it into a separate component in order to demarcate pieces
+of code as having different functions. In some cases, you may prefer to use
+subcomponents instead of actually creating a separate file.
+</p>
+<p class="content">
+One practice that often leads to jumboitis is often seen in the CGI world.
+Quite commonly, a single CGI program starts off with a big chain of <code>if-elsif</code><a name="IXT-10-1168"></a>
+ clauses that basically try to figure out what the program is supposed to do.
+First it displays a form then it processes the form output, and then it might
+show the form again with errors marked, or it might show another page, then
+update the database, then show an index page, and then...
+</p>
+<p class="content">
+OK, we're out of breath and our brains are throbbing. This sort of code is
+scary though we've all probably written something just like it in the past.
+</p>
+<p class="content">
+It would be easy to do this with Mason, but there's no need. In a cleaner
+design, you'd have one component display the form. Then it would post to a
+component that would handle the form input, which can call another component or
+a module to do data validation. If the data has errors, it redirects back to
+the form component. Otherwise it might redirect to a component that shows a
+preview of the data. Then a Submit button could post the data to yet another
+component that updates the database (after doing data validation again, no
+doubt). As long as you've got smooth pathways for sharing data among
+components, you'll be able to design a component tree that makes sense and
+isn't a nightmare to maintain.
+</p>
+<p class="content">
+And don't forget about autohandlers and dhandlers, which can go a long way to
+reducing code duplication with very little effort. We saw this sort of pattern
+in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a> when we looked at the user and project editing components.
+</p>
+<a name="TOC-ANCHOR-4"></a>
+<h2>Component Layout</h2><p class="content">
+<a name="CHP-10-SECT-3"></a>
+
+</p>
+<p class="content">
+If you are working with other people on a Mason project, you should probably
+standardize the layout of code within your components, if for no other reason
+than consistency. You may find that putting all of the text generation at the
+top of the component, followed by other sections like <code>&lt;%args&gt;</code> and <code>&lt;%init&gt;</code>, is a good layout. This means that when HTML folks have to look at your
+components, they won't be overwhelmed by many lines of what is, to them,
+gibberish. Here is another possible component layout stardard:
+</p>
+<ul>
+<li>
+A <code>&lt;%doc&gt;</code> section describing what the component does. You can omit this section if it
+purpose is obvious -- for some suitable strict definition of
+&quot;obvious.&quot;</li>
+<li>
+The <code>&lt;%args&gt;</code> section.</li>
+<li>
+The <code>&lt;%flags&gt;</code> section.</li>
+<li>
+The <code>&lt;%attr&gt;</code> section.</li>
+<li>
+The text generation portion of the component, along with whatever embedded code
+it contains.</li>
+<li>
+The <code>&lt;%once&gt;</code> section.</li>
+<li>
+The <code>&lt;%shared&gt;</code> section.</li>
+<li>
+The <code>&lt;%init&gt;</code> section.</li>
+<li>
+The <code>&lt;%cleanup&gt;</code> section.</li>
+<li>
+The <code>&lt;%filter&gt;</code> section.</li>
+<li>
+All of the component's <code>&lt;%def&gt;</code> sections.</li>
+<li>
+All of the component's <code>&lt;%method&gt;</code> sections.
+</ul>
+<p class="content">
+In turn, each subcomponent or method should follow the same ordering of
+sections as the main component.
+</p>
+<p class="content">
+The general aesthetic is that we first put sections that define the component's
+interface (<code>&lt;%doc&gt;</code>, <code>&lt;%args&gt;</code>, <code>&lt;%flags&gt;</code>, <code>&lt;%attr&gt;</code>), then the main body of the component, then any sections written in Perl. This
+tends to balance the needs of Perl developers, HTML developers, and code
+administrators.
+</p>
+<p class="content">
+Alternatively, you could place the <code>&lt;%args&gt;</code>, <code>&lt;%flags&gt;</code>, and <code>&lt;%attr&gt;</code> sections after the main body. You might do this if Mason components may be
+edited by nonprogramming web designers; they will probably prefer to see the
+text portions of the component first without being distracted by code sections
+that they may not understand anyway. This is the style we adopted for our
+sample site, in <a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">Chapter 8</a>.
+</p>
+<p class="content">
+Of course, use a layout that makes sense in your specific situation. For
+instance, if a subcomponent is tiny enough, you might just put it near the code
+that calls it. Choose a layout that gives you inner peace.
+</p>
+<a name="TOC-ANCHOR-5"></a>
+<h2>File Naming and Directory Layout</h2><p class="content">
+<a name="CHP-10-SECT-4"></a>
+
+</p>
+<p class="content">
+As with your <a name="perlhtmlmason-IDXTERM-816"></a>
+<a name="perlhtmlmason-IDXTERM-817"></a>
+<a name="perlhtmlmason-IDXTERM-818"></a>
+<a name="perlhtmlmason-IDXTERM-819"></a>
+ component layout, the most important aspect of naming is consistency. Give
+your components consistent names and file extensions. For example, components
+intended to be called by a client might end in <em>.html</em> or <em>.mhtml</em>, while components intended only for use by other components might end in <em>.mas</em>. Consistently naming your files will simplify your web server setup and lots
+of maintenance tasks as well as slightly lowering the barrier to entry for new
+developers.
+</p>
+<p class="content">
+One other consideration when determining your directory and file layout is how
+you plan to use autohandlers. One symptom of a bad layout is finding yourself
+frequently using the <code>inherit</code> flag to override a component's default inheritance. Even worse is when you
+have many components in a single directory, all with <em>different</em><code>inherit</code> flags. That is a strong sign that you should consider grouping files together
+based on  inheritance.
+</p>
+<p class="content">
+Of course, you can always use the <code>inherit</code> flag to change a component's parent, but if you can avoid it and simply use
+the closest autohandler file, that's one less complication to deal with and one
+less source of potential bugs.
+</p>
+<a name="TOC-ANCHOR-6"></a>
+<h2>Random Advice</h2><p class="content">
+<a name="CHP-10-SECT-5"></a>
+
+</p>
+<p class="content">
+Finally, we want to say a few things that don't justify their own section:
+</p>
+<ul>
+<li>
+Always put <a name="IXT-10-1169"></a>
+ whitespace around the contents of a <a name="IXT-10-1170"></a>
+<a name="IXT-10-1171"></a>
+ substitution tag. This looks nicer.</li>
+<li>
+Don't output content and return a value from the same component. This makes for
+a confusing <a name="IXT-10-1172"></a>
+ API.</li>
+<li>
+Put as much code as possible in external modules, and try to stick as much of
+the rest into <code>&lt;%init&gt;</code>, <code>&lt;%once&gt;</code>, and <code>&lt;%shared&gt;</code> blocks. Don't litter your components with <code>&lt;%perl&gt;</code> blocks and <a name="IXT-10-1173"></a>
+ Perl lines. Interspersing HTML (or other text) with lots of code makes for
+hard-to-read components.</li>
+<li>
+Use a <a name="IXT-10-1174"></a>
+<a name="IXT-10-1175"></a>
+ period (.) as the first character of<a name="IXT-10-1176"></a>
+ subcomponent names.
+</ul>
+<p class="content">
+None of these rules are etched in stone, but they provide some good guidelines
+to your coding that may make your life, and your fellow coders' lives, a little
+more pleasant.
+</p>
+
+<h4>Footnotes</h4>
+<a name="FOOTNOTE-ANCHOR-1"></a>
+<p class="content">
+1. Though a local RDBMS may be more trouble than it's worth with a
+high-maintenance RDBMS like Oracle. -- <a href="#RETURN-ANCHOR-1">Return</a>.
+</p>
+<hr>
+<p class="book-menu">
+<a href="index.mhtml.htm" tppabs="http://www.masonbook.com/book/index.mhtml">Table of Contents</a>
+|
+<a href="foreword.mhtml.htm" tppabs="http://www.masonbook.com/book/foreword.mhtml">Foreword</a>
+|
+<a href="preface.mhtml.htm" tppabs="http://www.masonbook.com/book/preface.mhtml">Preface</a>
+<br>
+Chapters: 
+<a href="chapter-1.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-1.mhtml">1</a>
+<a href="chapter-2.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-2.mhtml">2</a>
+<a href="chapter-3.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-3.mhtml">3</a>
+<a href="chapter-4.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-4.mhtml">4</a>
+<a href="chapter-5.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-5.mhtml">5</a>
+<a href="chapter-6.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-6.mhtml">6</a>
+<a href="chapter-7.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-7.mhtml">7</a>
+<a href="chapter-8.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-8.mhtml">8</a>
+<a href="chapter-9.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-9.mhtml">9</a>
+<b>10</b>
+<a href="chapter-11.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-11.mhtml">11</a>
+<a href="chapter-12.mhtml.htm" tppabs="http://www.masonbook.com/book/chapter-12.mhtml">12</a>
+<br>
+Appendices:
+<a href="appendix-a.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-a.mhtml">A</a>
+<a href="appendix-b.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-b.mhtml">B</a>
+<a href="appendix-c.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-c.mhtml">C</a>
+<a href="appendix-d.mhtml.htm" tppabs="http://www.masonbook.com/book/appendix-d.mhtml">D</a>
+<br>
+<a href="glossary.mhtml.htm" tppabs="http://www.masonbook.com/book/glossary.mhtml">Glossary</a>
+|
+<a href="colophon.mhtml.htm" tppabs="http://www.masonbook.com/book/colophon.mhtml">Colophon</a>
+|
+<a href="copyright.mhtml.htm" tppabs="http://www.masonbook.com/book/copyright.mhtml">Copyright</a>
+</p>
+
+<p>
+These HTML pages were created by running <a
+href="book_as_html" tppabs="http://www.masonbook.com/book/book_as_html">this script</a> against the <a
+href="mason-book.tar.gz" tppabs="http://www.masonbook.com/book/mason-book.tar.gz">pseudo-POD source</a>.
+</p>
+
+
+
+
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>
